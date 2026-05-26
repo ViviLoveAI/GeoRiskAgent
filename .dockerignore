@@ -1,0 +1,12 @@
+.git
+__pycache__
+.pytest_cache
+.venv
+venv
+.DS_Store
+screenshots
+chroma_db
+*.pyc
+*.pyo
+*.pyd
+*.log

@@ -1,0 +1,83 @@
+supply_chain_node,sector,ticker,asset_name,asset_type,region,notes
+maritime_chokepoint,Shipping,BOAT,SonicShares Global Shipping ETF,ETF,Global,Basket exposure to global shipping companies sensitive to maritime route disruptions
+maritime_chokepoint,Shipping,MATX,Matson Inc,Stock,United States,Ocean transportation and logistics operator with Pacific route exposure
+container_shipping,Shipping,DAC,Danaos Corporation,Stock,Global,Containership owner with exposure to container vessel demand and charter markets
+container_shipping,Shipping,MAERSK-B.CO,A P Moller Maersk Class B,Stock,Europe,Global container shipping and integrated logistics operator
+freight_routes,Logistics,FDX,FedEx Corporation,Stock,United States,Parcel and freight network with global trade route sensitivity
+freight_routes,Logistics,UPS,United Parcel Service Inc,Stock,United States,Parcel and freight network exposed to cross-border shipment flows
+ports,Port Operations,1199.HK,COSCO SHIPPING Ports Limited,Stock,Asia,Port operator with container terminal exposure across major trade lanes
+ports,Port Operations,0144.HK,China Merchants Port Holdings Company Limited,Stock,Asia,Port infrastructure operator exposed to container throughput
+marine_insurance,Insurance,CB,Chubb Limited,Stock,Global,Commercial insurer with marine and specialty insurance exposure
+marine_insurance,Insurance,TRV,The Travelers Companies Inc,Stock,United States,Property casualty insurer with commercial insurance exposure
+oil_shipping,Shipping,FRO,Frontline plc,Stock,Global,Crude tanker operator exposed to oil shipping routes and tanker rates
+oil_shipping,Shipping,DHT,DHT Holdings Inc,Stock,Global,Crude oil tanker company exposed to VLCC market conditions
+lng_shipping,Shipping,FLNG,FLEX LNG Ltd,Stock,Global,LNG carrier owner exposed to seaborne LNG transportation
+lng_shipping,Energy,LNG,Cheniere Energy Inc,Stock,United States,LNG exporter exposed to global gas trade and liquefaction demand
+energy,Energy,XLE,Energy Select Sector SPDR Fund,ETF,United States,Broad ETF exposure to US energy companies
+energy,Energy,XOM,Exxon Mobil Corporation,Stock,Global,Integrated energy producer with upstream and downstream exposure
+refining,Energy,VLO,Valero Energy Corporation,Stock,United States,Refiner exposed to crude supply and refined product margins
+refining,Energy,MPC,Marathon Petroleum Corporation,Stock,United States,Refining and midstream operator exposed to fuel markets
+petrochemicals,Chemicals,DOW,Dow Inc,Stock,Global,Commodity chemicals producer exposed to petrochemical feedstocks
+petrochemicals,Chemicals,LYB,LyondellBasell Industries NV,Stock,Global,Petrochemical producer exposed to olefins polymers and feedstock costs
+aviation,Airlines,JETS,U S Global Jets ETF,ETF,Global,Airline ETF exposed to fuel costs travel demand and route disruptions
+aviation,Airlines,DAL,Delta Air Lines Inc,Stock,United States,Airline exposed to jet fuel and international travel disruption risks
+semiconductor_equipment,Semiconductors,ASML,ASML Holding NV ADR,ADR,Europe,Advanced lithography supplier exposed to semiconductor equipment controls
+semiconductor_equipment,Semiconductors,AMAT,Applied Materials Inc,Stock,United States,Semiconductor manufacturing equipment supplier
+ai_chips,Semiconductors,NVDA,NVIDIA Corporation,Stock,United States,Advanced accelerator and GPU supplier exposed to AI chip demand and export controls
+ai_chips,Semiconductors,AMD,Advanced Micro Devices Inc,Stock,United States,CPU GPU and accelerator supplier exposed to data center chip demand
+eda_software,Semiconductor Software,SNPS,Synopsys Inc,Stock,United States,Electronic design automation software provider for chip design workflows
+eda_software,Semiconductor Software,CDNS,Cadence Design Systems Inc,Stock,United States,Electronic design automation software provider for semiconductor design
+foundry,Semiconductors,TSM,Taiwan Semiconductor Manufacturing Company ADR,ADR,Asia,Leading semiconductor foundry exposed to advanced manufacturing supply chains
+foundry,Semiconductors,GFS,GlobalFoundries Inc,Stock,Global,Contract semiconductor manufacturer with US and international fab exposure
+data_centers,Digital Infrastructure,EQIX,Equinix Inc,REIT,Global,Data center REIT exposed to cloud and colocation demand
+data_centers,Digital Infrastructure,DLR,Digital Realty Trust Inc,REIT,Global,Data center REIT with global colocation and cloud infrastructure exposure
+trade_lanes,Logistics,EXPD,Expeditors International of Washington Inc,Stock,Global,Freight forwarder exposed to global trade lanes and customs flows
+trade_lanes,Logistics,DHL.DE,DHL Group,Stock,Europe,Global logistics operator exposed to parcel freight and trade lane activity
+customs,Logistics,DSGX,The Descartes Systems Group Inc,Stock,North America,Logistics software provider with customs and trade compliance exposure
+customs,Logistics,CHRW,C H Robinson Worldwide Inc,Stock,United States,Freight broker and logistics provider exposed to customs and shipping flows
+manufacturing_inputs,Industrials,DE,Deere & Company,Stock,United States,Equipment manufacturer exposed to agriculture and industrial input cycles
+manufacturing_inputs,Industrials,CAT,Caterpillar Inc,Stock,Global,Heavy equipment manufacturer exposed to construction mining and infrastructure inputs
+agriculture,Agriculture,ADM,Archer-Daniels-Midland Company,Stock,Global,Agricultural processor and merchandiser exposed to crop flows and food supply chains
+agriculture,Agriculture,MOO,VanEck Agribusiness ETF,ETF,Global,Basket exposure to agribusiness equipment inputs and food supply chains
+fertilizer,Agriculture,NTR,Nutrien Ltd,Stock,North America,Fertilizer producer and distributor exposed to potash nitrogen and crop input demand
+fertilizer,Agriculture,CF,CF Industries Holdings Inc,Stock,North America,Nitrogen fertilizer producer exposed to natural gas feedstock costs
+logistics,Logistics,KNIN.SW,Kuehne + Nagel International AG,Stock,Europe,Global freight forwarding and logistics company
+logistics,Logistics,JBHT,J B Hunt Transport Services Inc,Stock,United States,Intermodal and trucking logistics provider exposed to freight demand
+defense,Defense,LMT,Lockheed Martin Corporation,Stock,United States,Defense contractor exposed to government security and defense spending priorities
+defense,Defense,ITA,iShares U S Aerospace & Defense ETF,ETF,United States,ETF exposure to US aerospace and defense companies
+broad_etf,Broad Market,SPY,SPDR S&P 500 ETF Trust,ETF,United States,Broad US equity ETF for market-wide context rather than a trading signal
+broad_etf,Broad Market,ACWI,iShares MSCI ACWI ETF,ETF,Global,Broad global equity ETF for cross-market context rather than a trading signal
+critical_minerals,Metals & Mining,REMX,VanEck Rare Earth and Strategic Metals ETF,ETF,Global,Basket exposure to rare earth and strategic metals producers used in critical supply chains
+critical_minerals,Metals & Mining,PICK,iShares MSCI Global Metals & Mining Producers ETF,ETF,Global,Broad metals and mining producer ETF with critical materials exposure
+rare_earths,Metals & Mining,MP,MP Materials Corp,Stock,United States,Rare earth mining and processing company exposed to magnet materials supply chains
+rare_earths,Metals & Mining,LYSDY,Lynas Rare Earths Ltd ADR,ADR,Australia,Rare earth producer with exposure to non-China rare earth supply chains
+gallium_germanium_graphite,Specialty Materials,NEO.TO,Neo Performance Materials Inc,Stock,Canada,Specialty materials company exposed to rare earth and engineered material supply chains
+gallium_germanium_graphite,Battery Materials,SYR.AX,Syrah Resources Ltd,Stock,Australia,Graphite producer exposed to battery anode material supply chains
+panama_canal,Shipping,LPG,Dorian LPG Ltd,Stock,Global,LPG carrier operator with exposure to global maritime route constraints including canal transit disruptions
+panama_canal,Shipping,SBLK,Star Bulk Carriers Corp,Stock,Global,Dry bulk shipping company exposed to grain and commodity route disruptions
+grain_exports,Agriculture,ADM,Archer-Daniels-Midland Company,Stock,Global,Agricultural processor and merchandiser exposed to grain export flows
+grain_exports,Agriculture,BG,Bunge Global SA,Stock,Global,Agribusiness company exposed to grain oilseed and food commodity trade flows
+cyber_infrastructure,Cybersecurity,CIBR,First Trust NASDAQ Cybersecurity ETF,ETF,United States,Cybersecurity ETF exposure to companies supporting infrastructure cyber resilience
+cyber_infrastructure,Cybersecurity,CRWD,CrowdStrike Holdings Inc,Stock,United States,Cybersecurity provider exposed to enterprise and infrastructure security demand
+pipeline_infrastructure,Energy Infrastructure,ENB,Enbridge Inc,Stock,North America,Pipeline and energy infrastructure operator exposed to fuel transport networks
+pipeline_infrastructure,Energy Infrastructure,TRP.TO,TC Energy Corporation,Stock,North America,Pipeline and energy infrastructure company exposed to natural gas and liquids transport
+uranium,Uranium,URA,Global X Uranium ETF,ETF,Global,Basket exposure to uranium miners and nuclear fuel-cycle companies
+uranium,Uranium,CCJ,Cameco Corporation,Stock,Canada,Uranium producer exposed to nuclear fuel supply chains
+nuclear_fuel,Nuclear Energy,URNM,Sprott Uranium Miners ETF,ETF,Global,Uranium and nuclear fuel-cycle ETF exposure for nuclear supply-chain monitoring
+nuclear_fuel,Nuclear Energy,LEU,Centrus Energy Corp,Stock,United States,Nuclear fuel supplier exposed to uranium enrichment and fuel-cycle services
+financial_sanctions,Financials,XLF,Financial Select Sector SPDR Fund,ETF,United States,Broad US financial sector ETF for sanctions and banking exposure context
+financial_sanctions,Financials,EUFN,iShares MSCI Europe Financials ETF,ETF,Europe,European financial sector ETF for cross-border banking exposure context
+payment_networks,Payments,V,Visa Inc,Stock,Global,Global payments network exposed to cross-border payment and compliance channels
+payment_networks,Payments,MA,Mastercard Incorporated,Stock,Global,Global payments network exposed to payment-routing and compliance channels
+taiwan_semiconductor_supply,Semiconductors,TSM,Taiwan Semiconductor Manufacturing Company ADR,ADR,Asia,Leading Taiwan foundry exposed to advanced semiconductor supply-chain concentration
+taiwan_semiconductor_supply,Country ETF,EWT,iShares MSCI Taiwan ETF,ETF,Asia,Taiwan equity ETF with significant technology and semiconductor supply-chain exposure
+battery_materials,Battery Materials,LIT,Global X Lithium & Battery Tech ETF,ETF,Global,Basket exposure to lithium battery materials and battery technology supply chains
+battery_materials,Chemicals,ALB,Albemarle Corporation,Stock,Global,Lithium producer exposed to battery material supply chains
+graphite,Battery Materials,NMG,Nouveau Monde Graphite Inc,Stock,North America,Graphite developer exposed to battery anode material supply chains
+graphite,Battery Materials,SYR.AX,Syrah Resources Ltd,Stock,Australia,Graphite producer exposed to battery anode material supply chains
+port_labor,Shipping,ZIM,ZIM Integrated Shipping Services Ltd,Stock,Global,Container shipping operator exposed to port throughput and labor disruption channels
+port_labor,Logistics,EXPD,Expeditors International of Washington Inc,Stock,Global,Freight forwarder exposed to port congestion and customs flow disruptions
+food_export_controls,Agriculture,DBA,Invesco DB Agriculture Fund,ETF,Global,Agriculture commodity ETF exposure for food export restriction monitoring
+food_export_controls,Agriculture,WEAT,Teucrium Wheat Fund,ETF,Global,Wheat-focused commodity ETF exposure for grain trade restriction monitoring
+aerospace_supply_chain,Aerospace,BA,Boeing Company,Stock,United States,Aerospace manufacturer exposed to aircraft supply-chain and sanctions channels
+aerospace_supply_chain,Aerospace,AIR.PA,Airbus SE,Stock,Europe,Aerospace manufacturer exposed to aircraft supply-chain and export restriction channels

@@ -1,0 +1,142 @@
+[
+  {
+    "case_id": "eval_red_sea_shipping_disruption",
+    "news": "Red Sea shipping routes face disruption due to escalating regional conflict.",
+    "expected_event_type": "maritime_security_disruption",
+    "expected_nodes": ["maritime_chokepoint", "container_shipping", "freight_routes", "marine_insurance", "oil_shipping", "lng_shipping", "logistics"],
+    "expected_historical_cases": ["case_2023_red_sea_attacks"]
+  },
+  {
+    "case_id": "eval_semiconductor_export_controls",
+    "news": "The U.S. expands export controls on advanced AI chips and semiconductor equipment to China.",
+    "expected_event_type": "technology_export_controls",
+    "expected_nodes": ["semiconductor_equipment", "ai_chips", "eda_software", "foundry", "data_centers", "customs"],
+    "expected_historical_cases": ["case_2022_us_china_semiconductor_controls"]
+  },
+  {
+    "case_id": "eval_russia_europe_gas_disruption",
+    "news": "Russia-related pipeline gas disruptions increase energy supply concerns across Europe.",
+    "expected_event_type": "war_and_sanctions_energy_disruption",
+    "expected_nodes": ["energy", "lng_shipping", "refining", "petrochemicals", "manufacturing_inputs"],
+    "expected_historical_cases": ["case_russia_ukraine_energy_shock"]
+  },
+  {
+    "case_id": "eval_natural_gas_fertilizer_shock",
+    "news": "Natural gas stress raises concerns over fertilizer production and agricultural input costs.",
+    "expected_event_type": "energy_and_agricultural_input_shock",
+    "expected_nodes": ["energy", "fertilizer", "agriculture", "petrochemicals", "manufacturing_inputs"],
+    "expected_historical_cases": ["case_2022_gas_fertilizer_shock"]
+  },
+  {
+    "case_id": "eval_us_china_tariffs",
+    "news": "New U.S.-China tariffs increase trade costs for manufacturers, agriculture exporters, and consumer goods supply chains.",
+    "expected_event_type": "trade_policy_and_tariffs",
+    "expected_nodes": ["trade_lanes", "customs", "manufacturing_inputs", "agriculture", "logistics"],
+    "expected_historical_cases": ["case_2018_2019_us_china_tariffs"]
+  },
+  {
+    "case_id": "eval_middle_east_oil_infrastructure_attack",
+    "news": "A Middle East oil facility attack disrupts crude processing and raises concerns for refining, petrochemicals, and aviation fuel supply.",
+    "expected_event_type": "energy_infrastructure_disruption",
+    "expected_nodes": ["energy", "refining", "petrochemicals", "aviation", "oil_shipping"],
+    "expected_historical_cases": ["case_middle_east_oil_supply_disruption"]
+  },
+  {
+    "case_id": "eval_hormuz_tanker_tensions",
+    "news": "Tanker security incidents near the Strait of Hormuz raise oil and LNG shipping concerns.",
+    "expected_event_type": "maritime_security_disruption",
+    "expected_nodes": ["maritime_chokepoint", "oil_shipping", "lng_shipping", "marine_insurance", "energy", "refining"],
+    "expected_historical_cases": ["case_hormuz_tanker_tensions"]
+  },
+  {
+    "case_id": "eval_suez_canal_blockage",
+    "news": "A grounded vessel blocks the Suez Canal and delays container shipping between Asia and Europe.",
+    "expected_event_type": "shipping_chokepoint_disruption",
+    "expected_nodes": ["maritime_chokepoint", "container_shipping", "freight_routes", "ports", "logistics"],
+    "expected_historical_cases": ["case_2021_suez_blockage"]
+  },
+  {
+    "case_id": "eval_huawei_entity_list",
+    "news": "A major Chinese telecom equipment company is added to the U.S. Entity List, restricting access to U.S.-origin chips and software.",
+    "expected_event_type": "technology_export_controls",
+    "expected_nodes": ["semiconductor_equipment", "ai_chips", "eda_software", "foundry", "data_centers", "customs"],
+    "expected_historical_cases": ["case_2019_huawei_entity_list"]
+  },
+  {
+    "case_id": "eval_dutch_asml_export_controls",
+    "news": "Dutch authorities tighten export controls on advanced ASML lithography equipment for semiconductor fabs in China.",
+    "expected_event_type": "technology_export_controls",
+    "expected_nodes": ["semiconductor_equipment", "foundry", "customs"],
+    "expected_historical_cases": ["case_2023_dutch_asml_controls"]
+  },
+  {
+    "case_id": "eval_taiwan_strait_semiconductor_risk",
+    "news": "Taiwan Strait military tensions raise concerns for advanced semiconductor foundries and AI chip supply chains.",
+    "expected_event_type": "taiwan_strait_semiconductor_risk",
+    "expected_nodes": ["foundry", "ai_chips", "semiconductor_equipment", "data_centers", "manufacturing_inputs", "defense"],
+    "expected_historical_cases": ["case_taiwan_strait_semiconductor_risk"]
+  },
+  {
+    "case_id": "eval_rare_earth_critical_minerals_controls",
+    "news": "China tightens rare earth and critical minerals export controls, raising concerns for battery materials and electronics supply chains.",
+    "expected_event_type": "critical_minerals_export_controls",
+    "expected_nodes": ["critical_minerals", "rare_earths", "gallium_germanium_graphite", "manufacturing_inputs", "customs"],
+    "expected_historical_cases": ["case_rare_earth_export_restriction_risk", "case_china_gallium_germanium_graphite_controls"]
+  },
+  {
+    "case_id": "eval_panama_canal_drought_shipping",
+    "news": "Panama Canal drought and low water levels force draft restrictions and reduce shipping capacity for global trade routes.",
+    "expected_event_type": "canal_shipping_disruption",
+    "expected_nodes": ["panama_canal", "maritime_chokepoint", "container_shipping", "freight_routes", "lng_shipping", "agriculture", "logistics"],
+    "expected_historical_cases": ["case_panama_canal_drought_shipping_capacity"]
+  },
+  {
+    "case_id": "eval_black_sea_grain_export_disruption",
+    "news": "Black Sea grain export corridor disruption raises concerns for wheat shipments, food supply chains, and agricultural logistics.",
+    "expected_event_type": "grain_export_disruption",
+    "expected_nodes": ["grain_exports", "agriculture", "freight_routes", "maritime_chokepoint", "fertilizer", "logistics"],
+    "expected_historical_cases": ["case_black_sea_grain_export_disruption"]
+  },
+  {
+    "case_id": "eval_uranium_nuclear_fuel_disruption",
+    "news": "Uranium enrichment and nuclear fuel supply-chain disruptions increase procurement concerns for utilities and energy security.",
+    "expected_event_type": "uranium_supply_chain_risk",
+    "expected_nodes": ["uranium", "nuclear_fuel", "energy", "trade_lanes", "customs", "manufacturing_inputs"],
+    "expected_historical_cases": ["case_uranium_nuclear_fuel_supply_disruption"]
+  },
+  {
+    "case_id": "eval_china_graphite_battery_controls",
+    "news": "China graphite export controls raise battery material sourcing concerns for electric vehicle and electronics supply chains.",
+    "expected_event_type": "critical_minerals_export_controls",
+    "expected_nodes": ["critical_minerals", "rare_earths", "gallium_germanium_graphite", "manufacturing_inputs", "customs"],
+    "expected_historical_cases": ["case_2023_china_graphite_battery_export_controls"]
+  },
+  {
+    "case_id": "eval_opec_oil_policy_shock",
+    "news": "OPEC+ production cuts shift oil supply expectations and raise fuel cost uncertainty for refining, aviation, and transportation.",
+    "expected_event_type": "oil_policy_shock",
+    "expected_nodes": ["energy", "oil_shipping", "refining", "petrochemicals", "aviation"],
+    "expected_historical_cases": ["case_2020_opec_plus_production_cut", "case_opec_production_cut_policy_shock"]
+  },
+  {
+    "case_id": "eval_cyber_port_pipeline_disruption",
+    "news": "A cyberattack disrupts port terminal systems and pipeline infrastructure, creating fuel and logistics bottlenecks.",
+    "expected_event_type": "cyber_infrastructure_disruption",
+    "expected_nodes": ["cyber_infrastructure", "pipeline_infrastructure", "ports", "energy", "logistics", "freight_routes"],
+    "expected_historical_cases": ["case_2023_port_of_nagoya_cyberattack", "case_cyberattack_pipeline_port_infrastructure"]
+  },
+  {
+    "case_id": "eval_defense_supply_chain_escalation",
+    "news": "Regional conflict escalation increases defense spending attention for munitions, missile defense, and aerospace supply chains.",
+    "expected_event_type": "defense_spending_shock",
+    "expected_nodes": ["defense", "manufacturing_inputs", "semiconductor_equipment", "ai_chips", "cyber_infrastructure"],
+    "expected_historical_cases": ["case_2023_middle_east_defense_supply_escalation", "case_defense_spending_shock_after_escalation"]
+  },
+  {
+    "case_id": "eval_food_export_grain_restriction",
+    "news": "A food export ban and grain export restriction limit wheat exports and raise grain trade concerns for agriculture and food supply chains.",
+    "expected_event_type": "grain_export_disruption",
+    "expected_nodes": ["grain_exports", "agriculture", "freight_routes", "maritime_chokepoint", "fertilizer", "logistics"],
+    "expected_historical_cases": ["case_2022_india_wheat_export_ban"]
+  }
+]
