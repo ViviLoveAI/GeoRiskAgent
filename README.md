@@ -12,13 +12,13 @@ GeoRisk uses structured historical cases and transmission mechanisms to show dir
 
 ## Release Provenance
 
-- Production methodology version: `V4`.
-- Current production version: `V4.1`.
-- Frozen V5 MVP status: evaluation-frozen bounded agentic discovery layer around the frozen V4 verification boundary.
+- Production runtime: frozen V5 LangGraph bounded recovery.
+- Frozen verification boundary: V4/V4.1 deterministic evidence, mapping, and ranking.
+- Frozen V5 MVP status: bounded agentic discovery layer around the frozen V4 verification boundary.
 - V5 LangGraph status: thin orchestration adapter for the frozen V5 state machine; methodology and frozen results are unchanged.
 - `V4.1` means V4 downstream retrieval/ranking/evidence methodology plus audited post-freeze implementation and presentation fixes.
 - Frozen V4 evaluation artifacts and metrics were not regenerated for `V4.1`.
-- The public `/analyze` API currently runs V4/V4.1. V5 is available through the Python/evaluation path and should not be described as the production API.
+- The public `/analyze` API runs frozen V5 LangGraph recovery and returns the existing `FinalReport` schema after the Frozen V4/V4.1 verification boundary.
 
 Post-freeze production fixes are recorded in `data/validation_v4/execution_diagnostics/v4_post_freeze_production_fix_manifest.json`.
 
@@ -39,7 +39,7 @@ Core implementation:
 | Interfaces | `src/api.py`, `app.py`, `src/pipeline.py` | FastAPI owns the production service boundary; Streamlit is an HTTP client; CLI/Python paths remain available for research and evaluation. |
 | V5 LangGraph Orchestration | `src/orchestration/langgraph_v5.py` | Represents the frozen V5 bounded repair workflow as explicit state transitions while reusing existing V5 functions. |
 
-The production V4 path uses simple Python orchestration functions and Pydantic models. V5 also has a thin LangGraph representation for stateful orchestration, conditional repair routing, bounded iteration, and deterministic handoff to the frozen V4 verification boundary. The LangGraph adapter does not introduce new agents, memory, persistence, LLM overrides, or changed evidence semantics.
+The production API runs the frozen V5 LangGraph bounded-recovery workflow, then hands off to the Frozen V4/V4.1 deterministic verification boundary. V5 does not change V4 evidence thresholds, mechanism compatibility, asset mapping, evidence labels, or ranking semantics. The LangGraph adapter does not introduce new agents, memory, persistence, LLM overrides, or changed evidence semantics.
 
 ## 3. Evidence Model
 
@@ -266,7 +266,7 @@ Open:
 
 In Docker Compose, Streamlit calls FastAPI at `http://api:8000` using the Compose service hostname. Local development defaults to `GEORISK_API_URL=http://127.0.0.1:8000`.
 
-Note: production `/analyze` runs the frozen V4 configuration (`top_k=10` with mechanism-compatible support). Callers cannot override retrieval-depth, support-threshold, or mechanism-compatibility settings through the public production API. Configurable `run_pipeline(...)` and CLI paths remain available for research and benchmark experiments.
+Note: production `/analyze` runs frozen V5 LangGraph recovery with the Frozen V4 configuration as the verification boundary (`top_k=10` with mechanism-compatible support). Callers cannot override retrieval-depth, support-threshold, repair budget, applicability-gate, or mechanism-compatibility settings through the public production API. Configurable `run_pipeline(...)` and CLI paths remain available for research and benchmark experiments.
 
 Runtime `/version` reports both `methodology_version` and `production_version` so current production is not confused with the byte-identical frozen evaluation snapshot.
 

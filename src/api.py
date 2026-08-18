@@ -11,7 +11,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 from src.config import INTERACTIVE_EVENT_ANALYZER
 from src.input_normalizer import normalize_event_input
-from src.pipeline import run_v4_pipeline
+from src.orchestration.langgraph_v5 import run_v5_langgraph
 from src.schemas import FinalReport
 from src.v4_config import (
     METHODOLOGY_VERSION,
@@ -20,6 +20,7 @@ from src.v4_config import (
     PRODUCTION_VERSION,
     V4_CONFIG,
 )
+from src.v5_config import V5_RECOVERY_APPLICABILITY_CONFIG
 from src.vector_store_health import assert_vector_store_ready, validate_vector_store
 
 
@@ -121,6 +122,13 @@ class VersionConfiguration(BaseModel):
     transmission_context_version: str
     canonical_family_version: str
     mechanism_compatibility_version: str
+    architecture_version: str
+    verification_boundary: str
+    max_repair_attempts: int
+    max_new_candidate_nodes: int
+    node_repair_enabled: bool
+    specificity_recovery_enabled: bool
+    current_event_applicability_gate_enabled: bool
 
 
 class VersionResponse(BaseModel):
@@ -165,7 +173,7 @@ def version() -> VersionResponse:
         production_version=PRODUCTION_VERSION,
         methodology_version=METHODOLOGY_VERSION,
         version=PRODUCTION_VERSION,
-        runtime="production",
+        runtime="V5 LangGraph bounded recovery with Frozen V4 verification boundary",
         post_freeze_fixes=POST_FREEZE_FIXES_ENABLED,
         post_freeze_fix_manifest=POST_FREEZE_FIX_MANIFEST,
         configuration=VersionConfiguration(
@@ -176,24 +184,39 @@ def version() -> VersionResponse:
             transmission_context_version=V4_CONFIG.transmission_context_version,
             canonical_family_version=V4_CONFIG.canonical_family_version,
             mechanism_compatibility_version=V4_CONFIG.mechanism_compatibility_version,
+            architecture_version=V5_RECOVERY_APPLICABILITY_CONFIG.architecture_version,
+            verification_boundary="Frozen V4 / V4.1 deterministic verification",
+            max_repair_attempts=V5_RECOVERY_APPLICABILITY_CONFIG.max_repair_attempts,
+            max_new_candidate_nodes=V5_RECOVERY_APPLICABILITY_CONFIG.max_new_candidate_nodes,
+            node_repair_enabled=V5_RECOVERY_APPLICABILITY_CONFIG.enable_node_repair,
+            specificity_recovery_enabled=(
+                V5_RECOVERY_APPLICABILITY_CONFIG.enable_specificity_recovery
+            ),
+            current_event_applicability_gate_enabled=(
+                V5_RECOVERY_APPLICABILITY_CONFIG.enable_current_event_applicability_gate
+            ),
         ),
     )
 
 
 @app.post("/analyze", response_model=FinalReport)
 def analyze(request: AnalyzeRequest) -> FinalReport:
-    """Run the production GeoRisk V4 pipeline for a geopolitical event."""
+    """Run the production GeoRisk V5 LangGraph path for a geopolitical event."""
 
     try:
         assert_vector_store_ready()
         normalized_input = normalize_event_input(request.event_text)
         logger.info(
-            "GeoRisk API analysis starting: mode=V4 top_k=%s "
-            "mechanism_compatible_support=%s event_analyzer=%s input_language=%s",
+            "GeoRisk API analysis starting: runtime=V5_LangGraph "
+            "verification_boundary=Frozen_V4 top_k=%s "
+            "mechanism_compatible_support=%s event_analyzer=%s input_language=%s "
+            "max_repair_attempts=%s max_new_candidate_nodes=%s",
             V4_CONFIG.retrieval_top_k,
             V4_CONFIG.use_mechanism_compatible_support,
             INTERACTIVE_EVENT_ANALYZER,
             normalized_input.detected_language,
+            V5_RECOVERY_APPLICABILITY_CONFIG.max_repair_attempts,
+            V5_RECOVERY_APPLICABILITY_CONFIG.max_new_candidate_nodes,
         )
         if normalized_input.normalization_error:
             raise HTTPException(
@@ -203,10 +226,12 @@ def analyze(request: AnalyzeRequest) -> FinalReport:
                     "Please retry later or submit the event in English."
                 ),
             )
-        report = run_v4_pipeline(
+        v5_result = run_v5_langgraph(
             normalized_input.analysis_text,
             event_analyzer=INTERACTIVE_EVENT_ANALYZER,
+            config=V5_RECOVERY_APPLICABILITY_CONFIG,
         )
+        report = v5_result.final_report
         return report.model_copy(
             update={
                 "input_title": request.display_title,
