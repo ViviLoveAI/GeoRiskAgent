@@ -7,6 +7,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      HF_HOME: ${{ github.workspace }}/.cache/huggingface
+      SENTENCE_TRANSFORMERS_HOME: ${{ github.workspace }}/.cache/sentence-transformers
 
     steps:
       - name: Check out repository
@@ -22,9 +25,61 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Resolve embedding model
+        id: embedding-model
+        run: |
+          echo "model=$(python -c 'from src.vector_store import MODEL_NAME; print(MODEL_NAME)')" >> "$GITHUB_OUTPUT"
+
+      - name: Restore embedding model cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.HF_HOME }}
+            ${{ env.SENTENCE_TRANSFORMERS_HOME }}
+          key: ${{ runner.os }}-python-3.11-sentence-transformers-${{ steps.embedding-model.outputs.model }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-python-3.11-sentence-transformers-${{ steps.embedding-model.outputs.model }}-
+
+      - name: Prefetch embedding model
+        env:
+          GEORISK_LOCAL_MODEL_FILES_ONLY: "false"
+        run: |
+          python - <<'PY'
+          import os
+
+          from sentence_transformers import SentenceTransformer
+          from src.vector_store import MODEL_NAME
+
+          SentenceTransformer(
+              MODEL_NAME,
+              cache_folder=os.environ["SENTENCE_TRANSFORMERS_HOME"],
+          )
+          print(f"Prefetched sentence-transformers model: {MODEL_NAME}")
+          PY
+
+      - name: Verify offline embedding model load
+        env:
+          GEORISK_LOCAL_MODEL_FILES_ONLY: "true"
+          HF_HUB_OFFLINE: "1"
+        run: |
+          python - <<'PY'
+          import os
+
+          from sentence_transformers import SentenceTransformer
+          from src.vector_store import MODEL_NAME
+
+          SentenceTransformer(
+              MODEL_NAME,
+              cache_folder=os.environ["SENTENCE_TRANSFORMERS_HOME"],
+              local_files_only=True,
+          )
+          print(f"Offline embedding model load OK: {MODEL_NAME}")
+          PY
+
       - name: Run tests
         env:
           GEORISK_LOCAL_MODEL_FILES_ONLY: "true"
+          HF_HUB_OFFLINE: "1"
           USE_LLM_EVENT_ANALYST: "false"
         run: pytest -q
 
