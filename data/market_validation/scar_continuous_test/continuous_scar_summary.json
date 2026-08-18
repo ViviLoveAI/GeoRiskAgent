@@ -1,0 +1,87 @@
+{
+  "absolute_scar_definition": "abs(standardized_car)",
+  "binary_reference": {
+    "curated_random_mean_hit_rate": 0.100564597942964,
+    "curated_random_median_hit_rate": 0.10215053763440861,
+    "curated_random_p05_hit_rate": 0.07526881720430108,
+    "curated_random_p95_hit_rate": 0.125,
+    "delta_georisk_minus_curated_mean": 0.01771497194950912,
+    "georisk_evaluated": 186,
+    "georisk_hit_rate": 0.11827956989247312,
+    "georisk_hits": 22,
+    "georisk_percentile": 0.871,
+    "hit_rule": "abs(standardized_car) >= 1.96"
+  },
+  "continuous_asset_level": {
+    "clustering_limitation": "Asset-level rows are clustered within events and MC draws; Mann-Whitney is descriptive, not the primary inference.",
+    "curated_random_mean_abs_scar": 0.9056198754396922,
+    "curated_random_median_abs_scar": 0.6646406547296743,
+    "curated_random_p25_of_run_medians": 0.6258484116047772,
+    "curated_random_p75_of_run_medians": 0.6977257483413494,
+    "curated_random_p90_of_run_medians": 0.7353846213927722,
+    "curated_random_pooled_asset_median_abs_scar": 0.6646406547296743,
+    "difference": 0.07850278085781526,
+    "georisk_mean_abs_scar": 0.9443441804592598,
+    "georisk_median_abs_scar": 0.7431434355874895,
+    "georisk_p25_abs_scar": 0.3146022817612915,
+    "georisk_p75_abs_scar": 1.2591256556308734,
+    "georisk_p90_abs_scar": 2.137562391664574,
+    "mann_whitney_secondary": {
+      "alternative": "GeoRisk |SCAR| greater than pooled curated-random asset draws",
+      "descriptive_secondary_only": true,
+      "p_value": 0.05907521932991406,
+      "rank_biserial_correlation": 0.06618273710338207,
+      "test": "Mann-Whitney U",
+      "u_statistic": 18377585.0
+    },
+    "pooled_asset_difference": 0.07850278085781526,
+    "pooled_asset_relative_difference": 0.11811311917075584,
+    "relative_difference": 0.11811311917075584
+  },
+  "event_level_primary": {
+    "curated_random_aggregate": {
+      "mean": 0.6573857932573443,
+      "median": 0.6559072942465946,
+      "p05": 0.5605192538676296,
+      "p25": 0.6138646060281603,
+      "p75": 0.6990685496554804,
+      "p90": 0.736298046235244,
+      "p95": 0.763463694501304
+    },
+    "empirical_one_sided_p_value": 0.11988011988011989,
+    "events": 12,
+    "events_with_negative_median_delta": 4,
+    "events_with_positive_median_delta": 8,
+    "events_with_zero_median_delta": 0,
+    "georisk_mc_percentile": 0.881,
+    "georisk_observed_aggregate_median_abs_scar": 0.7278980029377967,
+    "mean_event_level_delta": 0.027321608374941544,
+    "median_event_level_delta": 0.0173951259241516
+  },
+  "experiment_name": "Binary SCAR Threshold Compression Test",
+  "input_hashes": {
+    "asset_mapping": "5b94c4d8e0255237d1cb9f5f8eb564072b509c3923c89ca1b6fb117942f8316a",
+    "car_pair_results_v3": "12eeab979a982c3f3401b4df27656631fead34c07849d63f6d4e7ca1eb508acc",
+    "random_matched_runs": "55ae89217a7be02f886dfa8e1ca0150d98e4dd17b302ef9ccac195eebc4c3cec",
+    "random_matched_summary": "2aee1a9ed44b42cb8a72fd4a7e6d4926cc3065bbdaab977b2e2d3e2fda8df4a3"
+  },
+  "integrity": {
+    "broad_random_baseline_built": false,
+    "power_analysis": false,
+    "same_CAR_SCAR_calculation": true,
+    "same_curated_baseline": true,
+    "same_events": true,
+    "same_georisk_predictions": true,
+    "same_monte_carlo_draws": 1000,
+    "same_prices": true,
+    "same_random_seed": 20260805,
+    "sector_matched_baseline": false,
+    "threshold_tuning": false
+  },
+  "pattern": {
+    "conclusion": "PARTIALLY",
+    "label": "Pattern C",
+    "rationale": "continuous advantage exists but is not uniformly strong across events"
+  },
+  "primary_metric": "median event-level median absolute_scar"
+}

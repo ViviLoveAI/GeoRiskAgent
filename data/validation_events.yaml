@@ -1,0 +1,1125 @@
+validation_events:
+- event_id: candidate_d41a5f82d14a
+  event_date: '2025-10-10'
+  event_description: 'China Rare Earth Export Control List : What critical minerals
+    are on China export control list now ?, ETAuto China Rare Earth Export Control
+    List : What critical minerals are on China export control list now ?, ETAuto 20251010T131500Z
+    auto.economictimes.indiatimes.com'
+  event_type: critical minerals resource restrictions
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_d41a5f82d14a
+    symbol: DSGX
+    node: customs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: CHRW
+    node: customs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: DE
+    node: manufacturing_inputs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: CAT
+    node: manufacturing_inputs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: REMX
+    node: critical_minerals
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: PICK
+    node: critical_minerals
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: MP
+    node: rare_earths
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: LYSDY
+    node: rare_earths
+    asset_type: ADR
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: NEO.TO
+    node: gallium_germanium_graphite
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_d41a5f82d14a
+    symbol: SYR.AX
+    node: gallium_germanium_graphite
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_355782516069
+  event_date: '2025-10-03'
+  event_description: Cyberattack Shuts Down Production of Asahi , Japan Most Popular
+    Beer Cyberattack Shuts Down Production of Asahi , Japan Most Popular Beer 20251003T210000Z
+    breitbart.com
+  event_type: cyberattack critical infrastructure
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_355782516069
+    symbol: FDX
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: UPS
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: 1199.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: 0144.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: XLE
+    node: energy
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: XOM
+    node: energy
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: KNIN.SW
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: JBHT
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: CIBR
+    node: cyber_infrastructure
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: CRWD
+    node: cyber_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: ENB
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_355782516069
+    symbol: TRP.TO
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_03b2368e1784
+  event_date: '2025-10-14'
+  event_description: Goldman sees U . S . consumers paying more than half of Trump
+    tariffs Goldman sees U . S . consumers paying more than half of Trump tariffs
+    20251014T014500Z spokesman.com
+  event_type: trade restrictions tariffs
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_03b2368e1784
+    symbol: EXPD
+    node: trade_lanes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: DHL.DE
+    node: trade_lanes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: DSGX
+    node: customs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: CHRW
+    node: customs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: DE
+    node: manufacturing_inputs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: CAT
+    node: manufacturing_inputs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: ADM
+    node: agriculture
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: MOO
+    node: agriculture
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: KNIN.SW
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_03b2368e1784
+    symbol: JBHT
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_fba3f59c71da
+  event_date: '2025-11-09'
+  event_description: 'International Business : China suspends ban on exports of gallium
+    , germanium , antimony to US International Business : China suspends ban on exports
+    of gallium , germanium , antimony to US 20251109T091500Z gdnonline.com'
+  event_type: critical minerals resource restrictions
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_fba3f59c71da
+    symbol: DSGX
+    node: customs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: CHRW
+    node: customs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: DE
+    node: manufacturing_inputs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: CAT
+    node: manufacturing_inputs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: REMX
+    node: critical_minerals
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: PICK
+    node: critical_minerals
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: MP
+    node: rare_earths
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: LYSDY
+    node: rare_earths
+    asset_type: ADR
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: NEO.TO
+    node: gallium_germanium_graphite
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_fba3f59c71da
+    symbol: SYR.AX
+    node: gallium_germanium_graphite
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_ff6378fbb36b
+  event_date: '2025-11-09'
+  event_description: China halts ban on export to US of dual - use metals , further
+    easing tensions China halts ban on export to US of dual - use metals , further
+    easing tensions 20251109T154500Z straitstimes.com
+  event_type: critical minerals resource restrictions
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_ff6378fbb36b
+    symbol: SPY
+    node: broad_etf
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_ff6378fbb36b
+    symbol: ACWI
+    node: broad_etf
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_130fb98e42bb
+  event_date: '2025-11-10'
+  event_description: China Suspends Sanctions on Korean Shipbuilders , Pauses Export
+    Controls After U . S . Trade Detente -- Update China Suspends Sanctions on Korean
+    Shipbuilders , Pauses Export Controls After U . S . Trade Detente -- Update 20251110T123000Z
+    marketscreener.com
+  event_type: critical minerals resource restrictions
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_130fb98e42bb
+    symbol: ASML
+    node: semiconductor_equipment
+    asset_type: ADR
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: AMAT
+    node: semiconductor_equipment
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: NVDA
+    node: ai_chips
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: AMD
+    node: ai_chips
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: SNPS
+    node: eda_software
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: CDNS
+    node: eda_software
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: TSM
+    node: foundry
+    asset_type: ADR
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: GFS
+    node: foundry
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: EQIX
+    node: data_centers
+    asset_type: REIT
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: DLR
+    node: data_centers
+    asset_type: REIT
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: DSGX
+    node: customs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_130fb98e42bb
+    symbol: CHRW
+    node: customs
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_2bd2cdbf5b54
+  event_date: '2025-10-08'
+  event_description: Hack on Japan popular Asahi beer firm renews concerns over cyberattack
+    readiness Hack on Japan popular Asahi beer firm renews concerns over cyberattack
+    readiness 20251008T091500Z us.cnn.com
+  event_type: cyberattack critical infrastructure
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: FDX
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: UPS
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: 1199.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: 0144.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: XLE
+    node: energy
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: XOM
+    node: energy
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: KNIN.SW
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: JBHT
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: CIBR
+    node: cyber_infrastructure
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: CRWD
+    node: cyber_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: ENB
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_2bd2cdbf5b54
+    symbol: TRP.TO
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_eaccce38b750
+  event_date: '2025-10-21'
+  event_description: How Companies Can Emerge Stronger After Cyberattacks How Companies
+    Can Emerge Stronger After Cyberattacks 20251021T130000Z forbes.com
+  event_type: cyberattack critical infrastructure
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_eaccce38b750
+    symbol: FDX
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: UPS
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: 1199.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: 0144.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: XLE
+    node: energy
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: XOM
+    node: energy
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: KNIN.SW
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: JBHT
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: CIBR
+    node: cyber_infrastructure
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: CRWD
+    node: cyber_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: ENB
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_eaccce38b750
+    symbol: TRP.TO
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_a126990eefca
+  event_date: '2025-10-25'
+  event_description: 'US infiltration against China National Time Service Center  proves
+    once again it is the largest source of cyberattack : FM US infiltration against
+    China National Time Service Center  proves once again it is the largest source
+    of cyberattack : FM 20251025T144500Z globalsecurity.org'
+  event_type: cyberattack critical infrastructure
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_a126990eefca
+    symbol: FDX
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: UPS
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: 1199.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: 0144.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: XLE
+    node: energy
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: XOM
+    node: energy
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: KNIN.SW
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: JBHT
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: CIBR
+    node: cyber_infrastructure
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: CRWD
+    node: cyber_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: ENB
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_a126990eefca
+    symbol: TRP.TO
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+- event_id: candidate_4ead99ff6140
+  event_date: '2025-11-05'
+  event_description: 'Report : Hackers entered system 3 months before Nevada cyberattack
+    | Nevada | News Report : Hackers entered system 3 months before Nevada cyberattack
+    | Nevada | News 20251105T223000Z reviewjournal.com'
+  event_type: cyberattack critical infrastructure
+  notes: ''
+  held_out_from_kb: true
+  clear_t0: true
+  clean_estimation_window: true
+  low_confounding: true
+  status: accepted
+  predicted_exposures:
+  - event_id: candidate_4ead99ff6140
+    symbol: FDX
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: UPS
+    node: freight_routes
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: 1199.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: 0144.HK
+    node: ports
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: XLE
+    node: energy
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: XOM
+    node: energy
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: KNIN.SW
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: JBHT
+    node: logistics
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: CIBR
+    node: cyber_infrastructure
+    asset_type: ETF
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: CRWD
+    node: cyber_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: ENB
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  - event_id: candidate_4ead99ff6140
+    symbol: TRP.TO
+    node: pipeline_infrastructure
+    asset_type: Stock
+    confidence: 0.35
+    evidence_label: inference_only
+    expected_direction: null
+    source: georisk
+  baseline_assets:
+  - symbol: QQQ
+    node: broad_market_growth
+    asset_type: equity_etf
+    baseline_type: fixed_broad_market_baseline
+    source: baseline
+  - symbol: XLF
+    node: financials
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline
+  - symbol: XLV
+    node: healthcare
+    asset_type: equity_etf
+    baseline_type: fixed_sector_baseline
+    source: baseline

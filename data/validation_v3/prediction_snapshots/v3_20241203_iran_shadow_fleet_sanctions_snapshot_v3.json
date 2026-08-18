@@ -1,0 +1,596 @@
+{
+  "baseline_exposures": [
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_broad_market_baseline",
+      "node": "broad_market_growth",
+      "source": "baseline",
+      "symbol": "QQQ"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "financials",
+      "source": "baseline",
+      "symbol": "XLF"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "healthcare",
+      "source": "baseline",
+      "symbol": "XLV"
+    }
+  ],
+  "event_analyzer_mode": "rule",
+  "event_date": "2024-12-03",
+  "event_description": "U.S. sanctions Iranian shadow-fleet petroleum transport entities and vessels Treasury imposed sanctions on entities and vessels transporting illicit Iranian petroleum after regional escalation and nuclear developments, targeting Iran petroleum trade and shadow-fleet shipping. Keywords: sanctions, Iran, oil shipping, energy, marine insurance.",
+  "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+  "event_type": "sanctions_energy_shipping",
+  "generated_at": "2026-08-05T04:22:26.792630+00:00",
+  "git_commit": "85d26cd326d8f7a88d8fe604b988e00da0b6953a",
+  "headline": "U.S. sanctions Iranian shadow-fleet petroleum transport entities and vessels",
+  "note": "Frozen before observing post-event returns",
+  "pipeline_mode": "full_georisk_pipeline",
+  "predicted_exposures": [
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "inference_only",
+      "evidence_rationale": "SonicShares Global Shipping ETF is mapped from asset_mapping.csv via node 'maritime_chokepoint' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "SonicShares Global Shipping ETF is mapped from asset_mapping.csv via node 'maritime_chokepoint' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ticker is an ETF, fund, or basket used as broad proxy exposure for the maritime_chokepoint node: Basket exposure to global shipping companies sensitive to maritime route disruptions",
+      "linkage_tier": "broad_proxy",
+      "node": "maritime_chokepoint",
+      "source": "georisk",
+      "supporting_case_ids": [],
+      "symbol": "BOAT",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "inference_only",
+      "evidence_rationale": "Matson Inc is mapped from asset_mapping.csv via node 'maritime_chokepoint' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Matson Inc is mapped from asset_mapping.csv via node 'maritime_chokepoint' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ocean transportation and logistics operations are materially route-dependent, but maritime chokepoints are route constraints rather than Matson's core node-specific business activity.",
+      "linkage_tier": "related_exposure",
+      "node": "maritime_chokepoint",
+      "source": "georisk",
+      "supporting_case_ids": [],
+      "symbol": "MATX",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'marine_insurance', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). Chubb Limited maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'marine_insurance', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). Chubb Limited maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Business has meaningful but diversified or indirect economic linkage to the marine_insurance node: Commercial insurer with marine and specialty insurance exposure",
+      "linkage_tier": "related_exposure",
+      "node": "marine_insurance",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "CB",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'marine_insurance', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). The Travelers Companies Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'marine_insurance', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). The Travelers Companies Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Business has meaningful but diversified or indirect economic linkage to the marine_insurance node: Property casualty insurer with commercial insurance exposure",
+      "linkage_tier": "related_exposure",
+      "node": "marine_insurance",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "TRV",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.82,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "historical_supported",
+      "evidence_rationale": "Historical support from tanker transport matched affected tanker assets. The transmission node 'oil_shipping' is a first-order (directly implicated) node, and Frontline plc is directly named in the supporting case(s). Potential exposure candidate and risk watchlist item, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Historical support from tanker transport matched affected tanker assets. The transmission node 'oil_shipping' is a first-order (directly implicated) node, and Frontline plc is directly named in the supporting case(s). Potential exposure candidate and risk watchlist item, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the oil_shipping node: Crude tanker operator exposed to oil shipping routes and tanker rates",
+      "linkage_tier": "direct_exposure",
+      "node": "oil_shipping",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market"
+      ],
+      "symbol": "FRO",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.82,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "historical_supported",
+      "evidence_rationale": "Historical support from tanker transport matched affected tanker assets. The transmission node 'oil_shipping' is a first-order (directly implicated) node, and DHT Holdings Inc is directly named in the supporting case(s). Potential exposure candidate and risk watchlist item, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Historical support from tanker transport matched affected tanker assets. The transmission node 'oil_shipping' is a first-order (directly implicated) node, and DHT Holdings Inc is directly named in the supporting case(s). Potential exposure candidate and risk watchlist item, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the oil_shipping node: Crude oil tanker company exposed to VLCC market conditions",
+      "linkage_tier": "direct_exposure",
+      "node": "oil_shipping",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market"
+      ],
+      "symbol": "DHT",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "inference_only",
+      "evidence_rationale": "FLEX LNG Ltd is mapped from asset_mapping.csv via node 'lng_shipping' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "FLEX LNG Ltd is mapped from asset_mapping.csv via node 'lng_shipping' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the lng_shipping node: LNG carrier owner exposed to seaborne LNG transportation",
+      "linkage_tier": "direct_exposure",
+      "node": "lng_shipping",
+      "source": "georisk",
+      "supporting_case_ids": [],
+      "symbol": "FLNG",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "inference_only",
+      "evidence_rationale": "Cheniere Energy Inc is mapped from asset_mapping.csv via node 'lng_shipping' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Cheniere Energy Inc is mapped from asset_mapping.csv via node 'lng_shipping' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "LNG export and liquefaction operations are tied to global LNG trade, but seaborne LNG shipping is a downstream transport linkage rather than the company's primary operating activity.",
+      "linkage_tier": "related_exposure",
+      "node": "lng_shipping",
+      "source": "georisk",
+      "supporting_case_ids": [],
+      "symbol": "LNG",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'energy', which is a first-order (directly implicated) node corroborated by 1 retrieved case(s). Energy Select Sector SPDR Fund maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'energy', which is a first-order (directly implicated) node corroborated by 1 retrieved case(s). Energy Select Sector SPDR Fund maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ticker is an ETF, fund, or basket used as broad proxy exposure for the energy node: Broad ETF exposure to US energy companies",
+      "linkage_tier": "broad_proxy",
+      "node": "energy",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition"
+      ],
+      "symbol": "XLE",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'energy', which is a first-order (directly implicated) node corroborated by 1 retrieved case(s). Exxon Mobil Corporation maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'energy', which is a first-order (directly implicated) node corroborated by 1 retrieved case(s). Exxon Mobil Corporation maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Business has meaningful but diversified or indirect economic linkage to the energy node: Integrated energy producer with upstream and downstream exposure",
+      "linkage_tier": "related_exposure",
+      "node": "energy",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition"
+      ],
+      "symbol": "XOM",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.82,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "historical_supported",
+      "evidence_rationale": "Historical support from refining exposure matched affected refining assets. The transmission node 'refining' is a first-order (directly implicated) node, and Valero Energy Corporation is directly named in the supporting case(s). Potential exposure candidate and risk watchlist item, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Historical support from refining exposure matched affected refining assets. The transmission node 'refining' is a first-order (directly implicated) node, and Valero Energy Corporation is directly named in the supporting case(s). Potential exposure candidate and risk watchlist item, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the refining node: Refiner exposed to crude supply and refined product margins",
+      "linkage_tier": "direct_exposure",
+      "node": "refining",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition"
+      ],
+      "symbol": "VLO",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.82,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "historical_supported",
+      "evidence_rationale": "Historical support from refining exposure matched affected refining assets. The transmission node 'refining' is a first-order (directly implicated) node, and Marathon Petroleum Corporation is directly named in the supporting case(s). Potential exposure candidate and risk watchlist item, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Historical support from refining exposure matched affected refining assets. The transmission node 'refining' is a first-order (directly implicated) node, and Marathon Petroleum Corporation is directly named in the supporting case(s). Potential exposure candidate and risk watchlist item, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the refining node: Refining and midstream operator exposed to fuel markets",
+      "linkage_tier": "direct_exposure",
+      "node": "refining",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition"
+      ],
+      "symbol": "MPC",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'trade_lanes', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). Expeditors International of Washington Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'trade_lanes', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). Expeditors International of Washington Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Freight forwarding participates in global trade-lane activity, but trade_lanes is a broad route and flow condition across diversified logistics services.",
+      "linkage_tier": "related_exposure",
+      "node": "trade_lanes",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "EXPD",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'trade_lanes', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). DHL Group maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'trade_lanes', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). DHL Group maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Global logistics operations participate in trade lanes, but trade_lanes is a broad cross-border flow condition rather than a specific core node business.",
+      "linkage_tier": "related_exposure",
+      "node": "trade_lanes",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "DHL.DE",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'customs', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). The Descartes Systems Group Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'customs', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). The Descartes Systems Group Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the customs node: Logistics software provider with customs and trade compliance exposure",
+      "linkage_tier": "direct_exposure",
+      "node": "customs",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "DSGX",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'customs', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). C H Robinson Worldwide Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'customs', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). C H Robinson Worldwide Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Freight brokerage and logistics services are affected by customs flows, but customs is one operating component within broader logistics activity.",
+      "linkage_tier": "related_exposure",
+      "node": "customs",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "CHRW",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "inference_only",
+      "evidence_rationale": "Lockheed Martin Corporation is mapped from asset_mapping.csv via node 'defense' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Lockheed Martin Corporation is mapped from asset_mapping.csv via node 'defense' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the defense node: Defense contractor exposed to government security and defense spending priorities",
+      "linkage_tier": "direct_exposure",
+      "node": "defense",
+      "source": "georisk",
+      "supporting_case_ids": [],
+      "symbol": "LMT",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "inference_only",
+      "evidence_rationale": "iShares U S Aerospace & Defense ETF is mapped from asset_mapping.csv via node 'defense' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "iShares U S Aerospace & Defense ETF is mapped from asset_mapping.csv via node 'defense' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ticker is an ETF, fund, or basket used as broad proxy exposure for the defense node: ETF exposure to US aerospace and defense companies",
+      "linkage_tier": "broad_proxy",
+      "node": "defense",
+      "source": "georisk",
+      "supporting_case_ids": [],
+      "symbol": "ITA",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'financial_sanctions', which is a second-order (analog-corroborated) node corroborated by 3 retrieved case(s). Financial Select Sector SPDR Fund maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'financial_sanctions', which is a second-order (analog-corroborated) node corroborated by 3 retrieved case(s). Financial Select Sector SPDR Fund maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ticker is an ETF, fund, or basket used as broad proxy exposure for the financial_sanctions node: Broad US financial sector ETF for sanctions and banking exposure context",
+      "linkage_tier": "broad_proxy",
+      "node": "financial_sanctions",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "XLF",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'financial_sanctions', which is a second-order (analog-corroborated) node corroborated by 3 retrieved case(s). iShares MSCI Europe Financials ETF maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'financial_sanctions', which is a second-order (analog-corroborated) node corroborated by 3 retrieved case(s). iShares MSCI Europe Financials ETF maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ticker is an ETF, fund, or basket used as broad proxy exposure for the financial_sanctions node: European financial sector ETF for cross-border banking exposure context",
+      "linkage_tier": "broad_proxy",
+      "node": "financial_sanctions",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "EUFN",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'payment_networks', which is a second-order (analog-corroborated) node corroborated by 3 retrieved case(s). Visa Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'payment_networks', which is a second-order (analog-corroborated) node corroborated by 3 retrieved case(s). Visa Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the payment_networks node: Global payments network exposed to cross-border payment and compliance channels",
+      "linkage_tier": "direct_exposure",
+      "node": "payment_networks",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "V",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'payment_networks', which is a second-order (analog-corroborated) node corroborated by 3 retrieved case(s). Mastercard Incorporated maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'payment_networks', which is a second-order (analog-corroborated) node corroborated by 3 retrieved case(s). Mastercard Incorporated maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the payment_networks node: Global payments network exposed to payment-routing and compliance channels",
+      "linkage_tier": "direct_exposure",
+      "node": "payment_networks",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "symbol": "MA",
+      "transmission_order": "second_order"
+    }
+  ],
+  "regions": [
+    "Middle East",
+    "Global"
+  ],
+  "retrieval_configuration": {
+    "top_k": 3
+  },
+  "retrieved_case_ids": [
+    "case_2018_iran_oil_sanctions_reimposition",
+    "case_2019_cosco_shipping_sanctions_tanker_market",
+    "case_2018_iran_swift_restrictions"
+  ],
+  "snapshot_version": "v3_full_pipeline_linkage_ontology",
+  "source": "U.S. Department of the Treasury",
+  "source_url": "https://home.treasury.gov/news/press-releases/jy2734",
+  "transmission_chain": {
+    "affected_nodes": [
+      "defense",
+      "energy",
+      "maritime_chokepoint",
+      "oil_shipping",
+      "lng_shipping",
+      "marine_insurance",
+      "refining",
+      "financial_sanctions",
+      "payment_networks",
+      "customs",
+      "trade_lanes"
+    ],
+    "assumptions": [
+      "The event attributes were produced by either the rule-based analyzer or the optional validated LLM analyzer.",
+      "Retrieved historical cases provide analogs, not proof of identical outcomes.",
+      "Without retrieval similarity scores, single-case nodes are excluded from second-order expansion unless they are already event nodes."
+    ],
+    "chain_steps": [
+      "regional_energy_escalation_risk",
+      "defense",
+      "energy",
+      "maritime_chokepoint",
+      "oil_shipping",
+      "lng_shipping",
+      "marine_insurance",
+      "refining",
+      "financial_sanctions",
+      "payment_networks",
+      "customs",
+      "trade_lanes",
+      "sanctions reimposition",
+      "oil export compliance restrictions",
+      "shipping and insurance constraints",
+      "payment and financing friction",
+      "refinery sourcing adjustment",
+      "shipping entity sanctions",
+      "chartering and counterparty review",
+      "insurance and payment screening",
+      "tanker availability concern",
+      "oil cargo scheduling adjustment",
+      "banking connectivity restriction",
+      "oil payment and settlement friction",
+      "shipping insurance review",
+      "buyer and intermediary compliance adjustment"
+    ],
+    "channels": [
+      "regional_energy_escalation_risk",
+      "defense",
+      "energy",
+      "maritime_chokepoint",
+      "oil_shipping",
+      "lng_shipping",
+      "marine_insurance",
+      "refining",
+      "financial_sanctions",
+      "payment_networks",
+      "customs",
+      "trade_lanes",
+      "sanctions reimposition",
+      "oil export compliance restrictions",
+      "shipping and insurance constraints",
+      "payment and financing friction",
+      "refinery sourcing adjustment",
+      "shipping entity sanctions",
+      "chartering and counterparty review",
+      "insurance and payment screening",
+      "tanker availability concern",
+      "oil cargo scheduling adjustment",
+      "banking connectivity restriction",
+      "oil payment and settlement friction",
+      "shipping insurance review",
+      "buyer and intermediary compliance adjustment"
+    ],
+    "limitations": [
+      "The chain is qualitative and does not forecast prices.",
+      "The chain is not investment advice.",
+      "Second-order expansion is conservative: it may miss valid transmission targets that happen to appear in only one retrieved case.",
+      "The second-order support threshold is an unvalidated empirical default and should be calibrated against CAR-based ground truth.",
+      "Future work should pass retrieval similarity or distance into RetrievedCase to support high-similarity single-case analog expansion.",
+      "Node-level support is captured, but individual chain steps are not yet grounded step-by-step to specific cases."
+    ],
+    "node_evidence_levels": {
+      "customs": "case_grounded",
+      "defense": "event_node",
+      "energy": "event_node",
+      "financial_sanctions": "case_grounded",
+      "lng_shipping": "event_node",
+      "marine_insurance": "event_node",
+      "maritime_chokepoint": "event_node",
+      "oil_shipping": "event_node",
+      "payment_networks": "case_grounded",
+      "refining": "event_node",
+      "trade_lanes": "case_grounded"
+    },
+    "node_supporting_case_ids": {
+      "customs": [
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "defense": [],
+      "energy": [
+        "case_2018_iran_oil_sanctions_reimposition"
+      ],
+      "financial_sanctions": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "lng_shipping": [],
+      "marine_insurance": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "maritime_chokepoint": [],
+      "oil_shipping": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "payment_networks": [
+        "case_2018_iran_oil_sanctions_reimposition",
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ],
+      "refining": [
+        "case_2018_iran_oil_sanctions_reimposition"
+      ],
+      "trade_lanes": [
+        "case_2019_cosco_shipping_sanctions_tanker_market",
+        "case_2018_iran_swift_restrictions"
+      ]
+    },
+    "rationale": "This deterministic chain starts from the event's own supply-chain nodes (first-order) and expands to second-order affected nodes only when they recur across at least 2 independent retrieved historical analogs, so that single-case co-occurrence is not treated as sufficient evidence. The transmission narrative and the supporting-case list are scoped to the cases that actually support an accepted node, so the presented story matches the nodes that were accepted. Assets mapped later should be treated as potential exposure watchlist candidates, not trading signals.",
+    "supporting_case_ids": [
+      "case_2018_iran_oil_sanctions_reimposition",
+      "case_2019_cosco_shipping_sanctions_tanker_market",
+      "case_2018_iran_swift_restrictions"
+    ]
+  }
+}

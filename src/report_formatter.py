@@ -156,12 +156,18 @@ def _asset_watchlist(report: FinalReport, verbose: bool = False) -> str:
             confidence = asset.get("confidence", "n/a")
             if isinstance(confidence, float):
                 confidence = f"{confidence:.2f}"
+            rank = asset.get("rank_within_order", "n/a")
             lines.append(
                 "- "
                 f"{asset.get('ticker', 'n/a')} | "
                 f"{asset.get('asset_name', 'Unknown asset')} | "
                 f"{asset.get('supply_chain_node', 'unknown_node')} | "
-                f"confidence: {confidence}"
+                f"{_title_case_level(str(asset.get('transmission_order', 'unknown')))} | "
+                f"{_title_case_level(str(asset.get('linkage_tier', 'unknown')))} | "
+                f"confidence: {confidence} | "
+                f"priority: {_title_case_level(str(asset.get('priority_tier', 'unranked')))} | "
+                f"scope: {_title_case_level(str(asset.get('ranking_scope', 'unranked')))} | "
+                f"rank: {rank}"
             )
             if verbose and asset.get("reason"):
                 lines.append(f"  - {asset['reason']}")

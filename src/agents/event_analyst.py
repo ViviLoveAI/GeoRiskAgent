@@ -5,6 +5,9 @@ normalized event attributes. It does not predict stock prices or provide
 investment advice.
 """
 
+import re
+
+from src import nodes
 from src.schemas import EventAnalysis
 
 
@@ -238,6 +241,15 @@ EVENT_RULES = [
 ]
 
 
+# Fail fast at import time if any rule (or the default fallback) references a
+# supply-chain node that is not in the controlled vocabulary. This keeps the
+# rule-based analyzer aligned with the same node registry the LLM analyzer uses.
+_RULE_NODES = [
+    node for rule in EVENT_RULES for node in rule["supply_chain_nodes"]
+]
+nodes.validate_nodes([*_RULE_NODES, "broad_etf"], source="EVENT_RULES")
+
+
 REGION_KEYWORDS = {
     "Middle East": ["middle east", "red sea", "suez", "hormuz", "saudi", "iran", "yemen"],
     "Latin America": ["panama", "latin america"],
@@ -274,11 +286,26 @@ def analyze_event(news_text: str) -> EventAnalysis:
 
 
 def _match_event_rule(text: str) -> dict:
-    """Return the first event rule matched by the news text."""
+    """Return the most specific event rule matched by the news text."""
 
-    for rule in EVENT_RULES:
-        if any(keyword in text for keyword in rule["keywords"]):
-            return rule
+    best_match: tuple[int, int, dict] | None = None
+    for index, rule in enumerate(EVENT_RULES):
+        matched_keywords = _matched_keywords(text, rule["keywords"])
+        if not matched_keywords:
+            continue
+        specificity = max(len(keyword.strip()) for keyword in matched_keywords)
+        candidate = (specificity, -index, rule)
+        if best_match is None or candidate[:2] > best_match[:2]:
+            best_match = candidate
+
+    if best_match is not None:
+        return best_match[2]
+
+    return _default_event_rule()
+
+
+def _default_event_rule() -> dict:
+    """Return the default limited-support event rule."""
 
     return {
         "event_type": DEFAULT_EVENT_TYPE,
@@ -296,19 +323,46 @@ def _infer_regions(text: str) -> list[str]:
     return [
         region
         for region, keywords in REGION_KEYWORDS.items()
-        if any(keyword in text for keyword in keywords)
+        if any(_keyword_matches(text, keyword) for keyword in keywords)
     ]
 
 
 def _matched_keywords(text: str, keywords: list[str]) -> list[str]:
     """Return matched risk keywords for basic traceability."""
 
-    return [keyword for keyword in keywords if keyword in text]
+    return [keyword for keyword in keywords if _keyword_matches(text, keyword)]
+
+
+def _keyword_matches(text: str, keyword: str) -> bool:
+    """Return true when a keyword appears as a token or phrase.
+
+    The rule analyst intentionally uses simple lexical matching, but matching
+    raw substrings lets broad tokens such as ``war`` fire inside unrelated
+    words like ``toward``. Boundary-aware matching keeps phrase rules intact
+    without allowing accidental substring collisions.
+    """
+
+    cleaned = keyword.strip().lower()
+    if not cleaned:
+        return False
+
+    pattern = re.escape(cleaned).replace(r"\ ", r"\s+")
+    if cleaned[0].isalnum():
+        pattern = rf"(?<![a-z0-9]){pattern}"
+    if cleaned[-1].isalnum():
+        pattern = rf"{pattern}(?![a-z0-9])"
+    return re.search(pattern, text) is not None
 
 
 def _make_title(news_text: str) -> str:
     """Create a compact title from the first sentence or opening text."""
 
+    for line in news_text.strip().splitlines():
+        cleaned = line.strip()
+        if not cleaned or cleaned.lower().startswith(("context:", "year:")):
+            continue
+        first_sentence = cleaned.split(".", maxsplit=1)[0]
+        return first_sentence[:120].strip()
     first_sentence = news_text.strip().split(".", maxsplit=1)[0]
     return first_sentence[:120].strip()
 

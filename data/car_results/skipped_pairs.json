@@ -1,0 +1,26 @@
+[
+  {
+    "asset_type": "ETF",
+    "baseline_type": null,
+    "benchmark": "SPY",
+    "car": null,
+    "confidence": 0.35,
+    "direction": null,
+    "event_date": "2025-11-09",
+    "event_id": "candidate_ff6378fbb36b",
+    "event_type": "critical minerals resource restrictions",
+    "evidence_label": "inference_only",
+    "evidence_reason": "SPDR S&P 500 ETF Trust is mapped from asset_mapping.csv via node 'broad_etf' (a first-order (directly implicated) node), but retrieved cases do not corroborate this channel. Inference-only risk watchlist candidate, not a trading signal. This does not predict price movement.",
+    "expected_direction": null,
+    "hit": false,
+    "missing_data_reason": "asset_equals_benchmark",
+    "node": "broad_etf",
+    "skip_reason": "asset_equals_benchmark",
+    "source": "georisk",
+    "standardized_car": null,
+    "supporting_case_ids": "",
+    "supporting_notes": [],
+    "symbol": "SPY",
+    "transmission_order": "first_order"
+  }
+]

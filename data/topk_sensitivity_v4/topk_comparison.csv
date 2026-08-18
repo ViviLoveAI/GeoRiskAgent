@@ -1,0 +1,4 @@
+top_k,events_evaluated,retrieved_cases,recall_at_1,recall_at_3,mrr,raw_unique_second_order_nodes,raw_second_order_nodes,support_qualified_nodes,nodes_failing_support_threshold,retrieval_limited_threshold_misses,nodes_sent_to_mapper,mapped_nodes,unmapped_nodes,mapping_coverage,historical_supported,sector_proxy,inference_only,second_order_assets,ranked_second_order_assets,unique_ranked_tickers,historical_supported_share,sector_proxy_share,inference_only_share,recall_at_5,recall_at_10
+3,44,132,0.8333333333333334,1.0,0.9166666666666666,34,225,45,180,122,45,45,0,1.0,12,78,0,90,90,32,0.13333333333333333,0.8666666666666667,0.0,,
+5,44,220,0.8333333333333334,1.0,0.9166666666666666,39,330,92,238,145,92,92,0,1.0,22,162,0,184,184,42,0.11956521739130435,0.8804347826086957,0.0,1.0,
+10,44,440,0.8333333333333334,1.0,0.9166666666666666,40,582,217,365,215,217,217,0,1.0,72,359,0,431,431,61,0.16705336426914152,0.8329466357308585,0.0,,1.0

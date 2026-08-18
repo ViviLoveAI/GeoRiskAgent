@@ -1,0 +1,133 @@
+{
+  "baseline_exposures": [
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_broad_market_baseline",
+      "node": "broad_market_growth",
+      "source": "baseline",
+      "symbol": "QQQ"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "financials",
+      "source": "baseline",
+      "symbol": "XLF"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "healthcare",
+      "source": "baseline",
+      "symbol": "XLV"
+    }
+  ],
+  "event_date": "2025-11-09",
+  "event_description": "International Business : China suspends ban on exports of gallium , germanium , antimony to US International Business : China suspends ban on exports of gallium , germanium , antimony to US 20251109T091500Z gdnonline.com",
+  "event_id": "candidate_fba3f59c71da",
+  "event_type": "critical minerals resource restrictions",
+  "generated_at": "2026-08-05T00:49:30.485507+00:00",
+  "note": "Frozen before observing post-event returns",
+  "predicted_exposures": [
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "customs",
+      "source": "georisk",
+      "symbol": "DSGX"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "customs",
+      "source": "georisk",
+      "symbol": "CHRW"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "manufacturing_inputs",
+      "source": "georisk",
+      "symbol": "DE"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "manufacturing_inputs",
+      "source": "georisk",
+      "symbol": "CAT"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "critical_minerals",
+      "source": "georisk",
+      "symbol": "REMX"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "critical_minerals",
+      "source": "georisk",
+      "symbol": "PICK"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "rare_earths",
+      "source": "georisk",
+      "symbol": "MP"
+    },
+    {
+      "asset_type": "ADR",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "rare_earths",
+      "source": "georisk",
+      "symbol": "LYSDY"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "gallium_germanium_graphite",
+      "source": "georisk",
+      "symbol": "NEO.TO"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_fba3f59c71da",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "gallium_germanium_graphite",
+      "source": "georisk",
+      "symbol": "SYR.AX"
+    }
+  ]
+}

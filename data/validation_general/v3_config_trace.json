@@ -1,0 +1,12 @@
+{
+  "baseline_version": "georisk_v3_frozen_v1",
+  "event_analyzer": "rule",
+  "historical_call": "run_pipeline(event[\"event_description\"], event_analyzer=\"rule\")",
+  "legacy_call_site": "scripts/build_validation_set_v3.py:create_v3_snapshot",
+  "mechanism_compatibility_enabled": false,
+  "resolution_reasoning": "The frozen V3 snapshot builder called run_pipeline with event_analyzer='rule' and no top_k override, so Python resolved the top_k argument at src/pipeline.py:run_pipeline default top_k=3. Retriever/vector-store defaults of 5 were bypassed because run_pipeline passed top_k explicitly.",
+  "resolved_v3_top_k": 3,
+  "retriever_default_top_k": 5,
+  "run_pipeline_default_top_k": 3,
+  "vector_store_default_top_k": 5
+}

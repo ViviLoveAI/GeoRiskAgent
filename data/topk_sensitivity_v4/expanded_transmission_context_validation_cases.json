@@ -1,0 +1,2517 @@
+{
+  "case_count": 37,
+  "cases": [
+    {
+      "case_id": "case_2008_rice_export_restrictions_food_security",
+      "event_name": "Rice export restrictions and global food security shock",
+      "event_type": "food export controls and agricultural trade disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "food_export_trade_constraint",
+          "case_id": "case_2008_rice_export_restrictions_food_security",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "grain_exports",
+          "raw_affected_asset_types": [
+            "grain traders",
+            "food producers",
+            "agricultural processors",
+            "logistics providers",
+            "commodity funds"
+          ],
+          "raw_event_type": "food export controls and agricultural trade disruption",
+          "raw_supply_chain_nodes": [
+            "agriculture",
+            "grain_exports",
+            "food_export_controls",
+            "trade_lanes",
+            "customs",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "food inflation and policy pressure",
+            "export restriction implementation",
+            "customs and shipment controls",
+            "grain importer procurement stress",
+            "food supply-chain substitution"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "rice_export_restrictions"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2008_somali_piracy_gulf_of_aden",
+      "event_name": "Somali piracy and Gulf of Aden shipping disruption",
+      "event_type": "maritime security disruption and insurance cost shock",
+      "transmission_contexts": [
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2008_somali_piracy_gulf_of_aden",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "container_shipping",
+          "raw_affected_asset_types": [
+            "container shipping companies",
+            "tanker operators",
+            "marine insurers",
+            "freight forwarders",
+            "logistics providers"
+          ],
+          "raw_event_type": "maritime security disruption and insurance cost shock",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "container_shipping",
+            "oil_shipping",
+            "marine_insurance",
+            "freight_routes",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "piracy and vessel seizure risk",
+            "naval escort and security cost increase",
+            "insurance and routing review",
+            "freight schedule uncertainty",
+            "logistics cost pass-through risk"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "gulf_of_aden_piracy_security_risk"
+        },
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2008_somali_piracy_gulf_of_aden",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "container shipping companies",
+            "tanker operators",
+            "marine insurers",
+            "freight forwarders",
+            "logistics providers"
+          ],
+          "raw_event_type": "maritime security disruption and insurance cost shock",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "container_shipping",
+            "oil_shipping",
+            "marine_insurance",
+            "freight_routes",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "piracy and vessel seizure risk",
+            "naval escort and security cost increase",
+            "insurance and routing review",
+            "freight schedule uncertainty",
+            "logistics cost pass-through risk"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "gulf_of_aden_piracy_security_risk"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2014_crimea_financial_sanctions",
+      "event_name": "Crimea-related Russia financial sanctions",
+      "event_type": "financial sanctions and trade finance restriction",
+      "transmission_contexts": [
+        {
+          "canonical_context": "financial_sanctions_trade_finance_constraint",
+          "case_id": "case_2014_crimea_financial_sanctions",
+          "constraint_type": "financing_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "financial_sanctions",
+          "raw_affected_asset_types": [
+            "banks",
+            "energy companies",
+            "industrial exporters",
+            "trade finance providers",
+            "logistics firms"
+          ],
+          "raw_event_type": "financial sanctions and trade finance restriction",
+          "raw_supply_chain_nodes": [
+            "financial_sanctions",
+            "payment_networks",
+            "customs",
+            "trade_lanes",
+            "energy",
+            "manufacturing_inputs"
+          ],
+          "raw_transmission_chain_steps": [
+            "territorial annexation",
+            "financial sanctions designation",
+            "banking and trade-finance restriction",
+            "compliance screening expansion",
+            "cross-border trade friction"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "crimea_financial_access_restrictions"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2017_notpetya_shipping_logistics_cyberattack",
+      "event_name": "NotPetya cyberattack and global shipping logistics disruption",
+      "event_type": "geopolitical cyberattack and logistics disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "logistics_cyber_capacity_constraint",
+          "case_id": "case_2017_notpetya_shipping_logistics_cyberattack",
+          "constraint_type": "capacity_reduction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "logistics",
+          "raw_affected_asset_types": [
+            "shipping companies",
+            "port operators",
+            "logistics providers",
+            "manufacturers",
+            "cybersecurity providers"
+          ],
+          "raw_event_type": "geopolitical cyberattack and logistics disruption",
+          "raw_supply_chain_nodes": [
+            "cyber_infrastructure",
+            "container_shipping",
+            "ports",
+            "freight_routes",
+            "logistics",
+            "manufacturing_inputs"
+          ],
+          "raw_transmission_chain_steps": [
+            "geopolitical cyber incident",
+            "enterprise system outage",
+            "shipping and terminal disruption",
+            "booking and freight delays",
+            "manufacturing and delivery interruptions"
+          ],
+          "shock_type": "cyber_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "shipping_logistics_system_disruption"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2018_2019_us_china_tariffs",
+      "event_name": "US-China trade tariff escalation",
+      "event_type": "trade policy and tariffs",
+      "transmission_contexts": [
+        {
+          "canonical_context": "tariff_customs_compliance_constraint",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "constraint_type": "compliance_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "customs",
+          "raw_affected_asset_types": [
+            "manufacturers",
+            "retailers",
+            "agricultural commodities",
+            "industrial exporters",
+            "logistics providers"
+          ],
+          "raw_event_type": "trade policy and tariffs",
+          "raw_supply_chain_nodes": [
+            "trade_lanes",
+            "customs",
+            "manufacturing_inputs",
+            "agriculture",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "tariff announcements",
+            "higher landed costs",
+            "supplier renegotiation",
+            "inventory timing changes",
+            "margin pressure or price pass-through",
+            "supply chain relocation consideration"
+          ],
+          "shock_type": "tariff",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "compliance_channel",
+          "upstream_driver": "tariff_classification_review"
+        },
+        {
+          "canonical_context": "tariff_trade_compliance_constraint",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "trade_lanes",
+          "raw_affected_asset_types": [
+            "manufacturers",
+            "retailers",
+            "agricultural commodities",
+            "industrial exporters",
+            "logistics providers"
+          ],
+          "raw_event_type": "trade policy and tariffs",
+          "raw_supply_chain_nodes": [
+            "trade_lanes",
+            "customs",
+            "manufacturing_inputs",
+            "agriculture",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "tariff announcements",
+            "higher landed costs",
+            "supplier renegotiation",
+            "inventory timing changes",
+            "margin pressure or price pass-through",
+            "supply chain relocation consideration"
+          ],
+          "shock_type": "tariff",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "compliance_channel",
+          "upstream_driver": "tariff_and_customs_review"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2018_iran_oil_sanctions_reimposition",
+      "event_name": "Reimposed Iran oil sanctions and energy trade restrictions",
+      "event_type": "oil sanctions and shipping finance restriction",
+      "transmission_contexts": [
+        {
+          "canonical_context": "oil_shipping_security_constraint",
+          "case_id": "case_2018_iran_oil_sanctions_reimposition",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "oil_shipping",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "tanker operators",
+            "refiners",
+            "marine insurers",
+            "banks",
+            "petrochemical producers"
+          ],
+          "raw_event_type": "oil sanctions and shipping finance restriction",
+          "raw_supply_chain_nodes": [
+            "energy",
+            "oil_shipping",
+            "refining",
+            "petrochemicals",
+            "financial_sanctions",
+            "payment_networks",
+            "marine_insurance"
+          ],
+          "raw_transmission_chain_steps": [
+            "sanctions reimposition",
+            "oil export compliance restrictions",
+            "shipping and insurance constraints",
+            "payment and financing friction",
+            "refinery sourcing adjustment"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "oil_export_shipping_restriction"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2018_iran_swift_restrictions",
+      "event_name": "Iran sanctions and SWIFT-related banking restrictions",
+      "event_type": "sanctions payment network and oil trade restriction",
+      "transmission_contexts": [
+        {
+          "canonical_context": "financial_sanctions_trade_finance_constraint",
+          "case_id": "case_2018_iran_swift_restrictions",
+          "constraint_type": "financing_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "financial_sanctions",
+          "raw_affected_asset_types": [
+            "banks",
+            "payment networks",
+            "oil shippers",
+            "marine insurers",
+            "energy traders"
+          ],
+          "raw_event_type": "sanctions payment network and oil trade restriction",
+          "raw_supply_chain_nodes": [
+            "financial_sanctions",
+            "payment_networks",
+            "oil_shipping",
+            "marine_insurance",
+            "customs",
+            "trade_lanes"
+          ],
+          "raw_transmission_chain_steps": [
+            "sanctions reimposition",
+            "banking connectivity restriction",
+            "oil payment and settlement friction",
+            "shipping insurance review",
+            "buyer and intermediary compliance adjustment"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "swift_access_restriction"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2019_cosco_shipping_sanctions_tanker_market",
+      "event_name": "COSCO shipping sanctions and tanker compliance disruption",
+      "event_type": "shipping sanctions and marine insurance compliance disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "oil_shipping_security_constraint",
+          "case_id": "case_2019_cosco_shipping_sanctions_tanker_market",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "oil_shipping",
+          "raw_affected_asset_types": [
+            "tanker operators",
+            "marine insurers",
+            "energy traders",
+            "banks",
+            "freight brokers"
+          ],
+          "raw_event_type": "shipping sanctions and marine insurance compliance disruption",
+          "raw_supply_chain_nodes": [
+            "financial_sanctions",
+            "oil_shipping",
+            "marine_insurance",
+            "payment_networks",
+            "customs",
+            "trade_lanes",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "shipping entity sanctions",
+            "chartering and counterparty review",
+            "insurance and payment screening",
+            "tanker availability concern",
+            "oil cargo scheduling adjustment"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "shipping_compliance_restriction"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2019_huawei_entity_list",
+      "event_name": "Huawei added to US Entity List",
+      "event_type": "technology sanctions and trade restrictions",
+      "transmission_contexts": [
+        {
+          "canonical_context": "semiconductor_export_control_constraint",
+          "case_id": "case_2019_huawei_entity_list",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "semiconductor_equipment",
+          "raw_affected_asset_types": [
+            "telecom equipment vendors",
+            "semiconductor suppliers",
+            "software providers",
+            "5G infrastructure",
+            "consumer electronics"
+          ],
+          "raw_event_type": "technology sanctions and trade restrictions",
+          "raw_supply_chain_nodes": [
+            "ai_chips",
+            "semiconductor_equipment",
+            "eda_software",
+            "manufacturing_inputs",
+            "data_centers",
+            "customs"
+          ],
+          "raw_transmission_chain_steps": [
+            "entity listing",
+            "supplier licensing restrictions",
+            "component and software access uncertainty",
+            "telecom procurement risk",
+            "supply chain substitution"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "entity_list_supply_restriction"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2019_india_pakistan_airspace_closure",
+      "event_name": "India-Pakistan escalation and Pakistan airspace closure",
+      "event_type": "border military escalation and airspace disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "airspace_route_disruption",
+          "case_id": "case_2019_india_pakistan_airspace_closure",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "aviation",
+          "raw_affected_asset_types": [
+            "airlines",
+            "air cargo operators",
+            "defense contractors",
+            "freight forwarders",
+            "manufacturers"
+          ],
+          "raw_event_type": "border military escalation and airspace disruption",
+          "raw_supply_chain_nodes": [
+            "aviation",
+            "defense",
+            "trade_lanes",
+            "freight_routes",
+            "logistics",
+            "manufacturing_inputs"
+          ],
+          "raw_transmission_chain_steps": [
+            "border military escalation",
+            "airspace closure",
+            "flight rerouting",
+            "longer transit times",
+            "fuel and scheduling pressure",
+            "regional logistics uncertainty"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "airspace_closure"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2019_turkey_f35_s400_defense_restrictions",
+      "event_name": "Turkey removed from F-35 program after S-400 purchase",
+      "event_type": "defense procurement restriction and aerospace supply-chain adjustment",
+      "transmission_contexts": [
+        {
+          "canonical_context": "aerospace_defense_procurement_constraint",
+          "case_id": "case_2019_turkey_f35_s400_defense_restrictions",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "defense contractors",
+            "aerospace manufacturers",
+            "component suppliers",
+            "electronics suppliers",
+            "trade compliance providers"
+          ],
+          "raw_event_type": "defense procurement restriction and aerospace supply-chain adjustment",
+          "raw_supply_chain_nodes": [
+            "defense",
+            "aerospace_supply_chain",
+            "manufacturing_inputs",
+            "customs",
+            "trade_lanes",
+            "semiconductor_equipment"
+          ],
+          "raw_transmission_chain_steps": [
+            "defense policy dispute",
+            "program participation restriction",
+            "aerospace supplier substitution",
+            "export compliance review",
+            "manufacturing input reallocation"
+          ],
+          "shock_type": "regulatory_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "defense_procurement_policy_dispute"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2019_venezuela_oil_sanctions",
+      "event_name": "Venezuela oil sanctions and heavy crude supply disruption",
+      "event_type": "oil sanctions and refinery feedstock disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_trade_access_constraint",
+          "case_id": "case_2019_venezuela_oil_sanctions",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "energy",
+          "raw_affected_asset_types": [
+            "heavy crude",
+            "refiners",
+            "tanker operators",
+            "energy producers",
+            "banks"
+          ],
+          "raw_event_type": "oil sanctions and refinery feedstock disruption",
+          "raw_supply_chain_nodes": [
+            "energy",
+            "oil_shipping",
+            "refining",
+            "petrochemicals",
+            "financial_sanctions",
+            "payment_networks"
+          ],
+          "raw_transmission_chain_steps": [
+            "oil-sector sanctions",
+            "restricted crude sales",
+            "payment and compliance barriers",
+            "heavy crude sourcing adjustment",
+            "refining feedstock uncertainty"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "oil_export_sanctions"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2020_indonesia_nickel_export_ban",
+      "event_name": "Indonesia nickel ore export ban and battery supply-chain adjustment",
+      "event_type": "critical mineral export ban and processing localization",
+      "transmission_contexts": [
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2020_indonesia_nickel_export_ban",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "nickel miners",
+            "battery manufacturers",
+            "EV supply chains",
+            "steel producers",
+            "critical mineral processors"
+          ],
+          "raw_event_type": "critical mineral export ban and processing localization",
+          "raw_supply_chain_nodes": [
+            "critical_minerals",
+            "battery_materials",
+            "manufacturing_inputs",
+            "customs",
+            "trade_lanes"
+          ],
+          "raw_transmission_chain_steps": [
+            "mineral export ban",
+            "raw ore shipment restriction",
+            "domestic processing requirement",
+            "battery and steel input sourcing adjustment",
+            "investment in localized capacity"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "nickel_export_ban"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2021_belarus_potash_sanctions",
+      "event_name": "Belarus potash sanctions and fertilizer supply risk",
+      "event_type": "fertilizer sanctions and agricultural input disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "agricultural_input_constraint",
+          "case_id": "case_2021_belarus_potash_sanctions",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "agriculture",
+          "raw_affected_asset_types": [
+            "fertilizer producers",
+            "agricultural commodities",
+            "grain producers",
+            "logistics providers",
+            "food producers"
+          ],
+          "raw_event_type": "fertilizer sanctions and agricultural input disruption",
+          "raw_supply_chain_nodes": [
+            "fertilizer",
+            "agriculture",
+            "customs",
+            "trade_lanes",
+            "freight_routes",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "fertilizer sanctions",
+            "potash export restriction",
+            "rail and port routing uncertainty",
+            "farm input cost pressure",
+            "food production input sensitivity"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "potash_fertilizer_restriction"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2021_colonial_pipeline_ransomware",
+      "event_name": "Colonial Pipeline ransomware and fuel logistics disruption",
+      "event_type": "cyberattack on pipeline infrastructure and fuel distribution",
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_distribution_cyber_capacity_constraint",
+          "case_id": "case_2021_colonial_pipeline_ransomware",
+          "constraint_type": "capacity_reduction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "energy",
+          "raw_affected_asset_types": [
+            "pipeline operators",
+            "refiners",
+            "airlines",
+            "logistics providers",
+            "cybersecurity providers"
+          ],
+          "raw_event_type": "cyberattack on pipeline infrastructure and fuel distribution",
+          "raw_supply_chain_nodes": [
+            "cyber_infrastructure",
+            "pipeline_infrastructure",
+            "energy",
+            "refining",
+            "aviation",
+            "logistics",
+            "freight_routes"
+          ],
+          "raw_transmission_chain_steps": [
+            "ransomware intrusion",
+            "pipeline operational shutdown",
+            "fuel distribution constraint",
+            "aviation and trucking logistics concern",
+            "cyber resilience and backup planning"
+          ],
+          "shock_type": "cyber_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "fuel_pipeline_shutdown"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2021_myanmar_coup_supply_chain_disruption",
+      "event_name": "Myanmar coup and supply-chain disruption",
+      "event_type": "coup and manufacturing supply-chain disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "logistics_operational_disruption",
+          "case_id": "case_2021_myanmar_coup_supply_chain_disruption",
+          "constraint_type": "capacity_reduction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "logistics",
+          "raw_affected_asset_types": [
+            "manufacturers",
+            "apparel supply chains",
+            "logistics providers",
+            "agricultural exporters",
+            "regional importers"
+          ],
+          "raw_event_type": "coup and manufacturing supply-chain disruption",
+          "raw_supply_chain_nodes": [
+            "manufacturing_inputs",
+            "logistics",
+            "ports",
+            "customs",
+            "trade_lanes",
+            "agriculture"
+          ],
+          "raw_transmission_chain_steps": [
+            "military coup",
+            "civil unrest and operational disruption",
+            "factory and logistics interruptions",
+            "banking and customs friction",
+            "supplier compliance review"
+          ],
+          "shock_type": "political_instability",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "factory_and_border_logistics_disruption"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_chile_lithium_policy_shift",
+      "event_name": "Chile lithium policy shift and resource nationalism risk",
+      "event_type": "resource nationalism and battery material policy risk",
+      "transmission_contexts": [
+        {
+          "canonical_context": "battery_material_input_constraint",
+          "case_id": "case_2022_chile_lithium_policy_shift",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "battery_materials",
+          "raw_affected_asset_types": [
+            "lithium producers",
+            "battery manufacturers",
+            "EV supply chains",
+            "critical mineral processors",
+            "electronics manufacturers"
+          ],
+          "raw_event_type": "resource nationalism and battery material policy risk",
+          "raw_supply_chain_nodes": [
+            "battery_materials",
+            "critical_minerals",
+            "manufacturing_inputs",
+            "customs",
+            "trade_lanes"
+          ],
+          "raw_transmission_chain_steps": [
+            "resource policy shift",
+            "mining contract uncertainty",
+            "battery material supply concern",
+            "EV input sourcing review",
+            "supplier diversification efforts"
+          ],
+          "shock_type": "regulatory_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "lithium_policy_uncertainty"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_gas_fertilizer_shock",
+      "event_name": "Natural gas and fertilizer shock",
+      "event_type": "energy and agricultural input shock",
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_feedstock_constraint",
+          "case_id": "case_2022_gas_fertilizer_shock",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "energy",
+          "raw_affected_asset_types": [
+            "natural gas",
+            "fertilizer producers",
+            "agriculture commodities",
+            "food producers",
+            "chemical companies"
+          ],
+          "raw_event_type": "energy and agricultural input shock",
+          "raw_supply_chain_nodes": [
+            "energy",
+            "fertilizer",
+            "agriculture",
+            "petrochemicals",
+            "manufacturing_inputs"
+          ],
+          "raw_transmission_chain_steps": [
+            "gas supply uncertainty",
+            "higher feedstock costs",
+            "fertilizer production curtailment risk",
+            "farm input cost pressure",
+            "crop margin stress",
+            "food price concern"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "natural_gas_feedstock_shortage"
+        },
+        {
+          "canonical_context": "petrochemical_feedstock_constraint",
+          "case_id": "case_2022_gas_fertilizer_shock",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "petrochemicals",
+          "raw_affected_asset_types": [
+            "natural gas",
+            "fertilizer producers",
+            "agriculture commodities",
+            "food producers",
+            "chemical companies"
+          ],
+          "raw_event_type": "energy and agricultural input shock",
+          "raw_supply_chain_nodes": [
+            "energy",
+            "fertilizer",
+            "agriculture",
+            "petrochemicals",
+            "manufacturing_inputs"
+          ],
+          "raw_transmission_chain_steps": [
+            "gas supply uncertainty",
+            "higher feedstock costs",
+            "fertilizer production curtailment risk",
+            "farm input cost pressure",
+            "crop margin stress",
+            "food price concern"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "natural_gas_feedstock_shortage"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_india_wheat_export_ban",
+      "event_name": "India wheat export ban and grain trade restriction",
+      "event_type": "food export ban and grain trade restriction",
+      "transmission_contexts": [
+        {
+          "canonical_context": "food_export_trade_constraint",
+          "case_id": "case_2022_india_wheat_export_ban",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "grain_exports",
+          "raw_affected_asset_types": [
+            "grain traders",
+            "agricultural commodities",
+            "food producers",
+            "logistics providers",
+            "fertilizer producers"
+          ],
+          "raw_event_type": "food export ban and grain trade restriction",
+          "raw_supply_chain_nodes": [
+            "food_export_controls",
+            "grain_exports",
+            "agriculture",
+            "trade_lanes",
+            "customs",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "export ban announcement",
+            "grain trade availability concern",
+            "importer sourcing adjustment",
+            "food input cost uncertainty",
+            "agricultural trade rerouting"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "wheat_export_ban"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_nord_stream_pipeline_sabotage",
+      "event_name": "Nord Stream pipeline sabotage and European gas infrastructure risk",
+      "event_type": "energy infrastructure sabotage and pipeline disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_shipping_sanctions_route_constraint",
+          "case_id": "case_2022_nord_stream_pipeline_sabotage",
+          "constraint_type": "supplier_substitution",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "lng_shipping",
+          "raw_affected_asset_types": [
+            "natural gas",
+            "pipeline operators",
+            "LNG infrastructure",
+            "utilities",
+            "chemical producers",
+            "manufacturers"
+          ],
+          "raw_event_type": "energy infrastructure sabotage and pipeline disruption",
+          "raw_supply_chain_nodes": [
+            "pipeline_infrastructure",
+            "energy",
+            "lng_shipping",
+            "petrochemicals",
+            "manufacturing_inputs",
+            "cyber_infrastructure"
+          ],
+          "raw_transmission_chain_steps": [
+            "pipeline sabotage",
+            "gas infrastructure outage",
+            "European supply security concern",
+            "LNG substitution pressure",
+            "energy-intensive industry cost sensitivity"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "pipeline_gas_disruption_lng_substitution"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_russia_airspace_closure_aviation_routes",
+      "event_name": "Russia-related airspace closures and long-haul aviation route disruption",
+      "event_type": "airspace closure and aviation logistics disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "airspace_route_disruption",
+          "case_id": "case_2022_russia_airspace_closure_aviation_routes",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "aviation",
+          "raw_affected_asset_types": [
+            "airlines",
+            "air cargo operators",
+            "aerospace manufacturers",
+            "logistics providers",
+            "energy suppliers"
+          ],
+          "raw_event_type": "airspace closure and aviation logistics disruption",
+          "raw_supply_chain_nodes": [
+            "aviation",
+            "aerospace_supply_chain",
+            "freight_routes",
+            "energy",
+            "logistics",
+            "customs"
+          ],
+          "raw_transmission_chain_steps": [
+            "war and sanctions escalation",
+            "airspace access restriction",
+            "route lengthening and schedule adjustment",
+            "fuel and crew cost exposure",
+            "air cargo logistics delay"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "airspace_access_restriction"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_russia_fertilizer_export_restrictions",
+      "event_name": "Russia fertilizer export restrictions and crop input risk",
+      "event_type": "fertilizer export restriction and agricultural input shock",
+      "transmission_contexts": [
+        {
+          "canonical_context": "agricultural_input_constraint",
+          "case_id": "case_2022_russia_fertilizer_export_restrictions",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "agriculture",
+          "raw_affected_asset_types": [
+            "fertilizer producers",
+            "agribusiness firms",
+            "grain traders",
+            "logistics providers",
+            "food producers"
+          ],
+          "raw_event_type": "fertilizer export restriction and agricultural input shock",
+          "raw_supply_chain_nodes": [
+            "fertilizer",
+            "agriculture",
+            "energy",
+            "trade_lanes",
+            "customs",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "war and sanctions shock",
+            "fertilizer export restriction",
+            "customs and shipping uncertainty",
+            "crop input procurement risk",
+            "agricultural production planning adjustment"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "fertilizer_export_restriction"
+        },
+        {
+          "canonical_context": "energy_feedstock_input_constraint",
+          "case_id": "case_2022_russia_fertilizer_export_restrictions",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "energy",
+          "raw_affected_asset_types": [
+            "fertilizer producers",
+            "agribusiness firms",
+            "grain traders",
+            "logistics providers",
+            "food producers"
+          ],
+          "raw_event_type": "fertilizer export restriction and agricultural input shock",
+          "raw_supply_chain_nodes": [
+            "fertilizer",
+            "agriculture",
+            "energy",
+            "trade_lanes",
+            "customs",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "war and sanctions shock",
+            "fertilizer export restriction",
+            "customs and shipping uncertainty",
+            "crop input procurement risk",
+            "agricultural production planning adjustment"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "natural_gas_fertilizer_feedstock_constraint"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_russia_swift_financial_sanctions",
+      "event_name": "Russia financial sanctions and payment network disruption",
+      "event_type": "financial sanctions and payment network disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_trade_finance_constraint",
+          "case_id": "case_2022_russia_swift_financial_sanctions",
+          "constraint_type": "financing_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "energy",
+          "raw_affected_asset_types": [
+            "banks",
+            "payment networks",
+            "financial infrastructure providers",
+            "exporters",
+            "energy traders"
+          ],
+          "raw_event_type": "financial sanctions and payment network disruption",
+          "raw_supply_chain_nodes": [
+            "financial_sanctions",
+            "payment_networks",
+            "customs",
+            "trade_lanes",
+            "energy"
+          ],
+          "raw_transmission_chain_steps": [
+            "sanctions designation",
+            "banking access restrictions",
+            "payment and settlement disruption",
+            "trade finance friction",
+            "cross-border transaction uncertainty"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "energy_trade_payment_disruption"
+        },
+        {
+          "canonical_context": "financial_sanctions_trade_finance_constraint",
+          "case_id": "case_2022_russia_swift_financial_sanctions",
+          "constraint_type": "financing_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "financial_sanctions",
+          "raw_affected_asset_types": [
+            "banks",
+            "payment networks",
+            "financial infrastructure providers",
+            "exporters",
+            "energy traders"
+          ],
+          "raw_event_type": "financial sanctions and payment network disruption",
+          "raw_supply_chain_nodes": [
+            "financial_sanctions",
+            "payment_networks",
+            "customs",
+            "trade_lanes",
+            "energy"
+          ],
+          "raw_transmission_chain_steps": [
+            "sanctions designation",
+            "banking access restrictions",
+            "payment and settlement disruption",
+            "trade finance friction",
+            "cross-border transaction uncertainty"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "payment_network_restriction"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_arctic_lng_russian_energy_shipping_sanctions",
+      "event_name": "Arctic LNG and Russian energy shipping sanctions",
+      "event_type": "energy shipping sanctions and Arctic LNG disruption risk",
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_shipping_sanctions_route_constraint",
+          "case_id": "case_2023_arctic_lng_russian_energy_shipping_sanctions",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "lng_shipping",
+          "raw_affected_asset_types": [
+            "LNG carriers",
+            "energy producers",
+            "marine insurers",
+            "banks",
+            "gas utilities",
+            "shipbuilders"
+          ],
+          "raw_event_type": "energy shipping sanctions and Arctic LNG disruption risk",
+          "raw_supply_chain_nodes": [
+            "lng_shipping",
+            "energy",
+            "marine_insurance",
+            "financial_sanctions",
+            "payment_networks",
+            "maritime_chokepoint",
+            "oil_shipping"
+          ],
+          "raw_transmission_chain_steps": [
+            "energy sanctions expansion",
+            "Arctic LNG project and vessel restrictions",
+            "shipping insurance and financing constraints",
+            "LNG cargo timing uncertainty",
+            "buyer sourcing and route adjustment"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "arctic_lng_shipping_restrictions"
+        },
+        {
+          "canonical_context": "energy_shipping_insurance_constraint",
+          "case_id": "case_2023_arctic_lng_russian_energy_shipping_sanctions",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "LNG carriers",
+            "energy producers",
+            "marine insurers",
+            "banks",
+            "gas utilities",
+            "shipbuilders"
+          ],
+          "raw_event_type": "energy shipping sanctions and Arctic LNG disruption risk",
+          "raw_supply_chain_nodes": [
+            "lng_shipping",
+            "energy",
+            "marine_insurance",
+            "financial_sanctions",
+            "payment_networks",
+            "maritime_chokepoint",
+            "oil_shipping"
+          ],
+          "raw_transmission_chain_steps": [
+            "energy sanctions expansion",
+            "Arctic LNG project and vessel restrictions",
+            "shipping insurance and financing constraints",
+            "LNG cargo timing uncertainty",
+            "buyer sourcing and route adjustment"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "energy_shipping_insurance_and_financing_limits"
+        },
+        {
+          "canonical_context": "energy_shipping_sanctions_route_constraint",
+          "case_id": "case_2023_arctic_lng_russian_energy_shipping_sanctions",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "LNG carriers",
+            "energy producers",
+            "marine insurers",
+            "banks",
+            "gas utilities",
+            "shipbuilders"
+          ],
+          "raw_event_type": "energy shipping sanctions and Arctic LNG disruption risk",
+          "raw_supply_chain_nodes": [
+            "lng_shipping",
+            "energy",
+            "marine_insurance",
+            "financial_sanctions",
+            "payment_networks",
+            "maritime_chokepoint",
+            "oil_shipping"
+          ],
+          "raw_transmission_chain_steps": [
+            "energy sanctions expansion",
+            "Arctic LNG project and vessel restrictions",
+            "shipping insurance and financing constraints",
+            "LNG cargo timing uncertainty",
+            "buyer sourcing and route adjustment"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "arctic_lng_shipping_restrictions"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_china_graphite_battery_export_controls",
+      "event_name": "China graphite and battery material export controls",
+      "event_type": "battery material export controls",
+      "transmission_contexts": [
+        {
+          "canonical_context": "battery_material_input_constraint",
+          "case_id": "case_2023_china_graphite_battery_export_controls",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "battery_materials",
+          "raw_affected_asset_types": [
+            "battery material producers",
+            "EV manufacturers",
+            "graphite miners",
+            "critical mineral processors",
+            "electronics supply chains"
+          ],
+          "raw_event_type": "battery material export controls",
+          "raw_supply_chain_nodes": [
+            "battery_materials",
+            "graphite",
+            "critical_minerals",
+            "gallium_germanium_graphite",
+            "manufacturing_inputs",
+            "customs"
+          ],
+          "raw_transmission_chain_steps": [
+            "export licensing rules",
+            "graphite shipment uncertainty",
+            "battery anode input risk",
+            "EV supply-chain compliance burden",
+            "supplier diversification planning"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "graphite_export_licensing_controls"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+      "event_name": "DP World Australia cyber incident and port logistics disruption",
+      "event_type": "cyberattack on port logistics infrastructure",
+      "transmission_contexts": [
+        {
+          "canonical_context": "port_cyber_capacity_constraint",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "constraint_type": "capacity_reduction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "ports",
+          "raw_affected_asset_types": [
+            "port operators",
+            "container shipping companies",
+            "freight forwarders",
+            "retailers",
+            "cybersecurity providers"
+          ],
+          "raw_event_type": "cyberattack on port logistics infrastructure",
+          "raw_supply_chain_nodes": [
+            "cyber_infrastructure",
+            "ports",
+            "container_shipping",
+            "logistics",
+            "freight_routes",
+            "trade_lanes"
+          ],
+          "raw_transmission_chain_steps": [
+            "port cyber incident",
+            "terminal system outage",
+            "container processing delay",
+            "freight route backlog",
+            "retail and manufacturing delivery risk"
+          ],
+          "shock_type": "cyber_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "port_terminal_cyber_disruption"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_dutch_asml_controls",
+      "event_name": "Dutch export restrictions on advanced semiconductor equipment",
+      "event_type": "technology export controls",
+      "transmission_contexts": [
+        {
+          "canonical_context": "semiconductor_export_control_constraint",
+          "case_id": "case_2023_dutch_asml_controls",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "semiconductor_equipment",
+          "raw_affected_asset_types": [
+            "semiconductor equipment companies",
+            "foundries",
+            "chip manufacturers",
+            "electronics supply chains"
+          ],
+          "raw_event_type": "technology export controls",
+          "raw_supply_chain_nodes": [
+            "semiconductor_equipment",
+            "foundry",
+            "customs"
+          ],
+          "raw_transmission_chain_steps": [
+            "national export rules",
+            "equipment licensing requirements",
+            "restricted fab tool access",
+            "capacity planning uncertainty",
+            "semiconductor supply chain adjustment"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "advanced_lithography_export_controls"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_eu_carbon_border_adjustment_mechanism",
+      "event_name": "EU Carbon Border Adjustment Mechanism and green trade compliance risk",
+      "event_type": "green trade compliance and carbon border adjustment risk",
+      "transmission_contexts": [
+        {
+          "canonical_context": "tariff_customs_compliance_constraint",
+          "case_id": "case_2023_eu_carbon_border_adjustment_mechanism",
+          "constraint_type": "compliance_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "customs",
+          "raw_affected_asset_types": [
+            "steel producers",
+            "aluminum producers",
+            "cement exporters",
+            "fertilizer producers",
+            "industrial manufacturers"
+          ],
+          "raw_event_type": "green trade compliance and carbon border adjustment risk",
+          "raw_supply_chain_nodes": [
+            "customs",
+            "trade_lanes",
+            "manufacturing_inputs",
+            "fertilizer",
+            "energy",
+            "critical_minerals"
+          ],
+          "raw_transmission_chain_steps": [
+            "green trade policy implementation",
+            "embedded-emissions reporting burden",
+            "customs and documentation complexity",
+            "carbon-cost pass-through uncertainty",
+            "supplier emissions-data review"
+          ],
+          "shock_type": "regulatory_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "compliance_channel",
+          "upstream_driver": "carbon_border_documentation"
+        },
+        {
+          "canonical_context": "energy_trade_compliance_constraint",
+          "case_id": "case_2023_eu_carbon_border_adjustment_mechanism",
+          "constraint_type": "compliance_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "energy",
+          "raw_affected_asset_types": [
+            "steel producers",
+            "aluminum producers",
+            "cement exporters",
+            "fertilizer producers",
+            "industrial manufacturers"
+          ],
+          "raw_event_type": "green trade compliance and carbon border adjustment risk",
+          "raw_supply_chain_nodes": [
+            "customs",
+            "trade_lanes",
+            "manufacturing_inputs",
+            "fertilizer",
+            "energy",
+            "critical_minerals"
+          ],
+          "raw_transmission_chain_steps": [
+            "green trade policy implementation",
+            "embedded-emissions reporting burden",
+            "customs and documentation complexity",
+            "carbon-cost pass-through uncertainty",
+            "supplier emissions-data review"
+          ],
+          "shock_type": "regulatory_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "carbon_border_energy_intensity_reporting"
+        },
+        {
+          "canonical_context": "tariff_trade_compliance_constraint",
+          "case_id": "case_2023_eu_carbon_border_adjustment_mechanism",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "trade_lanes",
+          "raw_affected_asset_types": [
+            "steel producers",
+            "aluminum producers",
+            "cement exporters",
+            "fertilizer producers",
+            "industrial manufacturers"
+          ],
+          "raw_event_type": "green trade compliance and carbon border adjustment risk",
+          "raw_supply_chain_nodes": [
+            "customs",
+            "trade_lanes",
+            "manufacturing_inputs",
+            "fertilizer",
+            "energy",
+            "critical_minerals"
+          ],
+          "raw_transmission_chain_steps": [
+            "green trade policy implementation",
+            "embedded-emissions reporting burden",
+            "customs and documentation complexity",
+            "carbon-cost pass-through uncertainty",
+            "supplier emissions-data review"
+          ],
+          "shock_type": "regulatory_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "compliance_channel",
+          "upstream_driver": "carbon_border_trade_compliance"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_japan_chip_equipment_export_controls",
+      "event_name": "Japan semiconductor equipment export controls",
+      "event_type": "semiconductor equipment export control and customs licensing risk",
+      "transmission_contexts": [
+        {
+          "canonical_context": "semiconductor_export_control_constraint",
+          "case_id": "case_2023_japan_chip_equipment_export_controls",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "semiconductor_equipment",
+          "raw_affected_asset_types": [
+            "semiconductor equipment suppliers",
+            "foundries",
+            "AI chip designers",
+            "electronics manufacturers",
+            "data center operators"
+          ],
+          "raw_event_type": "semiconductor equipment export control and customs licensing risk",
+          "raw_supply_chain_nodes": [
+            "semiconductor_equipment",
+            "ai_chips",
+            "foundry",
+            "customs",
+            "data_centers",
+            "manufacturing_inputs"
+          ],
+          "raw_transmission_chain_steps": [
+            "technology policy coordination",
+            "chip equipment licensing requirement",
+            "customs and documentation review",
+            "foundry expansion uncertainty",
+            "AI hardware supply-chain monitoring"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "chip_tool_export_controls"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_port_of_nagoya_cyberattack",
+      "event_name": "Port of Nagoya cyberattack and logistics disruption",
+      "event_type": "cyber infrastructure disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "logistics_cyber_capacity_constraint",
+          "case_id": "case_2023_port_of_nagoya_cyberattack",
+          "constraint_type": "capacity_reduction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "logistics",
+          "raw_affected_asset_types": [
+            "port operators",
+            "logistics providers",
+            "automakers",
+            "cybersecurity companies",
+            "manufacturers"
+          ],
+          "raw_event_type": "cyber infrastructure disruption",
+          "raw_supply_chain_nodes": [
+            "cyber_infrastructure",
+            "ports",
+            "logistics",
+            "freight_routes",
+            "manufacturing_inputs"
+          ],
+          "raw_transmission_chain_steps": [
+            "ransomware incident",
+            "terminal system outage",
+            "container handling disruption",
+            "automotive logistics delay",
+            "cyber resilience response"
+          ],
+          "shock_type": "cyber_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "port_system_shutdown"
+        },
+        {
+          "canonical_context": "port_cyber_capacity_constraint",
+          "case_id": "case_2023_port_of_nagoya_cyberattack",
+          "constraint_type": "capacity_reduction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "ports",
+          "raw_affected_asset_types": [
+            "port operators",
+            "logistics providers",
+            "automakers",
+            "cybersecurity companies",
+            "manufacturers"
+          ],
+          "raw_event_type": "cyber infrastructure disruption",
+          "raw_supply_chain_nodes": [
+            "cyber_infrastructure",
+            "ports",
+            "logistics",
+            "freight_routes",
+            "manufacturing_inputs"
+          ],
+          "raw_transmission_chain_steps": [
+            "ransomware incident",
+            "terminal system outage",
+            "container handling disruption",
+            "automotive logistics delay",
+            "cyber resilience response"
+          ],
+          "shock_type": "cyber_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "port_system_shutdown"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_red_sea_attacks",
+      "event_name": "Red Sea shipping attacks and route diversions",
+      "event_type": "maritime security disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "container_shipping",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "container_shipping",
+            "freight_routes",
+            "marine_insurance",
+            "oil_shipping",
+            "lng_shipping",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "red_sea_vessel_security_risk"
+        },
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "container_shipping",
+            "freight_routes",
+            "marine_insurance",
+            "oil_shipping",
+            "lng_shipping",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "vessel_security_risk"
+        },
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "container_shipping",
+            "freight_routes",
+            "marine_insurance",
+            "oil_shipping",
+            "lng_shipping",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "red_sea_vessel_security_risk"
+        },
+        {
+          "canonical_context": "oil_shipping_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "oil_shipping",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "container_shipping",
+            "freight_routes",
+            "marine_insurance",
+            "oil_shipping",
+            "lng_shipping",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "red_sea_vessel_security_risk"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_south_china_sea_shipping_tensions",
+      "event_name": "South China Sea military tensions and shipping-route risk",
+      "event_type": "maritime military tension and shipping-route risk",
+      "transmission_contexts": [
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_2023_south_china_sea_shipping_tensions",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "container shipping companies",
+            "marine insurers",
+            "logistics providers",
+            "defense contractors",
+            "electronics manufacturers"
+          ],
+          "raw_event_type": "maritime military tension and shipping-route risk",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "container_shipping",
+            "freight_routes",
+            "marine_insurance",
+            "defense",
+            "logistics",
+            "trade_lanes"
+          ],
+          "raw_transmission_chain_steps": [
+            "maritime military tension",
+            "shipping-route security concern",
+            "naval and coast guard activity monitoring",
+            "insurance and routing uncertainty",
+            "regional logistics contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "contextual_background",
+          "upstream_driver": "south_china_sea_maritime_security_tensions"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2024_drc_cobalt_copper_mining_disruption",
+      "event_name": "DRC cobalt and copper mining disruption risk",
+      "event_type": "critical mineral mining disruption and political instability",
+      "transmission_contexts": [
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2024_drc_cobalt_copper_mining_disruption",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "critical mineral miners",
+            "battery manufacturers",
+            "EV supply chains",
+            "electronics manufacturers",
+            "logistics providers"
+          ],
+          "raw_event_type": "critical mineral mining disruption and political instability",
+          "raw_supply_chain_nodes": [
+            "critical_minerals",
+            "battery_materials",
+            "manufacturing_inputs",
+            "trade_lanes",
+            "customs",
+            "logistics"
+          ],
+          "raw_transmission_chain_steps": [
+            "mining-region political instability",
+            "mine permitting or security disruption",
+            "cobalt and copper shipment uncertainty",
+            "battery material input risk",
+            "EV and electronics sourcing review"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "cobalt_copper_mining_disruption"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2024_taiwan_strait_drills_semiconductor_supply",
+      "event_name": "Taiwan Strait military drills and semiconductor supply-chain disruption risk",
+      "event_type": "taiwan strait semiconductor supply-chain disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "semiconductor_strategic_downstream_exposure",
+          "case_id": "case_2024_taiwan_strait_drills_semiconductor_supply",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "semiconductor foundries",
+            "AI chip designers",
+            "semiconductor equipment companies",
+            "electronics manufacturers",
+            "data center suppliers"
+          ],
+          "raw_event_type": "taiwan strait semiconductor supply-chain disruption",
+          "raw_supply_chain_nodes": [
+            "taiwan_semiconductor_supply",
+            "foundry",
+            "ai_chips",
+            "semiconductor_equipment",
+            "data_centers",
+            "defense"
+          ],
+          "raw_transmission_chain_steps": [
+            "military drills",
+            "regional logistics and continuity concern",
+            "advanced foundry concentration risk",
+            "chip supply uncertainty",
+            "electronics and data center contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_strategic_exposure",
+          "upstream_driver": "advanced_foundry_concentration_risk"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2024_us_east_gulf_port_strike",
+      "event_name": "US East and Gulf Coast port strike",
+      "event_type": "port labor and shipping logistics disruption",
+      "transmission_contexts": [
+        {
+          "canonical_context": "logistics_port_labor_capacity_constraint",
+          "case_id": "case_2024_us_east_gulf_port_strike",
+          "constraint_type": "capacity_reduction",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "logistics",
+          "raw_affected_asset_types": [
+            "port operators",
+            "container shipping companies",
+            "freight forwarders",
+            "retailers",
+            "manufacturers"
+          ],
+          "raw_event_type": "port labor and shipping logistics disruption",
+          "raw_supply_chain_nodes": [
+            "port_labor",
+            "ports",
+            "container_shipping",
+            "freight_routes",
+            "logistics",
+            "trade_lanes"
+          ],
+          "raw_transmission_chain_steps": [
+            "labor contract dispute",
+            "port work stoppage",
+            "container handling disruption",
+            "shipment delays",
+            "inventory and logistics planning pressure"
+          ],
+          "shock_type": "labor_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "port_labor_work_stoppage"
+        }
+      ]
+    },
+    {
+      "case_id": "case_hormuz_tanker_tensions",
+      "event_name": "Strait of Hormuz tanker tensions",
+      "event_type": "energy chokepoint security risk",
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_shipping_insurance_constraint",
+          "case_id": "case_hormuz_tanker_tensions",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "energy producers",
+            "refiners",
+            "marine insurers"
+          ],
+          "raw_event_type": "energy chokepoint security risk",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "oil_shipping",
+            "lng_shipping",
+            "marine_insurance",
+            "energy",
+            "refining"
+          ],
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "tanker security incidents",
+            "perceived chokepoint risk",
+            "insurance and routing concerns",
+            "energy supply risk premium"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "tanker_security_incidents"
+        },
+        {
+          "canonical_context": "energy_chokepoint_security_constraint",
+          "case_id": "case_hormuz_tanker_tensions",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "energy producers",
+            "refiners",
+            "marine insurers"
+          ],
+          "raw_event_type": "energy chokepoint security risk",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "oil_shipping",
+            "lng_shipping",
+            "marine_insurance",
+            "energy",
+            "refining"
+          ],
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "tanker security incidents",
+            "perceived chokepoint risk",
+            "insurance and routing concerns",
+            "energy supply risk premium"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "hormuz_tanker_security_incidents"
+        },
+        {
+          "canonical_context": "oil_shipping_security_constraint",
+          "case_id": "case_hormuz_tanker_tensions",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "oil_shipping",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "energy producers",
+            "refiners",
+            "marine insurers"
+          ],
+          "raw_event_type": "energy chokepoint security risk",
+          "raw_supply_chain_nodes": [
+            "maritime_chokepoint",
+            "oil_shipping",
+            "lng_shipping",
+            "marine_insurance",
+            "energy",
+            "refining"
+          ],
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "tanker security incidents",
+            "perceived chokepoint risk",
+            "insurance and routing concerns",
+            "energy supply risk premium"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "tanker_security_incidents"
+        }
+      ]
+    },
+    {
+      "case_id": "case_taiwan_strait_semiconductor_risk",
+      "event_name": "Taiwan Strait tensions and semiconductor supply-chain risk",
+      "event_type": "regional military tension and semiconductor supply risk",
+      "transmission_contexts": [
+        {
+          "canonical_context": "semiconductor_strategic_downstream_exposure",
+          "case_id": "case_taiwan_strait_semiconductor_risk",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "enrichment_rationale": "Expanded development validation context using the frozen mechanism_compatibility_candidate_v1 schema.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "semiconductor foundries",
+            "advanced chip designers",
+            "electronics manufacturers",
+            "data center suppliers",
+            "defense contractors"
+          ],
+          "raw_event_type": "regional military tension and semiconductor supply risk",
+          "raw_supply_chain_nodes": [
+            "foundry",
+            "ai_chips",
+            "semiconductor_equipment",
+            "data_centers",
+            "manufacturing_inputs",
+            "defense"
+          ],
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "shipping and airspace disruption risk",
+            "foundry production concern",
+            "advanced chip supply uncertainty",
+            "electronics supply chain contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_strategic_exposure",
+          "upstream_driver": "advanced_chip_supply_uncertainty"
+        }
+      ]
+    }
+  ],
+  "diagnostic_only": true,
+  "mechanism_instances": 24,
+  "mechanism_rule_version": "mechanism_compatibility_candidate_v1"
+}

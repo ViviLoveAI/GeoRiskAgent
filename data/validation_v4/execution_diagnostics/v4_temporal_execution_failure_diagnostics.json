@@ -1,0 +1,30 @@
+{
+  "created_at_utc": "2026-08-12T04:58:56.597452+00:00",
+  "diagnostic_id": "v4_temporal_execution_failure_diagnostics",
+  "failure_count": 16,
+  "non_heldout_reproduction": {
+    "after_fix_single_smoke": "success",
+    "after_fix_two_sequential_calls": "success",
+    "before_fix_single_smoke": "failed with same traceback",
+    "root_area": "shared V4 retrieval embedding model loading lifecycle"
+  },
+  "original_attempt": "temporal_prediction_attempt_001",
+  "original_failure": "client_closed",
+  "representative_failure": {
+    "attempt_index": 1,
+    "client_class": "httpx.Client",
+    "client_closed_state": "closed before HuggingFace metadata request",
+    "client_creation_site": "huggingface_hub internal HTTP client",
+    "client_module": "huggingface_hub.utils._http / httpx._client",
+    "event_id": "v4cand_20260114_us_processed_critical_minerals",
+    "exception_class": "RuntimeError",
+    "exception_message": "Cannot send a request, as the client has been closed.",
+    "failing_file": "src/vector_store.py",
+    "failing_function": "_load_sentence_transformer_quietly",
+    "failing_line": "SentenceTransformer(MODEL_NAME)",
+    "full_traceback": "Sanitized representative traceback: run_v4_pipeline -> retrieve_cases -> query_cases -> _embed_texts -> _get_embedding_model -> _load_sentence_transformer_quietly -> SentenceTransformer(MODEL_NAME) -> huggingface_hub/httpx RuntimeError: Cannot send a request, as the client has been closed."
+  },
+  "unique_exception_messages": [
+    "Cannot send a request, as the client has been closed."
+  ]
+}

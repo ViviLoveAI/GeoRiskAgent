@@ -1,0 +1,2483 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "candidate_d41a5f82d14a",
+      "entities": [
+        "China",
+        "Control",
+        "ETAuto",
+        "Earth",
+        "Export",
+        "List",
+        "Rare",
+        "What"
+      ],
+      "event_date": "2025-10-10",
+      "event_id": "candidate_d41a5f82d14a",
+      "event_text": "China Rare Earth Export Control List : What critical minerals are on China export control list now ?, ETAuto 20251010T131500Z auto.economictimes.indiatimes.com",
+      "event_type": "critical minerals resource restrictions",
+      "event_type_hint": "critical minerals resource restrictions",
+      "headline": "China Rare Earth Export Control List : What critical minerals are on China export control list now ?, ETAuto",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5498,
+          "entity_overlap": 0.1176,
+          "event_type_similarity": 0.8267,
+          "score": 0.207,
+          "shared_entities": [
+            "china",
+            "rare"
+          ],
+          "text_similarity": 0.0615
+        },
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 801,
+          "entity_overlap": 0.0526,
+          "event_type_similarity": 0.6667,
+          "score": 0.1621,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0779
+        },
+        {
+          "case_date": "2020-01-01",
+          "case_id": "case_2020_indonesia_nickel_export_ban",
+          "case_name": "Indonesia nickel ore export ban and battery supply-chain adjustment",
+          "date_score": 0.0,
+          "days_apart": 2109,
+          "entity_overlap": 0.0556,
+          "event_type_similarity": 0.5745,
+          "score": 0.1354,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0331
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(\"critical minerals\" OR rare earths OR graphite OR gallium OR germanium OR lithium OR nickel) (export OR restriction OR ban OR controls)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "auto.economictimes.indiatimes.com",
+      "source_url": "https://auto.economictimes.indiatimes.com/news/auto-components/what-critical-minerals-are-on-chinas-export-control-list-now/124449571",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "China Rare Earth Export Control List : What critical minerals are on China export control list now ?, ETAuto",
+          "publication_date": "2025-10-10",
+          "source": "auto.economictimes.indiatimes.com",
+          "source_record_id": "source_2fee48a7c469",
+          "source_url": "https://auto.economictimes.indiatimes.com/news/auto-components/what-critical-minerals-are-on-chinas-export-control-list-now/124449571"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_fba3f59c71da",
+      "entities": [
+        "Business",
+        "China",
+        "International",
+        "US"
+      ],
+      "event_date": "2025-11-09",
+      "event_id": "candidate_fba3f59c71da",
+      "event_text": "International Business : China suspends ban on exports of gallium , germanium , antimony to US 20251109T091500Z gdnonline.com",
+      "event_type": "critical minerals resource restrictions",
+      "event_type_hint": "critical minerals resource restrictions",
+      "headline": "International Business : China suspends ban on exports of gallium , germanium , antimony to US",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5528,
+          "entity_overlap": 0.0714,
+          "event_type_similarity": 0.8267,
+          "score": 0.185,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.009
+        },
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 831,
+          "entity_overlap": 0.0667,
+          "event_type_similarity": 0.6667,
+          "score": 0.1572,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0359
+        },
+        {
+          "case_date": "2020-01-01",
+          "case_id": "case_2020_indonesia_nickel_export_ban",
+          "case_name": "Indonesia nickel ore export ban and battery supply-chain adjustment",
+          "date_score": 0.0,
+          "days_apart": 2139,
+          "entity_overlap": 0.0714,
+          "event_type_similarity": 0.5745,
+          "score": 0.1437,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0546
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(\"critical minerals\" OR rare earths OR graphite OR gallium OR germanium OR lithium OR nickel) (export OR restriction OR ban OR controls)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "gdnonline.com",
+      "source_url": "https://www.gdnonline.com:443/Details/1368099/China-suspends-ban-on-exports-of-gallium,-germanium,-antimony-to-US",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "International Business : China suspends ban on exports of gallium , germanium , antimony to US",
+          "publication_date": "2025-11-09",
+          "source": "gdnonline.com",
+          "source_record_id": "source_52a1b77a1c3c",
+          "source_url": "https://www.gdnonline.com:443/Details/1368099/China-suspends-ban-on-exports-of-gallium,-germanium,-antimony-to-US"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_ff6378fbb36b",
+      "entities": [
+        "China",
+        "US"
+      ],
+      "event_date": "2025-11-09",
+      "event_id": "candidate_ff6378fbb36b",
+      "event_text": "China halts ban on export to US of dual - use metals , further easing tensions 20251109T154500Z straitstimes.com",
+      "event_type": "critical minerals resource restrictions",
+      "event_type_hint": "critical minerals resource restrictions",
+      "headline": "China halts ban on export to US of dual - use metals , further easing tensions",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5528,
+          "entity_overlap": 0.0833,
+          "event_type_similarity": 0.8267,
+          "score": 0.1912,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0253
+        },
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 831,
+          "entity_overlap": 0.0769,
+          "event_type_similarity": 0.6667,
+          "score": 0.1632,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0532
+        },
+        {
+          "case_date": "2020-01-01",
+          "case_id": "case_2020_indonesia_nickel_export_ban",
+          "case_name": "Indonesia nickel ore export ban and battery supply-chain adjustment",
+          "date_score": 0.0,
+          "days_apart": 2139,
+          "entity_overlap": 0.0833,
+          "event_type_similarity": 0.5745,
+          "score": 0.1438,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0404
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(\"critical minerals\" OR rare earths OR graphite OR gallium OR germanium OR lithium OR nickel) (export OR restriction OR ban OR controls)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "straitstimes.com",
+      "source_url": "https://www.straitstimes.com/asia/china-halts-ban-on-export-to-us-of-dual-use-metals-further-easing-tensions",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "China halts ban on export to US of dual - use metals , further easing tensions",
+          "publication_date": "2025-11-09",
+          "source": "straitstimes.com",
+          "source_record_id": "source_9b36d181c250",
+          "source_url": "https://www.straitstimes.com/asia/china-halts-ban-on-export-to-us-of-dual-use-metals-further-easing-tensions"
+        },
+        {
+          "headline": "China halts ban on export to US of some dual - use metals",
+          "publication_date": "2025-11-09",
+          "source": "standardmedia.co.ke",
+          "source_record_id": "source_aa52099a6323",
+          "source_url": "https://www.standardmedia.co.ke/business/article/2001533798/china-halts-ban-on-export-to-us-of-some-dual-use-metals"
+        },
+        {
+          "headline": "China suspends ban on exports of gallium , germanium , antimony to US",
+          "publication_date": "2025-11-09",
+          "source": "businesstimes.com.sg",
+          "source_record_id": "source_e60d1af34a0e",
+          "source_url": "https://www.businesstimes.com.sg/international/china-suspends-ban-exports-gallium-germanium-antimony-us"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_130fb98e42bb",
+      "entities": [
+        "After",
+        "China",
+        "Controls",
+        "Detente",
+        "Export",
+        "Korean",
+        "Pauses",
+        "Sanctions",
+        "Shipbuilders",
+        "Suspends",
+        "Trade",
+        "Update"
+      ],
+      "event_date": "2025-11-10",
+      "event_id": "candidate_130fb98e42bb",
+      "event_text": "China Suspends Sanctions on Korean Shipbuilders , Pauses Export Controls After U . S . Trade Detente -- Update 20251110T123000Z marketscreener.com",
+      "event_type": "critical minerals resource restrictions",
+      "event_type_hint": "critical minerals resource restrictions",
+      "headline": "China Suspends Sanctions on Korean Shipbuilders , Pauses Export Controls After U . S . Trade Detente -- Update",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5529,
+          "entity_overlap": 0.0455,
+          "event_type_similarity": 0.8267,
+          "score": 0.1819,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.026
+        },
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 832,
+          "entity_overlap": 0.0435,
+          "event_type_similarity": 0.6667,
+          "score": 0.162,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.089
+        },
+        {
+          "case_date": "2020-01-01",
+          "case_id": "case_2020_indonesia_nickel_export_ban",
+          "case_name": "Indonesia nickel ore export ban and battery supply-chain adjustment",
+          "date_score": 0.0,
+          "days_apart": 2140,
+          "entity_overlap": 0.0455,
+          "event_type_similarity": 0.5745,
+          "score": 0.1334,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0359
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(\"critical minerals\" OR rare earths OR graphite OR gallium OR germanium OR lithium OR nickel) (export OR restriction OR ban OR controls)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "marketscreener.com",
+      "source_url": "https://www.marketscreener.com/news/china-suspends-sanctions-on-korean-shipbuilders-pauses-export-controls-after-u-s-trade-detente--ce7d5fd8d88ff625",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "China Suspends Sanctions on Korean Shipbuilders , Pauses Export Controls After U . S . Trade Detente -- Update",
+          "publication_date": "2025-11-10",
+          "source": "marketscreener.com",
+          "source_record_id": "source_f72562fed0f8",
+          "source_url": "https://www.marketscreener.com/news/china-suspends-sanctions-on-korean-shipbuilders-pauses-export-controls-after-u-s-trade-detente--ce7d5fd8d88ff625"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_355782516069",
+      "entities": [
+        "Asahi",
+        "Beer",
+        "Cyberattack",
+        "Down",
+        "Japan",
+        "Most",
+        "Popular",
+        "Production",
+        "Shuts"
+      ],
+      "event_date": "2025-10-03",
+      "event_id": "candidate_355782516069",
+      "event_text": "Cyberattack Shuts Down Production of Asahi , Japan Most Popular Beer 20251003T210000Z breitbart.com",
+      "event_type": "cyberattack critical infrastructure",
+      "event_type_hint": "cyberattack critical infrastructure",
+      "headline": "Cyberattack Shuts Down Production of Asahi , Japan Most Popular Beer",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-11-10",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "case_name": "DP World Australia cyber incident and port logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 693,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.8101,
+          "score": 0.1662,
+          "shared_entities": [],
+          "text_similarity": 0.0207
+        },
+        {
+          "case_date": "2023-07-04",
+          "case_id": "case_2023_port_of_nagoya_cyberattack",
+          "case_name": "Port of Nagoya cyberattack and logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 822,
+          "entity_overlap": 0.0714,
+          "event_type_similarity": 0.6061,
+          "score": 0.1521,
+          "shared_entities": [
+            "japan"
+          ],
+          "text_similarity": 0.0649
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_cyberattack_pipeline_port_infrastructure",
+          "case_name": "Cyberattack on pipeline and port infrastructure",
+          "date_score": 0.0,
+          "days_apart": 1610,
+          "entity_overlap": 0.0556,
+          "event_type_similarity": 0.6061,
+          "score": 0.1442,
+          "shared_entities": [
+            "cyberattack"
+          ],
+          "text_similarity": 0.0455
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "breitbart.com",
+      "source_url": "https://www.breitbart.com/asia/2025/10/03/cyberattack-shuts-down-production-of-asahi-japans-most-popular-beer/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Cyberattack Shuts Down Production of Asahi , Japan Most Popular Beer",
+          "publication_date": "2025-10-03",
+          "source": "breitbart.com",
+          "source_record_id": "source_57648f347d6c",
+          "source_url": "https://www.breitbart.com/asia/2025/10/03/cyberattack-shuts-down-production-of-asahi-japans-most-popular-beer/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_2bd2cdbf5b54",
+      "entities": [
+        "Asahi",
+        "Hack",
+        "Japan"
+      ],
+      "event_date": "2025-10-08",
+      "event_id": "candidate_2bd2cdbf5b54",
+      "event_text": "Hack on Japan popular Asahi beer firm renews concerns over cyberattack readiness 20251008T091500Z us.cnn.com",
+      "event_type": "cyberattack critical infrastructure",
+      "event_type_hint": "cyberattack critical infrastructure",
+      "headline": "Hack on Japan popular Asahi beer firm renews concerns over cyberattack readiness",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-11-10",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "case_name": "DP World Australia cyber incident and port logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 698,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.8101,
+          "score": 0.1656,
+          "shared_entities": [],
+          "text_similarity": 0.0179
+        },
+        {
+          "case_date": "2023-07-04",
+          "case_id": "case_2023_port_of_nagoya_cyberattack",
+          "case_name": "Port of Nagoya cyberattack and logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 827,
+          "entity_overlap": 0.125,
+          "event_type_similarity": 0.6061,
+          "score": 0.1535,
+          "shared_entities": [
+            "japan"
+          ],
+          "text_similarity": 0.005
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_2021_colonial_pipeline_ransomware",
+          "case_name": "Colonial Pipeline ransomware and fuel logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 1615,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6105,
+          "score": 0.127,
+          "shared_entities": [],
+          "text_similarity": 0.0242
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "us.cnn.com",
+      "source_url": "https://us.cnn.com/2025/10/08/business/japan-asahi-cyberattack-readiness-intl-hnk",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Hack on Japan popular Asahi beer firm renews concerns over cyberattack readiness",
+          "publication_date": "2025-10-08",
+          "source": "us.cnn.com",
+          "source_record_id": "source_d3e900e4e052",
+          "source_url": "https://us.cnn.com/2025/10/08/business/japan-asahi-cyberattack-readiness-intl-hnk"
+        },
+        {
+          "headline": "Hack on Japan popular Asahi beer firm renews concerns over cyberattack readiness",
+          "publication_date": "2025-10-08",
+          "source": "cnn.com",
+          "source_record_id": "source_f5d97b4448f7",
+          "source_url": "https://www.cnn.com/2025/10/08/business/japan-asahi-cyberattack-readiness-intl-hnk"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_eaccce38b750",
+      "entities": [
+        "After",
+        "Can",
+        "Companies",
+        "Cyberattacks",
+        "Emerge",
+        "How",
+        "Stronger"
+      ],
+      "event_date": "2025-10-21",
+      "event_id": "candidate_eaccce38b750",
+      "event_text": "How Companies Can Emerge Stronger After Cyberattacks 20251021T130000Z forbes.com",
+      "event_type": "cyberattack critical infrastructure",
+      "event_type_hint": "cyberattack critical infrastructure",
+      "headline": "How Companies Can Emerge Stronger After Cyberattacks",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-11-10",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "case_name": "DP World Australia cyber incident and port logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 711,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.8101,
+          "score": 0.1735,
+          "shared_entities": [],
+          "text_similarity": 0.0571
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_2021_colonial_pipeline_ransomware",
+          "case_name": "Colonial Pipeline ransomware and fuel logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 1628,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6105,
+          "score": 0.1343,
+          "shared_entities": [],
+          "text_similarity": 0.061
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_cyberattack_pipeline_port_infrastructure",
+          "case_name": "Cyberattack on pipeline and port infrastructure",
+          "date_score": 0.0,
+          "days_apart": 1628,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6061,
+          "score": 0.1306,
+          "shared_entities": [],
+          "text_similarity": 0.0472
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "forbes.com",
+      "source_url": "https://www.forbes.com/councils/forbesbusinesscouncil/2025/10/21/how-companies-can-emerge-stronger-after-cyberattacks/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "How Companies Can Emerge Stronger After Cyberattacks",
+          "publication_date": "2025-10-21",
+          "source": "forbes.com",
+          "source_record_id": "source_70fbe42d654e",
+          "source_url": "https://www.forbes.com/councils/forbesbusinesscouncil/2025/10/21/how-companies-can-emerge-stronger-after-cyberattacks/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_a126990eefca",
+      "entities": [
+        "Center",
+        "China",
+        "FM",
+        "National",
+        "Service",
+        "Time",
+        "US"
+      ],
+      "event_date": "2025-10-25",
+      "event_id": "candidate_a126990eefca",
+      "event_text": "US infiltration against China National Time Service Center  proves once again it is the largest source of cyberattack : FM 20251025T144500Z globalsecurity.org",
+      "event_type": "cyberattack critical infrastructure",
+      "event_type_hint": "cyberattack critical infrastructure",
+      "headline": "US infiltration against China National Time Service Center  proves once again it is the largest source of cyberattack : FM",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-11-10",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "case_name": "DP World Australia cyber incident and port logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 715,
+          "entity_overlap": 0.0588,
+          "event_type_similarity": 0.8101,
+          "score": 0.1808,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0204
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_2021_colonial_pipeline_ransomware",
+          "case_name": "Colonial Pipeline ransomware and fuel logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 1632,
+          "entity_overlap": 0.0556,
+          "event_type_similarity": 0.6105,
+          "score": 0.14,
+          "shared_entities": [
+            "us"
+          ],
+          "text_similarity": 0.0201
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_cyberattack_pipeline_port_infrastructure",
+          "case_name": "Cyberattack on pipeline and port infrastructure",
+          "date_score": 0.0,
+          "days_apart": 1632,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6061,
+          "score": 0.1281,
+          "shared_entities": [],
+          "text_similarity": 0.0343
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "globalsecurity.org",
+      "source_url": "https://www.globalsecurity.org/security/library/news/2025/10/sec-251024-globaltimes01.htm",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "US infiltration against China National Time Service Center  proves once again it is the largest source of cyberattack : FM",
+          "publication_date": "2025-10-25",
+          "source": "globalsecurity.org",
+          "source_record_id": "source_9c6f31a37aed",
+          "source_url": "https://www.globalsecurity.org/security/library/news/2025/10/sec-251024-globaltimes01.htm"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_4ead99ff6140",
+      "entities": [
+        "Hackers",
+        "Nevada",
+        "News",
+        "Report"
+      ],
+      "event_date": "2025-11-05",
+      "event_id": "candidate_4ead99ff6140",
+      "event_text": "Report : Hackers entered system 3 months before Nevada cyberattack | Nevada | News 20251105T223000Z reviewjournal.com",
+      "event_type": "cyberattack critical infrastructure",
+      "event_type_hint": "cyberattack critical infrastructure",
+      "headline": "Report : Hackers entered system 3 months before Nevada cyberattack | Nevada | News",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-11-10",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "case_name": "DP World Australia cyber incident and port logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 726,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.8101,
+          "score": 0.1656,
+          "shared_entities": [],
+          "text_similarity": 0.0179
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_2021_colonial_pipeline_ransomware",
+          "case_name": "Colonial Pipeline ransomware and fuel logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 1643,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6105,
+          "score": 0.1265,
+          "shared_entities": [],
+          "text_similarity": 0.0221
+        },
+        {
+          "case_date": "2023-07-04",
+          "case_id": "case_2023_port_of_nagoya_cyberattack",
+          "case_name": "Port of Nagoya cyberattack and logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 855,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6061,
+          "score": 0.1242,
+          "shared_entities": [],
+          "text_similarity": 0.0151
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "reviewjournal.com",
+      "source_url": "https://www.reviewjournal.com/news/politics-and-government/nevada/hackers-entered-system-3-months-before-nevada-cyberattack-report-says-3533421/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Report : Hackers entered system 3 months before Nevada cyberattack | Nevada | News",
+          "publication_date": "2025-11-05",
+          "source": "reviewjournal.com",
+          "source_record_id": "source_aa7d6a9037f2",
+          "source_url": "https://www.reviewjournal.com/news/politics-and-government/nevada/hackers-entered-system-3-months-before-nevada-cyberattack-report-says-3533421/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_baa44533ccce",
+      "entities": [
+        "Attack",
+        "Data",
+        "Notifying",
+        "Providers",
+        "Synnovis",
+        "Theft"
+      ],
+      "event_date": "2025-11-12",
+      "event_id": "candidate_baa44533ccce",
+      "event_text": "Synnovis Notifying united kingdom Providers of Data Theft in 2024 Attack 20251112T004500Z bankinfosecurity.com",
+      "event_type": "cyberattack critical infrastructure",
+      "event_type_hint": "cyberattack critical infrastructure",
+      "headline": "Synnovis Notifying united kingdom Providers of Data Theft in 2024 Attack",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-11-10",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "case_name": "DP World Australia cyber incident and port logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 733,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.8101,
+          "score": 0.1661,
+          "shared_entities": [],
+          "text_similarity": 0.0202
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_2021_colonial_pipeline_ransomware",
+          "case_name": "Colonial Pipeline ransomware and fuel logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 1650,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6105,
+          "score": 0.1274,
+          "shared_entities": [],
+          "text_similarity": 0.0266
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_cyberattack_pipeline_port_infrastructure",
+          "case_name": "Cyberattack on pipeline and port infrastructure",
+          "date_score": 0.0,
+          "days_apart": 1650,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6061,
+          "score": 0.123,
+          "shared_entities": [],
+          "text_similarity": 0.0089
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "bankinfosecurity.com",
+      "source_url": "https://www.bankinfosecurity.com/synnovis-notifying-uk-providers-data-theft-in-2024-attack-a-29990",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Synnovis Notifying united kingdom Providers of Data Theft in 2024 Attack",
+          "publication_date": "2025-11-12",
+          "source": "bankinfosecurity.com",
+          "source_record_id": "source_fe12a6823725",
+          "source_url": "https://www.bankinfosecurity.com/synnovis-notifying-uk-providers-data-theft-in-2024-attack-a-29990"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_87ef41f3c5f9",
+      "entities": [
+        "Bill",
+        "Cyber",
+        "Resilience",
+        "Security",
+        "UK",
+        "Unveils"
+      ],
+      "event_date": "2025-11-13",
+      "event_id": "candidate_87ef41f3c5f9",
+      "event_text": "UK Unveils Cyber Security and Resilience Bill 20251113T004500Z bankinfosecurity.com",
+      "event_type": "cyberattack critical infrastructure",
+      "event_type_hint": "cyberattack critical infrastructure",
+      "headline": "UK Unveils Cyber Security and Resilience Bill",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-11-10",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "case_name": "DP World Australia cyber incident and port logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 734,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.8101,
+          "score": 0.1663,
+          "shared_entities": [],
+          "text_similarity": 0.0215
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_cyberattack_pipeline_port_infrastructure",
+          "case_name": "Cyberattack on pipeline and port infrastructure",
+          "date_score": 0.0,
+          "days_apart": 1651,
+          "entity_overlap": 0.0667,
+          "event_type_similarity": 0.6061,
+          "score": 0.1464,
+          "shared_entities": [
+            "cyber"
+          ],
+          "text_similarity": 0.0427
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_2021_colonial_pipeline_ransomware",
+          "case_name": "Colonial Pipeline ransomware and fuel logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 1651,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6105,
+          "score": 0.1264,
+          "shared_entities": [],
+          "text_similarity": 0.0212
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "bankinfosecurity.com",
+      "source_url": "https://www.bankinfosecurity.com/uk-unveils-cyber-security-resilience-bill-a-30006",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "UK Unveils Cyber Security and Resilience Bill",
+          "publication_date": "2025-11-13",
+          "source": "bankinfosecurity.com",
+          "source_record_id": "source_a6562a2606d1",
+          "source_url": "https://www.bankinfosecurity.com/uk-unveils-cyber-security-resilience-bill-a-30006"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_62a1e26b492f",
+      "entities": [
+        "Cyberattacks"
+      ],
+      "event_date": "2025-12-30",
+      "event_id": "candidate_62a1e26b492f",
+      "event_text": "Cyberattacks : 2025 the  tipping point  as incidents highlight risks 20251230T064500Z thestar.com.my",
+      "event_type": "cyberattack critical infrastructure",
+      "event_type_hint": "cyberattack critical infrastructure",
+      "headline": "Cyberattacks : 2025 the  tipping point  as incidents highlight risks",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-11-10",
+          "case_id": "case_2023_dp_world_australia_cyber_port_disruption",
+          "case_name": "DP World Australia cyber incident and port logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 781,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.8101,
+          "score": 0.1666,
+          "shared_entities": [],
+          "text_similarity": 0.023
+        },
+        {
+          "case_date": "2021-05-07",
+          "case_id": "case_cyberattack_pipeline_port_infrastructure",
+          "case_name": "Cyberattack on pipeline and port infrastructure",
+          "date_score": 0.0,
+          "days_apart": 1698,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6061,
+          "score": 0.134,
+          "shared_entities": [],
+          "text_similarity": 0.0639
+        },
+        {
+          "case_date": "2023-07-04",
+          "case_id": "case_2023_port_of_nagoya_cyberattack",
+          "case_name": "Port of Nagoya cyberattack and logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 910,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6061,
+          "score": 0.1306,
+          "shared_entities": [],
+          "text_similarity": 0.0469
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "thestar.com.my",
+      "source_url": "https://www.thestar.com.my/tech/tech-news/2025/12/30/cyberattacks-2025-the-039tipping-point039-as-incidents-highlight-risks",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Cyberattacks : 2025 the  tipping point  as incidents highlight risks",
+          "publication_date": "2025-12-30",
+          "source": "thestar.com.my",
+          "source_record_id": "source_4da5efc53f8e",
+          "source_url": "https://www.thestar.com.my/tech/tech-news/2025/12/30/cyberattacks-2025-the-039tipping-point039-as-incidents-highlight-risks"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_781d38f81d9e",
+      "entities": [
+        "Australia",
+        "Export",
+        "Gold",
+        "LNG",
+        "Pass",
+        "Resource"
+      ],
+      "event_date": "2025-10-09",
+      "event_id": "candidate_781d38f81d9e",
+      "event_text": "Gold To Pass LNG As Australia No . 2 Resource Export 20251009T224500Z finance.yahoo.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Gold To Pass LNG As Australia No . 2 Resource Export",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5497,
+          "entity_overlap": 0.0625,
+          "event_type_similarity": 0.5067,
+          "score": 0.1243,
+          "shared_entities": [
+            "australia"
+          ],
+          "text_similarity": 0.0365
+        },
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 800,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.1154,
+          "shared_entities": [],
+          "text_similarity": 0.0494
+        },
+        {
+          "case_date": "2023-12-01",
+          "case_id": "case_2023_china_graphite_battery_export_controls",
+          "case_name": "China graphite and battery material export controls",
+          "date_score": 0.0,
+          "days_apart": 678,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.4507,
+          "score": 0.0986,
+          "shared_entities": [],
+          "text_similarity": 0.0422
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "finance.yahoo.com",
+      "source_url": "https://finance.yahoo.com/news/gold-pass-lng-australia-no-150000904.html",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Gold To Pass LNG As Australia No . 2 Resource Export",
+          "publication_date": "2025-10-09",
+          "source": "finance.yahoo.com",
+          "source_record_id": "source_0a5423e85bb8",
+          "source_url": "https://finance.yahoo.com/news/gold-pass-lng-australia-no-150000904.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_d65481880ec5",
+      "entities": [
+        "Madagascar"
+      ],
+      "event_date": "2025-10-13",
+      "event_id": "candidate_d65481880ec5",
+      "event_text": "Madagascar president to make a speech after soldiers turned against the government in apparent coup 20251013T141500Z clickondetroit.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 804,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.1083,
+          "shared_entities": [],
+          "text_similarity": 0.0136
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5501,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1035,
+          "shared_entities": [],
+          "text_similarity": 0.0109
+        },
+        {
+          "case_date": "2023-07-17",
+          "case_id": "case_2023_black_sea_shipping_insurance_restrictions",
+          "case_name": "Black Sea grain deal collapse and shipping insurance restrictions",
+          "date_score": 0.0,
+          "days_apart": 819,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.433,
+          "score": 0.094,
+          "shared_entities": [],
+          "text_similarity": 0.0372
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "clickondetroit.com",
+      "source_url": "https://www.clickondetroit.com/business/2025/10/13/madagascar-president-to-make-a-speech-after-soldiers-turned-against-the-government-in-apparent-coup/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup",
+          "publication_date": "2025-10-13",
+          "source": "clickondetroit.com",
+          "source_record_id": "source_51f40501fb61",
+          "source_url": "https://www.clickondetroit.com/business/2025/10/13/madagascar-president-to-make-a-speech-after-soldiers-turned-against-the-government-in-apparent-coup/"
+        },
+        {
+          "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup",
+          "publication_date": "2025-10-13",
+          "source": "clickorlando.com",
+          "source_record_id": "source_9f4b276f6fac",
+          "source_url": "https://www.clickorlando.com/business/2025/10/13/madagascar-president-to-make-a-speech-after-soldiers-turned-against-the-government-in-apparent-coup/"
+        },
+        {
+          "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup",
+          "publication_date": "2025-10-13",
+          "source": "dailyadvance.com",
+          "source_record_id": "source_bbf62ff01f43",
+          "source_url": "https://www.dailyadvance.com/news/world/madagascar-president-to-make-a-speech-after-soldiers-turned-against-the-government-in-apparent-coup/article_7a12302d-7ae5-5629-aafd-cb52dd0ee3b1.html"
+        },
+        {
+          "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup",
+          "publication_date": "2025-10-13",
+          "source": "news4jax.com",
+          "source_record_id": "source_be250d5bdc51",
+          "source_url": "https://www.news4jax.com/business/2025/10/13/madagascar-president-to-make-a-speech-after-soldiers-turned-against-the-government-in-apparent-coup/"
+        },
+        {
+          "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup",
+          "publication_date": "2025-10-13",
+          "source": "wboc.com",
+          "source_record_id": "source_a6a0405d21b7",
+          "source_url": "https://www.wboc.com/news/international/madagascar-president-to-make-a-speech-after-soldiers-turned-against-the-government-in-apparent-coup/article_567cfe77-5ae1-576b-bec3-180d309e1327.html"
+        },
+        {
+          "headline": "Madagascar president flees amid coup",
+          "publication_date": "2025-10-13",
+          "source": "csmonitor.com",
+          "source_record_id": "source_59e9e66324a6",
+          "source_url": "https://www.csmonitor.com/World/Africa/2025/1012/madascar-president-flees-country-coup"
+        },
+        {
+          "headline": "Madagascar president has left the country , opposition lawmaker says , after apparent coup",
+          "publication_date": "2025-10-13",
+          "source": "wftv.com",
+          "source_record_id": "source_411ddadd5a08",
+          "source_url": "https://www.wftv.com/news/business/madagascar-president/X2UU7VRZ4E6OPBYVAUEZHTVVRI/"
+        },
+        {
+          "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup",
+          "publication_date": "2025-10-13",
+          "source": "isp.netscape.com",
+          "source_record_id": "source_299de2932d19",
+          "source_url": "https://isp.netscape.com/news/world/story/0001/20251013/b17e7f78a6b0d4abf82a4a19a7a77a05"
+        },
+        {
+          "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup",
+          "publication_date": "2025-10-13",
+          "source": "chicagotribune.com",
+          "source_record_id": "source_e6edcb4bdb0f",
+          "source_url": "https://www.chicagotribune.com/2025/10/13/madagascar-coup/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_ff43dbddb449",
+      "entities": [
+        "Free",
+        "Madagascar",
+        "Press",
+        "Winnipeg"
+      ],
+      "event_date": "2025-10-13",
+      "event_id": "candidate_ff43dbddb449",
+      "event_text": "Madagascar president to make a speech after soldiers turned against the government in apparent coup \u2013 Winnipeg Free Press 20251013T113000Z winnipegfreepress.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup \u2013 Winnipeg Free Press",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 804,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.1078,
+          "shared_entities": [],
+          "text_similarity": 0.0112
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5501,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1067,
+          "shared_entities": [],
+          "text_similarity": 0.027
+        },
+        {
+          "case_date": "2023-07-17",
+          "case_id": "case_2023_black_sea_shipping_insurance_restrictions",
+          "case_name": "Black Sea grain deal collapse and shipping insurance restrictions",
+          "date_score": 0.0,
+          "days_apart": 819,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.433,
+          "score": 0.0961,
+          "shared_entities": [],
+          "text_similarity": 0.0474
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "winnipegfreepress.com",
+      "source_url": "https://www.winnipegfreepress.com/business/2025/10/13/madagascar-president-to-make-a-speech-after-soldiers-turned-against-the-government-in-apparent-coup",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Madagascar president to make a speech after soldiers turned against the government in apparent coup \u2013 Winnipeg Free Press",
+          "publication_date": "2025-10-13",
+          "source": "winnipegfreepress.com",
+          "source_record_id": "source_193f08df1fa6",
+          "source_url": "https://www.winnipegfreepress.com/business/2025/10/13/madagascar-president-to-make-a-speech-after-soldiers-turned-against-the-government-in-apparent-coup"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_a09bf5f42563",
+      "entities": [
+        "Andry",
+        "Gen",
+        "Madagascar",
+        "President",
+        "Rajoelina"
+      ],
+      "event_date": "2025-10-14",
+      "event_id": "candidate_a09bf5f42563",
+      "event_text": "Andry Rajoelina flees Madagascar : President claims life in danger amid military rebellion , Gen Z protests 20251014T023000Z brisbanetimes.com.au",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Andry Rajoelina flees Madagascar : President claims life in danger amid military rebellion , Gen Z protests",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 805,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.109,
+          "shared_entities": [],
+          "text_similarity": 0.0173
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5502,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1031,
+          "shared_entities": [],
+          "text_similarity": 0.0086
+        },
+        {
+          "case_date": "2017-06-27",
+          "case_id": "case_2017_notpetya_shipping_logistics_cyberattack",
+          "case_name": "NotPetya cyberattack and global shipping logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 3031,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.4545,
+          "score": 0.093,
+          "shared_entities": [],
+          "text_similarity": 0.0103
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "brisbanetimes.com.au",
+      "source_url": "https://www.brisbanetimes.com.au/world/africa/gen-z-led-protests-and-military-rebellion-lead-president-to-flee-to-protect-my-life-20251014-p5n2em.html",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Andry Rajoelina flees Madagascar : President claims life in danger amid military rebellion , Gen Z protests",
+          "publication_date": "2025-10-14",
+          "source": "brisbanetimes.com.au",
+          "source_record_id": "source_8b02fa916ce3",
+          "source_url": "https://www.brisbanetimes.com.au/world/africa/gen-z-led-protests-and-military-rebellion-lead-president-to-flee-to-protect-my-life-20251014-p5n2em.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_12e164c47fb2",
+      "entities": [
+        "Brazil",
+        "China",
+        "India",
+        "Nepal",
+        "Sept",
+        "Spain"
+      ],
+      "event_date": "2025-10-19",
+      "event_id": "candidate_12e164c47fb2",
+      "event_text": "India exports to Nepal slump in Sept amid political turmoil ; Spain , China , Brazil see an upswing 20251019T140000Z livemint.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "India exports to Nepal slump in Sept amid political turmoil ; Spain , China , Brazil see an upswing",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 810,
+          "entity_overlap": 0.0588,
+          "event_type_similarity": 0.5278,
+          "score": 0.1282,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0395
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5507,
+          "entity_overlap": 0.0625,
+          "event_type_similarity": 0.5067,
+          "score": 0.1267,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0488
+        },
+        {
+          "case_date": "2023-12-01",
+          "case_id": "case_2023_china_graphite_battery_export_controls",
+          "case_name": "China graphite and battery material export controls",
+          "date_score": 0.0,
+          "days_apart": 688,
+          "entity_overlap": 0.0588,
+          "event_type_similarity": 0.4507,
+          "score": 0.111,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0305
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "livemint.com",
+      "source_url": "https://www.livemint.com/economy/india-exports-nepal-protests-trade-deficit-imports-social-media-11760867816484.html",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "India exports to Nepal slump in Sept amid political turmoil ; Spain , China , Brazil see an upswing",
+          "publication_date": "2025-10-19",
+          "source": "livemint.com",
+          "source_record_id": "source_1fd3ede824d9",
+          "source_url": "https://www.livemint.com/economy/india-exports-nepal-protests-trade-deficit-imports-social-media-11760867816484.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_a2c13d6c68ee",
+      "entities": [
+        "Dar",
+        "Salaam",
+        "Tanzania"
+      ],
+      "event_date": "2025-11-04",
+      "event_id": "candidate_a2c13d6c68ee",
+      "event_text": "Tanzania : ancora chiuso il porto di Dar es Salaam , danneggiato lexport africano orientale 20251104T130000Z agenzianova.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Tanzania : ancora chiuso il porto di Dar es Salaam , danneggiato lexport africano orientale",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 826,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.1135,
+          "shared_entities": [],
+          "text_similarity": 0.0399
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5523,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1076,
+          "shared_entities": [],
+          "text_similarity": 0.0314
+        },
+        {
+          "case_date": "2023-12-01",
+          "case_id": "case_2023_china_graphite_battery_export_controls",
+          "case_name": "China graphite and battery material export controls",
+          "date_score": 0.0,
+          "days_apart": 704,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.4507,
+          "score": 0.0971,
+          "shared_entities": [],
+          "text_similarity": 0.0349
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "agenzianova.com",
+      "source_url": "https://www.agenzianova.com/news/tanzania-ancora-chiuso-il-porto-di-dar-es-salaam-danneggiato-lexport-africano-orientale/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Tanzania : ancora chiuso il porto di Dar es Salaam , danneggiato lexport africano orientale",
+          "publication_date": "2025-11-04",
+          "source": "agenzianova.com",
+          "source_record_id": "source_39f913b56c80",
+          "source_url": "https://www.agenzianova.com/news/tanzania-ancora-chiuso-il-porto-di-dar-es-salaam-danneggiato-lexport-africano-orientale/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_1415085213d2",
+      "entities": [
+        "Balochistan",
+        "Bangladesh",
+        "Becoming",
+        "Fears",
+        "New",
+        "Report",
+        "Sparks",
+        "Unrest"
+      ],
+      "event_date": "2025-12-07",
+      "event_id": "candidate_1415085213d2",
+      "event_text": "Balochistan Unrest Sparks Fears of Becoming New Bangladesh Report 20251207T171500Z newkerala.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Balochistan Unrest Sparks Fears of Becoming New Bangladesh Report",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 859,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.1076,
+          "shared_entities": [],
+          "text_similarity": 0.0104
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5556,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1046,
+          "shared_entities": [],
+          "text_similarity": 0.0165
+        },
+        {
+          "case_date": "2023-07-17",
+          "case_id": "case_2023_black_sea_shipping_insurance_restrictions",
+          "case_name": "Black Sea grain deal collapse and shipping insurance restrictions",
+          "date_score": 0.0,
+          "days_apart": 874,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.433,
+          "score": 0.0951,
+          "shared_entities": [],
+          "text_similarity": 0.0424
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "newkerala.com",
+      "source_url": "https://www.newkerala.com/news/o/escalating-unrest-balochistan-raises-fears-region-becoming-new-bangladesh-225",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Balochistan Unrest Sparks Fears of Becoming New Bangladesh Report",
+          "publication_date": "2025-12-07",
+          "source": "newkerala.com",
+          "source_record_id": "source_a5c204b044c5",
+          "source_url": "https://www.newkerala.com/news/o/escalating-unrest-balochistan-raises-fears-region-becoming-new-bangladesh-225"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_759be94fd003",
+      "entities": [
+        "Balochistan",
+        "Bangladesh",
+        "Escalating",
+        "Report"
+      ],
+      "event_date": "2025-12-07",
+      "event_id": "candidate_759be94fd003",
+      "event_text": "Escalating unrest in Balochistan raises fears about region becoming  new Bangladesh : Report 20251207T184500Z prokerala.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Escalating unrest in Balochistan raises fears about region becoming  new Bangladesh : Report",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 859,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.1075,
+          "shared_entities": [],
+          "text_similarity": 0.01
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5556,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1049,
+          "shared_entities": [],
+          "text_similarity": 0.0179
+        },
+        {
+          "case_date": "2023-07-17",
+          "case_id": "case_2023_black_sea_shipping_insurance_restrictions",
+          "case_name": "Black Sea grain deal collapse and shipping insurance restrictions",
+          "date_score": 0.0,
+          "days_apart": 874,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.433,
+          "score": 0.0934,
+          "shared_entities": [],
+          "text_similarity": 0.0339
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "prokerala.com",
+      "source_url": "https://www.prokerala.com/news/articles/a1705102.html",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Escalating unrest in Balochistan raises fears about region becoming  new Bangladesh : Report",
+          "publication_date": "2025-12-07",
+          "source": "prokerala.com",
+          "source_record_id": "source_9ad7911f9425",
+          "source_url": "https://www.prokerala.com/news/articles/a1705102.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_4149ce917e23",
+      "entities": [
+        "Africa",
+        "China",
+        "How",
+        "West"
+      ],
+      "event_date": "2025-12-14",
+      "event_id": "candidate_4149ce917e23",
+      "event_text": "How will China respond to latest West Africa coup as economic footprint expands ? 20251214T113000Z scmp.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "How will China respond to latest West Africa coup as economic footprint expands ?",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 866,
+          "entity_overlap": 0.0667,
+          "event_type_similarity": 0.5278,
+          "score": 0.1275,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0265
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5563,
+          "entity_overlap": 0.0714,
+          "event_type_similarity": 0.5067,
+          "score": 0.121,
+          "shared_entities": [
+            "china"
+          ],
+          "text_similarity": 0.0092
+        },
+        {
+          "case_date": "2024-02-15",
+          "case_id": "case_2024_drc_cobalt_copper_mining_disruption",
+          "case_name": "DRC cobalt and copper mining disruption risk",
+          "date_score": 0.0,
+          "days_apart": 668,
+          "entity_overlap": 0.1053,
+          "event_type_similarity": 0.4242,
+          "score": 0.1125,
+          "shared_entities": [
+            "africa",
+            "china"
+          ],
+          "text_similarity": 0.0067
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "scmp.com",
+      "source_url": "https://www.scmp.com/news/china/diplomacy/article/3336160/how-will-china-respond-latest-west-africa-coup-economic-footprint-expands",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "How will China respond to latest West Africa coup as economic footprint expands ?",
+          "publication_date": "2025-12-14",
+          "source": "scmp.com",
+          "source_record_id": "source_d1a4057ee79e",
+          "source_url": "https://www.scmp.com/news/china/diplomacy/article/3336160/how-will-china-respond-latest-west-africa-coup-economic-footprint-expands"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_206a1db921e7",
+      "entities": [
+        "Bangladesh",
+        "News",
+        "World"
+      ],
+      "event_date": "2025-12-19",
+      "event_id": "candidate_206a1db921e7",
+      "event_text": "World News : Bangladesh government urges calm in wake of youth leader killing 20251219T230000Z gdnonline.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "World News : Bangladesh government urges calm in wake of youth leader killing",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 871,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.1076,
+          "shared_entities": [],
+          "text_similarity": 0.0102
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5568,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1046,
+          "shared_entities": [],
+          "text_similarity": 0.0161
+        },
+        {
+          "case_date": "2017-06-27",
+          "case_id": "case_2017_notpetya_shipping_logistics_cyberattack",
+          "case_name": "NotPetya cyberattack and global shipping logistics disruption",
+          "date_score": 0.0,
+          "days_apart": 3097,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.4545,
+          "score": 0.094,
+          "shared_entities": [],
+          "text_similarity": 0.0155
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "gdnonline.com",
+      "source_url": "https://www.gdnonline.com:443/Details/1371454/Bangladesh-government-urges-calm-in-wake-of-youth-leader%E2%80%99s-killing",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "World News : Bangladesh government urges calm in wake of youth leader killing",
+          "publication_date": "2025-12-19",
+          "source": "gdnonline.com",
+          "source_record_id": "source_62c2fa273fd3",
+          "source_url": "https://www.gdnonline.com:443/Details/1371454/Bangladesh-government-urges-calm-in-wake-of-youth-leader%E2%80%99s-killing"
+        },
+        {
+          "headline": "World News : Bangladesh government urges calm in wake of youth leader killing",
+          "publication_date": "2025-12-20",
+          "source": "gdnonline.com",
+          "source_record_id": "source_1edc3c8cbb9e",
+          "source_url": "https://www.gdnonline.com:443/Details/1371454"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_d667427e12c3",
+      "entities": [
+        "Bangladesh",
+        "Indian"
+      ],
+      "event_date": "2025-12-19",
+      "event_id": "candidate_d667427e12c3",
+      "event_text": "Bangladesh erupts after student leader death ; mob targets Indian mission 20251219T220000Z tribuneindia.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Bangladesh erupts after student leader death ; mob targets Indian mission",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 871,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.108,
+          "shared_entities": [],
+          "text_similarity": 0.0123
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5568,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1037,
+          "shared_entities": [],
+          "text_similarity": 0.0116
+        },
+        {
+          "case_date": "2023-07-17",
+          "case_id": "case_2023_black_sea_shipping_insurance_restrictions",
+          "case_name": "Black Sea grain deal collapse and shipping insurance restrictions",
+          "date_score": 0.0,
+          "days_apart": 886,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.433,
+          "score": 0.0919,
+          "shared_entities": [],
+          "text_similarity": 0.0263
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "tribuneindia.com",
+      "source_url": "https://www.tribuneindia.com/news/top-headlines/bdesh-erupts-after-student-leaders-death-mob-targets-indian-mission/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Bangladesh erupts after student leader death ; mob targets Indian mission",
+          "publication_date": "2025-12-19",
+          "source": "tribuneindia.com",
+          "source_record_id": "source_d5ee9e39a5c8",
+          "source_url": "https://www.tribuneindia.com/news/top-headlines/bdesh-erupts-after-student-leaders-death-mob-targets-indian-mission/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_059eae7c89f0",
+      "entities": [
+        "Asia",
+        "Bangladesh",
+        "Pacific"
+      ],
+      "event_date": "2025-12-20",
+      "event_id": "candidate_059eae7c89f0",
+      "event_text": "Bangladesh government urges calm in wake of youth leader killing , as election looms - Asia & Pacific 20251220T054500Z thejakartapost.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Bangladesh government urges calm in wake of youth leader killing , as election looms - Asia & Pacific",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 872,
+          "entity_overlap": 0.0714,
+          "event_type_similarity": 0.5278,
+          "score": 0.1262,
+          "shared_entities": [
+            "asia"
+          ],
+          "text_similarity": 0.0137
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5569,
+          "entity_overlap": 0.0769,
+          "event_type_similarity": 0.5067,
+          "score": 0.1258,
+          "shared_entities": [
+            "asia"
+          ],
+          "text_similarity": 0.0263
+        },
+        {
+          "case_date": "2023-12-01",
+          "case_id": "case_2023_china_graphite_battery_export_controls",
+          "case_name": "China graphite and battery material export controls",
+          "date_score": 0.0,
+          "days_apart": 750,
+          "entity_overlap": 0.0714,
+          "event_type_similarity": 0.4507,
+          "score": 0.112,
+          "shared_entities": [
+            "asia"
+          ],
+          "text_similarity": 0.0202
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "thejakartapost.com",
+      "source_url": "https://www.thejakartapost.com/world/2025/12/20/bangladesh-government-urges-calm-in-wake-of-youth-leaders-killing-as-election-looms.html",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Bangladesh government urges calm in wake of youth leader killing , as election looms - Asia & Pacific",
+          "publication_date": "2025-12-20",
+          "source": "thejakartapost.com",
+          "source_record_id": "source_8473d1f9ea0f",
+          "source_url": "https://www.thejakartapost.com/world/2025/12/20/bangladesh-government-urges-calm-in-wake-of-youth-leaders-killing-as-election-looms.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_4e89dc71effc",
+      "entities": [
+        "Adikuasa",
+        "Daftar",
+        "Dunia",
+        "Masuk",
+        "Negara",
+        "Penguasa",
+        "Semua",
+        "Tambang"
+      ],
+      "event_date": "2025-12-21",
+      "event_id": "candidate_4e89dc71effc",
+      "event_text": "8 Negara Penguasa Tambang di Dunia pada 2025 , Semua Negara Adikuasa Masuk Daftar 20251221T130000Z international.sindonews.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "8 Negara Penguasa Tambang di Dunia pada 2025 , Semua Negara Adikuasa Masuk Daftar",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 873,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.11,
+          "shared_entities": [],
+          "text_similarity": 0.022
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5570,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.104,
+          "shared_entities": [],
+          "text_similarity": 0.0135
+        },
+        {
+          "case_date": "2023-12-01",
+          "case_id": "case_2023_china_graphite_battery_export_controls",
+          "case_name": "China graphite and battery material export controls",
+          "date_score": 0.0,
+          "days_apart": 751,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.4507,
+          "score": 0.0922,
+          "shared_entities": [],
+          "text_similarity": 0.0103
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "international.sindonews.com",
+      "source_url": "https://international.sindonews.com/read/1658549/46/8-negara-penguasa-tambang-di-dunia-pada-2025-semua-negara-adikuasa-masuk-daftar-1766311977",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "8 Negara Penguasa Tambang di Dunia pada 2025 , Semua Negara Adikuasa Masuk Daftar",
+          "publication_date": "2025-12-21",
+          "source": "international.sindonews.com",
+          "source_record_id": "source_8aa4162a8473",
+          "source_url": "https://international.sindonews.com/read/1658549/46/8-negara-penguasa-tambang-di-dunia-pada-2025-semua-negara-adikuasa-masuk-daftar-1766311977"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_f6b53c316537",
+      "entities": [
+        "Bangladesh",
+        "Dhaka",
+        "India",
+        "KC",
+        "Singh",
+        "Unrest",
+        "VHP"
+      ],
+      "event_date": "2025-12-23",
+      "event_id": "candidate_f6b53c316537",
+      "event_text": "Bangladesh Unrest : VHP protests played into Dhaka hands , India should have shown restraint , says KC Singh 20251223T141500Z cnbctv18.com",
+      "event_type": "political instability strategic exports",
+      "event_type_hint": "political instability strategic exports",
+      "headline": "Bangladesh Unrest : VHP protests played into Dhaka hands , India should have shown restraint , says KC Singh",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2023-08-01",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "case_name": "China gallium, germanium, and graphite export controls",
+          "date_score": 0.0,
+          "days_apart": 875,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5278,
+          "score": 0.1083,
+          "shared_entities": [],
+          "text_similarity": 0.0136
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5572,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5067,
+          "score": 0.1048,
+          "shared_entities": [],
+          "text_similarity": 0.0174
+        },
+        {
+          "case_date": "2023-12-01",
+          "case_id": "case_2023_china_graphite_battery_export_controls",
+          "case_name": "China graphite and battery material export controls",
+          "date_score": 0.0,
+          "days_apart": 753,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.4507,
+          "score": 0.0937,
+          "shared_entities": [],
+          "text_similarity": 0.018
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "cnbctv18.com",
+      "source_url": "https://www.cnbctv18.com/india/india-bangladesh-tensions-vhp-protests-kc-singh-19800831.htm",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Bangladesh Unrest : VHP protests played into Dhaka hands , India should have shown restraint , says KC Singh",
+          "publication_date": "2025-12-23",
+          "source": "cnbctv18.com",
+          "source_record_id": "source_d24da9b72495",
+          "source_url": "https://www.cnbctv18.com/india/india-bangladesh-tensions-vhp-protests-kc-singh-19800831.htm"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_03b2368e1784",
+      "entities": [
+        "Goldman",
+        "Trump"
+      ],
+      "event_date": "2025-10-14",
+      "event_id": "candidate_03b2368e1784",
+      "event_text": "Goldman sees U . S . consumers paying more than half of Trump tariffs 20251014T014500Z spokesman.com",
+      "event_type": "trade restrictions tariffs",
+      "event_type_hint": "trade restrictions tariffs",
+      "headline": "Goldman sees U . S . consumers paying more than half of Trump tariffs",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2018-07-06",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "case_name": "US-China trade tariff escalation",
+          "date_score": 0.0,
+          "days_apart": 2657,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.68,
+          "score": 0.1389,
+          "shared_entities": [],
+          "text_similarity": 0.0147
+        },
+        {
+          "case_date": "2019-05-16",
+          "case_id": "case_2019_huawei_entity_list",
+          "case_name": "Huawei added to US Entity List",
+          "date_score": 0.0,
+          "days_apart": 2343,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5217,
+          "score": 0.1053,
+          "shared_entities": [],
+          "text_similarity": 0.0048
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5502,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5161,
+          "score": 0.1037,
+          "shared_entities": [],
+          "text_similarity": 0.0024
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(tariff OR tariffs OR \"trade restrictions\" OR customs) (announced OR imposed OR raised OR banned)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "spokesman.com",
+      "source_url": "https://www.spokesman.com/stories/2025/oct/13/goldman-sees-us-consumers-paying-more-than-half-of/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Goldman sees U . S . consumers paying more than half of Trump tariffs",
+          "publication_date": "2025-10-14",
+          "source": "spokesman.com",
+          "source_record_id": "source_c523772017e8",
+          "source_url": "https://www.spokesman.com/stories/2025/oct/13/goldman-sees-us-consumers-paying-more-than-half-of/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_306ccb869b74",
+      "entities": [
+        "Americans",
+        "Trump"
+      ],
+      "event_date": "2025-11-09",
+      "event_id": "candidate_306ccb869b74",
+      "event_text": "Trump says Americans will get payments of  at least $2 , 000  from tariff revenue 20251109T233000Z kshb.com",
+      "event_type": "trade restrictions tariffs",
+      "event_type_hint": "trade restrictions tariffs",
+      "headline": "Trump says Americans will get payments of  at least $2 , 000  from tariff revenue",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2018-07-06",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "case_name": "US-China trade tariff escalation",
+          "date_score": 0.0,
+          "days_apart": 2683,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.68,
+          "score": 0.1393,
+          "shared_entities": [],
+          "text_similarity": 0.0167
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5528,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5161,
+          "score": 0.1083,
+          "shared_entities": [],
+          "text_similarity": 0.0255
+        },
+        {
+          "case_date": "2019-05-16",
+          "case_id": "case_2019_huawei_entity_list",
+          "case_name": "Huawei added to US Entity List",
+          "date_score": 0.0,
+          "days_apart": 2369,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5217,
+          "score": 0.1072,
+          "shared_entities": [],
+          "text_similarity": 0.0142
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(tariff OR tariffs OR \"trade restrictions\" OR customs) (announced OR imposed OR raised OR banned)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "kshb.com",
+      "source_url": "https://www.kshb.com/politics/the-president/trump-says-americans-will-get-payments-of-at-least-2-000-from-tariff-revenue",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Trump says Americans will get payments of  at least $2 , 000  from tariff revenue",
+          "publication_date": "2025-11-09",
+          "source": "kshb.com",
+          "source_record_id": "source_efc5ef153b48",
+          "source_url": "https://www.kshb.com/politics/the-president/trump-says-americans-will-get-payments-of-at-least-2-000-from-tariff-revenue"
+        },
+        {
+          "headline": "Trump says Americans will get payments of  at least $2 , 000  from tariff revenue",
+          "publication_date": "2025-11-09",
+          "source": "kxxv.com",
+          "source_record_id": "source_3e8dac2d2432",
+          "source_url": "https://www.kxxv.com/politics/the-president/trump-says-americans-will-get-payments-of-at-least-2-000-from-tariff-revenue"
+        },
+        {
+          "headline": "Trump says Americans will get payments of  at least $2 , 000  from tariff revenue",
+          "publication_date": "2025-11-09",
+          "source": "wcpo.com",
+          "source_record_id": "source_227ff461c7a0",
+          "source_url": "https://www.wcpo.com/politics/the-president/trump-says-americans-will-get-payments-of-at-least-2-000-from-tariff-revenue"
+        },
+        {
+          "headline": "Trump says Americans will get payments of  at least $2 , 000  from tariff revenue",
+          "publication_date": "2025-11-09",
+          "source": "wkbw.com",
+          "source_record_id": "source_4cfb9ea1d4b2",
+          "source_url": "https://www.wkbw.com/politics/the-president/trump-says-americans-will-get-payments-of-at-least-2-000-from-tariff-revenue"
+        },
+        {
+          "headline": "Trump says Americans will get payments of  at least $2 , 000  from tariff revenue",
+          "publication_date": "2025-11-10",
+          "source": "abc15.com",
+          "source_record_id": "source_0e1ef0bedff6",
+          "source_url": "https://www.abc15.com/politics/the-president/trump-says-americans-will-get-payments-of-at-least-2-000-from-tariff-revenue"
+        },
+        {
+          "headline": "Trump says Americans will get payments of  at least $2 , 000  from tariff revenue",
+          "publication_date": "2025-11-10",
+          "source": "fox17online.com",
+          "source_record_id": "source_91b383a993de",
+          "source_url": "https://www.fox17online.com/politics/the-president/trump-says-americans-will-get-payments-of-at-least-2-000-from-tariff-revenue"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_918e3683ad48",
+      "entities": [
+        "Court",
+        "Supreme",
+        "Trump"
+      ],
+      "event_date": "2025-11-11",
+      "event_id": "candidate_918e3683ad48",
+      "event_text": "Trump tariffs : Supreme Court could force repayment 20251111T154500Z cnbc.com",
+      "event_type": "trade restrictions tariffs",
+      "event_type_hint": "trade restrictions tariffs",
+      "headline": "Trump tariffs : Supreme Court could force repayment",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2018-07-06",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "case_name": "US-China trade tariff escalation",
+          "date_score": 0.0,
+          "days_apart": 2685,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.68,
+          "score": 0.1391,
+          "shared_entities": [],
+          "text_similarity": 0.0153
+        },
+        {
+          "case_date": "2019-05-16",
+          "case_id": "case_2019_huawei_entity_list",
+          "case_name": "Huawei added to US Entity List",
+          "date_score": 0.0,
+          "days_apart": 2371,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5217,
+          "score": 0.1054,
+          "shared_entities": [],
+          "text_similarity": 0.005
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5530,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5161,
+          "score": 0.1037,
+          "shared_entities": [],
+          "text_similarity": 0.0025
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(tariff OR tariffs OR \"trade restrictions\" OR customs) (announced OR imposed OR raised OR banned)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "cnbc.com",
+      "source_url": "https://www.cnbc.com/2025/11/11/trump-tariffs-trade-supreme-court-repayment.html",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Trump tariffs : Supreme Court could force repayment",
+          "publication_date": "2025-11-11",
+          "source": "cnbc.com",
+          "source_record_id": "source_c444805bfdb1",
+          "source_url": "https://www.cnbc.com/2025/11/11/trump-tariffs-trade-supreme-court-repayment.html"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_2b81b6284253",
+      "entities": [
+        "Costco",
+        "Trump"
+      ],
+      "event_date": "2025-12-02",
+      "event_id": "candidate_2b81b6284253",
+      "event_text": "Costco asks federal court to strike down Trump - era tariff orders and refund millions 20251202T044500Z kiro7.com",
+      "event_type": "trade restrictions tariffs",
+      "event_type_hint": "trade restrictions tariffs",
+      "headline": "Costco asks federal court to strike down Trump - era tariff orders and refund millions",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2018-07-06",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "case_name": "US-China trade tariff escalation",
+          "date_score": 0.0,
+          "days_apart": 2706,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.68,
+          "score": 0.1388,
+          "shared_entities": [],
+          "text_similarity": 0.0141
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5551,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5161,
+          "score": 0.1069,
+          "shared_entities": [],
+          "text_similarity": 0.0182
+        },
+        {
+          "case_date": "2019-05-16",
+          "case_id": "case_2019_huawei_entity_list",
+          "case_name": "Huawei added to US Entity List",
+          "date_score": 0.0,
+          "days_apart": 2392,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5217,
+          "score": 0.1057,
+          "shared_entities": [],
+          "text_similarity": 0.0069
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(tariff OR tariffs OR \"trade restrictions\" OR customs) (announced OR imposed OR raised OR banned)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "kiro7.com",
+      "source_url": "https://www.kiro7.com/news/local/costco-asks-federal-court-strike-down-trump-era-tariff-orders-refund-millions/3FP45BROFFARRO6HQNARWI32ZE/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Costco asks federal court to strike down Trump - era tariff orders and refund millions",
+          "publication_date": "2025-12-02",
+          "source": "kiro7.com",
+          "source_record_id": "source_2be306c85bc6",
+          "source_url": "https://www.kiro7.com/news/local/costco-asks-federal-court-strike-down-trump-era-tariff-orders-refund-millions/3FP45BROFFARRO6HQNARWI32ZE/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_66fc89d1e202",
+      "entities": [
+        "Botswana",
+        "SA"
+      ],
+      "event_date": "2025-12-10",
+      "event_id": "candidate_66fc89d1e202",
+      "event_text": "Botswana bans vegetable imports from SA again 20251210T171500Z citizen.co.za",
+      "event_type": "trade restrictions tariffs",
+      "event_type_hint": "trade restrictions tariffs",
+      "headline": "Botswana bans vegetable imports from SA again",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2018-07-06",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "case_name": "US-China trade tariff escalation",
+          "date_score": 0.0,
+          "days_apart": 2714,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.68,
+          "score": 0.1396,
+          "shared_entities": [],
+          "text_similarity": 0.018
+        },
+        {
+          "case_date": "2019-05-16",
+          "case_id": "case_2019_huawei_entity_list",
+          "case_name": "Huawei added to US Entity List",
+          "date_score": 0.0,
+          "days_apart": 2400,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5217,
+          "score": 0.1094,
+          "shared_entities": [],
+          "text_similarity": 0.0253
+        },
+        {
+          "case_date": "2010-09-21",
+          "case_id": "case_rare_earth_export_restriction_risk",
+          "case_name": "Rare earth export restriction risk",
+          "date_score": 0.0,
+          "days_apart": 5559,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.5161,
+          "score": 0.1057,
+          "shared_entities": [],
+          "text_similarity": 0.0124
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(tariff OR tariffs OR \"trade restrictions\" OR customs) (announced OR imposed OR raised OR banned)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "citizen.co.za",
+      "source_url": "https://www.citizen.co.za/business/botswana-bans-vegetable-imports-from-sa-again/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Botswana bans vegetable imports from SA again",
+          "publication_date": "2025-12-10",
+          "source": "citizen.co.za",
+          "source_record_id": "source_20e58f955f63",
+          "source_url": "https://www.citizen.co.za/business/botswana-bans-vegetable-imports-from-sa-again/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_6fe1f9e3e955",
+      "entities": [
+        "Cheap",
+        "Curb",
+        "Imports",
+        "Imposes",
+        "India",
+        "Select",
+        "Steel",
+        "Tariff",
+        "Three",
+        "Year"
+      ],
+      "event_date": "2025-12-31",
+      "event_id": "candidate_6fe1f9e3e955",
+      "event_text": "India Imposes Three - Year Tariff On Select Steel Imports To Curb Cheap Imports 20251231T041500Z news18.com",
+      "event_type": "trade restrictions tariffs",
+      "event_type_hint": "trade restrictions tariffs",
+      "headline": "India Imposes Three - Year Tariff On Select Steel Imports To Curb Cheap Imports",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2018-07-06",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "case_name": "US-China trade tariff escalation",
+          "date_score": 0.0,
+          "days_apart": 2735,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.68,
+          "score": 0.1389,
+          "shared_entities": [],
+          "text_similarity": 0.0143
+        },
+        {
+          "case_date": "2022-05-13",
+          "case_id": "case_2022_india_wheat_export_ban",
+          "case_name": "India wheat export ban and grain trade restriction",
+          "date_score": 0.0,
+          "days_apart": 1328,
+          "entity_overlap": 0.0625,
+          "event_type_similarity": 0.4928,
+          "score": 0.1244,
+          "shared_entities": [
+            "india"
+          ],
+          "text_similarity": 0.051
+        },
+        {
+          "case_date": "2022-03-10",
+          "case_id": "case_2022_russia_fertilizer_export_restrictions",
+          "case_name": "Russia fertilizer export restrictions and crop input risk",
+          "date_score": 0.0,
+          "days_apart": 1392,
+          "entity_overlap": 0.0417,
+          "event_type_similarity": 0.4762,
+          "score": 0.1079,
+          "shared_entities": [
+            "india"
+          ],
+          "text_similarity": 0.0112
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global"
+      ],
+      "retrieval_query": "(tariff OR tariffs OR \"trade restrictions\" OR customs) (announced OR imposed OR raised OR banned)",
+      "retrieved_at": "2026-08-05T02:57:46.859294+00:00",
+      "source": "news18.com",
+      "source_url": "https://www.news18.com/india/india-imposes-tariff-on-some-steel-imports-for-three-years-to-curb-cheap-low-priced-shipment-mainly-from-china-9801300.html",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "India Imposes Three - Year Tariff On Select Steel Imports To Curb Cheap Imports",
+          "publication_date": "2025-12-31",
+          "source": "news18.com",
+          "source_record_id": "source_955906cf5bbe",
+          "source_url": "https://www.news18.com/india/india-imposes-tariff-on-some-steel-imports-for-three-years-to-curb-cheap-low-priced-shipment-mainly-from-china-9801300.html"
+        }
+      ]
+    }
+  ]
+}

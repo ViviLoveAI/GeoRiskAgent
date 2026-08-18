@@ -1,0 +1,48 @@
+{
+  "CAR_run": false,
+  "benchmark_changed": false,
+  "created_at_utc": "2026-08-12T04:59:39.051282+00:00",
+  "execution_fix": "Load the frozen sentence-transformers model from the existing local HuggingFace cache with local_files_only=True, avoiding the closed HuggingFace HTTP client path.",
+  "files_changed": [
+    "src/vector_store.py",
+    "tests/test_v4_execution_lifecycle.py"
+  ],
+  "ground_truth_changed": false,
+  "heldout_prediction_rerun_performed": false,
+  "manifest_id": "v4_post_freeze_execution_fix_manifest",
+  "market_data_accessed": false,
+  "non_heldout_reproduction": {
+    "single_smoke_after_fix": "success",
+    "two_sequential_v4_calls_after_fix": "success"
+  },
+  "original_attempt": "temporal_prediction_attempt_001",
+  "original_failure": "client_closed",
+  "post_freeze_code_change_type": "execution_only_bugfix",
+  "prices_accessed": false,
+  "representation_changed": false,
+  "retry_approved": true,
+  "retry_plan": {
+    "artifact_policy": "write independent attempt_002 directory; do not overwrite attempt_001 artifacts",
+    "attempt_id": "temporal_prediction_attempt_002",
+    "parent_attempt": "temporal_prediction_attempt_001",
+    "required_invariants": [
+      "same 16 event IDs",
+      "same event inputs",
+      "same T0",
+      "same ground truth",
+      "same V4 semantic config",
+      "top_k=10",
+      "support_threshold=2",
+      "same historical KB",
+      "same sidecar",
+      "same Asset Ranker"
+    ],
+    "retry_reason": "execution_client_lifecycle_fix"
+  },
+  "root_cause": "SentenceTransformer model loading attempted HuggingFace Hub metadata access through an internal httpx.Client that was already closed; this occurred before retrieval query execution and reproduced on non-held-out V4 smoke input.",
+  "root_cause_area": "shared V4 retrieval embedding model loading lifecycle",
+  "semantic_config_changed": false,
+  "tests_added": [
+    "tests/test_v4_execution_lifecycle.py"
+  ]
+}

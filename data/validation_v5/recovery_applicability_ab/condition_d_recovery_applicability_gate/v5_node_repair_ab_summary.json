@@ -1,0 +1,215 @@
+{
+  "CAR_run": false,
+  "artifact_paths": {
+    "accepted_review": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_specificity_recovery_accepted_review.csv",
+    "asset_snapshot": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_node_repair_asset_snapshot.csv",
+    "event_results": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_node_repair_event_results.csv",
+    "funnel": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_node_repair_funnel.csv",
+    "mechanism_evaluation": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_node_repair_mechanism_evaluation.csv",
+    "node_snapshot": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_node_repair_node_snapshot.csv",
+    "raw_predictions": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_node_repair_raw_predictions.json",
+    "summary": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_node_repair_ab_summary.json",
+    "trajectory_review": "data/validation_v5/recovery_applicability_ab/condition_d_recovery_applicability_gate/v5_node_repair_trajectory_review.csv"
+  },
+  "benchmark_version": "v4_temporal_heldout_v1",
+  "conditions": {
+    "v4_baseline": "frozen_attempt_002",
+    "v5_node_repair": "v5_agentic_discovery_mvp"
+  },
+  "cost_engineering": {
+    "additional_llm_calls": 0,
+    "mean_v5_latency_ms": 11,
+    "retrieval_rounds_per_event": 1,
+    "retrieval_rounds_total": 16,
+    "token_delta_available": false
+  },
+  "created_at_utc": "2026-08-17T08:37:24.377756+00:00",
+  "failure_migration": {
+    "first_failure_stage": [
+      {
+        "delta": -2,
+        "label": "A_node_not_proposed",
+        "v4_count": 18,
+        "v5_count": 16
+      },
+      {
+        "delta": 2,
+        "label": "PASS_final_retained",
+        "v4_count": 3,
+        "v5_count": 5
+      }
+    ],
+    "node_generation_gap_delta": -2,
+    "primary_root_cause": [
+      {
+        "delta": -2,
+        "label": "node_generation_gap",
+        "v4_count": 18,
+        "v5_count": 16
+      },
+      {
+        "delta": 2,
+        "label": "pass_final_retained",
+        "v4_count": 3,
+        "v5_count": 5
+      }
+    ]
+  },
+  "funnel_comparison": [
+    {
+      "delta": 0,
+      "stage": "compatible_ground_truth_nodes",
+      "v4_count": 21,
+      "v5_count": 21
+    },
+    {
+      "delta": 2,
+      "stage": "current_candidate_node_proposed",
+      "v4_count": 3,
+      "v5_count": 5
+    },
+    {
+      "delta": 0,
+      "stage": "raw_same_node_evidence_ge1",
+      "v4_count": 5,
+      "v5_count": 5
+    },
+    {
+      "delta": 0,
+      "stage": "raw_same_node_evidence_ge2",
+      "v4_count": 5,
+      "v5_count": 5
+    },
+    {
+      "delta": 2,
+      "stage": "current_context_available",
+      "v4_count": 2,
+      "v5_count": 4
+    },
+    {
+      "delta": 2,
+      "stage": "mechanism_compatible_support_ge1",
+      "v4_count": 2,
+      "v5_count": 4
+    },
+    {
+      "delta": 2,
+      "stage": "mechanism_compatible_support_ge2",
+      "v4_count": 2,
+      "v5_count": 4
+    },
+    {
+      "delta": 2,
+      "stage": "final_retained",
+      "v4_count": 3,
+      "v5_count": 5
+    }
+  ],
+  "mechanism_quality_comparison": {
+    "compatible_retained": {
+      "delta": 2,
+      "v4": 3,
+      "v5": 5
+    },
+    "compatible_retention_rate": {
+      "delta": 0.095238,
+      "v4": 0.142857,
+      "v5": 0.238095
+    },
+    "correct_insufficient": {
+      "delta": 0,
+      "v4": 3,
+      "v5": 3
+    },
+    "false_acceptance": {
+      "delta": 0,
+      "v4": 0,
+      "v5": 0
+    },
+    "false_rejection": {
+      "delta": -2,
+      "v4": 18,
+      "v5": 16
+    },
+    "insufficient_handling_rate": {
+      "delta": 0.0,
+      "v4": 0.75,
+      "v5": 0.75
+    },
+    "runtime_failure": {
+      "delta": 0,
+      "v4": 0,
+      "v5": 0
+    },
+    "weak_leakage": {
+      "delta": 0,
+      "v4": 0,
+      "v5": 0
+    },
+    "weak_leakage_rate": {
+      "delta": 0.0,
+      "v4": 0.0,
+      "v5": 0.0
+    },
+    "weak_rejected": {
+      "delta": 0,
+      "v4": 7,
+      "v5": 7
+    },
+    "weak_rejection_rate": {
+      "delta": 0.0,
+      "v4": 1.0,
+      "v5": 1.0
+    }
+  },
+  "prices_accessed": false,
+  "repair_summary": {
+    "events_repaired": 7,
+    "gt_compatible_candidates_recovered": 2,
+    "gt_compatible_projection_attempted": 2,
+    "gt_compatible_projection_succeeded": 2,
+    "max_candidates_added": 5,
+    "mean_candidates_added_per_repair": 5,
+    "neutral_repair_events": 5,
+    "other_repair_projection_succeeded": 1,
+    "projection_attempted": 35,
+    "projection_succeeded": 3,
+    "rejected_repair_candidates": 33,
+    "repair_invocation_rate": 0.4375,
+    "repair_success_rate": 0.285714,
+    "repaired_candidates_finally_retained": 2,
+    "repaired_candidates_passing_mechanism_compatibility": 3,
+    "repaired_candidates_passing_support_ge2": 3,
+    "total_candidates_added": 35,
+    "useful_repair_events": 2
+  },
+  "returns_accessed": false,
+  "runtime_failure_count": 0,
+  "selected_event_count": 16,
+  "specificity_recovery_summary": {
+    "accepted_gt_repaired_candidates": 2,
+    "accepted_non_gt_repaired_candidates": 0,
+    "accepted_repaired_candidates": 2,
+    "downstream_qualification_entered": 2,
+    "eligible_gt_repaired_candidates": 2,
+    "eligible_non_gt_repaired_candidates": 0,
+    "event_guardrail_bypassed_for_candidate": 2,
+    "specificity_recovery_eligible": 2,
+    "specificity_recovery_evaluated": 35
+  },
+  "success_count": 16,
+  "v4_config": {
+    "mechanism_compatible_support": true,
+    "support_threshold": 2,
+    "top_k": 10
+  },
+  "v5_config": {
+    "architecture_version": "v5_agentic_discovery_mvp",
+    "enable_current_event_applicability_gate": true,
+    "enable_node_repair": true,
+    "enable_specificity_recovery": true,
+    "max_new_candidate_nodes": 5,
+    "max_repair_attempts": 1,
+    "repair_policy_version": "node_repair_v1"
+  }
+}

@@ -1,0 +1,2 @@
+event_id,event_date,event_description,notes
+event_001,YYYY-MM-DD,"Held-out geopolitical event description.","Not part of historical_cases.json"

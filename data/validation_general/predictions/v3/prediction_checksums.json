@@ -1,0 +1,11 @@
+{
+  "artifacts": {
+    "data/validation_general/predictions/v3/asset_snapshot.csv": "c9a06631960359d90d2893a6bdeabe3bc533e6ed9b3f28f4e9d59b3b885f8156",
+    "data/validation_general/predictions/v3/node_snapshot.csv": "e91cb17d734a8b3d40b5198d96f2d4e2e830d300f262937ebafa30d410049f0f",
+    "data/validation_general/predictions/v3/prediction_manifest.json": "c4ab1acdadd46d51880e6c5e53702cac8ca8f60a4383ad2e96454d97e00951a8",
+    "data/validation_general/predictions/v3/raw_predictions.json": "c8377774b862825302c854d06d89d5bc87f503e70fa5d9717e2a3b482f0a7423"
+  },
+  "benchmark_version": "georisk_multiyear_general_v1",
+  "created_at_utc": "2026-08-12T06:00:36.428220+00:00",
+  "system": "v3"
+}

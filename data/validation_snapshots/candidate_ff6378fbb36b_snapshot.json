@@ -1,0 +1,53 @@
+{
+  "baseline_exposures": [
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_broad_market_baseline",
+      "node": "broad_market_growth",
+      "source": "baseline",
+      "symbol": "QQQ"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "financials",
+      "source": "baseline",
+      "symbol": "XLF"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "healthcare",
+      "source": "baseline",
+      "symbol": "XLV"
+    }
+  ],
+  "event_date": "2025-11-09",
+  "event_description": "China halts ban on export to US of dual - use metals , further easing tensions China halts ban on export to US of dual - use metals , further easing tensions 20251109T154500Z straitstimes.com",
+  "event_id": "candidate_ff6378fbb36b",
+  "event_type": "critical minerals resource restrictions",
+  "generated_at": "2026-08-05T00:49:30.485708+00:00",
+  "note": "Frozen before observing post-event returns",
+  "predicted_exposures": [
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_ff6378fbb36b",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "broad_etf",
+      "source": "georisk",
+      "symbol": "SPY"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_ff6378fbb36b",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "broad_etf",
+      "source": "georisk",
+      "symbol": "ACWI"
+    }
+  ]
+}

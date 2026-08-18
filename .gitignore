@@ -1,8 +1,56 @@
 .env
-.DS_Store
+.env.*
+!.env.example
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 .pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
 .venv/
 venv/
+env/
+
+# Local/generated runtime state
 chroma_db/
+chroma_db_backup*/
+logs/
+*.log
+tmp/
+temp/
+
+# Raw collected/source dumps excluded from public release
+data/validation_candidates/raw/
+data/validation_v3/candidates/raw/
+data/validation_v3/candidates_2019_2024/raw/
+data/validation_v4/candidates/raw/*
+!data/validation_v4/candidates/raw/.gitkeep
+
+# Downloaded market data; regenerate locally when needed
+data/prices/
+data/eval/*prices*.csv
+data/market_validation/**/prices/
+
+# Noncanonical V5 scratch/intermediate experiments; keep final recovery_applicability_ab artifacts public
+data/validation_v5/guardrail_routing_audit/
+data/validation_v5/node_repair_ab/
+data/validation_v5/node_repair_ab_v2/
+data/validation_v5/node_repair_projection_ab/
+data/validation_v5/specificity_recovery_ab/
+
+# Local model/cache directories
+.cache/
+.huggingface/
+models/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

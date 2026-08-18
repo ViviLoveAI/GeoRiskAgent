@@ -1,0 +1,2 @@
+event_id,symbol,node,asset_type,confidence,evidence_label
+event_001,FRO,oil_shipping,equity,0.82,historical_supported

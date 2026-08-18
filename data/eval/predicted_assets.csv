@@ -1,0 +1,4 @@
+event_id,symbol,node,asset_type,confidence,evidence_label
+red_sea_heldout_2023,FRO,oil_shipping,equity,0.82,historical_supported
+red_sea_heldout_2023,BOAT,maritime_chokepoint,etf,0.64,sector_proxy
+red_sea_heldout_2023,MISSING,logistics,equity,0.35,inference_only

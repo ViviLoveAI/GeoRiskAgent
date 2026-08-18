@@ -1,237 +1,293 @@
 # GeoRisk Transmission Analyzer
 
-A corrective agentic RAG system that analyzes geopolitical news, retrieves historically similar events, builds transmission-chain reasoning, maps affected supply-chain nodes to secondary assets, and generates an evidence-graded risk watchlist.
+GeoRisk maps direct market exposures to geopolitical events and surfaces historically grounded second-order transmission risks.
 
-This project is **not** a stock price prediction system and does **not** provide investment advice. It is designed for geopolitical risk exposure discovery and decision-support analysis. Confidence scores represent evidence strength, not probability of price movement.
+It is not a stock-price prediction system, trading strategy, or investment-advice tool.
 
-## Project Overview
+## 1. Why GeoRisk
 
-GeoRisk Transmission Analyzer takes a geopolitical news headline or article as input and produces a structured risk transmission report. The system identifies the event type, retrieves relevant historical analogs, builds a qualitative transmission chain, maps affected supply-chain nodes to candidate secondary assets, and grades the evidence behind each mapped candidate.
+Geopolitical shocks often create indirect second-order effects: rerouted shipping, energy-trade constraints, export-control spillovers, insurance pressure, critical-mineral bottlenecks, agriculture inputs, or technology-access limits. These paths are hard to trace manually because the relevant evidence may sit in prior events rather than the current headline.
 
-The key output is a secondary asset watchlist with evidence levels and confidence scores. Candidate assets are treated as possible exposure candidates, not trading signals.
+GeoRisk uses structured historical cases and transmission mechanisms to show direct exposure references as baseline context and to rank only evidence-qualified downstream exposures. A valid report may abstain from second-order rankings when no downstream node satisfies V4 support requirements.
 
-## Problem Statement
+## Release Provenance
 
-Major assets often react quickly to geopolitical events, but secondary assets may be affected through less obvious channels such as supply chains, logistics networks, energy flows, trade restrictions, or technology access constraints.
+- Production methodology version: `V4`.
+- Current production version: `V4.1`.
+- Frozen V5 MVP status: evaluation-frozen bounded agentic discovery layer around the frozen V4 verification boundary.
+- V5 LangGraph status: thin orchestration adapter for the frozen V5 state machine; methodology and frozen results are unchanged.
+- `V4.1` means V4 downstream retrieval/ranking/evidence methodology plus audited post-freeze implementation and presentation fixes.
+- Frozen V4 evaluation artifacts and metrics were not regenerated for `V4.1`.
+- The public `/analyze` API currently runs V4/V4.1. V5 is available through the Python/evaluation path and should not be described as the production API.
 
-This system helps identify possible secondary exposure candidates and grounds the analysis in historical geopolitical cases. The goal is to support risk monitoring and decision intelligence, not to forecast asset prices.
+Post-freeze production fixes are recorded in `data/validation_v4/execution_diagnostics/v4_post_freeze_production_fix_manifest.json`.
 
-## Core Pipeline
+## 2. System Architecture
 
-```text
-News Input
-→ Event Analyst Agent
-→ Historical Case Retrieval Agent
-→ Transmission Chain Builder
-→ Market Mapping Agent
-→ Evidence Agent
-→ Report Agent
-→ Streamlit Report UI
+```mermaid
+flowchart LR
+  A["Browser"] --> B["Streamlit Frontend"]
+  B -->|"REST / JSON"| C["FastAPI Service"]
+  C --> D["GeoRisk V4 Pipeline"]
+  D --> E["Event Analyst"]
+  D --> F["Historical Case Retrieval"]
+  D --> G["Transmission Builder"]
+  D --> H["Evidence Grader"]
+  D --> I["Asset Ranker"]
+  F --> J["ChromaDB / Historical KB"]
 ```
 
-- **Event Analyst Agent:** extracts event type, regions, industries, supply-chain nodes, and shock direction.
-- **Historical Case Retrieval Agent:** uses sentence-transformer embeddings and ChromaDB to retrieve historically similar geopolitical cases.
-- **Transmission Chain Builder:** builds a qualitative risk transmission path.
-- **Market Mapping Agent:** maps normalized supply-chain nodes to candidate stocks, ADRs, and ETFs using `asset_mapping.csv`.
-- **Evidence Agent:** assigns evidence level and confidence score.
-- **Report Agent:** generates a structured report for the UI.
+Core implementation:
 
-## Technical Architecture
+| Stage | Code | Purpose |
+| --- | --- | --- |
+| Event Analyst | `src/agents/event_analyst.py`, `src/agents/llm_event_analyst.py` | Structures event type, regions, industries, nodes, risk factors. |
+| Retrieval | `src/agents/case_retriever.py`, `src/vector_store.py` | Retrieves analog cases from `data/historical_cases.json` using ChromaDB and `all-MiniLM-L6-v2`. |
+| Transmission | `src/agents/transmission_builder.py` | Builds first-order and second-order transmission nodes. |
+| Mechanism Context | `src/mechanism_context.py`, `src/transmission_context_store.py` | Applies V4 mechanism-compatible support using `data/transmission_context_v1.json`. |
+| Asset Mapping | `src/agents/market_mapper.py` | Maps nodes only to assets in `data/asset_mapping.csv`. |
+| Evidence / Ranking | `src/agents/evidence_agent.py`, `src/agents/asset_ranker.py` | Labels support strength and ranks only second-order watchlist candidates. |
+| Interfaces | `src/api.py`, `app.py`, `src/pipeline.py` | FastAPI owns the production service boundary; Streamlit is an HTTP client; CLI/Python paths remain available for research and evaluation. |
+| V5 LangGraph Orchestration | `src/orchestration/langgraph_v5.py` | Represents the frozen V5 bounded repair workflow as explicit state transitions while reusing existing V5 functions. |
 
-- Python
-- Streamlit
-- Pydantic
-- pandas
-- sentence-transformers
-- PyTorch-backed embeddings
-- ChromaDB
-- Structured JSON/CSV data layer
+The production V4 path uses simple Python orchestration functions and Pydantic models. V5 also has a thin LangGraph representation for stateful orchestration, conditional repair routing, bounded iteration, and deterministic handoff to the frozen V4 verification boundary.
 
-## Data Layer
+V5 LangGraph orchestration:
 
-- `data/historical_cases.json` stores structured historical geopolitical risk cases.
-- `data/asset_mapping.csv` maps normalized supply-chain nodes to candidate secondary assets.
-- Candidate assets are always selected from the asset mapping table; the system should not invent tickers.
+```mermaid
+flowchart TD
+  A["Current Event"] --> B["Prepare Event"]
+  B --> C["Retrieve Candidates / Evidence"]
+  C --> D["Initial Frozen V4 Verification"]
+  D -->|"Repair Disabled"| J["Finalize"]
+  D -->|"Repair Enabled"| E["Diagnose Repair Need"]
+  E -->|"No Node Gap or Budget Exhausted"| J
+  E -->|"Node Gap and Budget Available"| F["Node Repair"]
+  F --> G["Current-Context Projection"]
+  G --> H["Repaired Frozen V4 Verification"]
+  H --> I["Candidate-Local Specificity Recovery / Applicability Gate"]
+  I --> J
+  J --> K["Final Evidence / Asset Output"]
+```
 
-## Evidence Levels
+The LangGraph adapter does not introduce new agents, memory, persistence, LLM overrides, or changed evidence semantics.
 
-- **Historical Supported:** similar historical cases directly support the channel.
-- **Sector Proxy:** historical cases support the sector or supply-chain node, but not necessarily the exact ticker.
-- **Inference Only:** based mainly on logical mapping with limited historical support.
+## 3. Evidence Model
 
-Confidence ranges:
+GeoRisk separates “possible exposure” from “historically supported exposure.”
 
-- `historical_supported`: 0.75-0.90
-- `sector_proxy`: 0.50-0.74
-- `inference_only`: 0.25-0.49
+The asset report has two layers:
 
-Confidence reflects evidence strength, not probability of price movement.
+- Direct Exposure References: assets mapped to the event's direct exposure nodes. They provide baseline/context and are not ranked.
+- Ranked Second-Order Exposures: assets mapped to downstream nodes that pass the V4 historical-support and mechanism-compatibility requirements.
 
-## Event Analyst Modes
+| Label | Meaning |
+| --- | --- |
+| `historical_supported` | Retrieved historical evidence directly supports the asset or the exposure channel strongly enough for the configured support rule. |
+| `sector_proxy` | Historical cases support the sector or supply-chain node, but not the exact asset. |
+| `inference_only` | The asset maps logically from the node, but retrieved cases do not corroborate the channel. |
 
-GeoRisk supports two event-analysis modes:
+Frozen V4 support policy:
 
-- **Rule-based analyzer:** deterministic baseline extraction using transparent keyword rules. It is stable, reproducible, and does not require an API key.
-- **LLM analyzer:** optional GPT-4.1-mini event analysis for paraphrased, indirect, or implicit geopolitical events. The LLM output is constrained to structured JSON and validated against the project schema and controlled vocabularies.
-- **Fallback design:** if the API call, JSON parsing, schema validation, vocabulary checks, or grounding checks fail, the system falls back to the rule-based analyzer.
+- Retrieval depth: `top_k=10`.
+- Support threshold: mechanism-compatible support count `>= 2`.
+- Historical context sidecar: `data/transmission_context_v1.json`.
+- Canonical-family version: `canonical_family_v1`.
+- Mechanism compatibility version: `mechanism_compatibility_candidate_v1`.
 
-The LLM analyzer requires local environment configuration. Store keys in `.env` or your shell environment and never commit them:
+Repeated node occurrence across retrieved cases is not treated as automatically equivalent evidence. Broad nodes such as `energy`, `logistics`, or `maritime_chokepoint` can create pseudo-consensus when different cases share a node but not a causal mechanism. V4 therefore checks mechanism compatibility before allowing historical support to vote.
+
+## 4. Example
+
+Verified command:
 
 ```bash
-OPENAI_API_KEY=...
-USE_LLM_EVENT_ANALYST=true
-LLM_EVENT_ANALYST_MODEL=gpt-4.1-mini
+PYTHONPATH=. python -m src.pipeline \
+  --news "Red Sea shipping routes face disruption due to escalating regional conflict." \
+  --format concise \
+  --event-analyzer rule
 ```
 
-## Example Use Cases
+Observed output summary from the current repository:
 
-### A. Red Sea Shipping Disruption
+- Event type: maritime security disruption.
+- Top retrieved historical cases:
+  - Red Sea shipping attacks and route diversions.
+  - Suez Canal blockage by Ever Given.
+  - US East and Gulf Coast port strike.
+- Example transmission chain:
+  - regional conflict raises route-disruption risk near Red Sea shipping lanes;
+  - pressure concentrates in maritime chokepoints, container shipping, freight routes;
+  - fuel, insurance, and freight uncertainty widen secondary exposure channels.
+- Example evidence-graded outputs:
+  - `0144.HK` and `1199.HK` as second-order, `historical_supported`, ports exposure.
+  - `BOAT`, `DAC`, `DHT`, `FRO` as first-order reference items.
+  - `CB`, `FDX`, `FLNG`, `JBHT` as first-order `sector_proxy` reference items.
 
-Expected outputs:
+This is a risk watchlist for review, not a prediction that any listed asset will move.
 
-- Event type: `maritime_security_disruption`
-- Historical analogs: Red Sea shipping attacks, Suez Canal blockage, Strait of Hormuz tanker tensions
-- Exposure nodes: `maritime_chokepoint`, `container_shipping`, `oil_shipping`, `lng_shipping`, `logistics`
-- Example watchlist assets: `BOAT`, `DAC`, `FRO`, `DHT`, `FLNG`, `FDX`
+## 5. Evaluation
 
-### B. Semiconductor Export Controls
+The public release treats the V4 mechanism-aware system as frozen. Metrics below are copied from checked-in artifacts, not from this README prompt.
 
-Expected outputs:
+### Retrieval / Event Understanding
 
-- Event type: `technology_export_controls`
-- Historical analogs: US semiconductor export controls, Dutch ASML restrictions, Huawei Entity List
-- Exposure nodes: `semiconductor_equipment`, `ai_chips`, `eda_software`, `foundry`
-- Example watchlist assets: `ASML`, `AMAT`, `NVDA`, `AMD`, `SNPS`, `CDNS`
+The basic evaluation corpus contains 20 events in `data/evaluation_cases.json`; the hard-case corpus contains 12 events in `data/hard_evaluation_cases.json`.
 
-## Demo Screenshots
+Top-k sensitivity artifacts show that wider retrieval increases candidate coverage:
 
-### Event Dashboard
+| Retrieval depth | Events | Retrieved cases | Support-qualified nodes | Ranked second-order assets |
+| --- | ---: | ---: | ---: | ---: |
+| `top_k=3` | 44 | 132 | 45 | 90 |
+| `top_k=5` | 44 | 220 | 92 | 184 |
+| `top_k=10` | 44 | 440 | 217 | 431 |
 
-![Event Dashboard](assets/dashboard.png)
+Source: `data/topk_sensitivity_v4/topk_sensitivity_summary.json`.
 
-### Red Sea Shipping Report
+### Evidence Aggregation / Ablation
 
-![Red Sea Report](assets/red_sea_report.png)
+Frozen multi-year benchmark:
 
-### Semiconductor Export Controls Report
+- Benchmark version: `georisk_multiyear_general_v1`.
+- 23 independent events from 2020-2025.
+- 46 `(event, node)` annotations.
+- Ground truth: 25 compatible-support expected, 15 weak-cooccurrence expected, 6 insufficient-context expected.
 
-![Semiconductor Report](assets/semiconductor_report.png)
+| Metric | V3 | V4 | Delta |
+| --- | ---: | ---: | ---: |
+| Overall correctness | 17/46 = 36.96% | 21/46 = 45.65% | +8.70 pp |
+| Compatible support recall | 2/25 = 8.00% | 2/25 = 8.00% | 0.00 pp |
+| Weak-support rejection | 11/15 = 73.33% | 14/15 = 93.33% | +20.00 pp |
+| Weak leakage | 4/15 = 26.67% | 1/15 = 6.67% | -20.00 pp |
+| Insufficient-context handling | 4/6 = 66.67% | 5/6 = 83.33% | +16.67 pp |
 
-## Evaluation
+Source: `data/validation_general/results/v3_v4_paired_evaluation_summary.json`.
 
-The MVP regression set evaluates deterministic pipeline behavior on manually defined geopolitical test cases.
+Interpretation: V4 improves evidence precision and abstention behavior, especially by rejecting weak broad-node co-occurrence. It does not improve compatible-node recall in this benchmark.
 
-Evaluation labels were manually defined for expected event type, expected supply-chain nodes, and relevant historical analogs.
+### Temporal Held-Out Evaluation
 
-Metrics:
+The temporal held-out benchmark freezes the historical KB/configuration before evaluating later unseen events.
 
-- Event Type Accuracy: 0.90
-- Supply-Chain Node Recall: 0.90
-- Historical Case Retrieval Recall@3: 1.00
+- Held-out set: 16 real 2026 events.
+- Annotations: 32 `(event, node)` labels.
+- Ground truth: 21 compatible, 7 weak, 4 insufficient-context.
 
-No stock-price movement, returns, or investment-performance metrics are evaluated because the system is designed for exposure discovery, not price prediction.
+| Metric | Result |
+| --- | ---: |
+| Compatible retention | 3/21 = 14.29% |
+| Weak rejection | 7/7 = 100.00% |
+| Weak leakage | 0/7 = 0.00% |
+| Insufficient-context handling | 3/4 = 75.00% |
 
-The main miss involved overlapping maritime-energy chokepoint classification, such as Strait of Hormuz tanker tensions.
+Source: `data/validation_v4/results/attempt_002/v4_temporal_mechanism_evaluation_summary.json`.
 
-## Hard Generalization Evaluation
+Compatible-node funnel:
 
-The hard evaluation set contains 12 cases with paraphrased geopolitical events, ambiguous maritime-energy cases, out-of-domain inputs, and negative non-geopolitical examples.
+| Stage | Count |
+| --- | ---: |
+| Compatible ground-truth nodes | 21 |
+| Current node proposed | 3 |
+| Raw same-node evidence `>=1` in top-10 | 5 |
+| Raw same-node evidence `>=2` in top-10 | 5 |
+| Current context available | 2 |
+| Mechanism-compatible support `>=2` | 2 |
+| Final retained | 3 |
 
-| Analyzer | Event Type Accuracy | Node Recall | Recall@3 | MRR | Negative Limited-Support Rate |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Rule-based | 0.33 | 0.45 | 1.00 | 0.95 | 1.00 |
-| GPT-4.1-mini | 0.83 | 0.56 | 1.00 | 0.95 | 1.00 |
+Source: `data/validation_v4/results/attempt_002/v4_temporal_compatible_node_funnel_summary.json`.
 
-GPT-4.1-mini significantly improves event-type classification on hard paraphrased and implicit cases. Node recall improves modestly but remains the main bottleneck because supply-chain exposure expansion requires inferring both first-order and second-order affected nodes. Retrieval remains strong, with Recall@3 = 1.00. The negative limited-support rate remains 1.00, meaning the LLM upgrade did not increase unsupported geopolitical-risk claims on negative examples.
+The main temporal failure mode is upstream of the V4 guardrail: candidate-node proposal and retrieval/vocabulary coverage.
 
-This matters because GeoRisk is more than a simple RAG demo. It is a reusable geopolitical risk knowledge-base pipeline with semantic event analysis, schema validation, human-review-ready structured outputs, fallback reliability, and evaluation on hard cases.
+### Frozen V5 MVP Evaluation
 
-### Current Limitations
+V5 adds a bounded agentic node-discovery repair layer, repaired-node current-context projection, candidate-local specificity recovery, and a current-event applicability gate around the frozen V4 verification boundary. It does not change V4 evidence thresholds, asset mapping, ranking semantics, or benchmark labels.
 
-- Supply-chain node recall is still conservative.
-- More work is needed on node expansion, taxonomy alignment, and alias mapping.
-- Future work may include improving prompts, adding node-expansion rules, and comparing GPT-4.1-mini with stronger models.
+Frozen temporal held-out result:
 
-## Usage Modes
+| Metric | V4 | V5 |
+| --- | ---: | ---: |
+| Compatible retained | 3/21 | 5/21 |
+| False rejection | 18 | 16 |
+| Weak leakage | 0 | 0 |
+| False acceptance | 0 | 0 |
+| Weak rejected | 7 | 7 |
+| Runtime failures | 0 | 0 |
 
-GeoRisk Transmission Analyzer supports three usage modes:
+Source: `data/validation_v5/recovery_applicability_ab/v5_recovery_applicability_experiment_summary.json`.
 
-- **CLI:** for local testing and concise report generation.
-- **Streamlit Web UI:** the user-facing interactive dashboard and report page. This is the frontend demo for users.
-- **FastAPI Backend:** a developer-facing API service that exposes the GeoRisk pipeline through HTTP endpoints. FastAPI `/docs` is for API testing and documentation, not the end-user frontend.
+### Optional Downstream Market Validation
 
-## How to Run
+GeoRisk includes ex-post CAR/SCAR validation artifacts for a frozen legacy/V3 market-validation snapshot. This is optional downstream validation, not the primary V4 evidence result, not a V4 market prediction, and not evidence of tradable performance.
 
-Install dependencies:
+The main descriptive signal uses 12 CAR validation events, 186 activated/evaluable GeoRisk asset-event rows, market-model standardized CAR over frozen event windows, and event-level median `|SCAR|`.
 
-```bash
-pip install -r requirements.txt
-```
+| Group | Aggregate median `|SCAR|` |
+| --- | ---: |
+| GeoRisk activated | 0.7279 |
+| Curated random | 0.6559 |
+| Broad random full | 0.6294 |
+| Broad random ex-curated | 0.6331 |
 
-Run CLI:
+Source: `data/market_validation/broad_random/broad_random_summary.json`.
 
-```bash
-PYTHONPATH=. python -m src.pipeline --news "Red Sea shipping routes face disruption due to escalating regional conflict." --format concise
-```
+Within the curated asset universe, activated rows showed higher aggregate median `|SCAR|` than non-activated rows:
 
-Run CLI with the optional LLM Event Analyst:
+| Metric | Value |
+| --- | ---: |
+| Activated rows | 186 |
+| Non-activated rows | 736 |
+| Activated aggregate median `|SCAR|` | 0.7279 |
+| Non-activated aggregate median `|SCAR|` | 0.6465 |
+| Relative activation lift | +12.59% |
+| Activated > non-activated events | 7/12 |
+| Paired sign-flip p-value | 0.2837 |
 
-```bash
-PYTHONPATH=. python -m src.pipeline --news "Commercial vessels are diverting away from waters off Yemen." --format concise --event-analyzer llm
-```
+Source: `data/market_validation/curated_activation/activation_summary.json`.
 
-Run Streamlit:
+Interpretation: the market-validation artifacts show a positive but not statistically definitive selectivity signal. They remain ex-post validation signals, not price prediction, causality, or investment performance.
 
-```bash
-PYTHONPATH=. python -m streamlit run app.py
-```
+## 6. Temporal Generalization
 
-Run API:
+The temporal held-out design asks whether a frozen historical KB and frozen V4 configuration can handle later geopolitical events without tuning on them. It tests generalization of evidence qualification and node retention under time separation.
+
+The sample is small: 16 events and 32 annotations. The results support a narrow claim: V4 rejects weak co-occurrence well on this held-out set, but compatible-node recall remains low.
+
+## 7. API / Demo
+
+FastAPI:
 
 ```bash
 PYTHONPATH=. uvicorn src.api:app --reload
 ```
 
-Open API docs:
+Open `http://127.0.0.1:8000/docs`.
 
-```text
-http://127.0.0.1:8000/docs
-```
-
-Health check:
-
-```bash
-curl http://127.0.0.1:8000/health
-```
-
-Analyze:
+Production API request:
 
 ```bash
 curl -X POST http://127.0.0.1:8000/analyze \
   -H "Content-Type: application/json" \
-  -d '{"news_text":"Red Sea shipping routes face disruption due to escalating regional conflict.","top_k":3,"output_format":"concise"}'
+  -d '{"description":"Red Sea shipping routes face disruption due to escalating regional conflict."}'
 ```
 
-## Docker
+Health and runtime-version checks:
 
-The project includes a lightweight Docker setup for local development. It runs the FastAPI backend and Streamlit UI as separate services and can later be adapted for deployment on AWS EC2.
+```bash
+curl http://127.0.0.1:8000/health
+curl http://127.0.0.1:8000/version
+```
 
-Build and run:
+Streamlit:
+
+```bash
+export GEORISK_API_URL=http://127.0.0.1:8000
+PYTHONPATH=. python -m streamlit run app.py
+```
+
+Docker Compose:
 
 ```bash
 docker compose up --build
-```
-
-Run in the background:
-
-```bash
-docker compose up --build -d
-```
-
-Stop:
-
-```bash
-docker compose down
 ```
 
 Open:
@@ -239,58 +295,197 @@ Open:
 - FastAPI docs: `http://localhost:8000/docs`
 - Streamlit UI: `http://localhost:8501`
 
-Run evaluation:
+In Docker Compose, Streamlit calls FastAPI at `http://api:8000` using the Compose service hostname. Local development defaults to `GEORISK_API_URL=http://127.0.0.1:8000`.
+
+Note: production `/analyze` runs the frozen V4 configuration (`top_k=10` with mechanism-compatible support). Callers cannot override retrieval-depth, support-threshold, or mechanism-compatibility settings through the public production API. Configurable `run_pipeline(...)` and CLI paths remain available for research and benchmark experiments.
+
+Runtime `/version` reports both `methodology_version` and `production_version` so current production is not confused with the byte-identical frozen evaluation snapshot.
+
+## 8. Installation
+
+```bash
+git clone <repo-url>
+cd <repo-directory>
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+Optional LLM Event Analyst:
+
+```bash
+export OPENAI_API_KEY="..."
+export USE_LLM_EVENT_ANALYST=true
+export LLM_EVENT_ANALYST_MODEL=gpt-4.1-mini
+```
+
+Rule-based mode does not require an API key. LLM mode is optional and falls back to the rule-based analyzer if the OpenAI call is unavailable.
+
+Retrieval bootstrap:
+
+```bash
+python -m src.vector_store_health --rebuild
+```
+
+`src/vector_store.py` uses `sentence-transformers/all-MiniLM-L6-v2`. Runtime defaults to local-only model loading for frozen-test stability. On a clean machine, copy `.env.example` to `.env` or export `GEORISK_LOCAL_MODEL_FILES_ONLY=false` before rebuilding the index so `sentence-transformers` can download the model once.
+
+## 9. Running GeoRisk
+
+Minimal CLI run:
+
+```bash
+PYTHONPATH=. python -m src.pipeline \
+  --news "Red Sea shipping routes face disruption due to escalating regional conflict." \
+  --format concise \
+  --event-analyzer rule
+```
+
+Local frontend/backend development:
+
+Terminal 1:
+
+```bash
+PYTHONPATH=. uvicorn src.api:app --host 127.0.0.1 --port 8000
+```
+
+Terminal 2:
+
+```bash
+GEORISK_API_URL=http://127.0.0.1:8000 PYTHONPATH=. python -m streamlit run app.py
+```
+
+JSON output:
+
+```bash
+PYTHONPATH=. python -m src.pipeline \
+  --news "The U.S. expands export controls on advanced AI chips and semiconductor equipment to China." \
+  --format json \
+  --event-analyzer rule
+```
+
+Frozen V4 from Python:
+
+```bash
+PYTHONPATH=. python - <<'PY'
+from src.pipeline import run_v4_pipeline
+from src.report_formatter import format_concise_report
+
+report = run_v4_pipeline(
+    "Red Sea shipping routes face disruption due to escalating regional conflict.",
+    event_analyzer="rule",
+)
+print(format_concise_report(report))
+PY
+```
+
+## 10. Running Tests
+
+```bash
+pytest -q
+```
+
+Focused smoke checks:
 
 ```bash
 PYTHONPATH=. python scripts/evaluate_pipeline.py
+PYTHONPATH=. python scripts/evaluate_hard_cases.py --event-analyzer rule
 ```
 
-Run hard generalization evaluation:
+Some optional validation scripts fetch market data through `yfinance` and require internet access. The checked-in CAR artifacts can be inspected without rerunning those downloads.
 
-```bash
-PYTHONPATH=. python scripts/evaluate_hard_cases.py --event-analyzer both
-```
-
-## Project Structure
+## 11. Repository Structure
 
 ```text
-data/
-  historical_cases.json
-  asset_mapping.csv
-
 src/
-  agents/
-    event_analyst.py
-    case_retriever.py
-    transmission_builder.py
-    market_mapper.py
-    evidence_agent.py
-    report_agent.py
-    llm_event_analyst.py
-  vector_store.py
-  pipeline.py
-  schemas.py
-  report_formatter.py
+  agents/                 Runtime analysis steps
+  validation/             Benchmark and validation implementation
+  eval/car/               CAR validation helpers
+  pipeline.py             CLI and orchestration entrypoints
+  api.py                  FastAPI app
 
-scripts/
-  evaluate_pipeline.py
-  evaluate_hard_cases.py
+data/
+  historical_cases.json   Structured historical KB
+  asset_mapping.csv       Candidate asset mapping source of truth
+  transmission_context_v1.json
+  validation_general/     Primary V3/V4 paired benchmark
+  validation_v4/          Temporal held-out validation
+  topk_sensitivity_v4/    V4 diagnostics and ablations
+  market_validation/      Optional downstream CAR/SCAR validation
 
-app.py
-README.md
+scripts/                  Evaluation, audit, and validation commands
+tests/                    Pytest suite
+app.py                    Streamlit demo
+Dockerfile
+docker-compose.yml
 ```
 
-## Limitations and Future Work
+Data policy: raw candidate/source dumps, downloaded market price files, Chroma persistence, and local caches are excluded from public release. See `docs/DATA_POLICY.md`.
 
-- Current MVP focuses on shipping chokepoints, semiconductor export controls, energy shocks, trade tariffs, and fertilizer/agriculture input risks.
-- Event analysis now supports a deterministic rule-based mode and an optional GPT-4.1-mini mode with schema validation and fallback.
-- Expand the historical case base to 20-30+ cases and perform human evaluation on evidence-level calibration.
-- Add hybrid retrieval scoring with metadata matching.
-- Improve evidence calibration and human evaluation.
-- Improve UI reporting for richer event detail pages and historical-case explanations.
-- Add more event domains such as rare earth controls, Taiwan Strait risk, Panama Canal drought, Black Sea grain disruption, cyberattacks on infrastructure, and uranium/nuclear supply-chain risk.
-- Improve supply-chain node expansion, taxonomy alignment, and alias mapping.
+## 12. Limitations
 
-## Disclaimer
+- Historical case coverage is finite and curated.
+- Results depend on transmission-node representation.
+- Current-event node proposal can limit recall.
+- Mechanism compatibility uses structured heuristics and an ontology-like sidecar, not causal proof.
+- Geopolitical ground truth can be ambiguous.
+- Temporal held-out sample size is small.
+- CAR/SCAR validation is ex-post market-response validation, not price prediction.
+- The system does not provide investment advice.
 
-This project is for research and educational purposes only. It generates risk watchlists and evidence-grounded exposure analysis. It is not a stock price prediction system, does not predict prices, does not recommend trades, and does not provide investment advice. Confidence reflects evidence strength, not probability of price movement. Candidate assets are risk watchlist items, not trading signals.
+## 13. Future Work
+
+Future research directions are intentionally not implemented in this frozen release:
+
+- improve current-event node proposal recall;
+- improve vocabulary and node alignment;
+- retrieve mechanism-level fragments rather than only whole historical cases;
+- improve temporal generalization;
+- separate compatible-support diagnostics from final-retention logic;
+- expand evaluation coverage.
+
+## 14. Metric Provenance
+
+| Claim | Source artifact |
+| --- | --- |
+| 70 historical cases | `data/historical_cases.json` |
+| 82 asset-mapping rows / 78 unique tickers | `data/asset_mapping.csv` |
+| Top-k sensitivity table | `data/topk_sensitivity_v4/topk_sensitivity_summary.json` |
+| V3/V4 paired benchmark metrics | `data/validation_general/results/v3_v4_paired_evaluation_summary.json` |
+| Temporal held-out metrics | `data/validation_v4/results/attempt_002/v4_temporal_mechanism_evaluation_summary.json` |
+| Frozen V5 temporal comparison | `data/validation_v5/recovery_applicability_ab/v5_recovery_applicability_experiment_summary.json` |
+| Temporal compatible-node funnel | `data/validation_v4/results/attempt_002/v4_temporal_compatible_node_funnel_summary.json` |
+| Broad/curated market validation | `data/market_validation/broad_random/broad_random_summary.json` |
+| Continuous SCAR analysis | `data/market_validation/scar_continuous_test/continuous_scar_summary.json` |
+| Curated activation test | `data/market_validation/curated_activation/activation_summary.json` |
+
+## 15. License
+
+This project is released under the MIT License. See `LICENSE`.
+
+## 16. Contributing & Community
+
+Contributions are welcome for bug fixes, documentation improvements, tests,
+UI/usability improvements, additional evaluation tooling, and new adapters or
+integrations that preserve the existing evaluation guarantees.
+
+For methodology-changing proposals, please open an issue first. Changes that
+affect frozen V4/V5 methodology, evaluation semantics, thresholds, or reported
+benchmark numbers must be discussed explicitly and must not silently alter
+canonical results.
+
+- Contributor guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Issues: [GitHub Issues](https://github.com/ViviLoveAI/Georisk-transmission-analyzer/issues)
+- Pull requests: [GitHub Pull Requests](https://github.com/ViviLoveAI/Georisk-transmission-analyzer/pulls)
+
+GeoRisk was originally designed and implemented by Weiyu Liu. If you build on
+this project, please preserve the applicable license notices and cite or link
+back to the original repository where appropriate.
+
+## 17. Community & Downstream Projects
+
+Built something with GeoRisk?
+
+If you adapt GeoRisk for another domain, dataset, interface, or evaluation
+setting, open an issue and share what you built. Notable community projects may
+be listed here in future releases.

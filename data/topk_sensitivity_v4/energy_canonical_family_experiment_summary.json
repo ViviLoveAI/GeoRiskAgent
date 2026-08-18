@@ -1,0 +1,71 @@
+{
+  "diagnostic_only": true,
+  "energy_target": {
+    "after_family_mapping": {
+      "candidate_under_structured_rule": true,
+      "case_decisions": [
+        {
+          "case_id": "case_2019_venezuela_oil_sanctions",
+          "reason": "same canonical transmission context",
+          "status": "compatible"
+        },
+        {
+          "case_id": "case_2022_russia_swift_financial_sanctions",
+          "reason": "same diagnostic canonical transmission-context family",
+          "status": "compatible"
+        }
+      ],
+      "case_match_types": {
+        "case_2019_venezuela_oil_sanctions": "exact",
+        "case_2022_russia_swift_financial_sanctions": "canonical_family"
+      },
+      "compatible_case_ids": [
+        "case_2019_venezuela_oil_sanctions",
+        "case_2022_russia_swift_financial_sanctions"
+      ],
+      "compatible_support_count": 2,
+      "incompatible_case_ids": []
+    },
+    "before_family_mapping": {
+      "candidate_under_structured_rule": false,
+      "compatible_case_ids": [
+        "case_2019_venezuela_oil_sanctions"
+      ],
+      "compatible_support_count": 1,
+      "incompatible_case_ids": [
+        "case_2022_russia_swift_financial_sanctions"
+      ]
+    },
+    "event_id": "dev_energy_sanctions_oil_shipping",
+    "node": "energy"
+  },
+  "family_mapping": {
+    "energy_trade_access_constraint": "energy_trade_constraint",
+    "energy_trade_finance_constraint": "energy_trade_constraint"
+  },
+  "focused_matrix": {
+    "different_family_negative_cases_rejected": {
+      "passed": 3,
+      "total": 3
+    },
+    "exact_positive_cases_passed": {
+      "passed": 2,
+      "total": 2
+    },
+    "false_negatives": 0,
+    "false_positives": 0,
+    "match_type_counts": {
+      "canonical_family": 2,
+      "exact": 2,
+      "incompatible": 4
+    },
+    "sibling_family_positive_cases_passed": {
+      "passed": 2,
+      "total": 2
+    },
+    "weak_background_controls_rejected": {
+      "passed": 1,
+      "total": 1
+    }
+  }
+}

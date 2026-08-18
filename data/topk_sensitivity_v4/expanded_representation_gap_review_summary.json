@@ -1,0 +1,109 @@
+{
+  "audit_target_review_counts": {
+    "ambiguous": 1,
+    "confirmed": 1,
+    "questionable": 1
+  },
+  "counterfactual_coverage": {
+    "genuinely_ambiguous": 1,
+    "resolvable_with_current_schema_better_enrichment": 0,
+    "still_requires_schema_or_vocabulary_change": 0
+  },
+  "diagnostic_only": true,
+  "downstream_exposure_review": [
+    {
+      "constraint_type": "financing_constraint;trade_access_restriction",
+      "event_id": "dev_energy_sanctions_oil_shipping",
+      "false_rejection_status": "false_rejection",
+      "mechanism_family": "energy_trade_access_constraint;energy_trade_finance_constraint",
+      "node": "energy",
+      "possible_semantic_subtype": "downstream_energy_trade_access_vs_finance_exposure"
+    },
+    {
+      "constraint_type": "input_shortage;trade_access_restriction",
+      "event_id": "dev_food_export_restriction",
+      "false_rejection_status": "false_rejection_or_target_questionable",
+      "mechanism_family": "agricultural_export_trade_constraint;agricultural_input_constraint",
+      "node": "agriculture",
+      "possible_semantic_subtype": "downstream_agriculture_export_vs_input_exposure"
+    },
+    {
+      "constraint_type": "route_disruption;supplier_substitution",
+      "event_id": "dev_lng_shipping_sanctions",
+      "false_rejection_status": "retained",
+      "mechanism_family": "maritime_route_disruption",
+      "node": "lng_shipping",
+      "possible_semantic_subtype": "downstream_energy_shipping_substitution_exposure"
+    }
+  ],
+  "field_coverage": [
+    {
+      "coverage": 0.972603,
+      "field": "shock_type",
+      "populated": 71,
+      "required_instances": 73
+    },
+    {
+      "coverage": 0.972603,
+      "field": "constraint_type",
+      "populated": 71,
+      "required_instances": 73
+    },
+    {
+      "coverage": 0.972603,
+      "field": "upstream_driver",
+      "populated": 71,
+      "required_instances": 73
+    },
+    {
+      "coverage": 0.972603,
+      "field": "target_node_role",
+      "populated": 71,
+      "required_instances": 73
+    },
+    {
+      "coverage": 0.972603,
+      "field": "canonical_context",
+      "populated": 71,
+      "required_instances": 73
+    }
+  ],
+  "potential_vocabulary_refinements": [
+    {
+      "clean_cases_it_also_applies_to": [
+        "financial_sanctions and oil_shipping sanctions controls"
+      ],
+      "errors_it_would_explain": [
+        "dev_energy_sanctions_oil_shipping / energy"
+      ],
+      "proposed_concept": "energy_sanctions_trade_constraint family",
+      "risk_of_over_generalization": "Medium: could merge trade access and financing channels when one is only contextual."
+    },
+    {
+      "clean_cases_it_also_applies_to": [
+        "lng_shipping downstream substitution",
+        "defense downstream strategic exposure"
+      ],
+      "errors_it_would_explain": [
+        "dev_energy_sanctions_oil_shipping / energy",
+        "dev_food_export_restriction / agriculture"
+      ],
+      "proposed_concept": "split downstream_exposure into export-market, input-cost, and strategic-technology subtypes",
+      "risk_of_over_generalization": "Medium-high unless backed by consistent raw transmission-chain evidence."
+    }
+  ],
+  "problem_type_counts": {
+    "ambiguous": 2,
+    "schema_gap": 1
+  },
+  "review_scope": {
+    "failures_reviewed": 3,
+    "false_rejections": 2,
+    "insufficient_context": 1
+  },
+  "root_cause_counts": {
+    "audit_target_problem": 1,
+    "canonical_family_too_narrow": 1,
+    "genuinely_insufficient_source_evidence": 1
+  }
+}

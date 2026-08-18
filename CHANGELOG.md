@@ -1,6 +1,25 @@
 # Changelog
 
+> **Historical development document. Some architecture details, metrics, and dataset counts reflect earlier GeoRisk versions. See `README.md` for the current frozen public release.**
+
 Recent project changes for GeoRisk Transmission Analyzer.
+
+## Public Release Cleanup
+
+### Fixed
+
+- Preserved Chroma `RetrievedCase.supply_chain_nodes` carry-through.
+- Added boundary-aware rule matching in the Event Analyst.
+- Added boundary-aware current-event context keyword matching.
+- Clarified node qualification support versus asset-level evidence presentation.
+
+### Changed
+
+- Added production/report provenance versioning: V4 methodology, V4.1 production implementation.
+- Kept frozen V4 evaluation artifacts unchanged and documented post-freeze production fixes separately.
+- Updated the asset report to show Ranked Second-Order Exposures plus Direct Exposure References.
+- Simplified custom-event input to Event plus optional Additional Context.
+- Moved backend/service failures to a global service-level frontend message.
 
 ## 1. Event Analyst
 

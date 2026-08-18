@@ -1,0 +1,4 @@
+top_k,retrieved_cases,support_qualified_second_order_nodes,mapped_nodes,second_order_assets,historical_supported,sector_proxy,inference_only,v4_ranked_candidates
+3,132,45,45,90,12,78,0,90
+5,220,92,92,184,22,162,0,184
+10,440,217,217,431,72,359,0,431

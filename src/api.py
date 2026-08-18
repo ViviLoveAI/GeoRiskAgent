@@ -1,63 +1,268 @@
-"""FastAPI backend for GeoRisk Transmission Analyzer."""
+"""FastAPI production backend for GeoRisk Transmission Analyzer."""
 
-from typing import Literal
+from __future__ import annotations
 
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
+import logging
+from datetime import date
+from datetime import datetime
 
-from src.pipeline import run_pipeline
-from src.report_formatter import format_concise_report
+from fastapi import FastAPI, HTTPException, status
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+
+from src.config import INTERACTIVE_EVENT_ANALYZER
+from src.input_normalizer import normalize_event_input
+from src.pipeline import run_v4_pipeline
 from src.schemas import FinalReport
+from src.v4_config import (
+    METHODOLOGY_VERSION,
+    POST_FREEZE_FIX_MANIFEST,
+    POST_FREEZE_FIXES_ENABLED,
+    PRODUCTION_VERSION,
+    V4_CONFIG,
+)
+from src.vector_store_health import assert_vector_store_ready, validate_vector_store
 
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title="GeoRisk Transmission Analyzer API",
     description=(
-        "Geopolitical risk exposure discovery API. This service does not "
-        "predict stock prices or provide investment advice."
+        "Production service boundary for geopolitical risk exposure discovery. "
+        "This service does not predict stock prices or provide investment advice."
     ),
 )
 
 
 class AnalyzeRequest(BaseModel):
-    """Request body for risk transmission analysis."""
+    """Production request body for risk transmission analysis."""
 
-    news_text: str = Field(..., description="Geopolitical news headline or article.")
-    top_k: int = Field(default=3, ge=1, le=20)
-    output_format: Literal["json", "concise"] = "json"
+    model_config = ConfigDict(extra="forbid")
+
+    event: str | None = Field(
+        default=None,
+        description="Required event name or short geopolitical event phrase.",
+    )
+    event_year: int | None = Field(
+        default=None,
+        description="Optional event year. No exact date is inferred.",
+    )
+    context: str | None = Field(
+        default=None,
+        description="Optional user-supplied context for ambiguous events.",
+    )
+    description: str | None = Field(
+        default=None,
+        description="Backward-compatible event description.",
+    )
+    news_text: str | None = Field(
+        default=None,
+        description="Backward-compatible alias for description.",
+    )
+    title: str | None = Field(default=None, description="Optional event title.")
+    event_date: date | None = Field(default=None, description="Optional event date.")
+
+    @field_validator("event_year")
+    @classmethod
+    def validate_event_year(cls, value: int | None) -> int | None:
+        """Validate optional user-supplied year without inventing a date."""
+
+        if value is None:
+            return None
+        current_year = datetime.now().year
+        if value < 1900 or value > current_year + 2:
+            raise ValueError("event_year must be between 1900 and two years from now.")
+        return value
+
+    @model_validator(mode="after")
+    def validate_event_text(self) -> "AnalyzeRequest":
+        """Require one non-empty event input field."""
+
+        if not self.event_text.strip():
+            raise ValueError("event input must not be empty.")
+        return self
+
+    @property
+    def event_text(self) -> str:
+        """Return the canonical text sent to the GeoRisk pipeline."""
+
+        return build_analysis_input(self)
+
+    @property
+    def display_title(self) -> str | None:
+        """Return the best user-facing title for the report."""
+
+        return self.title or self.event or self.description or self.news_text
 
 
-class ConciseAnalyzeResponse(BaseModel):
-    """Concise markdown report response."""
+class HealthVectorStore(BaseModel):
+    """Vector-store health details safe for deployment checks."""
 
-    report: str
-
-
-@app.get("/health")
-def health() -> dict[str, str]:
-    """Return API health status."""
-
-    return {"status": "ok"}
+    status: str
+    collection: str
+    documents: int | None = None
+    message: str | None = None
 
 
-@app.post("/analyze", response_model=FinalReport | ConciseAnalyzeResponse)
-def analyze(request: AnalyzeRequest) -> FinalReport | ConciseAnalyzeResponse:
-    """Run the GeoRisk pipeline for a geopolitical news item."""
+class HealthResponse(BaseModel):
+    """API health response."""
 
-    if not request.news_text.strip():
-        raise HTTPException(status_code=400, detail="news_text must not be empty.")
+    status: str
+    vector_store: HealthVectorStore
+
+
+class VersionConfiguration(BaseModel):
+    """Safe production configuration metadata."""
+
+    top_k: int
+    support_threshold: int
+    mechanism_compatible: bool
+    event_analyzer: str
+    transmission_context_version: str
+    canonical_family_version: str
+    mechanism_compatibility_version: str
+
+
+class VersionResponse(BaseModel):
+    """Runtime version response."""
+
+    system: str
+    production_version: str
+    methodology_version: str
+    version: str
+    runtime: str
+    post_freeze_fixes: bool
+    post_freeze_fix_manifest: str | None = None
+    configuration: VersionConfiguration
+
+
+@app.get("/health", response_model=HealthResponse)
+def health() -> HealthResponse:
+    """Return API and required retrieval-infrastructure health."""
+
+    vector_health = validate_vector_store()
+    vector_status = "ready" if vector_health.healthy else "unavailable"
+    response = HealthResponse(
+        status="healthy" if vector_health.healthy else "unhealthy",
+        vector_store=HealthVectorStore(
+            status=vector_status,
+            collection=vector_health.collection_name,
+            documents=vector_health.collection_count,
+            message=None if vector_health.healthy else vector_health.message,
+        ),
+    )
+    if not vector_health.healthy:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=response.model_dump())
+    return response
+
+
+@app.get("/version", response_model=VersionResponse)
+def version() -> VersionResponse:
+    """Return safe runtime metadata for configuration drift checks."""
+
+    return VersionResponse(
+        system="GeoRisk",
+        production_version=PRODUCTION_VERSION,
+        methodology_version=METHODOLOGY_VERSION,
+        version=PRODUCTION_VERSION,
+        runtime="production",
+        post_freeze_fixes=POST_FREEZE_FIXES_ENABLED,
+        post_freeze_fix_manifest=POST_FREEZE_FIX_MANIFEST,
+        configuration=VersionConfiguration(
+            top_k=V4_CONFIG.retrieval_top_k,
+            support_threshold=V4_CONFIG.compatible_support_threshold,
+            mechanism_compatible=V4_CONFIG.use_mechanism_compatible_support,
+            event_analyzer=INTERACTIVE_EVENT_ANALYZER,
+            transmission_context_version=V4_CONFIG.transmission_context_version,
+            canonical_family_version=V4_CONFIG.canonical_family_version,
+            mechanism_compatibility_version=V4_CONFIG.mechanism_compatibility_version,
+        ),
+    )
+
+
+@app.post("/analyze", response_model=FinalReport)
+def analyze(request: AnalyzeRequest) -> FinalReport:
+    """Run the production GeoRisk V4 pipeline for a geopolitical event."""
 
     try:
-        report = run_pipeline(request.news_text, top_k=request.top_k)
+        assert_vector_store_ready()
+        normalized_input = normalize_event_input(request.event_text)
+        logger.info(
+            "GeoRisk API analysis starting: mode=V4 top_k=%s "
+            "mechanism_compatible_support=%s event_analyzer=%s input_language=%s",
+            V4_CONFIG.retrieval_top_k,
+            V4_CONFIG.use_mechanism_compatible_support,
+            INTERACTIVE_EVENT_ANALYZER,
+            normalized_input.detected_language,
+        )
+        if normalized_input.normalization_error:
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail=(
+                    "Non-English input normalization is temporarily unavailable. "
+                    "Please retry later or submit the event in English."
+                ),
+            )
+        report = run_v4_pipeline(
+            normalized_input.analysis_text,
+            event_analyzer=INTERACTIVE_EVENT_ANALYZER,
+        )
+        return report.model_copy(
+            update={
+                "input_title": request.display_title,
+                "input_event_date": request.event_date.isoformat() if request.event_date else None,
+                "input_event_year": request.event_year,
+                "input_context": clean_optional_text(request.context),
+                "original_event_text": normalized_input.original_text,
+                "normalized_event_text": normalized_input.analysis_text,
+                "input_language": normalized_input.detected_language,
+                "input_normalization_applied": normalized_input.normalization_applied,
+                "input_normalization_error": normalized_input.normalization_error,
+            }
+        )
     except HTTPException:
         raise
-    except Exception as exc:
+    except ValueError as exc:
+        logger.info("GeoRisk API rejected invalid input: %s", exc)
         raise HTTPException(
-            status_code=500,
-            detail="Pipeline execution failed. Please check server logs.",
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="event must contain a geopolitical risk event.",
+        ) from exc
+    except Exception as exc:
+        logger.exception("GeoRisk API analysis failed.")
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail="GeoRisk analysis is temporarily unavailable.",
         ) from exc
 
-    if request.output_format == "concise":
-        return ConciseAnalyzeResponse(report=format_concise_report(report))
 
-    return report
+def build_analysis_input(request: AnalyzeRequest) -> str:
+    """Build analysis text only from fields supplied by the user."""
+
+    primary = first_non_empty(request.event, request.description, request.news_text)
+    parts = [primary]
+    if request.event_year is not None:
+        parts.append(f"Year: {request.event_year}")
+    context = clean_optional_text(request.context)
+    if context:
+        parts.append(f"Context: {context}")
+    return "\n".join(part for part in parts if part).strip()
+
+
+def first_non_empty(*values: str | None) -> str:
+    """Return the first non-empty string from a list of optional values."""
+
+    for value in values:
+        cleaned = clean_optional_text(value)
+        if cleaned:
+            return cleaned
+    return ""
+
+
+def clean_optional_text(value: str | None) -> str | None:
+    """Return stripped text or None."""
+
+    if value is None:
+        return None
+    cleaned = value.strip()
+    return cleaned or None

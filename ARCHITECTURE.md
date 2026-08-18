@@ -1,5 +1,9 @@
 # Architecture
 
+> **Historical development document. Some architecture details, metrics, and dataset counts reflect earlier GeoRisk versions. See `README.md` for the current frozen public release.**
+
+> **Release note:** Frozen V5 now also has a thin LangGraph orchestration adapter in `src/orchestration/langgraph_v5.py`. It wraps the existing V5 bounded repair workflow and preserves the frozen V4 verification boundary; it is not a V6 redesign.
+
 GeoRisk Transmission Analyzer is a curated agentic RAG project for geopolitical risk exposure discovery. This document explains how the system is organized, what is implemented, and how to evaluate it.
 
 The intended audience is a beginner full-stack / AI engineer or a technical interviewer who wants to understand the project design without reading every source file first.
@@ -29,6 +33,7 @@ News Input
   -> Transmission Chain Builder
   -> Market Mapping
   -> Evidence Grading
+  -> Asset Relevance Ranking
   -> Report Generation
   -> CLI / Streamlit UI / FastAPI
 ```
@@ -219,6 +224,18 @@ The evidence agent assigns one of three evidence levels:
 - `inference_only`
 
 Confidence scores represent evidence strength, not probability of price movement.
+
+### Asset Relevance Ranking
+
+File:
+
+- `src/agents/asset_ranker.py`
+
+The ranker adds deterministic analyst-priority metadata after evidence grading.
+It ranks only second-order exposures using a fixed lexicographic key. First-order
+exposures are preserved as a direct-exposure reference list. The ranker
+does not filter candidates and does not reinterpret evidence confidence as
+market-movement probability.
 
 ### Report Generation
 

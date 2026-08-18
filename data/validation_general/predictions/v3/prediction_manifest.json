@@ -1,0 +1,36 @@
+{
+  "CAR_run": false,
+  "asset_snapshot_path": "data/validation_general/predictions/v3/asset_snapshot.csv",
+  "benchmark_version": "georisk_multiyear_general_v1",
+  "config": {
+    "TransmissionContext_enabled": false,
+    "baseline_version": "georisk_v3_frozen_v1",
+    "canonical_family_enabled": false,
+    "event_analyzer": "rule",
+    "mechanism_compatibility_enabled": false,
+    "support_threshold": 2,
+    "top_k": 3
+  },
+  "events_attempted": 23,
+  "ground_truth_accessed_during_generation": false,
+  "node_snapshot_path": "data/validation_general/predictions/v3/node_snapshot.csv",
+  "prediction_run_timestamp": "2026-08-12T06:00:36.428124+00:00",
+  "preflight": {
+    "CAR_run": false,
+    "benchmark_version": "georisk_multiyear_general_v1",
+    "ground_truth_frozen": true,
+    "multiyear_manifest_checksums_valid": true,
+    "node_annotation_count": 46,
+    "prices_accessed": false,
+    "ready_for_paired_prediction": true,
+    "selected_event_count": 23,
+    "v3_manifest_checksums_valid": true,
+    "v4_manifest_checksums_valid": true
+  },
+  "prices_accessed": false,
+  "raw_prediction_artifact": "data/validation_general/predictions/v3/raw_predictions.json",
+  "returns_accessed": false,
+  "runtime_failure_count": 0,
+  "success_count": 23,
+  "system": "v3"
+}

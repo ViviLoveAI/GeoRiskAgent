@@ -1,0 +1,15 @@
+{
+  "activated_rows": 186,
+  "curated_eligible_asset_event_rows": 922,
+  "events": 12,
+  "experiment_name": "Curated-Pool Activation / Event-Specific Discrimination Test",
+  "input_hashes": {
+    "asset_mapping": "5b94c4d8e0255237d1cb9f5f8eb564072b509c3923c89ca1b6fb117942f8316a",
+    "price_dir_listing": "47e3590a4b48d45d1b6a98f23a586627f31c74a8a3f30ca0381b81505e3a261b"
+  },
+  "nonactivated_rows": 736,
+  "prediction_version": "GeoRisk frozen market-validation snapshot (V3 snapshot artifacts)",
+  "prices_used_for_eligibility_only": true,
+  "scar_inspected_before_activation_freeze": false,
+  "stage": "activation_boundary_frozen_before_scar_join"
+}

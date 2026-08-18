@@ -1,0 +1,19 @@
+{
+  "accepted_second_order_nodes": 45,
+  "dropped_by_support_requirement": 180,
+  "events_evaluated": 44,
+  "evidence_grading": {
+    "historical_supported": 12,
+    "sector_proxy": 78
+  },
+  "mapped_second_order_nodes": 45,
+  "node_mapping_coverage": 1.0,
+  "raw_second_order_nodes": 225,
+  "second_order_assets": 90,
+  "supported_nodes_sent_to_market_mapper": 45,
+  "unique_mapped_second_order_nodes": 16,
+  "unique_raw_second_order_nodes": 34,
+  "unique_unmapped_accepted_second_order_nodes": 0,
+  "unmapped_accepted_second_order_nodes": 0,
+  "v4_ranked_second_order_candidates": 90
+}

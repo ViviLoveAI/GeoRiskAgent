@@ -1,0 +1,22 @@
+{
+  "baseline_hit_rate": 0.06666666666666667,
+  "evaluated_pairs": 147,
+  "events_evaluated": 10,
+  "georisk_flagged_hit_rate": 0.07692307692307693,
+  "hit_rate_by_event_type": {
+    "critical minerals resource restrictions": 0.07547169811320754,
+    "cyberattack critical infrastructure": 0.07407407407407407,
+    "trade restrictions tariffs": 0.07692307692307693
+  },
+  "hit_rate_by_evidence_label": {
+    "historical_supported": 0.0,
+    "inference_only": 0.0,
+    "sector_proxy": 0.08035714285714286
+  },
+  "overall_hit_rate": 0.07482993197278912,
+  "skipped_pairs": 1,
+  "skipped_reasons": {
+    "asset_equals_benchmark": 1
+  },
+  "total_evaluated_pairs": 147
+}

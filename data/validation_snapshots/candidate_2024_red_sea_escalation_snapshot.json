@@ -1,0 +1,173 @@
+{
+  "baseline_exposures": [
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_broad_market_baseline",
+      "node": "broad_market_growth",
+      "source": "baseline",
+      "symbol": "QQQ"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "financials",
+      "source": "baseline",
+      "symbol": "XLF"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "healthcare",
+      "source": "baseline",
+      "symbol": "XLV"
+    }
+  ],
+  "event_date": "2024-01-12",
+  "event_description": "United States and United Kingdom launch strikes after Red Sea shipping attacks The United States and United Kingdom launched strikes against Houthi targets in Yemen after repeated attacks on commercial vessels in the Red Sea forced shipping lines to divert container and tanker traffic around Africa.",
+  "event_id": "candidate_2024_red_sea_escalation",
+  "event_type": "maritime security disruption",
+  "generated_at": "2026-08-05T00:36:58.565394+00:00",
+  "note": "Frozen before observing post-event returns",
+  "predicted_exposures": [
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "maritime_chokepoint",
+      "source": "georisk",
+      "symbol": "BOAT"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "maritime_chokepoint",
+      "source": "georisk",
+      "symbol": "MATX"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "container_shipping",
+      "source": "georisk",
+      "symbol": "DAC"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "container_shipping",
+      "source": "georisk",
+      "symbol": "MAERSK-B.CO"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "freight_routes",
+      "source": "georisk",
+      "symbol": "FDX"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "freight_routes",
+      "source": "georisk",
+      "symbol": "UPS"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "marine_insurance",
+      "source": "georisk",
+      "symbol": "CB"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "marine_insurance",
+      "source": "georisk",
+      "symbol": "TRV"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "oil_shipping",
+      "source": "georisk",
+      "symbol": "FRO"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "oil_shipping",
+      "source": "georisk",
+      "symbol": "DHT"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "lng_shipping",
+      "source": "georisk",
+      "symbol": "FLNG"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "lng_shipping",
+      "source": "georisk",
+      "symbol": "LNG"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "logistics",
+      "source": "georisk",
+      "symbol": "KNIN.SW"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_red_sea_escalation",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "logistics",
+      "source": "georisk",
+      "symbol": "JBHT"
+    }
+  ]
+}

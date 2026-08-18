@@ -1,0 +1,1061 @@
+{
+  "coverage_by_event_type": {
+    "aerospace supply-chain sanctions": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "resolvable": 5,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "airspace closure and aviation logistics disruption": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "battery material export controls": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "border military escalation and airspace disruption": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "civil conflict and oil infrastructure supply disruption": {
+      "coverage": 0.857143,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 2,
+        "ambiguous": 1,
+        "resolvable": 4
+      },
+      "total": 7
+    },
+    "climate-related shipping chokepoint disruption": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 6
+      },
+      "total": 7
+    },
+    "coup and manufacturing supply-chain disruption": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 1,
+        "ambiguous": 1,
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "coup and uranium supply-chain risk": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 2
+      },
+      "total": 6
+    },
+    "critical mineral export ban and processing localization": {
+      "coverage": 0.8,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "critical mineral mining disruption and political instability": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "critical minerals export controls": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "critical minerals export restriction": {
+      "coverage": 0.6,
+      "informative": 3,
+      "status_counts": {
+        "ambiguous": 1,
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "cyber infrastructure disruption": {
+      "coverage": 0.818182,
+      "informative": 9,
+      "status_counts": {
+        "already_migrated": 2,
+        "ambiguous": 1,
+        "resolvable": 7,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 11
+    },
+    "cyberattack on pipeline infrastructure and fuel distribution": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 6
+      },
+      "total": 7
+    },
+    "cyberattack on port logistics infrastructure": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "defense procurement restriction and aerospace supply-chain adjustment": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "defense spending policy shock": {
+      "coverage": 0.8,
+      "informative": 4,
+      "status_counts": {
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "defense supply-chain escalation": {
+      "coverage": 0.8,
+      "informative": 4,
+      "status_counts": {
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "energy and agricultural input shock": {
+      "coverage": 0.8,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 2,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "energy chokepoint security risk": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 3,
+        "ambiguous": 1,
+        "resolvable": 2
+      },
+      "total": 6
+    },
+    "energy infrastructure disruption": {
+      "coverage": 0.727273,
+      "informative": 8,
+      "status_counts": {
+        "already_migrated": 2,
+        "ambiguous": 3,
+        "resolvable": 6
+      },
+      "total": 11
+    },
+    "energy infrastructure sabotage and pipeline disruption": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 1,
+        "ambiguous": 1,
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "energy shipping sanctions and Arctic LNG disruption risk": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "already_migrated": 3,
+        "resolvable": 4
+      },
+      "total": 7
+    },
+    "fertilizer export restriction and agricultural input shock": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 4
+      },
+      "total": 6
+    },
+    "fertilizer sanctions and agricultural input disruption": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "financial sanctions and payment network disruption": {
+      "coverage": 1.0,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 3
+      },
+      "total": 5
+    },
+    "financial sanctions and trade finance restriction": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "food export ban and grain trade restriction": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "food export controls and agricultural trade disruption": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "forced-labor import restriction and customs compliance risk": {
+      "coverage": 0.8,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "geopolitical cyberattack and logistics disruption": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "green trade compliance and carbon border adjustment risk": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 3,
+        "resolvable": 2,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "maritime chokepoint security and oil shipping disruption": {
+      "coverage": 0.857143,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 3,
+        "ambiguous": 1,
+        "resolvable": 3
+      },
+      "total": 7
+    },
+    "maritime insurance verification and tanker-route disruption": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "resolvable": 7
+      },
+      "total": 7
+    },
+    "maritime military tension and shipping-route risk": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 6
+      },
+      "total": 7
+    },
+    "maritime security disruption": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "already_migrated": 4,
+        "resolvable": 3
+      },
+      "total": 7
+    },
+    "maritime security disruption and insurance cost shock": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 4
+      },
+      "total": 6
+    },
+    "mining unrest and critical mineral shipment disruption": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "ambiguous": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "missile escalation and regional security risk": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "nearshoring policy and cross-border manufacturing risk": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "resolvable": 5,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "nuclear fuel supply-chain risk": {
+      "coverage": 0.5,
+      "informative": 3,
+      "status_counts": {
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 3
+      },
+      "total": 6
+    },
+    "oil sanctions and refinery feedstock disruption": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "oil sanctions and shipping finance restriction": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 6
+      },
+      "total": 7
+    },
+    "oil supply policy shock": {
+      "coverage": 0.6,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "ambiguous": 4,
+        "resolvable": 5
+      },
+      "total": 10
+    },
+    "pipeline gas transit disruption and energy security shock": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "ambiguous": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "port labor and shipping logistics disruption": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "ambiguous": 1,
+        "resolvable": 4
+      },
+      "total": 6
+    },
+    "rare earth export restriction and electronics input disruption": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "regional military escalation and energy chokepoint risk": {
+      "coverage": 0.857143,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 3,
+        "ambiguous": 1,
+        "resolvable": 3
+      },
+      "total": 7
+    },
+    "regional military tension and semiconductor supply risk": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "resource contract dispute and critical mineral supply disruption": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "ambiguous": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "resource nationalism and battery material policy risk": {
+      "coverage": 0.8,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "sanctions payment network and oil trade restriction": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "semiconductor entity-list export control and foundry access risk": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "resolvable": 5,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "semiconductor equipment export control and customs licensing risk": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "shipping chokepoint disruption": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "already_migrated": 2,
+        "ambiguous": 1,
+        "resolvable": 3
+      },
+      "total": 6
+    },
+    "shipping sanctions and marine insurance compliance disruption": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 6
+      },
+      "total": 7
+    },
+    "taiwan strait semiconductor supply-chain disruption": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "tariff escalation and clean technology trade restriction": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 2,
+        "ambiguous": 1,
+        "resolvable": 2,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "technology export controls": {
+      "coverage": 1.0,
+      "informative": 8,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 7
+      },
+      "total": 8
+    },
+    "technology sanctions and trade restrictions": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 1,
+        "ambiguous": 1,
+        "resolvable": 3,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "trade policy and tariffs": {
+      "coverage": 0.8,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 2,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "war and sanctions energy disruption": {
+      "coverage": 0.8,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 2,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 5
+    },
+    "war-related agricultural export disruption": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "resolvable": 6
+      },
+      "total": 6
+    },
+    "war-related maritime insurance and grain export disruption": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "already_migrated": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "wartime electricity grid attack and infrastructure disruption": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "ambiguous": 1,
+        "resolvable": 4,
+        "vocabulary_gap_candidate": 1
+      },
+      "total": 6
+    },
+    "wartime refinery disruption and refined-product supply risk": {
+      "coverage": 0.666667,
+      "informative": 4,
+      "status_counts": {
+        "ambiguous": 2,
+        "resolvable": 4
+      },
+      "total": 6
+    }
+  },
+  "coverage_by_node": {
+    "aerospace_supply_chain": {
+      "coverage": 1.0,
+      "informative": 4,
+      "status_counts": {
+        "resolvable": 4
+      },
+      "total": 4
+    },
+    "agriculture": {
+      "coverage": 0.9,
+      "informative": 9,
+      "status_counts": {
+        "already_migrated": 2,
+        "ambiguous": 1,
+        "resolvable": 7
+      },
+      "total": 10
+    },
+    "ai_chips": {
+      "coverage": 1.0,
+      "informative": 8,
+      "status_counts": {
+        "resolvable": 8
+      },
+      "total": 8
+    },
+    "aviation": {
+      "coverage": 0.636364,
+      "informative": 7,
+      "status_counts": {
+        "already_migrated": 4,
+        "ambiguous": 4,
+        "resolvable": 3
+      },
+      "total": 11
+    },
+    "battery_materials": {
+      "coverage": 0.571429,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 2,
+        "ambiguous": 3,
+        "resolvable": 2
+      },
+      "total": 7
+    },
+    "container_shipping": {
+      "coverage": 1.0,
+      "informative": 8,
+      "status_counts": {
+        "already_migrated": 4,
+        "resolvable": 4
+      },
+      "total": 8
+    },
+    "critical_minerals": {
+      "coverage": 1.0,
+      "informative": 12,
+      "status_counts": {
+        "already_migrated": 6,
+        "resolvable": 6
+      },
+      "total": 12
+    },
+    "customs": {
+      "coverage": 1.0,
+      "informative": 32,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 30
+      },
+      "total": 32
+    },
+    "cyber_infrastructure": {
+      "coverage": 1.0,
+      "informative": 9,
+      "status_counts": {
+        "resolvable": 9
+      },
+      "total": 9
+    },
+    "data_centers": {
+      "coverage": 0.833333,
+      "informative": 5,
+      "status_counts": {
+        "ambiguous": 1,
+        "resolvable": 5
+      },
+      "total": 6
+    },
+    "defense": {
+      "coverage": 1.0,
+      "informative": 15,
+      "status_counts": {
+        "already_migrated": 8,
+        "resolvable": 7
+      },
+      "total": 15
+    },
+    "eda_software": {
+      "coverage": 1.0,
+      "informative": 3,
+      "status_counts": {
+        "resolvable": 3
+      },
+      "total": 3
+    },
+    "energy": {
+      "coverage": 0.464286,
+      "informative": 13,
+      "status_counts": {
+        "already_migrated": 7,
+        "ambiguous": 15,
+        "resolvable": 6
+      },
+      "total": 28
+    },
+    "fertilizer": {
+      "coverage": 1.0,
+      "informative": 5,
+      "status_counts": {
+        "resolvable": 5
+      },
+      "total": 5
+    },
+    "financial_sanctions": {
+      "coverage": 1.0,
+      "informative": 8,
+      "status_counts": {
+        "already_migrated": 3,
+        "resolvable": 5
+      },
+      "total": 8
+    },
+    "food_export_controls": {
+      "coverage": 1.0,
+      "informative": 2,
+      "status_counts": {
+        "resolvable": 2
+      },
+      "total": 2
+    },
+    "foundry": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "resolvable": 6
+      },
+      "total": 6
+    },
+    "freight_routes": {
+      "coverage": 1.0,
+      "informative": 19,
+      "status_counts": {
+        "resolvable": 19
+      },
+      "total": 19
+    },
+    "gallium_germanium_graphite": {
+      "coverage": 1.0,
+      "informative": 2,
+      "status_counts": {
+        "resolvable": 2
+      },
+      "total": 2
+    },
+    "grain_exports": {
+      "coverage": 1.0,
+      "informative": 4,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 2
+      },
+      "total": 4
+    },
+    "graphite": {
+      "coverage": 1.0,
+      "informative": 1,
+      "status_counts": {
+        "resolvable": 1
+      },
+      "total": 1
+    },
+    "lng_shipping": {
+      "coverage": 1.0,
+      "informative": 8,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 6
+      },
+      "total": 8
+    },
+    "logistics": {
+      "coverage": 1.0,
+      "informative": 33,
+      "status_counts": {
+        "already_migrated": 6,
+        "resolvable": 27
+      },
+      "total": 33
+    },
+    "manufacturing_inputs": {
+      "coverage": 0.0,
+      "informative": 0,
+      "status_counts": {
+        "vocabulary_gap_candidate": 34
+      },
+      "total": 34
+    },
+    "marine_insurance": {
+      "coverage": 1.0,
+      "informative": 12,
+      "status_counts": {
+        "already_migrated": 5,
+        "resolvable": 7
+      },
+      "total": 12
+    },
+    "maritime_chokepoint": {
+      "coverage": 1.0,
+      "informative": 12,
+      "status_counts": {
+        "already_migrated": 6,
+        "resolvable": 6
+      },
+      "total": 12
+    },
+    "nuclear_fuel": {
+      "coverage": 0.0,
+      "informative": 0,
+      "status_counts": {
+        "vocabulary_gap_candidate": 2
+      },
+      "total": 2
+    },
+    "oil_shipping": {
+      "coverage": 1.0,
+      "informative": 17,
+      "status_counts": {
+        "already_migrated": 5,
+        "resolvable": 12
+      },
+      "total": 17
+    },
+    "panama_canal": {
+      "coverage": 1.0,
+      "informative": 1,
+      "status_counts": {
+        "resolvable": 1
+      },
+      "total": 1
+    },
+    "payment_networks": {
+      "coverage": 1.0,
+      "informative": 7,
+      "status_counts": {
+        "resolvable": 7
+      },
+      "total": 7
+    },
+    "petrochemicals": {
+      "coverage": 1.0,
+      "informative": 12,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 10
+      },
+      "total": 12
+    },
+    "pipeline_infrastructure": {
+      "coverage": 1.0,
+      "informative": 6,
+      "status_counts": {
+        "resolvable": 6
+      },
+      "total": 6
+    },
+    "port_labor": {
+      "coverage": 0.0,
+      "informative": 0,
+      "status_counts": {
+        "ambiguous": 1
+      },
+      "total": 1
+    },
+    "ports": {
+      "coverage": 1.0,
+      "informative": 9,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 7
+      },
+      "total": 9
+    },
+    "rare_earths": {
+      "coverage": 1.0,
+      "informative": 2,
+      "status_counts": {
+        "resolvable": 2
+      },
+      "total": 2
+    },
+    "refining": {
+      "coverage": 1.0,
+      "informative": 12,
+      "status_counts": {
+        "already_migrated": 2,
+        "resolvable": 10
+      },
+      "total": 12
+    },
+    "semiconductor_equipment": {
+      "coverage": 1.0,
+      "informative": 11,
+      "status_counts": {
+        "already_migrated": 3,
+        "resolvable": 8
+      },
+      "total": 11
+    },
+    "taiwan_semiconductor_supply": {
+      "coverage": 1.0,
+      "informative": 1,
+      "status_counts": {
+        "resolvable": 1
+      },
+      "total": 1
+    },
+    "trade_lanes": {
+      "coverage": 1.0,
+      "informative": 31,
+      "status_counts": {
+        "already_migrated": 3,
+        "resolvable": 28
+      },
+      "total": 31
+    },
+    "uranium": {
+      "coverage": 0.0,
+      "informative": 0,
+      "status_counts": {
+        "vocabulary_gap_candidate": 2
+      },
+      "total": 2
+    }
+  },
+  "field_coverage": {
+    "canonical_context": {
+      "coverage": 1.0,
+      "informative": 350,
+      "total": 350
+    },
+    "constraint_type": {
+      "coverage": 1.0,
+      "informative": 350,
+      "total": 350
+    },
+    "shock_type": {
+      "coverage": 1.0,
+      "informative": 350,
+      "total": 350
+    },
+    "target_node_role": {
+      "coverage": 1.0,
+      "informative": 350,
+      "total": 350
+    },
+    "upstream_driver": {
+      "coverage": 1.0,
+      "informative": 350,
+      "total": 350
+    }
+  },
+  "historical_case_node_coverage": 0.847458,
+  "historical_case_nodes_total": 413,
+  "historical_cases_total": 70,
+  "migrated_case_nodes": 350,
+  "migrated_cases": 70,
+  "migration_status_counts": {
+    "already_migrated": 76,
+    "ambiguous": 25,
+    "resolvable": 274,
+    "vocabulary_gap_candidate": 38
+  },
+  "quality_review_rows": 36,
+  "top_unmigrated_nodes": [
+    {
+      "missing_case_nodes": 34,
+      "node": "manufacturing_inputs"
+    },
+    {
+      "missing_case_nodes": 15,
+      "node": "energy"
+    },
+    {
+      "missing_case_nodes": 4,
+      "node": "aviation"
+    },
+    {
+      "missing_case_nodes": 3,
+      "node": "battery_materials"
+    },
+    {
+      "missing_case_nodes": 2,
+      "node": "uranium"
+    },
+    {
+      "missing_case_nodes": 2,
+      "node": "nuclear_fuel"
+    },
+    {
+      "missing_case_nodes": 1,
+      "node": "data_centers"
+    },
+    {
+      "missing_case_nodes": 1,
+      "node": "port_labor"
+    },
+    {
+      "missing_case_nodes": 1,
+      "node": "agriculture"
+    }
+  ]
+}

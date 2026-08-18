@@ -1,0 +1,395 @@
+{
+  "baseline_exposures": [
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_broad_market_baseline",
+      "node": "broad_market_growth",
+      "source": "baseline",
+      "symbol": "QQQ"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "financials",
+      "source": "baseline",
+      "symbol": "XLF"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "healthcare",
+      "source": "baseline",
+      "symbol": "XLV"
+    }
+  ],
+  "event_analyzer_mode": "rule",
+  "event_date": "2025-04-04",
+  "event_description": "China imposes rare-earth export controls after U.S. tariff escalation Reuters reported China placed export restrictions on rare earth elements after U.S. tariff escalation, affecting minerals used in weapons, electronics, and consumer goods. Keywords: rare earth, export controls, critical minerals, trade restrictions.",
+  "event_id": "v3_20250404_china_rare_earth_export_controls",
+  "event_type": "critical_minerals_export_controls",
+  "generated_at": "2026-08-05T04:22:26.608063+00:00",
+  "git_commit": "85d26cd326d8f7a88d8fe604b988e00da0b6953a",
+  "headline": "China imposes rare-earth export controls after U.S. tariff escalation",
+  "note": "Frozen before observing post-event returns",
+  "pipeline_mode": "full_georisk_pipeline",
+  "predicted_exposures": [
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'customs', which is a first-order (directly implicated) node corroborated by 2 retrieved case(s). The Descartes Systems Group Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'customs', which is a first-order (directly implicated) node corroborated by 2 retrieved case(s). The Descartes Systems Group Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the customs node: Logistics software provider with customs and trade compliance exposure",
+      "linkage_tier": "direct_exposure",
+      "node": "customs",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "symbol": "DSGX",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'customs', which is a first-order (directly implicated) node corroborated by 2 retrieved case(s). C H Robinson Worldwide Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'customs', which is a first-order (directly implicated) node corroborated by 2 retrieved case(s). C H Robinson Worldwide Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Freight brokerage and logistics services are affected by customs flows, but customs is one operating component within broader logistics activity.",
+      "linkage_tier": "related_exposure",
+      "node": "customs",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "symbol": "CHRW",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'manufacturing_inputs', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). Deere & Company maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'manufacturing_inputs', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). Deere & Company maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Business has meaningful but diversified or indirect economic linkage to the manufacturing_inputs node: Equipment manufacturer exposed to agriculture and industrial input cycles",
+      "linkage_tier": "related_exposure",
+      "node": "manufacturing_inputs",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "symbol": "DE",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'manufacturing_inputs', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). Caterpillar Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'manufacturing_inputs', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). Caterpillar Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Business has meaningful but diversified or indirect economic linkage to the manufacturing_inputs node: Heavy equipment manufacturer exposed to construction mining and infrastructure inputs",
+      "linkage_tier": "related_exposure",
+      "node": "manufacturing_inputs",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "symbol": "CAT",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'defense', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). Lockheed Martin Corporation maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'defense', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). Lockheed Martin Corporation maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the defense node: Defense contractor exposed to government security and defense spending priorities",
+      "linkage_tier": "direct_exposure",
+      "node": "defense",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo"
+      ],
+      "symbol": "LMT",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'defense', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). iShares U S Aerospace & Defense ETF maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'defense', which is a second-order (analog-corroborated) node corroborated by 2 retrieved case(s). iShares U S Aerospace & Defense ETF maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ticker is an ETF, fund, or basket used as broad proxy exposure for the defense node: ETF exposure to US aerospace and defense companies",
+      "linkage_tier": "broad_proxy",
+      "node": "defense",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo"
+      ],
+      "symbol": "ITA",
+      "transmission_order": "second_order"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'critical_minerals', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). VanEck Rare Earth and Strategic Metals ETF maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'critical_minerals', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). VanEck Rare Earth and Strategic Metals ETF maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ticker is an ETF, fund, or basket used as broad proxy exposure for the critical_minerals node: Basket exposure to rare earth and strategic metals producers used in critical supply chains",
+      "linkage_tier": "broad_proxy",
+      "node": "critical_minerals",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "symbol": "REMX",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'critical_minerals', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). iShares MSCI Global Metals & Mining Producers ETF maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'critical_minerals', which is a first-order (directly implicated) node corroborated by 3 retrieved case(s). iShares MSCI Global Metals & Mining Producers ETF maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Ticker is an ETF, fund, or basket used as broad proxy exposure for the critical_minerals node: Broad metals and mining producer ETF with critical materials exposure",
+      "linkage_tier": "broad_proxy",
+      "node": "critical_minerals",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "symbol": "PICK",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'rare_earths', which is a first-order (directly implicated) node corroborated by 2 retrieved case(s). MP Materials Corp maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'rare_earths', which is a first-order (directly implicated) node corroborated by 2 retrieved case(s). MP Materials Corp maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the rare_earths node: Rare earth mining and processing company exposed to magnet materials supply chains",
+      "linkage_tier": "direct_exposure",
+      "node": "rare_earths",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo"
+      ],
+      "symbol": "MP",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "ADR",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'rare_earths', which is a first-order (directly implicated) node corroborated by 2 retrieved case(s). Lynas Rare Earths Ltd ADR maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'rare_earths', which is a first-order (directly implicated) node corroborated by 2 retrieved case(s). Lynas Rare Earths Ltd ADR maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Core operations or products are directly tied to the rare_earths node: Rare earth producer with exposure to non-China rare earth supply chains",
+      "linkage_tier": "direct_exposure",
+      "node": "rare_earths",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo"
+      ],
+      "symbol": "LYSDY",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'gallium_germanium_graphite', which is a first-order (directly implicated) node corroborated by 1 retrieved case(s). Neo Performance Materials Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'gallium_germanium_graphite', which is a first-order (directly implicated) node corroborated by 1 retrieved case(s). Neo Performance Materials Inc maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Specialty materials operations are exposed to engineered and rare-earth material supply chains, but the bundled gallium, germanium, and graphite node is narrower than the company's broader materials business.",
+      "linkage_tier": "related_exposure",
+      "node": "gallium_germanium_graphite",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "symbol": "NEO.TO",
+      "transmission_order": "first_order"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.64,
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "evidence_label": "sector_proxy",
+      "evidence_rationale": "Channel support inherited from transmission node 'gallium_germanium_graphite', which is a first-order (directly implicated) node corroborated by 1 retrieved case(s). Syrah Resources Ltd maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "evidence_reason": "Channel support inherited from transmission node 'gallium_germanium_graphite', which is a first-order (directly implicated) node corroborated by 1 retrieved case(s). Syrah Resources Ltd maps to this supported channel but is not individually named. Risk watchlist candidate, not a trading signal. This does not predict price movement.",
+      "expected_direction": null,
+      "linkage_rationale": "Graphite production links the company to part of this node, but the bundled gallium, germanium, and graphite node is only partly specific to its core operations.",
+      "linkage_tier": "related_exposure",
+      "node": "gallium_germanium_graphite",
+      "source": "georisk",
+      "supporting_case_ids": [
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "symbol": "SYR.AX",
+      "transmission_order": "first_order"
+    }
+  ],
+  "regions": [
+    "East Asia",
+    "North America",
+    "Global"
+  ],
+  "retrieval_configuration": {
+    "top_k": 3
+  },
+  "retrieved_case_ids": [
+    "case_rare_earth_export_restriction_risk",
+    "case_2010_china_japan_rare_earth_embargo",
+    "case_china_gallium_germanium_graphite_controls"
+  ],
+  "snapshot_version": "v3_full_pipeline_linkage_ontology",
+  "source": "Reuters via Investing.com",
+  "source_url": "https://www.investing.com/news/commodities-news/china-hits-back-at-us-tariffs-with-rare-earth-export-controls-3967562",
+  "transmission_chain": {
+    "affected_nodes": [
+      "critical_minerals",
+      "rare_earths",
+      "gallium_germanium_graphite",
+      "manufacturing_inputs",
+      "customs",
+      "defense"
+    ],
+    "assumptions": [
+      "The event attributes were produced by either the rule-based analyzer or the optional validated LLM analyzer.",
+      "Retrieved historical cases provide analogs, not proof of identical outcomes.",
+      "Without retrieval similarity scores, single-case nodes are excluded from second-order expansion unless they are already event nodes."
+    ],
+    "chain_steps": [
+      "critical_minerals_access_risk",
+      "critical_minerals",
+      "rare_earths",
+      "gallium_germanium_graphite",
+      "manufacturing_inputs",
+      "customs",
+      "defense",
+      "export restriction concern",
+      "critical mineral availability risk",
+      "magnet and component supply pressure",
+      "manufacturer sourcing uncertainty",
+      "strategic stockpiling and substitution efforts",
+      "territorial dispute escalation",
+      "rare earth export disruption concern",
+      "customs and licensing bottleneck",
+      "electronics and magnet input risk",
+      "supplier diversification review",
+      "export licensing rules",
+      "critical mineral shipment uncertainty",
+      "semiconductor and battery input risk",
+      "compliance burden",
+      "supplier diversification efforts"
+    ],
+    "channels": [
+      "critical_minerals_access_risk",
+      "critical_minerals",
+      "rare_earths",
+      "gallium_germanium_graphite",
+      "manufacturing_inputs",
+      "customs",
+      "defense",
+      "export restriction concern",
+      "critical mineral availability risk",
+      "magnet and component supply pressure",
+      "manufacturer sourcing uncertainty",
+      "strategic stockpiling and substitution efforts",
+      "territorial dispute escalation",
+      "rare earth export disruption concern",
+      "customs and licensing bottleneck",
+      "electronics and magnet input risk",
+      "supplier diversification review",
+      "export licensing rules",
+      "critical mineral shipment uncertainty",
+      "semiconductor and battery input risk",
+      "compliance burden",
+      "supplier diversification efforts"
+    ],
+    "limitations": [
+      "The chain is qualitative and does not forecast prices.",
+      "The chain is not investment advice.",
+      "Second-order expansion is conservative: it may miss valid transmission targets that happen to appear in only one retrieved case.",
+      "The second-order support threshold is an unvalidated empirical default and should be calibrated against CAR-based ground truth.",
+      "Future work should pass retrieval similarity or distance into RetrievedCase to support high-similarity single-case analog expansion.",
+      "Node-level support is captured, but individual chain steps are not yet grounded step-by-step to specific cases."
+    ],
+    "node_evidence_levels": {
+      "critical_minerals": "event_node",
+      "customs": "event_node",
+      "defense": "case_grounded",
+      "gallium_germanium_graphite": "event_node",
+      "manufacturing_inputs": "event_node",
+      "rare_earths": "event_node"
+    },
+    "node_supporting_case_ids": {
+      "critical_minerals": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "customs": [
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "defense": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo"
+      ],
+      "gallium_germanium_graphite": [
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "manufacturing_inputs": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo",
+        "case_china_gallium_germanium_graphite_controls"
+      ],
+      "rare_earths": [
+        "case_rare_earth_export_restriction_risk",
+        "case_2010_china_japan_rare_earth_embargo"
+      ]
+    },
+    "rationale": "This deterministic chain starts from the event's own supply-chain nodes (first-order) and expands to second-order affected nodes only when they recur across at least 2 independent retrieved historical analogs, so that single-case co-occurrence is not treated as sufficient evidence. The transmission narrative and the supporting-case list are scoped to the cases that actually support an accepted node, so the presented story matches the nodes that were accepted. Assets mapped later should be treated as potential exposure watchlist candidates, not trading signals.",
+    "supporting_case_ids": [
+      "case_rare_earth_export_restriction_risk",
+      "case_2010_china_japan_rare_earth_embargo",
+      "case_china_gallium_germanium_graphite_controls"
+    ]
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "downloaded_symbols": [],
+  "failed_symbols": [
+    {
+      "path": "data/prices/DSGX.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "DSGX"
+    },
+    {
+      "path": "data/prices/CHRW.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "CHRW"
+    },
+    {
+      "path": "data/prices/DE.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "DE"
+    },
+    {
+      "path": "data/prices/CAT.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "CAT"
+    },
+    {
+      "path": "data/prices/REMX.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "REMX"
+    },
+    {
+      "path": "data/prices/PICK.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "PICK"
+    },
+    {
+      "path": "data/prices/MP.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "MP"
+    },
+    {
+      "path": "data/prices/LYSDY.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "LYSDY"
+    },
+    {
+      "path": "data/prices/NEO.TO.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "NEO.TO"
+    },
+    {
+      "path": "data/prices/SYR.AX.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "SYR.AX"
+    },
+    {
+      "path": "data/prices/QQQ.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "QQQ"
+    },
+    {
+      "path": "data/prices/XLF.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "XLF"
+    },
+    {
+      "path": "data/prices/XLV.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "XLV"
+    },
+    {
+      "path": "data/prices/FDX.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "FDX"
+    },
+    {
+      "path": "data/prices/UPS.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "UPS"
+    },
+    {
+      "path": "data/prices/XLE.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "XLE"
+    },
+    {
+      "path": "data/prices/XOM.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "XOM"
+    },
+    {
+      "path": "data/prices/JBHT.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "JBHT"
+    },
+    {
+      "path": "data/prices/CIBR.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "CIBR"
+    },
+    {
+      "path": "data/prices/CRWD.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "CRWD"
+    },
+    {
+      "path": "data/prices/ENB.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "ENB"
+    },
+    {
+      "path": "data/prices/TRP.TO.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "TRP.TO"
+    },
+    {
+      "path": "data/prices/EXPD.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "EXPD"
+    },
+    {
+      "path": "data/prices/DHL.DE.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "DHL.DE"
+    },
+    {
+      "path": "data/prices/ADM.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "ADM"
+    },
+    {
+      "path": "data/prices/MOO.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "MOO"
+    },
+    {
+      "path": "data/prices/ACWI.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "ACWI"
+    },
+    {
+      "path": "data/prices/CB.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "CB"
+    },
+    {
+      "path": "data/prices/TRV.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "TRV"
+    },
+    {
+      "path": "data/prices/FRO.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "FRO"
+    },
+    {
+      "path": "data/prices/DHT.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "DHT"
+    },
+    {
+      "path": "data/prices/ASML.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "ASML"
+    },
+    {
+      "path": "data/prices/AMAT.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "AMAT"
+    },
+    {
+      "path": "data/prices/NVDA.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "NVDA"
+    },
+    {
+      "path": "data/prices/AMD.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "AMD"
+    },
+    {
+      "path": "data/prices/SNPS.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "SNPS"
+    },
+    {
+      "path": "data/prices/CDNS.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "CDNS"
+    },
+    {
+      "path": "data/prices/TSM.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "TSM"
+    },
+    {
+      "path": "data/prices/GFS.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "GFS"
+    },
+    {
+      "path": "data/prices/EQIX.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "EQIX"
+    },
+    {
+      "path": "data/prices/DLR.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "DLR"
+    },
+    {
+      "path": "data/prices/EUFN.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "EUFN"
+    },
+    {
+      "path": "data/prices/V.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "V"
+    },
+    {
+      "path": "data/prices/MA.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "MA"
+    },
+    {
+      "path": "data/prices/DAC.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "DAC"
+    },
+    {
+      "path": "data/prices/MAERSK-B.CO.csv",
+      "reason": "download_returned_no_valid_prices",
+      "symbol": "MAERSK-B.CO"
+    }
+  ],
+  "invalid_event_dates": [],
+  "price_dir": "data/prices",
+  "required_end": "2025-11-25",
+  "required_start": "2025-03-22",
+  "reused_symbols": [
+    "1199.HK",
+    "0144.HK",
+    "KNIN.SW",
+    "SPY"
+  ],
+  "symbols": [
+    "DSGX",
+    "CHRW",
+    "DE",
+    "CAT",
+    "REMX",
+    "PICK",
+    "MP",
+    "LYSDY",
+    "NEO.TO",
+    "SYR.AX",
+    "QQQ",
+    "XLF",
+    "XLV",
+    "FDX",
+    "UPS",
+    "1199.HK",
+    "0144.HK",
+    "XLE",
+    "XOM",
+    "KNIN.SW",
+    "JBHT",
+    "CIBR",
+    "CRWD",
+    "ENB",
+    "TRP.TO",
+    "EXPD",
+    "DHL.DE",
+    "ADM",
+    "MOO",
+    "SPY",
+    "ACWI",
+    "CB",
+    "TRV",
+    "FRO",
+    "DHT",
+    "ASML",
+    "AMAT",
+    "NVDA",
+    "AMD",
+    "SNPS",
+    "CDNS",
+    "TSM",
+    "GFS",
+    "EQIX",
+    "DLR",
+    "EUFN",
+    "V",
+    "MA",
+    "DAC",
+    "MAERSK-B.CO"
+  ]
+}

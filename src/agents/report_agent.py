@@ -91,10 +91,32 @@ def _group_watchlist(evidence_results: list[EvidenceResult]) -> dict[str, list[d
                 "asset_name": result.asset_name,
                 "asset_type": result.asset.asset_type,
                 "supply_chain_node": result.asset.supply_chain_node,
+                "linkage_tier": result.linkage_tier,
+                "linkage_rationale": result.linkage_rationale,
+                "transmission_order": result.transmission_order,
                 "confidence": result.confidence,
                 "supporting_case_ids": result.supporting_case_ids,
+                "supporting_case_details": result.supporting_case_details,
+                "relevance_score": result.relevance_score,
+                "priority_tier": result.priority_tier,
+                "rank_within_order": result.rank_within_order,
+                "ranking_version": result.ranking_version,
+                "ranking_scope": result.ranking_scope,
+                "ranking_key": result.ranking_key,
+                "supporting_case_count": result.supporting_case_count,
+                "ranking_components": result.ranking_components,
+                "ranking_rationale": result.ranking_rationale,
                 "reason": result.reason,
             }
+        )
+    for assets in grouped.values():
+        assets.sort(
+            key=lambda row: (
+                0 if row.get("ranking_scope") == "ranked_second_order" else 1,
+                int(row.get("rank_within_order") or 10_000),
+                str(row.get("ticker") or ""),
+                str(row.get("supply_chain_node") or ""),
+            )
         )
     return grouped
 

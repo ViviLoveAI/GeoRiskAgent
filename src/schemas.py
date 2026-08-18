@@ -30,6 +30,8 @@ class CandidateAsset(BaseModel):
     asset_type: str | None = None
     notes: str | None = None
     mapping_rationale: str | None = None
+    linkage_tier: str | None = None
+    linkage_rationale: str | None = None
 
 
 class HistoricalCase(BaseModel):
@@ -75,6 +77,7 @@ class RetrievedCase(BaseModel):
     title: str
     summary: str
     event_type: str | None = None
+    supply_chain_nodes: list[str] = Field(default_factory=list)
     transmission_chain: list[str] = Field(default_factory=list)
     relevance: str | None = None
 
@@ -84,6 +87,8 @@ class TransmissionChain(BaseModel):
 
     chain_steps: list[str] = Field(default_factory=list)
     affected_nodes: list[str] = Field(default_factory=list)
+    node_supporting_case_ids: dict[str, list[str]] = Field(default_factory=dict)
+    node_evidence_levels: dict[str, str] = Field(default_factory=dict)
     supporting_case_ids: list[str] = Field(default_factory=list)
     rationale: str
     channels: list[str] = Field(default_factory=list)
@@ -103,6 +108,25 @@ class EvidenceResult(BaseModel):
     evidence_level: str
     confidence: float
     reason: str
+    transmission_order: str = "unknown"
+    linkage_tier: str | None = None
+    linkage_rationale: str | None = None
+    supporting_case_details: list[dict[str, object]] = Field(default_factory=list)
+    qualification_case_ids: list[str] = Field(default_factory=list)
+    qualification_case_count: int | None = None
+    relevance_score: float | None = None
+    priority_tier: str | None = None
+    rank_within_order: int | None = None
+    ranking_version: str | None = None
+    ranking_scope: str | None = None
+    ranking_key: dict[str, object] | None = None
+    supporting_case_count: int | None = None
+    ranking_components: dict[str, object] = Field(default_factory=dict)
+    ranking_rationale: str | None = None
+    """Whether the asset's supply-chain node was first-order (directly
+    implicated by the event) or second-order (an analog-corroborated
+    transmission target). Orthogonal to evidence_level. Used downstream for
+    the non-obvious (second-order) hit-rate evaluation."""
 
 
 class FinalReport(BaseModel):
@@ -123,3 +147,12 @@ class FinalReport(BaseModel):
     risk_notes: list[str] = Field(default_factory=list)
     disclaimer: str
     limitations: list[str] = Field(default_factory=list)
+    input_title: str | None = None
+    input_event_date: str | None = None
+    input_event_year: int | None = None
+    input_context: str | None = None
+    original_event_text: str | None = None
+    normalized_event_text: str | None = None
+    input_language: str | None = None
+    input_normalization_applied: bool = False
+    input_normalization_error: str | None = None

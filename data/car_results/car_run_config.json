@@ -1,0 +1,30 @@
+{
+  "benchmark_symbol": "SPY",
+  "estimation_window": [
+    -130,
+    -10
+  ],
+  "event_ids": [
+    "candidate_d41a5f82d14a",
+    "candidate_355782516069",
+    "candidate_03b2368e1784",
+    "candidate_fba3f59c71da",
+    "candidate_ff6378fbb36b",
+    "candidate_130fb98e42bb",
+    "candidate_2bd2cdbf5b54",
+    "candidate_eaccce38b750",
+    "candidate_a126990eefca",
+    "candidate_4ead99ff6140"
+  ],
+  "event_window": [
+    -1,
+    1
+  ],
+  "formal_evaluation_mode": "csv_first_offline_after_price_preparation",
+  "manifest_path": "data/validation_events.yaml",
+  "price_dir": "data/prices",
+  "result_dir": "data/car_results",
+  "run_timestamp": "2026-08-05T01:53:43.059299+00:00",
+  "significance_threshold": 1.96,
+  "snapshot_dir": "data/validation_snapshots"
+}

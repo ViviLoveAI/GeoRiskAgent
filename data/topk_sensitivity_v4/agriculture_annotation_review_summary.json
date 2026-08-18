@@ -1,0 +1,18 @@
+{
+  "current_label": "compatible_support_expected",
+  "diagnostic_only": true,
+  "negative_controls_rejected": 1,
+  "negative_controls_total": 1,
+  "new_family_abstraction_recommended": false,
+  "positive_controls_passed": 3,
+  "positive_controls_total": 3,
+  "rationale": "The original label groups food-export trade restrictions with fertilizer input constraints because both affect agriculture. Under the frozen causal-mechanism definition, this is too broad: same affected node does not establish mechanism-compatible historical support.",
+  "recommended_label": "weak_cooccurrence_expected",
+  "review_outcome": "ground_truth_granularity_correction",
+  "review_scope": "dev_food_export_restriction / agriculture only",
+  "rule_change_recommended": false,
+  "system_rejection_likely_correct": true,
+  "target_pairs_diagnostic_compatible": 0,
+  "target_pairs_reviewed": 2,
+  "target_pairs_shared_transmission_process": 0
+}

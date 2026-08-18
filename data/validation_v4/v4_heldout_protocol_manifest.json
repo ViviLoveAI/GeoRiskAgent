@@ -1,0 +1,78 @@
+{
+  "car_run": false,
+  "created_at_utc": "2026-08-11T21:18:49.242748+00:00",
+  "empty_scaffold_only": true,
+  "event_selection_rules": {
+    "diversity_dimensions": [
+      "event_type",
+      "region",
+      "transmission family",
+      "asset universe coverage"
+    ],
+    "hard_filters": [
+      "held_out_from_kb",
+      "clear_t0",
+      "clean_estimation_window",
+      "low_confounding"
+    ],
+    "recommended_minimum_events": 12,
+    "source_requirements": [
+      "contemporaneous source-backed geopolitical or supply-chain event",
+      "clear event date T0",
+      "sufficient event text for Event Analyst",
+      "no exact V1/V2/V3 event overlap",
+      "no exact incident-level duplicate in historical KB",
+      "no CAR, price-return, or market-outcome fields used"
+    ]
+  },
+  "freeze_sequence": [
+    "Collect candidate events using only pre-outcome source facts.",
+    "Screen candidates for held-out status and KB/V1/V2/V3 non-overlap.",
+    "Select final V4 held-out set and seal event manifest hash.",
+    "Run frozen run_v4_pipeline only; freeze prediction snapshots.",
+    "Seal snapshot hashes before any CAR, price, or return inspection.",
+    "Only then prepare price inputs and run CAR validation."
+  ],
+  "frozen_v4_reference": {
+    "artifact_checksum_count": 0,
+    "freeze_checksums_path": "data/topk_sensitivity_v4/v4_freeze_checksums.json",
+    "freeze_checksums_sha256": "33b7c62c156fa87fbf8cc46a95b8c068184d4e13bd23053e3e6adcc7d6f49f59",
+    "freeze_manifest_path": "data/topk_sensitivity_v4/v4_final_freeze_manifest.json",
+    "freeze_manifest_sha256": "1d880d7d03d718089e98ea55cfe17aaa7d18506058767d31ebadf952af57053a",
+    "freeze_status": "V4 DEVELOPMENT FROZEN",
+    "freeze_timestamp_utc": "2026-08-11T21:00:09.165239+00:00"
+  },
+  "frozen_v4_specification": {
+    "asset_ranker_version": "ranking_v1",
+    "canonical_family_version": "canonical_family_v1",
+    "historical_context_coverage": 0.847458,
+    "historical_context_sidecar": "/Users/weiyuliu/Documents/GeoRisk Agentic RAG project/data/transmission_context_v1.json",
+    "mechanism_compatibility_version": "mechanism_compatibility_candidate_v1",
+    "support_threshold": 2,
+    "top_k": 10,
+    "transmission_context_version": "transmission_context_v1"
+  },
+  "heldout_events_created": false,
+  "predictions_frozen": false,
+  "protocol_version": "v4_heldout_protocol_v1",
+  "purpose": "Untouched held-out validation protocol for frozen GeoRisk V4.",
+  "required_future_artifacts": [
+    "candidate_events.csv",
+    "candidate_screening.csv",
+    "accepted_events.csv",
+    "excluded_events.csv",
+    "v4_heldout_manifest.json",
+    "prediction_snapshots/",
+    "snapshot_hashes.json",
+    "post_snapshot_price_input_audit.json"
+  ],
+  "status": "protocol_created_no_heldout_events_selected",
+  "strictly_prohibited_before_snapshot_freeze": [
+    "CAR",
+    "SCAR",
+    "price returns",
+    "market hit labels",
+    "post-event abnormal returns",
+    "ranking or mechanism tuning"
+  ]
+}

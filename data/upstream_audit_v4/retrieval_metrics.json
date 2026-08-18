@@ -1,0 +1,8 @@
+{
+  "events_with_expected_analogs": 30,
+  "inspection_only_events": 36,
+  "misses": [],
+  "mrr": 0.9166666666666666,
+  "recall_at_1": 0.8333333333333334,
+  "recall_at_3": 1.0
+}

@@ -19,6 +19,7 @@ from pydantic import BaseModel, Field
 
 from src.agents.event_analyst import DEFAULT_EVENT_TYPE, EVENT_RULES, analyze_event
 from src.config import ASSET_MAPPING_PATH, LLM_EVENT_ANALYST_MODEL, USE_LLM_EVENT_ANALYST
+from src import nodes
 from src.schemas import EventAnalysis
 
 
@@ -315,11 +316,15 @@ def _allowed_event_types() -> set[str]:
 
 
 def _allowed_supply_chain_nodes() -> set[str]:
-    """Return controlled supply-chain nodes from asset_mapping.csv."""
+    """Return the controlled supply-chain node vocabulary.
 
-    with ASSET_MAPPING_PATH.open(encoding="utf-8") as file:
-        rows = csv.DictReader(file)
-        return {row["supply_chain_node"] for row in rows if row.get("supply_chain_node")}
+    Sourced from the node registry (single source of truth), not from
+    asset_mapping.csv. The mapping file is a downstream node->asset table; the
+    registry is the authoritative vocabulary that both analyzers validate
+    against.
+    """
+
+    return nodes.all_node_ids()
 
 
 def _known_tickers() -> set[str]:

@@ -1,0 +1,199 @@
+{
+  "audit_id": "retrieved_case_nodes_bug_impact_audit",
+  "created_for": "GeoRisk public-release evaluation-integrity audit",
+  "bug": {
+    "summary": "src.vector_store.query_cases reconstructed RetrievedCase objects without carrying supply_chain_nodes from data/historical_cases.json.",
+    "affected_function": "src.vector_store.query_cases",
+    "affected_field": "RetrievedCase.supply_chain_nodes",
+    "old_behavior": "RetrievedCase.supply_chain_nodes defaulted to an empty list after Chroma retrieval.",
+    "fixed_behavior": "RetrievedCase.supply_chain_nodes is populated from the authoritative historical case record.",
+    "downstream_consumers": [
+      "src.agents.transmission_builder._node_support_from_cases",
+      "src.agents.transmission_builder._mechanism_compatible_node_support",
+      "src.agents.transmission_builder._contributing_cases",
+      "src.agents.market_mapper.map_assets",
+      "src.agents.evidence_agent.grade_evidence",
+      "src.agents.asset_ranker.rank_assets"
+    ]
+  },
+  "git_provenance": {
+    "committed_history_available": "Only the initial committed version is available in this workspace.",
+    "faulty_committed_version": "85d26cd Initial GeoRisk Transmission Analyzer MVP",
+    "fix_status": "Present in working tree at audit time; not committed in the inspected history.",
+    "introduction_range": "Known present in initial committed src/vector_store.py; exact pre-repository introduction point not recoverable from local history."
+  },
+  "artifact_signature_rule": {
+    "bug_signature": "Successful raw prediction artifacts generated through the faulty live path would serialize retrieved_cases with empty supply_chain_nodes arrays.",
+    "non_bug_signature": "Successful raw prediction artifacts whose retrieved_cases contain non-empty supply_chain_nodes show that the frozen artifact was not generated with the faulty reconstruction behavior active."
+  },
+  "experiments": [
+    {
+      "name": "V4 temporal held-out attempt 002",
+      "key_artifacts": [
+        "data/validation_v4/predictions/attempt_002/v4_temporal_raw_predictions.json",
+        "data/validation_v4/predictions/attempt_002/v4_temporal_prediction_snapshot.csv",
+        "data/validation_v4/results/attempt_002/v4_temporal_mechanism_evaluation_summary.json",
+        "data/validation_v4/results/attempt_002/v4_temporal_compatible_node_funnel_summary.json"
+      ],
+      "runner": "scripts/run_v4_temporal_attempt_002.py -> src.validation.v4_temporal_prediction.run_and_freeze_temporal_predictions -> run_v4_pipeline",
+      "retrieval_source": "live Chroma retrieval at prediction-generation time; derived funnel reads frozen raw predictions",
+      "buggy_reconstruction_used": "no evidence in checked-in artifact",
+      "artifact_signature": "16 successful predictions; 160/160 retrieved cases have non-empty supply_chain_nodes.",
+      "impact_classification": "UNAFFECTED",
+      "recommended_action": "DOCUMENT ONLY"
+    },
+    {
+      "name": "V4 temporal attempt 001",
+      "key_artifacts": [
+        "data/validation_v4/predictions/v4_temporal_raw_predictions.json"
+      ],
+      "runner": "scripts/run_v4_temporal_predictions.py",
+      "retrieval_source": "live Chroma retrieval, but attempt recorded no successful predictions",
+      "buggy_reconstruction_used": "not observable because there were no success records",
+      "artifact_signature": "0 successful predictions; no retrieved cases serialized.",
+      "impact_classification": "UNAFFECTED",
+      "recommended_action": "NO ACTION"
+    },
+    {
+      "name": "Multi-year V3/V4 paired benchmark",
+      "key_artifacts": [
+        "data/validation_general/predictions/v3/raw_predictions.json",
+        "data/validation_general/predictions/v4/raw_predictions.json",
+        "data/validation_general/results/v3_v4_paired_evaluation_summary.json"
+      ],
+      "runner": "src.validation.multiyear_paired_prediction.run_and_evaluate_multiyear_paired_predictions",
+      "retrieval_source": "live Chroma retrieval at snapshot-generation time",
+      "buggy_reconstruction_used": "no evidence in checked-in artifact",
+      "artifact_signature": "V3: 69/69 successful retrieved cases have non-empty supply_chain_nodes; V4: 230/230 successful retrieved cases have non-empty supply_chain_nodes.",
+      "impact_classification": "UNAFFECTED",
+      "recommended_action": "DOCUMENT ONLY"
+    },
+    {
+      "name": "Top-k sensitivity",
+      "key_artifacts": [
+        "data/topk_sensitivity_v4/topk_sensitivity_summary.json",
+        "data/topk_sensitivity_v4/topk_comparison.csv",
+        "data/topk_sensitivity_v4/event_funnel_k3.csv",
+        "data/topk_sensitivity_v4/event_funnel_k5.csv",
+        "data/topk_sensitivity_v4/event_funnel_k10.csv"
+      ],
+      "runner": "scripts/audit_topk_sensitivity.py -> scripts.audit_upstream_candidates._audit_event -> query_cases",
+      "retrieval_source": "live Chroma retrieval during diagnostic generation",
+      "buggy_reconstruction_used": "no evidence in checked-in artifact",
+      "artifact_signature": "Nonzero raw/support-qualified second-order node and asset counts across k=3, k=5, and k=10; faulty reconstruction would collapse retrieved-node-driven second-order support.",
+      "impact_classification": "UNAFFECTED",
+      "recommended_action": "DOCUMENT ONLY"
+    },
+    {
+      "name": "Upstream candidate audit",
+      "key_artifacts": [
+        "data/upstream_audit_v4/funnel_summary.json",
+        "data/upstream_audit_v4/retrieval_audit.csv",
+        "data/upstream_audit_v4/second_order_node_audit.csv",
+        "data/upstream_audit_v4/second_order_exposure_audit.csv"
+      ],
+      "runner": "scripts/audit_upstream_candidates.py -> query_cases",
+      "retrieval_source": "live Chroma retrieval during diagnostic generation",
+      "buggy_reconstruction_used": "no evidence in checked-in artifact",
+      "artifact_signature": "45 accepted second-order nodes and 90 second-order assets recorded; this requires non-empty RetrievedCase.supply_chain_nodes.",
+      "impact_classification": "UNAFFECTED",
+      "recommended_action": "DOCUMENT ONLY"
+    },
+    {
+      "name": "Mechanism compatibility prototype / Rule-6 analysis",
+      "key_artifacts": [
+        "data/topk_sensitivity_v4/mechanism_compatible_support_summary.json",
+        "data/topk_sensitivity_v4/rule6_error_analysis_summary.json",
+        "data/topk_sensitivity_v4/mechanism_consistency_rule_summary.json"
+      ],
+      "runner": "scripts/prototype_mechanism_compatible_support.py and related review scripts",
+      "retrieval_source": "manual/control case-node fixtures and direct historical context artifacts, not live Chroma reconstruction for the summarized prototype",
+      "buggy_reconstruction_used": "no",
+      "artifact_signature": "Scripts define explicit event/node/supporting_case_ids and read data/transmission_context_v1.json or controlled fixtures.",
+      "impact_classification": "UNAFFECTED",
+      "recommended_action": "NO ACTION"
+    },
+    {
+      "name": "V4 temporal compatible-node funnel",
+      "key_artifacts": [
+        "data/validation_v4/results/attempt_002/v4_temporal_compatible_node_funnel.csv",
+        "data/validation_v4/results/attempt_002/v4_temporal_compatible_node_funnel_summary.json"
+      ],
+      "runner": "src.validation.v4_compatible_node_funnel.build_compatible_node_funnel",
+      "retrieval_source": "frozen raw prediction snapshots from attempt 002",
+      "buggy_reconstruction_used": "no evidence in upstream raw predictions",
+      "artifact_signature": "Derived from attempt 002 raw predictions whose retrieved cases have non-empty supply_chain_nodes.",
+      "impact_classification": "UNAFFECTED",
+      "recommended_action": "DOCUMENT ONLY"
+    },
+    {
+      "name": "Legacy/V3 CAR validation",
+      "key_artifacts": [
+        "data/validation_v3/prediction_snapshots/",
+        "data/car_results_v3/car_summary.json",
+        "data/car_results_v3/car_pair_results.csv"
+      ],
+      "runner": "scripts/run_car_validation_v3.py reads frozen V3 prediction snapshots",
+      "retrieval_source": "CAR computation reads saved V3 exposure snapshots; original snapshot generation used run_pipeline(top_k=3)",
+      "buggy_reconstruction_used": "not directly provable from retrieved-case fields because V3 snapshots store retrieved_case_ids but not full retrieved case node arrays",
+      "artifact_signature": "Snapshots contain 54 second-order exposures, indicating historical node support existed during generation, but full retrieved case node arrays were not preserved.",
+      "impact_classification": "NOT ENOUGH EVIDENCE",
+      "recommended_action": "TARGETED RERUN"
+    },
+    {
+      "name": "CAR/SCAR market-validation calculations",
+      "key_artifacts": [
+        "data/market_validation/broad_random/broad_random_summary.json",
+        "data/market_validation/curated_activation/activation_summary.json",
+        "data/market_validation/scar_continuous_test/continuous_scar_summary.json"
+      ],
+      "runner": "src.validation.curated_activation_test, src.validation.curated_filtering_test, src.validation.scar_continuous_test",
+      "retrieval_source": "saved V3 prediction snapshots and reconstructed candidate/activation snapshots",
+      "buggy_reconstruction_used": "CAR/SCAR math itself does not use RetrievedCase.supply_chain_nodes; upstream V3 snapshot provenance is incomplete",
+      "artifact_signature": "Downstream market tests operate on frozen activated/predicted exposure rows, not live retrieval.",
+      "impact_classification": "POTENTIALLY AFFECTED",
+      "recommended_action": "DOCUMENT ONLY"
+    },
+    {
+      "name": "Retrieval@k / MRR-style metrics",
+      "key_artifacts": [
+        "data/topk_sensitivity_v4/topk_sensitivity_summary.json",
+        "data/upstream_audit_v4/retrieval_metrics.json",
+        "PUBLIC_RELEASE_VERIFICATION.md"
+      ],
+      "runner": "scripts/audit_topk_sensitivity.py, scripts/evaluate_pipeline.py, scripts/evaluate_hard_cases.py",
+      "retrieval_source": "retrieved case identity/order",
+      "buggy_reconstruction_used": "field may be absent on RetrievedCase, but metric reads case_id/rank rather than supply_chain_nodes",
+      "artifact_signature": "Metrics depend on retrieved IDs and expected-case matching.",
+      "impact_classification": "UNAFFECTED",
+      "recommended_action": "NO ACTION"
+    }
+  ],
+  "reported_claims_at_risk": [
+    {
+      "claim": "V4 temporal node-proposal bottleneck: 18/21 compatible misses at node-not-proposed stage.",
+      "source_artifact": "data/validation_v4/results/attempt_002/v4_temporal_compatible_node_funnel_summary.json",
+      "impact_status": "UNAFFECTED",
+      "documentation_action": "Document audit; no metric edit required."
+    },
+    {
+      "claim": "V4 weak-support rejection and compatible recall in the multi-year benchmark.",
+      "source_artifact": "data/validation_general/results/v3_v4_paired_evaluation_summary.json",
+      "impact_status": "UNAFFECTED",
+      "documentation_action": "Document audit; no metric edit required."
+    },
+    {
+      "claim": "Top-k sensitivity candidate counts.",
+      "source_artifact": "data/topk_sensitivity_v4/topk_sensitivity_summary.json",
+      "impact_status": "UNAFFECTED",
+      "documentation_action": "Document audit; no metric edit required."
+    },
+    {
+      "claim": "CAR/SCAR positive but not statistically definitive market-validation signal.",
+      "source_artifact": "data/market_validation/curated_activation/activation_summary.json",
+      "impact_status": "POTENTIALLY AFFECTED upstream only",
+      "documentation_action": "Keep caveat that CAR/SCAR is legacy/V3 snapshot validation; optionally add provenance note before public release."
+    }
+  ],
+  "final_assessment": "Current V4 headline conclusions are trustworthy with documentation of the audit. Legacy/V3 CAR lineage should be treated as snapshot-based optional validation with incomplete retrieved-case-node provenance."
+}

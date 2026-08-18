@@ -1,0 +1,4 @@
+evidence_level,confidence,evaluated,hits,hit_rate,mean_abs_SCAR,median_abs_SCAR,max_abs_SCAR
+historical_supported,0.8200000000,6,2,0.3333333333,1.4540345526,0.7972305065,3.6336565266
+sector_proxy,0.6400000000,48,6,0.1250000000,0.8812146364,0.7452501779,2.3747642563
+inference_only,0.3500000000,0,0,,,,

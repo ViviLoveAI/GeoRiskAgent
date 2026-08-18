@@ -1,0 +1,10 @@
+{
+  "artifacts": {
+    "data/validation_v4/temporal_final_heldout_events.csv": "e330df32a0454fb2b6e8c7f3ddea5a9100777aed11febedb5d3f9544bbd4f0d1",
+    "data/validation_v4/temporal_heldout_annotation_review.csv": "4f3984127726448e2e9a44b16ce0530496c57748003ba58e73e58e4895e245e9",
+    "data/validation_v4/temporal_heldout_ground_truth.csv": "768c3fa070f7e6a1269ac4ae162e240d3d3dfe95e836a3e00d6ea890c05224d3",
+    "data/validation_v4/v4_temporal_heldout_manifest.json": "67c8676cd809e9edcd029f25afe57f05accb0d45a4886106b988ba66a5f9519b"
+  },
+  "benchmark_version": "v4_temporal_heldout_v1",
+  "created_at_utc": "2026-08-12T01:47:49.782950+00:00"
+}

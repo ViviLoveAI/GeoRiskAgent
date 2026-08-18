@@ -1,0 +1,35 @@
+{
+  "CAR_run": false,
+  "asset_snapshot_path": "data/validation_v4/predictions/v4_temporal_asset_snapshot.csv",
+  "benchmark_version": "v4_temporal_heldout_v1",
+  "ground_truth_accessed_during_generation": false,
+  "node_snapshot_path": "data/validation_v4/predictions/v4_temporal_prediction_snapshot.csv",
+  "prediction_run_timestamp": "2026-08-12T01:58:53.239503+00:00",
+  "preflight": {
+    "car_run": false,
+    "freeze_timestamp_utc": "2026-08-11T21:00:09.165239+00:00",
+    "ground_truth_frozen": true,
+    "heldout_manifest_sealed": true,
+    "node_annotation_count": 32,
+    "predictions_frozen_before_run": false,
+    "selected_event_count": 16,
+    "temporal_checksums_valid": true,
+    "temporal_manifest_valid": true,
+    "v4_freeze_checksums_valid": true,
+    "v4_freeze_manifest_valid": true
+  },
+  "prices_accessed": false,
+  "raw_prediction_artifact": "data/validation_v4/predictions/v4_temporal_raw_predictions.json",
+  "runtime_failure_count": 16,
+  "selected_event_count": 16,
+  "success_count": 0,
+  "v4_config": {
+    "asset_ranker_version": "ranking_v1",
+    "canonical_family_version": "canonical_family_v1",
+    "mechanism_compatibility_version": "mechanism_compatibility_candidate_v1",
+    "mechanism_compatible_support": true,
+    "support_threshold": 2,
+    "top_k": 10,
+    "transmission_context_version": "transmission_context_v1"
+  }
+}

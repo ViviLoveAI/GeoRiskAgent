@@ -1,0 +1,77 @@
+{
+  "activation_snapshot": {
+    "activated_rows": 186,
+    "curated_eligible_asset_event_rows": 922,
+    "events": 12,
+    "experiment_name": "Curated-Pool Activation / Event-Specific Discrimination Test",
+    "input_hashes": {
+      "asset_mapping": "5b94c4d8e0255237d1cb9f5f8eb564072b509c3923c89ca1b6fb117942f8316a",
+      "price_dir_listing": "47e3590a4b48d45d1b6a98f23a586627f31c74a8a3f30ca0381b81505e3a261b"
+    },
+    "nonactivated_rows": 736,
+    "prediction_version": "GeoRisk frozen market-validation snapshot (V3 snapshot artifacts)",
+    "prices_used_for_eligibility_only": true,
+    "scar_inspected_before_activation_freeze": false,
+    "stage": "activation_boundary_frozen_before_scar_join"
+  },
+  "experiment_name": "Curated-Pool Activation / Event-Specific Discrimination Test",
+  "integrity": {
+    "activation_definition_frozen_before_scar": true,
+    "asset_mapping_unchanged": true,
+    "event_changes": false,
+    "georisk_unchanged": true,
+    "outcome_based_asset_selection": false,
+    "prediction_snapshot_unchanged": true,
+    "threshold_tuning": false,
+    "v5_implemented": false
+  },
+  "provenance": {
+    "checksums": {
+      "car_pair_results": "12eeab979a982c3f3401b4df27656631fead34c07849d63f6d4e7ca1eb508acc",
+      "snapshot_dir": "86a24ac7a17ef1725807b39afc05ac7339d50bb7865986bf2e5d832e10c4fa0c",
+      "v3_manifest": "31c896326029752ec9040d39a2abbe52adf6d7dd88575eb6ea2a38c402e73048"
+    },
+    "event_count": 12,
+    "freeze_status": {
+      "car_results_existing_frozen_input": true,
+      "prediction_snapshots_frozen": true
+    },
+    "georisk_car_rows": 186,
+    "is_frozen_v4_market_validation": false,
+    "market_validation_prediction_version": "GeoRisk frozen market-validation snapshot (V3 snapshot artifacts)",
+    "predicted_exposure_rows": 186,
+    "prediction_artifact_paths": {
+      "car_results": "data/car_results_v3/car_pair_results.csv",
+      "manifest": "data/validation_v3/v3_manifest.json",
+      "snapshot_dir": "data/validation_v3/prediction_snapshots"
+    },
+    "provenance_confirmed": true,
+    "system_version_label": "legacy/V3 CAR snapshot"
+  },
+  "summary": {
+    "continuous_primary": {
+      "activated_aggregate_median_abs_scar": 0.727898407363198,
+      "activated_eq_nonactivated_events": 0,
+      "activated_gt_nonactivated_events": 7,
+      "activated_lt_nonactivated_events": 5,
+      "activation_lift": 0.08138176028296584,
+      "mean_event_delta": 0.04760891542247785,
+      "median_event_delta": 0.02864301639269895,
+      "nonactivated_aggregate_median_abs_scar": 0.6465166470802322,
+      "paired_eligible_events": 12,
+      "paired_sign_flip_test": {
+        "draws": 10000,
+        "empirical_one_sided_p_value": 0.2836716328367163,
+        "observed": 0.04760891542247785,
+        "seed": 20260805,
+        "statistic": "mean_event_delta"
+      },
+      "relative_activation_lift": 0.12587728506373086
+    },
+    "main_conclusion": {
+      "answer": "PARTIALLY",
+      "reason": "Activated median |SCAR| exceeds non-activated by 0.0814; 7/12 paired events have positive deltas; sign-flip p=0.2837.",
+      "selectivity_stage": "upstream event-specific node activation / mapping"
+    }
+  }
+}

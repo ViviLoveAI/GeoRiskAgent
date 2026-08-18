@@ -1,0 +1,7 @@
+rule,kept_instances,removed_instances,weak_cases,weak_correctly_rejected,weak_cases_missed,non_weak_cases,non_weak_retained,non_weak_incorrectly_rejected,weak_rejection_rate,non_weak_retention_rate,complexity,main_failure_mode
+rule_1_event_type_and_node,46,40,32,18,14,54,32,22,0.5625,0.5925925925925926,medium: event-type token similarity AND node overlap,misses some weak cases and rejects some non-weak cases
+rule_2_specific_node_or_industry,79,7,32,3,29,54,50,4,0.09375,0.9259259259259259,low: specific-node overlap OR industry overlap,misses some weak cases and rejects some non-weak cases
+rule_3_support_context_similarity,70,16,32,9,23,54,47,7,0.28125,0.8703703703703703,medium: support asset-type OR chain-token similarity,misses some weak cases and rejects some non-weak cases
+rule_4_event_and_asset_context,46,40,32,19,13,54,33,21,0.59375,0.6111111111111112,medium: event-type plus industry/asset-type context,misses some weak cases and rejects some non-weak cases
+rule_5_node_or_asset_context,84,2,32,2,30,54,54,0,0.0625,1.0,medium: specific-node OR industry OR support asset-type context,too permissive; misses weak cases
+rule_6_support_mechanism_overlap,56,30,32,26,6,54,50,4,0.8125,0.9259259259259259,low: supporting-case event-type OR asset-type overlap,misses some weak cases and rejects some non-weak cases

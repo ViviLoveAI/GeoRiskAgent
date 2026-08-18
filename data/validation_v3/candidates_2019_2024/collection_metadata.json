@@ -1,0 +1,98 @@
+{
+  "candidate_count": 1,
+  "collection_timestamp": "2026-08-05T03:09:00.935811+00:00",
+  "configuration": {
+    "forbidden_inputs": [
+      "data/prices",
+      "data/car_results",
+      "CAR",
+      "standardized_car",
+      "returns",
+      "hit_labels",
+      "baseline_performance"
+    ],
+    "kb_case_count": 70,
+    "no_market_outcome_inputs": true,
+    "records_per_query": 25,
+    "refresh": true,
+    "target_output": "data/validation_v3/candidate_events_2019_2024.json"
+  },
+  "date_range": {
+    "end_date": "2024-12-31",
+    "start_date": "2019-01-01"
+  },
+  "deduplicated_incident_count": 1,
+  "eligible_source_record_count": 1,
+  "max_event_date_after_post_event_buffer": "2024-12-31",
+  "possible_kb_overlap_count": 0,
+  "queries_used": [
+    {
+      "event_type_hint": "maritime security disruption",
+      "family_id": "maritime_chokepoint_shipping",
+      "query": "(shipping OR vessel OR tanker OR container) (chokepoint OR canal OR \"Red Sea\" OR Hormuz OR Suez OR \"Panama Canal\") (attack OR disruption OR blockade OR restriction OR diversion)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/maritime_chokepoint_shipping.json"
+    },
+    {
+      "event_type_hint": "sanctions",
+      "family_id": "sanctions",
+      "query": "(sanctions OR sanctioned OR embargo) (Russia OR Iran OR China OR North Korea OR Venezuela OR Myanmar) (announced OR imposed OR expanded)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/sanctions.json"
+    },
+    {
+      "event_type_hint": "technology export controls",
+      "family_id": "export_controls",
+      "query": "(\"export controls\" OR \"export restrictions\" OR blacklist OR \"Entity List\") (semiconductor OR chips OR technology OR equipment)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/export_controls.json"
+    },
+    {
+      "event_type_hint": "military escalation conflict",
+      "family_id": "military_escalation_conflict",
+      "query": "(invasion OR missile OR airstrike OR \"military escalation\" OR conflict) (border OR strait OR region OR capital)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/military_escalation_conflict.json"
+    },
+    {
+      "event_type_hint": "energy infrastructure disruption",
+      "family_id": "energy_infrastructure",
+      "query": "(\"energy infrastructure\" OR pipeline OR refinery OR LNG OR oilfield) (attack OR explosion OR shutdown OR sabotage OR disruption)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/energy_infrastructure.json"
+    },
+    {
+      "event_type_hint": "trade restrictions tariffs",
+      "family_id": "trade_tariffs",
+      "query": "(tariff OR tariffs OR \"trade restrictions\" OR customs) (announced OR imposed OR raised OR banned)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/trade_tariffs.json"
+    },
+    {
+      "event_type_hint": "critical minerals resource restrictions",
+      "family_id": "critical_minerals",
+      "query": "(\"critical minerals\" OR rare earths OR graphite OR gallium OR germanium OR lithium OR nickel) (export OR restriction OR ban OR controls)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/critical_minerals.json"
+    },
+    {
+      "event_type_hint": "agriculture food fertilizer shock",
+      "family_id": "agriculture_food_fertilizer",
+      "query": "(grain OR wheat OR fertilizer OR food exports OR agriculture) (export ban OR restriction OR disruption OR blockade)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/agriculture_food_fertilizer.json"
+    },
+    {
+      "event_type_hint": "cyberattack critical infrastructure",
+      "family_id": "cyber_critical_infrastructure",
+      "query": "(cyberattack OR ransomware OR hack) (pipeline OR port OR grid OR railway OR critical infrastructure)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/cyber_critical_infrastructure.json"
+    },
+    {
+      "event_type_hint": "political instability strategic exports",
+      "family_id": "political_instability_exports",
+      "query": "(coup OR unrest OR protests OR political instability) (mine OR port OR exports OR oil OR copper OR lithium)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/political_instability_exports.json"
+    },
+    {
+      "event_type_hint": "aerospace defense supply-chain disruption",
+      "family_id": "aerospace_defense_supply_chain",
+      "query": "(aerospace OR aviation OR defense) (sanctions OR export controls OR supply chain OR parts shortage)",
+      "raw_cache_path": "data/validation_v3/candidates_2019_2024/raw/aerospace_defense_supply_chain.json"
+    }
+  ],
+  "raw_article_count": 25,
+  "retrieval_source": "GDELT DOC 2.0"
+}

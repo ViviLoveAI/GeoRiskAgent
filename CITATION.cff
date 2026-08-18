@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use GeoRisk Transmission Analyzer, please cite or link back to the original repository."
+title: "GeoRisk Transmission Analyzer"
+version: "1.0.0"
+authors:
+  - family-names: "Liu"
+    given-names: "Weiyu"
+repository-code: "https://github.com/ViviLoveAI/Georisk-transmission-analyzer"
+license: "MIT"

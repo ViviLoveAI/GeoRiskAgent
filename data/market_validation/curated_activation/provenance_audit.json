@@ -1,0 +1,23 @@
+{
+  "checksums": {
+    "car_pair_results": "12eeab979a982c3f3401b4df27656631fead34c07849d63f6d4e7ca1eb508acc",
+    "snapshot_dir": "86a24ac7a17ef1725807b39afc05ac7339d50bb7865986bf2e5d832e10c4fa0c",
+    "v3_manifest": "31c896326029752ec9040d39a2abbe52adf6d7dd88575eb6ea2a38c402e73048"
+  },
+  "event_count": 12,
+  "freeze_status": {
+    "car_results_existing_frozen_input": true,
+    "prediction_snapshots_frozen": true
+  },
+  "georisk_car_rows": 186,
+  "is_frozen_v4_market_validation": false,
+  "market_validation_prediction_version": "GeoRisk frozen market-validation snapshot (V3 snapshot artifacts)",
+  "predicted_exposure_rows": 186,
+  "prediction_artifact_paths": {
+    "car_results": "data/car_results_v3/car_pair_results.csv",
+    "manifest": "data/validation_v3/v3_manifest.json",
+    "snapshot_dir": "data/validation_v3/prediction_snapshots"
+  },
+  "provenance_confirmed": true,
+  "system_version_label": "legacy/V3 CAR snapshot"
+}

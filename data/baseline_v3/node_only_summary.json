@@ -1,0 +1,11 @@
+{
+  "evaluated": 132,
+  "evaluated_pairs": 132,
+  "hit_rate": 0.10606060606060606,
+  "hits": 14,
+  "max_abs_SCAR": 5.6157714726161645,
+  "mean_abs_SCAR": 0.9441325488390555,
+  "median_abs_SCAR": 0.7431410905551724,
+  "skipped_pairs": 0,
+  "total_predictions": 132
+}

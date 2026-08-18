@@ -17,6 +17,7 @@ services:
       - "8501:8501"
     environment:
       PYTHONPATH: /app
+      GEORISK_API_URL: http://api:8000
     volumes:
       - .:/app
     depends_on:

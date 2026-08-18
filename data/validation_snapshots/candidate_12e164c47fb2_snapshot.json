@@ -1,0 +1,53 @@
+{
+  "baseline_exposures": [
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_broad_market_baseline",
+      "node": "broad_market_growth",
+      "source": "baseline",
+      "symbol": "QQQ"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "financials",
+      "source": "baseline",
+      "symbol": "XLF"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "healthcare",
+      "source": "baseline",
+      "symbol": "XLV"
+    }
+  ],
+  "event_date": "2025-10-19",
+  "event_description": "India exports to Nepal slump in Sept amid political turmoil ; Spain , China , Brazil see an upswing India exports to Nepal slump in Sept amid political turmoil ; Spain , China , Brazil see an upswing 20251019T140000Z livemint.com",
+  "event_id": "candidate_12e164c47fb2",
+  "event_type": "political instability strategic exports",
+  "generated_at": "2026-08-05T00:45:44.310325+00:00",
+  "note": "Frozen before observing post-event returns",
+  "predicted_exposures": [
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_12e164c47fb2",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "broad_etf",
+      "source": "georisk",
+      "symbol": "SPY"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_12e164c47fb2",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "broad_etf",
+      "source": "georisk",
+      "symbol": "ACWI"
+    }
+  ]
+}

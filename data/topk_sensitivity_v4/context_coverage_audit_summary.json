@@ -1,0 +1,143 @@
+{
+  "current_event_informative_coverage": {
+    "coverage": 0.958333,
+    "covered": 23,
+    "total": 24
+  },
+  "current_event_relevant_nodes": 24,
+  "diagnostic_only": true,
+  "field_coverage": {
+    "canonical_context": {
+      "coverage": 0.971429,
+      "informative": 68,
+      "total": 70
+    },
+    "constraint_type": {
+      "coverage": 0.971429,
+      "informative": 68,
+      "total": 70
+    },
+    "shock_type": {
+      "coverage": 0.971429,
+      "informative": 68,
+      "total": 70
+    },
+    "target_node_role": {
+      "coverage": 0.971429,
+      "informative": 68,
+      "total": 70
+    },
+    "upstream_driver": {
+      "coverage": 0.971429,
+      "informative": 68,
+      "total": 70
+    }
+  },
+  "field_coverage_by_source": {
+    "current_event_projection": {
+      "canonical_context": {
+        "coverage": 0.958333,
+        "informative": 23,
+        "total": 24
+      },
+      "constraint_type": {
+        "coverage": 0.958333,
+        "informative": 23,
+        "total": 24
+      },
+      "shock_type": {
+        "coverage": 0.958333,
+        "informative": 23,
+        "total": 24
+      },
+      "target_node_role": {
+        "coverage": 0.958333,
+        "informative": 23,
+        "total": 24
+      },
+      "upstream_driver": {
+        "coverage": 0.958333,
+        "informative": 23,
+        "total": 24
+      }
+    },
+    "historical_case": {
+      "canonical_context": {
+        "coverage": 0.978261,
+        "informative": 45,
+        "total": 46
+      },
+      "constraint_type": {
+        "coverage": 0.978261,
+        "informative": 45,
+        "total": 46
+      },
+      "shock_type": {
+        "coverage": 0.978261,
+        "informative": 45,
+        "total": 46
+      },
+      "target_node_role": {
+        "coverage": 0.978261,
+        "informative": 45,
+        "total": 46
+      },
+      "upstream_driver": {
+        "coverage": 0.978261,
+        "informative": 45,
+        "total": 46
+      }
+    }
+  },
+  "fully_covered_node_count": 68,
+  "gap_type_counts": {
+    "fully_covered": 68,
+    "missing_context": 2
+  },
+  "gaps": [
+    {
+      "case_id": "",
+      "event_id": "dev_lng_shipping_sanctions",
+      "gap_type": "missing_context",
+      "has_context": false,
+      "missing_fields": "shock_type;constraint_type;upstream_driver;target_node_role;canonical_context",
+      "node": "trade_lanes",
+      "non_informative_fields": "shock_type;constraint_type;upstream_driver;target_node_role;canonical_context",
+      "notes": "current_event_projection context is absent for dev_lng_shipping_sanctions / trade_lanes",
+      "source_type": "current_event_projection"
+    },
+    {
+      "case_id": "case_2023_arctic_lng_russian_energy_shipping_sanctions",
+      "event_id": "",
+      "gap_type": "missing_context",
+      "has_context": false,
+      "missing_fields": "shock_type;constraint_type;upstream_driver;target_node_role;canonical_context",
+      "node": "trade_lanes",
+      "non_informative_fields": "shock_type;constraint_type;upstream_driver;target_node_role;canonical_context",
+      "notes": "historical_case context is absent for case_2023_arctic_lng_russian_energy_shipping_sanctions / trade_lanes",
+      "source_type": "historical_case"
+    }
+  ],
+  "historical_informative_coverage": {
+    "coverage": 0.978261,
+    "covered": 45,
+    "total": 46
+  },
+  "historical_relevant_nodes": 46,
+  "missing_node_count": 2,
+  "overall_informative_coverage": {
+    "coverage": 0.971429,
+    "covered": 68,
+    "total": 70
+  },
+  "partial_node_count": 0,
+  "required_context_fields": [
+    "shock_type",
+    "constraint_type",
+    "upstream_driver",
+    "target_node_role",
+    "canonical_context"
+  ],
+  "scope": "expanded_validation_set",
+  "total_relevant_nodes": 70
+}

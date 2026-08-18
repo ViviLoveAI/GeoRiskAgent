@@ -1,0 +1,2840 @@
+{
+  "case_count": 25,
+  "cases": [
+    {
+      "case_id": "case_1987_1988_tanker_war_reflagging",
+      "diagnostic_only": true,
+      "event_name": "Tanker War reflagging and Persian Gulf convoy risk",
+      "event_type": "maritime chokepoint security and oil shipping disruption",
+      "nodes_enriched": [
+        "defense",
+        "logistics",
+        "oil_shipping"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_1987_1988_tanker_war_reflagging",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "tanker operators",
+            "energy producers",
+            "marine insurers",
+            "logistics providers",
+            "defense contractors"
+          ],
+          "raw_event_type": "maritime chokepoint security and oil shipping disruption",
+          "raw_transmission_chain_steps": [
+            "regional military escalation",
+            "tanker attack risk",
+            "war-risk insurance repricing",
+            "convoy and routing constraints",
+            "oil cargo timing uncertainty"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "convoy_and_reflagging_security_operations"
+        },
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_1987_1988_tanker_war_reflagging",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "logistics",
+          "raw_affected_asset_types": [
+            "tanker operators",
+            "energy producers",
+            "marine insurers",
+            "logistics providers",
+            "defense contractors"
+          ],
+          "raw_event_type": "maritime chokepoint security and oil shipping disruption",
+          "raw_transmission_chain_steps": [
+            "regional military escalation",
+            "tanker attack risk",
+            "war-risk insurance repricing",
+            "convoy and routing constraints",
+            "oil cargo timing uncertainty"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "convoy_and_routing_constraints"
+        },
+        {
+          "canonical_context": "oil_shipping_security_constraint",
+          "case_id": "case_1987_1988_tanker_war_reflagging",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "oil_shipping",
+          "raw_affected_asset_types": [
+            "tanker operators",
+            "energy producers",
+            "marine insurers",
+            "logistics providers",
+            "defense contractors"
+          ],
+          "raw_event_type": "maritime chokepoint security and oil shipping disruption",
+          "raw_transmission_chain_steps": [
+            "regional military escalation",
+            "tanker attack risk",
+            "war-risk insurance repricing",
+            "convoy and routing constraints",
+            "oil cargo timing uncertainty"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "tanker_attack_risk"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2008_somali_piracy_gulf_of_aden",
+      "diagnostic_only": true,
+      "event_name": "Somali piracy and Gulf of Aden shipping disruption",
+      "event_type": "maritime security disruption and insurance cost shock",
+      "nodes_enriched": [
+        "maritime_chokepoint"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2008_somali_piracy_gulf_of_aden",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "container shipping companies",
+            "tanker operators",
+            "marine insurers",
+            "freight forwarders",
+            "logistics providers"
+          ],
+          "raw_event_type": "maritime security disruption and insurance cost shock",
+          "raw_transmission_chain_steps": [
+            "piracy and vessel seizure risk",
+            "naval escort and security cost increase",
+            "insurance and routing review",
+            "freight schedule uncertainty",
+            "logistics cost pass-through risk"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "gulf_of_aden_piracy_security_risk"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2010_china_japan_rare_earth_embargo",
+      "diagnostic_only": true,
+      "event_name": "China-Japan rare earth export disruption after Senkaku dispute",
+      "event_type": "rare earth export restriction and electronics input disruption",
+      "nodes_enriched": [
+        "critical_minerals",
+        "defense"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2010_china_japan_rare_earth_embargo",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "rare earth producers",
+            "electronics manufacturers",
+            "automakers",
+            "defense contractors",
+            "clean technology manufacturers"
+          ],
+          "raw_event_type": "rare earth export restriction and electronics input disruption",
+          "raw_transmission_chain_steps": [
+            "territorial dispute escalation",
+            "rare earth export disruption concern",
+            "customs and licensing bottleneck",
+            "electronics and magnet input risk",
+            "supplier diversification review"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "rare_earth_export_disruption"
+        },
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2010_china_japan_rare_earth_embargo",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "rare earth producers",
+            "electronics manufacturers",
+            "automakers",
+            "defense contractors",
+            "clean technology manufacturers"
+          ],
+          "raw_event_type": "rare earth export restriction and electronics input disruption",
+          "raw_transmission_chain_steps": [
+            "territorial dispute escalation",
+            "rare earth export disruption concern",
+            "customs and licensing bottleneck",
+            "electronics and magnet input risk",
+            "supplier diversification review"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "rare_earth_export_disruption"
+        },
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2010_china_japan_rare_earth_embargo",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "rare earth producers",
+            "electronics manufacturers",
+            "automakers",
+            "defense contractors",
+            "clean technology manufacturers"
+          ],
+          "raw_event_type": "rare earth export restriction and electronics input disruption",
+          "raw_transmission_chain_steps": [
+            "territorial dispute escalation",
+            "rare earth export disruption concern",
+            "customs and licensing bottleneck",
+            "electronics and magnet input risk",
+            "supplier diversification review"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "rare_earth_export_disruption"
+        },
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2010_china_japan_rare_earth_embargo",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "rare earth producers",
+            "electronics manufacturers",
+            "automakers",
+            "defense contractors",
+            "clean technology manufacturers"
+          ],
+          "raw_event_type": "rare earth export restriction and electronics input disruption",
+          "raw_transmission_chain_steps": [
+            "territorial dispute escalation",
+            "rare earth export disruption concern",
+            "customs and licensing bottleneck",
+            "electronics and magnet input risk",
+            "supplier diversification review"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "rare_earth_export_disruption"
+        },
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2010_china_japan_rare_earth_embargo",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "rare earth producers",
+            "electronics manufacturers",
+            "automakers",
+            "defense contractors",
+            "clean technology manufacturers"
+          ],
+          "raw_event_type": "rare earth export restriction and electronics input disruption",
+          "raw_transmission_chain_steps": [
+            "territorial dispute escalation",
+            "rare earth export disruption concern",
+            "customs and licensing bottleneck",
+            "electronics and magnet input risk",
+            "supplier diversification review"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "rare_earth_input_dependency"
+        },
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2010_china_japan_rare_earth_embargo",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "rare earth producers",
+            "electronics manufacturers",
+            "automakers",
+            "defense contractors",
+            "clean technology manufacturers"
+          ],
+          "raw_event_type": "rare earth export restriction and electronics input disruption",
+          "raw_transmission_chain_steps": [
+            "territorial dispute escalation",
+            "rare earth export disruption concern",
+            "customs and licensing bottleneck",
+            "electronics and magnet input risk",
+            "supplier diversification review"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "rare_earth_input_dependency"
+        },
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_2010_china_japan_rare_earth_embargo",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "rare earth producers",
+            "electronics manufacturers",
+            "automakers",
+            "defense contractors",
+            "clean technology manufacturers"
+          ],
+          "raw_event_type": "rare earth export restriction and electronics input disruption",
+          "raw_transmission_chain_steps": [
+            "territorial dispute escalation",
+            "rare earth export disruption concern",
+            "customs and licensing bottleneck",
+            "electronics and magnet input risk",
+            "supplier diversification review"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "rare_earth_input_dependency"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2011_libya_civil_war_oil_disruption",
+      "diagnostic_only": true,
+      "event_name": "Libya civil war and oil infrastructure disruption",
+      "event_type": "civil conflict and oil infrastructure supply disruption",
+      "nodes_enriched": [
+        "aviation",
+        "logistics"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "transport_fuel_cost_exposure",
+          "case_id": "case_2011_libya_civil_war_oil_disruption",
+          "constraint_type": "cost_increase",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "aviation",
+          "raw_affected_asset_types": [
+            "energy producers",
+            "refiners",
+            "petrochemical producers",
+            "airlines",
+            "shipping companies"
+          ],
+          "raw_event_type": "civil conflict and oil infrastructure supply disruption",
+          "raw_transmission_chain_steps": [
+            "civil conflict escalation",
+            "oilfield and terminal disruption",
+            "crude export uncertainty",
+            "refinery feedstock adjustment",
+            "fuel-sensitive sector exposure"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "jet_fuel_feedstock_exposure"
+        },
+        {
+          "canonical_context": "transport_fuel_cost_exposure",
+          "case_id": "case_2011_libya_civil_war_oil_disruption",
+          "constraint_type": "cost_increase",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "logistics",
+          "raw_affected_asset_types": [
+            "energy producers",
+            "refiners",
+            "petrochemical producers",
+            "airlines",
+            "shipping companies"
+          ],
+          "raw_event_type": "civil conflict and oil infrastructure supply disruption",
+          "raw_transmission_chain_steps": [
+            "civil conflict escalation",
+            "oilfield and terminal disruption",
+            "crude export uncertainty",
+            "refinery feedstock adjustment",
+            "fuel-sensitive sector exposure"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "fuel_supply_uncertainty"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2017_north_korea_missile_escalation",
+      "diagnostic_only": true,
+      "event_name": "North Korea missile escalation and regional security risk",
+      "event_type": "missile escalation and regional security risk",
+      "nodes_enriched": [
+        "aviation"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "airspace_security_disruption",
+          "case_id": "case_2017_north_korea_missile_escalation",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "aviation",
+          "raw_affected_asset_types": [
+            "defense contractors",
+            "airlines",
+            "electronics manufacturers",
+            "logistics providers",
+            "regional exporters"
+          ],
+          "raw_event_type": "missile escalation and regional security risk",
+          "raw_transmission_chain_steps": [
+            "missile launch escalation",
+            "regional security alert",
+            "airspace and route monitoring",
+            "defense readiness demand",
+            "manufacturing and logistics contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "missile_overflight_airspace_monitoring"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2018_2019_us_china_tariffs",
+      "diagnostic_only": true,
+      "event_name": "US-China trade tariff escalation",
+      "event_type": "trade policy and tariffs",
+      "nodes_enriched": [
+        "trade_lanes"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "tariff_trade_compliance_constraint",
+          "case_id": "case_2018_2019_us_china_tariffs",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "trade_lanes",
+          "raw_affected_asset_types": [
+            "manufacturers",
+            "retailers",
+            "agricultural commodities",
+            "industrial exporters",
+            "logistics providers"
+          ],
+          "raw_event_type": "trade policy and tariffs",
+          "raw_transmission_chain_steps": [
+            "tariff announcements",
+            "higher landed costs",
+            "supplier renegotiation",
+            "inventory timing changes",
+            "margin pressure or price pass-through",
+            "supply chain relocation consideration"
+          ],
+          "shock_type": "tariff",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "compliance_channel",
+          "upstream_driver": "tariff_and_customs_review"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2019_india_pakistan_airspace_closure",
+      "diagnostic_only": true,
+      "event_name": "India-Pakistan escalation and Pakistan airspace closure",
+      "event_type": "border military escalation and airspace disruption",
+      "nodes_enriched": [
+        "aviation"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "airspace_route_disruption",
+          "case_id": "case_2019_india_pakistan_airspace_closure",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "aviation",
+          "raw_affected_asset_types": [
+            "airlines",
+            "air cargo operators",
+            "defense contractors",
+            "freight forwarders",
+            "manufacturers"
+          ],
+          "raw_event_type": "border military escalation and airspace disruption",
+          "raw_transmission_chain_steps": [
+            "border military escalation",
+            "airspace closure",
+            "flight rerouting",
+            "longer transit times",
+            "fuel and scheduling pressure",
+            "regional logistics uncertainty"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "airspace_closure"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2019_turkey_f35_s400_defense_restrictions",
+      "diagnostic_only": true,
+      "event_name": "Turkey removed from F-35 program after S-400 purchase",
+      "event_type": "defense procurement restriction and aerospace supply-chain adjustment",
+      "nodes_enriched": [
+        "defense"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "aerospace_defense_procurement_constraint",
+          "case_id": "case_2019_turkey_f35_s400_defense_restrictions",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "defense contractors",
+            "aerospace manufacturers",
+            "component suppliers",
+            "electronics suppliers",
+            "trade compliance providers"
+          ],
+          "raw_event_type": "defense procurement restriction and aerospace supply-chain adjustment",
+          "raw_transmission_chain_steps": [
+            "defense policy dispute",
+            "program participation restriction",
+            "aerospace supplier substitution",
+            "export compliance review",
+            "manufacturing input reallocation"
+          ],
+          "shock_type": "regulatory_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "defense_procurement_policy_dispute"
+        },
+        {
+          "canonical_context": "aerospace_defense_procurement_constraint",
+          "case_id": "case_2019_turkey_f35_s400_defense_restrictions",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "defense contractors",
+            "aerospace manufacturers",
+            "component suppliers",
+            "electronics suppliers",
+            "trade compliance providers"
+          ],
+          "raw_event_type": "defense procurement restriction and aerospace supply-chain adjustment",
+          "raw_transmission_chain_steps": [
+            "defense policy dispute",
+            "program participation restriction",
+            "aerospace supplier substitution",
+            "export compliance review",
+            "manufacturing input reallocation"
+          ],
+          "shock_type": "regulatory_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "defense_procurement_policy_dispute"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2021_suez_blockage",
+      "diagnostic_only": true,
+      "event_name": "Suez Canal blockage by Ever Given",
+      "event_type": "shipping chokepoint disruption",
+      "nodes_enriched": [
+        "container_shipping",
+        "maritime_chokepoint"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "maritime_route_capacity_constraint",
+          "case_id": "case_2021_suez_blockage",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "container_shipping",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "logistics companies",
+            "port operators",
+            "retail supply chains",
+            "energy cargoes"
+          ],
+          "raw_event_type": "shipping chokepoint disruption",
+          "raw_transmission_chain_steps": [
+            "vessel grounding",
+            "canal closure",
+            "shipping delays",
+            "rerouting or queueing",
+            "higher freight uncertainty",
+            "inventory and delivery delays"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "canal_blockage"
+        },
+        {
+          "canonical_context": "maritime_route_capacity_constraint",
+          "case_id": "case_2021_suez_blockage",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "logistics companies",
+            "port operators",
+            "retail supply chains",
+            "energy cargoes"
+          ],
+          "raw_event_type": "shipping chokepoint disruption",
+          "raw_transmission_chain_steps": [
+            "vessel grounding",
+            "canal closure",
+            "shipping delays",
+            "rerouting or queueing",
+            "higher freight uncertainty",
+            "inventory and delivery delays"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "canal_blockage"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2021_xinjiang_forced_labor_import_restrictions",
+      "diagnostic_only": true,
+      "event_name": "Xinjiang forced-labor import restrictions and solar supply-chain compliance",
+      "event_type": "forced-labor import restriction and customs compliance risk",
+      "nodes_enriched": [
+        "critical_minerals"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "critical_material_compliance_constraint",
+          "case_id": "case_2021_xinjiang_forced_labor_import_restrictions",
+          "constraint_type": "compliance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "solar equipment manufacturers",
+            "electronics importers",
+            "retailers",
+            "logistics providers",
+            "customs brokers"
+          ],
+          "raw_event_type": "forced-labor import restriction and customs compliance risk",
+          "raw_transmission_chain_steps": [
+            "import restriction law",
+            "customs documentation burden",
+            "shipment detention risk",
+            "supplier traceability review",
+            "sourcing and inventory adjustment"
+          ],
+          "shock_type": "import_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "supplier_traceability_review"
+        },
+        {
+          "canonical_context": "critical_material_compliance_constraint",
+          "case_id": "case_2021_xinjiang_forced_labor_import_restrictions",
+          "constraint_type": "compliance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "solar equipment manufacturers",
+            "electronics importers",
+            "retailers",
+            "logistics providers",
+            "customs brokers"
+          ],
+          "raw_event_type": "forced-labor import restriction and customs compliance risk",
+          "raw_transmission_chain_steps": [
+            "import restriction law",
+            "customs documentation burden",
+            "shipment detention risk",
+            "supplier traceability review",
+            "sourcing and inventory adjustment"
+          ],
+          "shock_type": "import_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "supplier_traceability_review"
+        },
+        {
+          "canonical_context": "critical_material_compliance_constraint",
+          "case_id": "case_2021_xinjiang_forced_labor_import_restrictions",
+          "constraint_type": "compliance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "solar equipment manufacturers",
+            "electronics importers",
+            "retailers",
+            "logistics providers",
+            "customs brokers"
+          ],
+          "raw_event_type": "forced-labor import restriction and customs compliance risk",
+          "raw_transmission_chain_steps": [
+            "import restriction law",
+            "customs documentation burden",
+            "shipment detention risk",
+            "supplier traceability review",
+            "sourcing and inventory adjustment"
+          ],
+          "shock_type": "import_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "supplier_traceability_review"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_abu_dhabi_oil_facility_attack",
+      "diagnostic_only": true,
+      "event_name": "Abu Dhabi oil facility attack and energy infrastructure risk",
+      "event_type": "energy infrastructure disruption",
+      "nodes_enriched": [
+        "defense"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_2022_abu_dhabi_oil_facility_attack",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "energy producers",
+            "refiners",
+            "airlines",
+            "tanker operators",
+            "defense contractors"
+          ],
+          "raw_event_type": "energy infrastructure disruption",
+          "raw_transmission_chain_steps": [
+            "infrastructure attack",
+            "regional energy security concern",
+            "crude and fuel supply sensitivity",
+            "shipping and insurance risk",
+            "defense response monitoring"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "energy_facility_attack_defense_readiness"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2022_gas_fertilizer_shock",
+      "diagnostic_only": true,
+      "event_name": "Natural gas and fertilizer shock",
+      "event_type": "energy and agricultural input shock",
+      "nodes_enriched": [
+        "energy",
+        "petrochemicals"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_feedstock_constraint",
+          "case_id": "case_2022_gas_fertilizer_shock",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "energy",
+          "raw_affected_asset_types": [
+            "natural gas",
+            "fertilizer producers",
+            "agriculture commodities",
+            "food producers",
+            "chemical companies"
+          ],
+          "raw_event_type": "energy and agricultural input shock",
+          "raw_transmission_chain_steps": [
+            "gas supply uncertainty",
+            "higher feedstock costs",
+            "fertilizer production curtailment risk",
+            "farm input cost pressure",
+            "crop margin stress",
+            "food price concern"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "natural_gas_feedstock_shortage"
+        },
+        {
+          "canonical_context": "petrochemical_feedstock_constraint",
+          "case_id": "case_2022_gas_fertilizer_shock",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "petrochemicals",
+          "raw_affected_asset_types": [
+            "natural gas",
+            "fertilizer producers",
+            "agriculture commodities",
+            "food producers",
+            "chemical companies"
+          ],
+          "raw_event_type": "energy and agricultural input shock",
+          "raw_transmission_chain_steps": [
+            "gas supply uncertainty",
+            "higher feedstock costs",
+            "fertilizer production curtailment risk",
+            "farm input cost pressure",
+            "crop margin stress",
+            "food price concern"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "natural_gas_feedstock_shortage"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_arctic_lng_russian_energy_shipping_sanctions",
+      "diagnostic_only": true,
+      "event_name": "Arctic LNG and Russian energy shipping sanctions",
+      "event_type": "energy shipping sanctions and Arctic LNG disruption risk",
+      "nodes_enriched": [
+        "marine_insurance",
+        "maritime_chokepoint"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_shipping_insurance_constraint",
+          "case_id": "case_2023_arctic_lng_russian_energy_shipping_sanctions",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "LNG carriers",
+            "energy producers",
+            "marine insurers",
+            "banks",
+            "gas utilities",
+            "shipbuilders"
+          ],
+          "raw_event_type": "energy shipping sanctions and Arctic LNG disruption risk",
+          "raw_transmission_chain_steps": [
+            "energy sanctions expansion",
+            "Arctic LNG project and vessel restrictions",
+            "shipping insurance and financing constraints",
+            "LNG cargo timing uncertainty",
+            "buyer sourcing and route adjustment"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "energy_shipping_insurance_and_financing_limits"
+        },
+        {
+          "canonical_context": "energy_shipping_sanctions_route_constraint",
+          "case_id": "case_2023_arctic_lng_russian_energy_shipping_sanctions",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "LNG carriers",
+            "energy producers",
+            "marine insurers",
+            "banks",
+            "gas utilities",
+            "shipbuilders"
+          ],
+          "raw_event_type": "energy shipping sanctions and Arctic LNG disruption risk",
+          "raw_transmission_chain_steps": [
+            "energy sanctions expansion",
+            "Arctic LNG project and vessel restrictions",
+            "shipping insurance and financing constraints",
+            "LNG cargo timing uncertainty",
+            "buyer sourcing and route adjustment"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "arctic_lng_shipping_restrictions"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_black_sea_shipping_insurance_restrictions",
+      "diagnostic_only": true,
+      "event_name": "Black Sea grain deal collapse and shipping insurance restrictions",
+      "event_type": "war-related maritime insurance and grain export disruption",
+      "nodes_enriched": [
+        "marine_insurance"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "food_shipping_insurance_constraint",
+          "case_id": "case_2023_black_sea_shipping_insurance_restrictions",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "grain traders",
+            "shipping companies",
+            "marine insurers",
+            "food producers",
+            "agricultural commodities"
+          ],
+          "raw_event_type": "war-related maritime insurance and grain export disruption",
+          "raw_transmission_chain_steps": [
+            "grain corridor suspension",
+            "vessel security concern",
+            "marine insurance constraint",
+            "grain shipment delay",
+            "importer sourcing adjustment"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "grain_shipping_war_risk_insurance"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2023_red_sea_attacks",
+      "diagnostic_only": true,
+      "event_name": "Red Sea shipping attacks and route diversions",
+      "event_type": "maritime security disruption",
+      "nodes_enriched": [
+        "marine_insurance",
+        "maritime_chokepoint",
+        "oil_shipping"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "vessel_security_risk"
+        },
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "vessel_security_risk"
+        },
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "red_sea_vessel_security_risk"
+        },
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "red_sea_vessel_security_risk"
+        },
+        {
+          "canonical_context": "maritime_route_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "red_sea_vessel_security_risk"
+        },
+        {
+          "canonical_context": "oil_shipping_security_constraint",
+          "case_id": "case_2023_red_sea_attacks",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "oil_shipping",
+          "raw_affected_asset_types": [
+            "shipping equities",
+            "freight rates",
+            "marine insurers",
+            "energy transport",
+            "import-dependent retailers"
+          ],
+          "raw_event_type": "maritime security disruption",
+          "raw_transmission_chain_steps": [
+            "vessel security risk",
+            "carrier route diversions",
+            "longer voyage duration",
+            "higher fuel and insurance costs",
+            "schedule disruption",
+            "delivery delays"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "red_sea_vessel_security_risk"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2024_ev_tariff_escalation_china",
+      "diagnostic_only": true,
+      "event_name": "EV tariff escalation on China-linked clean technology imports",
+      "event_type": "tariff escalation and clean technology trade restriction",
+      "nodes_enriched": [
+        "critical_minerals",
+        "trade_lanes"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "critical_material_cost_constraint",
+          "case_id": "case_2024_ev_tariff_escalation_china",
+          "constraint_type": "cost_increase",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "EV manufacturers",
+            "battery suppliers",
+            "solar equipment producers",
+            "logistics providers",
+            "manufacturers"
+          ],
+          "raw_event_type": "tariff escalation and clean technology trade restriction",
+          "raw_transmission_chain_steps": [
+            "tariff escalation",
+            "higher landed cost",
+            "customs classification review",
+            "supplier localization pressure",
+            "EV and battery supply-chain adjustment"
+          ],
+          "shock_type": "tariff",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "battery_and_ev_input_tariffs"
+        },
+        {
+          "canonical_context": "tariff_trade_compliance_constraint",
+          "case_id": "case_2024_ev_tariff_escalation_china",
+          "constraint_type": "trade_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "trade_lanes",
+          "raw_affected_asset_types": [
+            "EV manufacturers",
+            "battery suppliers",
+            "solar equipment producers",
+            "logistics providers",
+            "manufacturers"
+          ],
+          "raw_event_type": "tariff escalation and clean technology trade restriction",
+          "raw_transmission_chain_steps": [
+            "tariff escalation",
+            "higher landed cost",
+            "customs classification review",
+            "supplier localization pressure",
+            "EV and battery supply-chain adjustment"
+          ],
+          "shock_type": "tariff",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "compliance_channel",
+          "upstream_driver": "clean_technology_tariff_escalation"
+        }
+      ]
+    },
+    {
+      "case_id": "case_2024_taiwan_strait_drills_semiconductor_supply",
+      "diagnostic_only": true,
+      "event_name": "Taiwan Strait military drills and semiconductor supply-chain disruption risk",
+      "event_type": "taiwan strait semiconductor supply-chain disruption",
+      "nodes_enriched": [
+        "defense"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_2024_taiwan_strait_drills_semiconductor_supply",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "semiconductor foundries",
+            "AI chip designers",
+            "semiconductor equipment companies",
+            "electronics manufacturers",
+            "data center suppliers"
+          ],
+          "raw_event_type": "taiwan strait semiconductor supply-chain disruption",
+          "raw_transmission_chain_steps": [
+            "military drills",
+            "regional logistics and continuity concern",
+            "advanced foundry concentration risk",
+            "chip supply uncertainty",
+            "electronics and data center contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "contextual_background",
+          "upstream_driver": "regional_military_drills"
+        },
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_2024_taiwan_strait_drills_semiconductor_supply",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "semiconductor foundries",
+            "AI chip designers",
+            "semiconductor equipment companies",
+            "electronics manufacturers",
+            "data center suppliers"
+          ],
+          "raw_event_type": "taiwan strait semiconductor supply-chain disruption",
+          "raw_transmission_chain_steps": [
+            "military drills",
+            "regional logistics and continuity concern",
+            "advanced foundry concentration risk",
+            "chip supply uncertainty",
+            "electronics and data center contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "contextual_background",
+          "upstream_driver": "regional_military_drills"
+        },
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_2024_taiwan_strait_drills_semiconductor_supply",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "semiconductor foundries",
+            "AI chip designers",
+            "semiconductor equipment companies",
+            "electronics manufacturers",
+            "data center suppliers"
+          ],
+          "raw_event_type": "taiwan strait semiconductor supply-chain disruption",
+          "raw_transmission_chain_steps": [
+            "military drills",
+            "regional logistics and continuity concern",
+            "advanced foundry concentration risk",
+            "chip supply uncertainty",
+            "electronics and data center contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "contextual_background",
+          "upstream_driver": "regional_military_drills"
+        }
+      ]
+    },
+    {
+      "case_id": "case_china_gallium_germanium_graphite_controls",
+      "diagnostic_only": true,
+      "event_name": "China gallium, germanium, and graphite export controls",
+      "event_type": "critical minerals export controls",
+      "nodes_enriched": [
+        "critical_minerals"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "semiconductor suppliers",
+            "battery manufacturers",
+            "solar equipment producers",
+            "EV supply chains",
+            "critical mineral processors"
+          ],
+          "raw_event_type": "critical minerals export controls",
+          "raw_transmission_chain_steps": [
+            "export licensing rules",
+            "critical mineral shipment uncertainty",
+            "semiconductor and battery input risk",
+            "compliance burden",
+            "supplier diversification efforts"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "export_licensing_controls"
+        },
+        {
+          "canonical_context": "critical_material_input_constraint",
+          "case_id": "case_china_gallium_germanium_graphite_controls",
+          "constraint_type": "input_access_restriction",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "critical_minerals",
+          "raw_affected_asset_types": [
+            "semiconductor suppliers",
+            "battery manufacturers",
+            "solar equipment producers",
+            "EV supply chains",
+            "critical mineral processors"
+          ],
+          "raw_event_type": "critical minerals export controls",
+          "raw_transmission_chain_steps": [
+            "export licensing rules",
+            "critical mineral shipment uncertainty",
+            "semiconductor and battery input risk",
+            "compliance burden",
+            "supplier diversification efforts"
+          ],
+          "shock_type": "export_restriction",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "export_licensing_controls"
+        }
+      ]
+    },
+    {
+      "case_id": "case_hormuz_tanker_tensions",
+      "diagnostic_only": true,
+      "event_name": "Strait of Hormuz tanker tensions",
+      "event_type": "energy chokepoint security risk",
+      "nodes_enriched": [
+        "marine_insurance",
+        "maritime_chokepoint",
+        "oil_shipping"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_shipping_insurance_constraint",
+          "case_id": "case_hormuz_tanker_tensions",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "energy producers",
+            "refiners",
+            "marine insurers"
+          ],
+          "raw_event_type": "energy chokepoint security risk",
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "tanker security incidents",
+            "perceived chokepoint risk",
+            "insurance and routing concerns",
+            "energy supply risk premium"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "tanker_security_incidents"
+        },
+        {
+          "canonical_context": "energy_shipping_insurance_constraint",
+          "case_id": "case_hormuz_tanker_tensions",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "energy producers",
+            "refiners",
+            "marine insurers"
+          ],
+          "raw_event_type": "energy chokepoint security risk",
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "tanker security incidents",
+            "perceived chokepoint risk",
+            "insurance and routing concerns",
+            "energy supply risk premium"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "tanker_security_incidents"
+        },
+        {
+          "canonical_context": "energy_chokepoint_security_constraint",
+          "case_id": "case_hormuz_tanker_tensions",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "energy producers",
+            "refiners",
+            "marine insurers"
+          ],
+          "raw_event_type": "energy chokepoint security risk",
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "tanker security incidents",
+            "perceived chokepoint risk",
+            "insurance and routing concerns",
+            "energy supply risk premium"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "hormuz_tanker_security_incidents"
+        },
+        {
+          "canonical_context": "oil_shipping_security_constraint",
+          "case_id": "case_hormuz_tanker_tensions",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "oil_shipping",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "energy producers",
+            "refiners",
+            "marine insurers"
+          ],
+          "raw_event_type": "energy chokepoint security risk",
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "tanker security incidents",
+            "perceived chokepoint risk",
+            "insurance and routing concerns",
+            "energy supply risk premium"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "tanker_security_incidents"
+        }
+      ]
+    },
+    {
+      "case_id": "case_israel_iran_escalation_energy_risk",
+      "diagnostic_only": true,
+      "event_name": "Israel-Iran regional escalation and energy risk",
+      "event_type": "regional military escalation and energy chokepoint risk",
+      "nodes_enriched": [
+        "defense",
+        "marine_insurance",
+        "maritime_chokepoint"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_israel_iran_escalation_energy_risk",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "marine insurers",
+            "defense contractors",
+            "refiners"
+          ],
+          "raw_event_type": "regional military escalation and energy chokepoint risk",
+          "raw_transmission_chain_steps": [
+            "regional military escalation",
+            "risk of wider conflict",
+            "energy chokepoint concern",
+            "tanker and insurance risk",
+            "refining and fuel supply sensitivity"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "downstream_exposure",
+          "upstream_driver": "regional_military_escalation"
+        },
+        {
+          "canonical_context": "energy_shipping_insurance_constraint",
+          "case_id": "case_israel_iran_escalation_energy_risk",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "marine insurers",
+            "defense contractors",
+            "refiners"
+          ],
+          "raw_event_type": "regional military escalation and energy chokepoint risk",
+          "raw_transmission_chain_steps": [
+            "regional military escalation",
+            "risk of wider conflict",
+            "energy chokepoint concern",
+            "tanker and insurance risk",
+            "refining and fuel supply sensitivity"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "regional_energy_chokepoint_risk"
+        },
+        {
+          "canonical_context": "energy_shipping_insurance_constraint",
+          "case_id": "case_israel_iran_escalation_energy_risk",
+          "constraint_type": "insurance_constraint",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "marine_insurance",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "marine insurers",
+            "defense contractors",
+            "refiners"
+          ],
+          "raw_event_type": "regional military escalation and energy chokepoint risk",
+          "raw_transmission_chain_steps": [
+            "regional military escalation",
+            "risk of wider conflict",
+            "energy chokepoint concern",
+            "tanker and insurance risk",
+            "refining and fuel supply sensitivity"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "financing_or_insurance_channel",
+          "upstream_driver": "regional_energy_chokepoint_risk"
+        },
+        {
+          "canonical_context": "energy_chokepoint_security_constraint",
+          "case_id": "case_israel_iran_escalation_energy_risk",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "maritime_chokepoint",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "LNG",
+            "tanker operators",
+            "marine insurers",
+            "defense contractors",
+            "refiners"
+          ],
+          "raw_event_type": "regional military escalation and energy chokepoint risk",
+          "raw_transmission_chain_steps": [
+            "regional military escalation",
+            "risk of wider conflict",
+            "energy chokepoint concern",
+            "tanker and insurance risk",
+            "refining and fuel supply sensitivity"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "transmission_channel",
+          "upstream_driver": "persian_gulf_chokepoint_risk"
+        }
+      ]
+    },
+    {
+      "case_id": "case_middle_east_oil_supply_disruption",
+      "diagnostic_only": true,
+      "event_name": "Middle East oil supply disruption after Saudi facility attacks",
+      "event_type": "energy infrastructure disruption",
+      "nodes_enriched": [
+        "refining"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "refining_feedstock_constraint",
+          "case_id": "case_middle_east_oil_supply_disruption",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "refining",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "energy producers",
+            "refiners",
+            "petrochemical producers",
+            "airlines",
+            "tanker operators"
+          ],
+          "raw_event_type": "energy infrastructure disruption",
+          "raw_transmission_chain_steps": [
+            "infrastructure attack",
+            "temporary production outage",
+            "supply availability concern",
+            "crude quality and export uncertainty",
+            "refining and transport cost sensitivity"
+          ],
+          "shock_type": "physical_disruption",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "crude_supply_disruption"
+        }
+      ]
+    },
+    {
+      "case_id": "case_opec_production_cut_policy_shock",
+      "diagnostic_only": true,
+      "event_name": "OPEC production cut and oil supply policy shock",
+      "event_type": "oil supply policy shock",
+      "nodes_enriched": [
+        "refining"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "refining_feedstock_constraint",
+          "case_id": "case_opec_production_cut_policy_shock",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "refining",
+          "raw_affected_asset_types": [
+            "crude oil",
+            "energy producers",
+            "refiners",
+            "airlines",
+            "petrochemical producers",
+            "transportation companies"
+          ],
+          "raw_event_type": "oil supply policy shock",
+          "raw_transmission_chain_steps": [
+            "production policy decision",
+            "crude supply expectation change",
+            "refining feedstock sensitivity",
+            "fuel cost uncertainty",
+            "downstream transport and petrochemical exposure"
+          ],
+          "shock_type": "capacity_constraint",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "crude_supply_policy_cut"
+        }
+      ]
+    },
+    {
+      "case_id": "case_panama_canal_drought_shipping_capacity",
+      "diagnostic_only": true,
+      "event_name": "Panama Canal drought and shipping capacity disruption",
+      "event_type": "climate-related shipping chokepoint disruption",
+      "nodes_enriched": [
+        "container_shipping"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "maritime_route_capacity_constraint",
+          "case_id": "case_panama_canal_drought_shipping_capacity",
+          "constraint_type": "route_disruption",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "container_shipping",
+          "raw_affected_asset_types": [
+            "shipping companies",
+            "LNG cargoes",
+            "grain exporters",
+            "freight forwarders",
+            "import-dependent supply chains"
+          ],
+          "raw_event_type": "climate-related shipping chokepoint disruption",
+          "raw_transmission_chain_steps": [
+            "drought conditions",
+            "canal draft and transit restrictions",
+            "reduced shipping capacity",
+            "queueing and rerouting",
+            "freight timing uncertainty"
+          ],
+          "shock_type": "capacity_constraint",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "direct_disruption_target",
+          "upstream_driver": "canal_transit_capacity_reduction"
+        }
+      ]
+    },
+    {
+      "case_id": "case_russia_ukraine_energy_shock",
+      "diagnostic_only": true,
+      "event_name": "Russia-Ukraine war and European energy shock",
+      "event_type": "war and sanctions energy disruption",
+      "nodes_enriched": [
+        "energy",
+        "petrochemicals"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "energy_feedstock_constraint",
+          "case_id": "case_russia_ukraine_energy_shock",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "energy",
+          "raw_affected_asset_types": [
+            "natural gas",
+            "crude oil",
+            "utilities",
+            "chemicals",
+            "metals producers",
+            "LNG infrastructure"
+          ],
+          "raw_event_type": "war and sanctions energy disruption",
+          "raw_transmission_chain_steps": [
+            "military invasion",
+            "sanctions and supply uncertainty",
+            "pipeline gas reductions",
+            "European energy price pressure",
+            "industrial cost shock",
+            "demand adjustment and LNG substitution"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "gas_and_energy_feedstock_disruption"
+        },
+        {
+          "canonical_context": "petrochemical_feedstock_constraint",
+          "case_id": "case_russia_ukraine_energy_shock",
+          "constraint_type": "input_shortage",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "petrochemicals",
+          "raw_affected_asset_types": [
+            "natural gas",
+            "crude oil",
+            "utilities",
+            "chemicals",
+            "metals producers",
+            "LNG infrastructure"
+          ],
+          "raw_event_type": "war and sanctions energy disruption",
+          "raw_transmission_chain_steps": [
+            "military invasion",
+            "sanctions and supply uncertainty",
+            "pipeline gas reductions",
+            "European energy price pressure",
+            "industrial cost shock",
+            "demand adjustment and LNG substitution"
+          ],
+          "shock_type": "sanctions",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "upstream_input",
+          "upstream_driver": "gas_and_energy_feedstock_disruption"
+        }
+      ]
+    },
+    {
+      "case_id": "case_taiwan_strait_semiconductor_risk",
+      "diagnostic_only": true,
+      "event_name": "Taiwan Strait tensions and semiconductor supply-chain risk",
+      "event_type": "regional military tension and semiconductor supply risk",
+      "nodes_enriched": [
+        "defense"
+      ],
+      "transmission_contexts": [
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_taiwan_strait_semiconductor_risk",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "semiconductor foundries",
+            "advanced chip designers",
+            "electronics manufacturers",
+            "data center suppliers",
+            "defense contractors"
+          ],
+          "raw_event_type": "regional military tension and semiconductor supply risk",
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "shipping and airspace disruption risk",
+            "foundry production concern",
+            "advanced chip supply uncertainty",
+            "electronics supply chain contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "contextual_background",
+          "upstream_driver": "regional_military_tension"
+        },
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_taiwan_strait_semiconductor_risk",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "semiconductor foundries",
+            "advanced chip designers",
+            "electronics manufacturers",
+            "data center suppliers",
+            "defense contractors"
+          ],
+          "raw_event_type": "regional military tension and semiconductor supply risk",
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "shipping and airspace disruption risk",
+            "foundry production concern",
+            "advanced chip supply uncertainty",
+            "electronics supply chain contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "contextual_background",
+          "upstream_driver": "regional_military_tension"
+        },
+        {
+          "canonical_context": "regional_security_context",
+          "case_id": "case_taiwan_strait_semiconductor_risk",
+          "constraint_type": "security_risk",
+          "diagnostic_only": true,
+          "diagnostic_rationale": "Curated only for the controlled V4 transmission-context prototype; not loaded by production code.",
+          "node": "defense",
+          "raw_affected_asset_types": [
+            "semiconductor foundries",
+            "advanced chip designers",
+            "electronics manufacturers",
+            "data center suppliers",
+            "defense contractors"
+          ],
+          "raw_event_type": "regional military tension and semiconductor supply risk",
+          "raw_transmission_chain_steps": [
+            "regional military tension",
+            "shipping and airspace disruption risk",
+            "foundry production concern",
+            "advanced chip supply uncertainty",
+            "electronics supply chain contingency planning"
+          ],
+          "shock_type": "military_escalation",
+          "source_fields_used": [
+            "event_type",
+            "industries",
+            "supply_chain_nodes",
+            "affected_asset_types",
+            "affected_assets",
+            "transmission_chain",
+            "summary"
+          ],
+          "target_node_role": "contextual_background",
+          "upstream_driver": "regional_military_tension"
+        }
+      ]
+    }
+  ],
+  "control_case_count": 10,
+  "current_event_contexts": [
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_cyber_port_pipeline_disruption",
+      "node": "maritime_chokepoint",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "maritime_route_security_constraint",
+        "constraint_type": "route_disruption",
+        "node": "maritime_chokepoint",
+        "shock_type": "cyber_disruption",
+        "target_node_role": "transmission_channel",
+        "upstream_driver": "port_operational_disruption"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_defense_supply_chain_escalation",
+      "node": "aviation",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "aerospace_defense_procurement_constraint",
+        "constraint_type": "trade_access_restriction",
+        "node": "aviation",
+        "shock_type": "regulatory_restriction",
+        "target_node_role": "contextual_background",
+        "upstream_driver": "defense_procurement_policy_dispute"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_dutch_asml_export_controls",
+      "node": "critical_minerals",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "critical_material_input_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "critical_minerals",
+        "shock_type": "export_restriction",
+        "target_node_role": "upstream_input",
+        "upstream_driver": "semiconductor_input_export_controls"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_dutch_asml_export_controls",
+      "node": "defense",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "semiconductor_input_access_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "defense",
+        "shock_type": "export_restriction",
+        "target_node_role": "downstream_exposure",
+        "upstream_driver": "semiconductor_supply_restriction"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_food_export_grain_restriction",
+      "node": "marine_insurance",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "food_shipping_insurance_constraint",
+        "constraint_type": "insurance_constraint",
+        "node": "marine_insurance",
+        "shock_type": "export_restriction",
+        "target_node_role": "financing_or_insurance_channel",
+        "upstream_driver": "grain_shipping_insurance_risk"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_huawei_entity_list",
+      "node": "critical_minerals",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "critical_material_input_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "critical_minerals",
+        "shock_type": "export_restriction",
+        "target_node_role": "upstream_input",
+        "upstream_driver": "electronics_input_restriction"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_huawei_entity_list",
+      "node": "defense",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "semiconductor_input_access_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "defense",
+        "shock_type": "export_restriction",
+        "target_node_role": "contextual_background",
+        "upstream_driver": "entity_list_semiconductor_supply_restriction"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_middle_east_oil_infrastructure_attack",
+      "node": "defense",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "regional_security_context",
+        "constraint_type": "security_risk",
+        "node": "defense",
+        "shock_type": "military_escalation",
+        "target_node_role": "downstream_exposure",
+        "upstream_driver": "regional_energy_security_escalation"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_middle_east_oil_infrastructure_attack",
+      "node": "logistics",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "transport_fuel_cost_exposure",
+        "constraint_type": "cost_increase",
+        "node": "logistics",
+        "shock_type": "physical_disruption",
+        "target_node_role": "downstream_exposure",
+        "upstream_driver": "oil_infrastructure_damage"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_middle_east_oil_infrastructure_attack",
+      "node": "marine_insurance",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "energy_shipping_insurance_constraint",
+        "constraint_type": "insurance_constraint",
+        "node": "marine_insurance",
+        "shock_type": "physical_disruption",
+        "target_node_role": "financing_or_insurance_channel",
+        "upstream_driver": "energy_facility_attack_risk"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_middle_east_oil_infrastructure_attack",
+      "node": "refining",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "refining_feedstock_constraint",
+        "constraint_type": "input_shortage",
+        "node": "refining",
+        "shock_type": "physical_disruption",
+        "target_node_role": "upstream_input",
+        "upstream_driver": "oil_infrastructure_damage"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_natural_gas_fertilizer_shock",
+      "node": "energy",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "energy_feedstock_constraint",
+        "constraint_type": "input_shortage",
+        "node": "energy",
+        "shock_type": "physical_disruption",
+        "target_node_role": "upstream_input",
+        "upstream_driver": "natural_gas_supply_disruption"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_natural_gas_fertilizer_shock",
+      "node": "petrochemicals",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "petrochemical_feedstock_constraint",
+        "constraint_type": "input_shortage",
+        "node": "petrochemicals",
+        "shock_type": "physical_disruption",
+        "target_node_role": "upstream_input",
+        "upstream_driver": "gas_feedstock_shortage"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_oil_shipping_chokepoint",
+      "node": "oil_shipping",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "oil_shipping_security_constraint",
+        "constraint_type": "route_disruption",
+        "node": "oil_shipping",
+        "shock_type": "military_escalation",
+        "target_node_role": "direct_disruption_target",
+        "upstream_driver": "tanker_security_risk"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_panama_canal_drought",
+      "node": "container_shipping",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "maritime_route_capacity_constraint",
+        "constraint_type": "route_disruption",
+        "node": "container_shipping",
+        "shock_type": "capacity_constraint",
+        "target_node_role": "direct_disruption_target",
+        "upstream_driver": "canal_transit_capacity_reduction"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_red_sea_shipping_disruption",
+      "node": "maritime_chokepoint",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "maritime_route_security_constraint",
+        "constraint_type": "route_disruption",
+        "node": "maritime_chokepoint",
+        "shock_type": "military_escalation",
+        "target_node_role": "direct_disruption_target",
+        "upstream_driver": "red_sea_vessel_security_risk"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_semiconductor_export_controls",
+      "node": "critical_minerals",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "critical_material_input_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "critical_minerals",
+        "shock_type": "export_restriction",
+        "target_node_role": "upstream_input",
+        "upstream_driver": "semiconductor_input_export_controls"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_semiconductor_export_controls",
+      "node": "defense",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "semiconductor_input_access_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "defense",
+        "shock_type": "export_restriction",
+        "target_node_role": "contextual_background",
+        "upstream_driver": "advanced_chip_export_controls"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_uranium_nuclear_fuel_disruption",
+      "node": "marine_insurance",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "nuclear_fuel_input_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "marine_insurance",
+        "shock_type": "export_restriction",
+        "target_node_role": "contextual_background",
+        "upstream_driver": "uranium_supply_restriction"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_uranium_nuclear_fuel_disruption",
+      "node": "maritime_chokepoint",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "nuclear_fuel_input_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "maritime_chokepoint",
+        "shock_type": "export_restriction",
+        "target_node_role": "contextual_background",
+        "upstream_driver": "uranium_supply_restriction"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "eval_us_china_tariffs",
+      "node": "trade_lanes",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "tariff_trade_compliance_constraint",
+        "constraint_type": "trade_access_restriction",
+        "node": "trade_lanes",
+        "shock_type": "tariff",
+        "target_node_role": "compliance_channel",
+        "upstream_driver": "tariff_and_customs_review"
+      }
+    },
+    {
+      "diagnostic_only": true,
+      "diagnostic_rationale": "Offline current-event projection for the controlled mechanism-compatible support prototype. This is not a production EventAnalysis schema change.",
+      "event_id": "hard_semiconductor_controls_paraphrased",
+      "node": "critical_minerals",
+      "source_fields_used": [
+        "event_id",
+        "event_type",
+        "summary",
+        "industries",
+        "supply_chain_nodes"
+      ],
+      "transmission_context": {
+        "canonical_context": "critical_material_input_constraint",
+        "constraint_type": "input_access_restriction",
+        "node": "critical_minerals",
+        "shock_type": "export_restriction",
+        "target_node_role": "upstream_input",
+        "upstream_driver": "semiconductor_input_export_controls"
+      }
+    }
+  ],
+  "diagnostic_only": true,
+  "error_related_case_count": 15,
+  "nodes_covered": [
+    "aviation",
+    "container_shipping",
+    "critical_minerals",
+    "defense",
+    "energy",
+    "logistics",
+    "marine_insurance",
+    "maritime_chokepoint",
+    "oil_shipping",
+    "petrochemicals",
+    "refining",
+    "trade_lanes"
+  ],
+  "schema_version": "controlled_transmission_context_v0",
+  "selection_rationale": {
+    "clean_controls": "Additional non-error mechanism instances were selected to cover container_shipping, ports/maritime routes, oil_shipping, refining, petrochemicals, lng/energy shipping, trade-lane adjacent, energy, defense, and marine-insurance contexts.",
+    "rule6_error_cases": "All historical cases supporting the 10 Rule-6 error mechanism instances were included."
+  }
+}

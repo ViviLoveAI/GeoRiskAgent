@@ -1,0 +1,19 @@
+event_id,event_date,event_type,accepted,rejection_reasons,closest_kb_case,closest_kb_score,exposure_count
+candidate_d41a5f82d14a,2025-10-10,critical minerals resource restrictions,True,,case_rare_earth_export_restriction_risk,0.207,10
+candidate_fba3f59c71da,2025-11-09,critical minerals resource restrictions,True,,case_rare_earth_export_restriction_risk,0.185,10
+candidate_ff6378fbb36b,2025-11-09,critical minerals resource restrictions,True,,case_rare_earth_export_restriction_risk,0.1912,2
+candidate_130fb98e42bb,2025-11-10,critical minerals resource restrictions,True,,case_rare_earth_export_restriction_risk,0.1819,12
+candidate_355782516069,2025-10-03,cyberattack critical infrastructure,True,,case_2023_dp_world_australia_cyber_port_disruption,0.1662,12
+candidate_2bd2cdbf5b54,2025-10-08,cyberattack critical infrastructure,True,,case_2023_dp_world_australia_cyber_port_disruption,0.1656,12
+candidate_eaccce38b750,2025-10-21,cyberattack critical infrastructure,True,,case_2023_dp_world_australia_cyber_port_disruption,0.1735,12
+candidate_a126990eefca,2025-10-25,cyberattack critical infrastructure,True,,case_2023_dp_world_australia_cyber_port_disruption,0.1808,12
+candidate_4ead99ff6140,2025-11-05,cyberattack critical infrastructure,True,,case_2023_dp_world_australia_cyber_port_disruption,0.1656,12
+candidate_baa44533ccce,2025-11-12,cyberattack critical infrastructure,True,,case_2023_dp_world_australia_cyber_port_disruption,0.1661,2
+candidate_87ef41f3c5f9,2025-11-13,cyberattack critical infrastructure,True,,case_2023_dp_world_australia_cyber_port_disruption,0.1663,2
+candidate_62a1e26b492f,2025-12-30,cyberattack critical infrastructure,True,,case_2023_dp_world_australia_cyber_port_disruption,0.1666,12
+candidate_03b2368e1784,2025-10-14,trade restrictions tariffs,True,,case_2018_2019_us_china_tariffs,0.1389,10
+candidate_306ccb869b74,2025-11-09,trade restrictions tariffs,True,,case_2018_2019_us_china_tariffs,0.1393,10
+candidate_918e3683ad48,2025-11-11,trade restrictions tariffs,True,,case_2018_2019_us_china_tariffs,0.1391,10
+candidate_2b81b6284253,2025-12-02,trade restrictions tariffs,True,,case_2018_2019_us_china_tariffs,0.1388,10
+candidate_66fc89d1e202,2025-12-10,trade restrictions tariffs,True,,case_2018_2019_us_china_tariffs,0.1396,2
+candidate_6fe1f9e3e955,2025-12-31,trade restrictions tariffs,True,,case_2018_2019_us_china_tariffs,0.1389,10

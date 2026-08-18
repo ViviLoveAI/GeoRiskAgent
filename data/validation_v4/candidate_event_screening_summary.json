@@ -1,0 +1,16 @@
+{
+  "candidate_count": 25,
+  "candidate_pool_created": true,
+  "car_run": false,
+  "created_at_utc": "2026-08-11T21:30:06.417873+00:00",
+  "eligible_count": 25,
+  "manual_review_count": 0,
+  "outcome_data_used": false,
+  "predictions_frozen": false,
+  "provisional_accepted_count": 25,
+  "rejected_count": 0,
+  "status_counts": {
+    "eligible": 25
+  },
+  "v4_prediction_run": false
+}

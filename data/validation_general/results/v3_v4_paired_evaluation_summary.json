@@ -1,0 +1,301 @@
+{
+  "CAR_run": false,
+  "all": {
+    "delta_v4_minus_v3": {
+      "accuracy": 0.086957,
+      "insufficient_handling": 0.166666,
+      "node_presence_recall": 0.0,
+      "support_recall": 0.0,
+      "weak_leakage": -0.2,
+      "weak_rejection": 0.2
+    },
+    "n": 46,
+    "transitions": {
+      "V3_correct_to_V4_correct": 17,
+      "V3_wrong_to_V4_correct": 4,
+      "V3_wrong_to_V4_wrong": 25
+    },
+    "v3": {
+      "accuracy": 0.369565,
+      "correct": 17,
+      "false_acceptance": 4,
+      "false_rejection": 23,
+      "insufficient_handling": 0.666667,
+      "insufficient_handling_count": 4,
+      "node_presence_count": 2,
+      "node_presence_recall": 0.08,
+      "support_recall": 0.08,
+      "support_recall_count": 2,
+      "weak_leakage": 0.266667,
+      "weak_leakage_count": 4,
+      "weak_rejection": 0.733333,
+      "weak_rejection_count": 11
+    },
+    "v4": {
+      "accuracy": 0.456522,
+      "correct": 21,
+      "false_acceptance": 1,
+      "false_rejection": 23,
+      "insufficient_handling": 0.833333,
+      "insufficient_handling_count": 5,
+      "node_presence_count": 2,
+      "node_presence_recall": 0.08,
+      "support_recall": 0.08,
+      "support_recall_count": 2,
+      "weak_leakage": 0.066667,
+      "weak_leakage_count": 1,
+      "weak_rejection": 0.933333,
+      "weak_rejection_count": 14
+    }
+  },
+  "benchmark_version": "georisk_multiyear_general_v1",
+  "by_ground_truth_class": {
+    "compatible_support_expected": {
+      "delta_v4_minus_v3": {
+        "accuracy": 0.0,
+        "insufficient_handling": null,
+        "node_presence_recall": 0.0,
+        "support_recall": 0.0,
+        "weak_leakage": null,
+        "weak_rejection": null
+      },
+      "n": 25,
+      "transitions": {
+        "V3_correct_to_V4_correct": 2,
+        "V3_wrong_to_V4_wrong": 23
+      },
+      "v3": {
+        "accuracy": 0.08,
+        "correct": 2,
+        "false_acceptance": 0,
+        "false_rejection": 23,
+        "insufficient_handling": null,
+        "insufficient_handling_count": 0,
+        "node_presence_count": 2,
+        "node_presence_recall": 0.08,
+        "support_recall": 0.08,
+        "support_recall_count": 2,
+        "weak_leakage": null,
+        "weak_leakage_count": 0,
+        "weak_rejection": null,
+        "weak_rejection_count": 0
+      },
+      "v4": {
+        "accuracy": 0.08,
+        "correct": 2,
+        "false_acceptance": 0,
+        "false_rejection": 23,
+        "insufficient_handling": null,
+        "insufficient_handling_count": 0,
+        "node_presence_count": 2,
+        "node_presence_recall": 0.08,
+        "support_recall": 0.08,
+        "support_recall_count": 2,
+        "weak_leakage": null,
+        "weak_leakage_count": 0,
+        "weak_rejection": null,
+        "weak_rejection_count": 0
+      }
+    },
+    "insufficient_context_expected": {
+      "delta_v4_minus_v3": {
+        "accuracy": 0.166666,
+        "insufficient_handling": 0.166666,
+        "node_presence_recall": null,
+        "support_recall": null,
+        "weak_leakage": null,
+        "weak_rejection": null
+      },
+      "n": 6,
+      "transitions": {
+        "V3_correct_to_V4_correct": 4,
+        "V3_wrong_to_V4_correct": 1,
+        "V3_wrong_to_V4_wrong": 1
+      },
+      "v3": {
+        "accuracy": 0.666667,
+        "correct": 4,
+        "false_acceptance": 0,
+        "false_rejection": 0,
+        "insufficient_handling": 0.666667,
+        "insufficient_handling_count": 4,
+        "node_presence_count": 0,
+        "node_presence_recall": null,
+        "support_recall": null,
+        "support_recall_count": 0,
+        "weak_leakage": null,
+        "weak_leakage_count": 0,
+        "weak_rejection": null,
+        "weak_rejection_count": 0
+      },
+      "v4": {
+        "accuracy": 0.833333,
+        "correct": 5,
+        "false_acceptance": 0,
+        "false_rejection": 0,
+        "insufficient_handling": 0.833333,
+        "insufficient_handling_count": 5,
+        "node_presence_count": 0,
+        "node_presence_recall": null,
+        "support_recall": null,
+        "support_recall_count": 0,
+        "weak_leakage": null,
+        "weak_leakage_count": 0,
+        "weak_rejection": null,
+        "weak_rejection_count": 0
+      }
+    },
+    "weak_cooccurrence_expected": {
+      "delta_v4_minus_v3": {
+        "accuracy": 0.2,
+        "insufficient_handling": null,
+        "node_presence_recall": null,
+        "support_recall": null,
+        "weak_leakage": -0.2,
+        "weak_rejection": 0.2
+      },
+      "n": 15,
+      "transitions": {
+        "V3_correct_to_V4_correct": 11,
+        "V3_wrong_to_V4_correct": 3,
+        "V3_wrong_to_V4_wrong": 1
+      },
+      "v3": {
+        "accuracy": 0.733333,
+        "correct": 11,
+        "false_acceptance": 4,
+        "false_rejection": 0,
+        "insufficient_handling": null,
+        "insufficient_handling_count": 0,
+        "node_presence_count": 0,
+        "node_presence_recall": null,
+        "support_recall": null,
+        "support_recall_count": 0,
+        "weak_leakage": 0.266667,
+        "weak_leakage_count": 4,
+        "weak_rejection": 0.733333,
+        "weak_rejection_count": 11
+      },
+      "v4": {
+        "accuracy": 0.933333,
+        "correct": 14,
+        "false_acceptance": 1,
+        "false_rejection": 0,
+        "insufficient_handling": null,
+        "insufficient_handling_count": 0,
+        "node_presence_count": 0,
+        "node_presence_recall": null,
+        "support_recall": null,
+        "support_recall_count": 0,
+        "weak_leakage": 0.066667,
+        "weak_leakage_count": 1,
+        "weak_rejection": 0.933333,
+        "weak_rejection_count": 14
+      }
+    }
+  },
+  "prices_accessed": false,
+  "representation_gap_false": {
+    "delta_v4_minus_v3": {
+      "accuracy": 0.096774,
+      "insufficient_handling": null,
+      "node_presence_recall": 0.0,
+      "support_recall": 0.0,
+      "weak_leakage": -0.2,
+      "weak_rejection": 0.2
+    },
+    "n": 31,
+    "transitions": {
+      "V3_correct_to_V4_correct": 13,
+      "V3_wrong_to_V4_correct": 3,
+      "V3_wrong_to_V4_wrong": 15
+    },
+    "v3": {
+      "accuracy": 0.419355,
+      "correct": 13,
+      "false_acceptance": 4,
+      "false_rejection": 14,
+      "insufficient_handling": null,
+      "insufficient_handling_count": 0,
+      "node_presence_count": 2,
+      "node_presence_recall": 0.125,
+      "support_recall": 0.125,
+      "support_recall_count": 2,
+      "weak_leakage": 0.266667,
+      "weak_leakage_count": 4,
+      "weak_rejection": 0.733333,
+      "weak_rejection_count": 11
+    },
+    "v4": {
+      "accuracy": 0.516129,
+      "correct": 16,
+      "false_acceptance": 1,
+      "false_rejection": 14,
+      "insufficient_handling": null,
+      "insufficient_handling_count": 0,
+      "node_presence_count": 2,
+      "node_presence_recall": 0.125,
+      "support_recall": 0.125,
+      "support_recall_count": 2,
+      "weak_leakage": 0.066667,
+      "weak_leakage_count": 1,
+      "weak_rejection": 0.933333,
+      "weak_rejection_count": 14
+    }
+  },
+  "representation_gap_true": {
+    "delta_v4_minus_v3": {
+      "accuracy": 0.066666,
+      "insufficient_handling": 0.166666,
+      "node_presence_recall": 0.0,
+      "support_recall": 0.0,
+      "weak_leakage": null,
+      "weak_rejection": null
+    },
+    "n": 15,
+    "transitions": {
+      "V3_correct_to_V4_correct": 4,
+      "V3_wrong_to_V4_correct": 1,
+      "V3_wrong_to_V4_wrong": 10
+    },
+    "v3": {
+      "accuracy": 0.266667,
+      "correct": 4,
+      "false_acceptance": 0,
+      "false_rejection": 9,
+      "insufficient_handling": 0.666667,
+      "insufficient_handling_count": 4,
+      "node_presence_count": 0,
+      "node_presence_recall": 0.0,
+      "support_recall": 0.0,
+      "support_recall_count": 0,
+      "weak_leakage": null,
+      "weak_leakage_count": 0,
+      "weak_rejection": null,
+      "weak_rejection_count": 0
+    },
+    "v4": {
+      "accuracy": 0.333333,
+      "correct": 5,
+      "false_acceptance": 0,
+      "false_rejection": 9,
+      "insufficient_handling": 0.833333,
+      "insufficient_handling_count": 5,
+      "node_presence_count": 0,
+      "node_presence_recall": 0.0,
+      "support_recall": 0.0,
+      "support_recall_count": 0,
+      "weak_leakage": null,
+      "weak_leakage_count": 0,
+      "weak_rejection": null,
+      "weak_rejection_count": 0
+    }
+  },
+  "returns_accessed": false,
+  "total_annotations": 46,
+  "transition_counts": {
+    "V3_correct_to_V4_correct": 17,
+    "V3_wrong_to_V4_correct": 4,
+    "V3_wrong_to_V4_wrong": 25
+  }
+}

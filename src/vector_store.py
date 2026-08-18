@@ -12,6 +12,7 @@ import contextlib
 import io
 import json
 import logging
+import os
 import warnings
 from pathlib import Path
 from typing import Any
@@ -27,6 +28,7 @@ from src.schemas import RetrievedCase
 COLLECTION_NAME = "georisk_historical_cases"
 MODEL_NAME = "all-MiniLM-L6-v2"
 CHROMA_DB_DIR = PROJECT_ROOT / "chroma_db"
+LOCAL_MODEL_FILES_ONLY = os.getenv("GEORISK_LOCAL_MODEL_FILES_ONLY", "true").lower() == "true"
 
 _embedding_model: SentenceTransformer | None = None
 
@@ -99,6 +101,7 @@ def query_cases(query_text: str, top_k: int = 5) -> list[RetrievedCase]:
                 title=case["event_name"],
                 summary=case["summary"],
                 event_type=case.get("event_type"),
+                supply_chain_nodes=case.get("supply_chain_nodes", []),
                 transmission_chain=case.get("transmission_chain", []),
                 relevance=f"semantic_distance={distance:.4f}",
             )
@@ -158,7 +161,10 @@ def _load_sentence_transformer_quietly() -> SentenceTransformer:
                 warnings.filterwarnings("ignore", module="sentence_transformers")
                 warnings.filterwarnings("ignore", module="transformers")
                 warnings.filterwarnings("ignore", message=".*UNEXPECTED.*")
-                return SentenceTransformer(MODEL_NAME)
+                return SentenceTransformer(
+                    MODEL_NAME,
+                    local_files_only=LOCAL_MODEL_FILES_ONLY,
+                )
     finally:
         transformers_logging.set_verbosity(previous_transformers_verbosity)
         for logger_name, level in previous_levels.items():

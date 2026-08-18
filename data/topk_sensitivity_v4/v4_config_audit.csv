@@ -1,0 +1,10 @@
+file,function_or_cli,current_default,legacy_or_v4,v4_path_can_reach,explicit_override_exists,risk_of_silent_3_or_5_fallback,notes
+src/pipeline.py,run_pipeline(top_k=3),3,legacy,True,True,low_when_run_v4_pipeline_is_used,Caller can override top_k; legacy default remains 3.
+src/pipeline.py,CLI --top-k default,3,legacy,True,True,low_when_run_v4_pipeline_is_used,CLI default remains legacy 3.
+src/pipeline.py,run_v4_pipeline(),10,v4,True,False,none,Dedicated V4 entry point uses V4_CONFIG.retrieval_top_k.
+src/api.py,AnalyzeRequest.top_k,3,legacy,False,True,legacy_only,API endpoint calls legacy run_pipeline with request top_k.
+app.py,"Streamlit run_pipeline(..., top_k=3)",3,legacy,False,True,legacy_only,UI remains legacy/demo path.
+src/agents/case_retriever.py,retrieve_cases(top_k=5),5,shared_internal_default,True,True,low_when_run_v4_pipeline_is_used,"V4 path passes explicit 10, so default is bypassed."
+src/vector_store.py,query_cases(top_k=5),5,shared_internal_default,True,True,low_when_run_v4_pipeline_is_used,V4 path passes explicit 10 through retriever.
+src/v4_config.py,V4_CONFIG.retrieval_top_k,10,v4,True,False,none,Single frozen V4 source of truth.
+src/v4_config.py,V4_CONFIG.use_mechanism_compatible_support,True,v4,True,False,none,V4 path explicitly enables mechanism support.

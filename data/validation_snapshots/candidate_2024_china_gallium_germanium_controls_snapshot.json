@@ -1,0 +1,133 @@
+{
+  "baseline_exposures": [
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_broad_market_baseline",
+      "node": "broad_market_growth",
+      "source": "baseline",
+      "symbol": "QQQ"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "financials",
+      "source": "baseline",
+      "symbol": "XLF"
+    },
+    {
+      "asset_type": "equity_etf",
+      "baseline_type": "fixed_sector_baseline",
+      "node": "healthcare",
+      "source": "baseline",
+      "symbol": "XLV"
+    }
+  ],
+  "event_date": "2024-08-15",
+  "event_description": "China tightens export controls on gallium and germanium supply chains China tightened export-control procedures for gallium and germanium materials used in semiconductors, solar equipment, fiber optics, and defense electronics, increasing concern about critical-mineral supply chains.",
+  "event_id": "candidate_2024_china_gallium_germanium_controls",
+  "event_type": "critical minerals export controls",
+  "generated_at": "2026-08-05T00:36:58.565135+00:00",
+  "note": "Frozen before observing post-event returns",
+  "predicted_exposures": [
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "customs",
+      "source": "georisk",
+      "symbol": "DSGX"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "customs",
+      "source": "georisk",
+      "symbol": "CHRW"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "manufacturing_inputs",
+      "source": "georisk",
+      "symbol": "DE"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "manufacturing_inputs",
+      "source": "georisk",
+      "symbol": "CAT"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "critical_minerals",
+      "source": "georisk",
+      "symbol": "REMX"
+    },
+    {
+      "asset_type": "ETF",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "critical_minerals",
+      "source": "georisk",
+      "symbol": "PICK"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "rare_earths",
+      "source": "georisk",
+      "symbol": "MP"
+    },
+    {
+      "asset_type": "ADR",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "rare_earths",
+      "source": "georisk",
+      "symbol": "LYSDY"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "gallium_germanium_graphite",
+      "source": "georisk",
+      "symbol": "NEO.TO"
+    },
+    {
+      "asset_type": "Stock",
+      "confidence": 0.35,
+      "event_id": "candidate_2024_china_gallium_germanium_controls",
+      "evidence_label": "inference_only",
+      "expected_direction": null,
+      "node": "gallium_germanium_graphite",
+      "source": "georisk",
+      "symbol": "SYR.AX"
+    }
+  ]
+}

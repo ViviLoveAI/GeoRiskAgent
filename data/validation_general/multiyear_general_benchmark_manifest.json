@@ -1,0 +1,83 @@
+{
+  "annotation_distribution": {
+    "compatible_support_expected": 25,
+    "insufficient_context_expected": 6,
+    "weak_cooccurrence_expected": 15
+  },
+  "benchmark_name": "GeoRisk Multi-year General Benchmark",
+  "benchmark_sealed": true,
+  "benchmark_type": "cross-temporal_generalization_and_system_comparison",
+  "benchmark_version": "georisk_multiyear_general_v1",
+  "candidate_count": 31,
+  "event_family_distribution": {
+    "agriculture_export_restriction": 1,
+    "agriculture_trade_restriction": 1,
+    "aviation_airspace_restriction": 1,
+    "cyber_technology_restriction": 1,
+    "energy_trade_finance_restriction": 1,
+    "maritime_trade_restriction": 1,
+    "port_logistics_disruption": 2,
+    "sanctions_energy_shipping": 1,
+    "sanctions_energy_trade": 2,
+    "sanctions_industrial_metals": 1,
+    "sanctions_labor_inputs": 1,
+    "sanctions_relief_trade_access": 1,
+    "sanctions_resource_trade": 2,
+    "sanctions_trade_restrictions": 1,
+    "technology_export_controls": 2,
+    "technology_restriction": 1,
+    "trade_restrictions_tariffs": 3
+  },
+  "event_year_scope": "2020-2025",
+  "future_metrics_defined_not_computed": [
+    "node_presence_recall",
+    "strict_historical_support_recall",
+    "weak_support_leakage",
+    "compatible_recall_delta",
+    "weak_leakage_delta",
+    "balanced_accuracy",
+    "macro_f1"
+  ],
+  "ground_truth_frozen": true,
+  "ground_truth_taxonomy": [
+    "compatible_support_expected",
+    "insufficient_context_expected",
+    "weak_cooccurrence_expected"
+  ],
+  "leakage_status": {
+    "CAR_run": false,
+    "model_outputs_used_for_annotation": false,
+    "model_outputs_used_for_selection": false,
+    "prices_accessed": false
+  },
+  "node_annotation_count": 46,
+  "prediction_status": {
+    "CAR_run": false,
+    "V3_predictions_run": false,
+    "V4_predictions_run": false,
+    "prices_accessed": false
+  },
+  "region_distribution": {
+    "East Asia": 6,
+    "Europe": 10,
+    "Global": 6,
+    "Latin America": 2,
+    "Middle East": 2,
+    "North America": 10,
+    "South Asia": 4,
+    "Southeast Asia": 1
+  },
+  "representation_gap_count": 15,
+  "sealed_at_utc": "2026-08-18T03:58:04.842410+00:00",
+  "selected_event_count": 23,
+  "v3_baseline_manifest": "data/validation_general/v3_frozen_baseline_manifest.json",
+  "v4_freeze_manifest": "data/topk_sensitivity_v4/v4_final_freeze_manifest.json",
+  "year_distribution": {
+    "2020": 4,
+    "2021": 4,
+    "2022": 4,
+    "2023": 4,
+    "2024": 4,
+    "2025": 3
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "broad_mechanism_removal_incremental_only": {
+    "consistent": {
+      "baseline": 71,
+      "kept": 71,
+      "removed": 0
+    },
+    "mixed": {
+      "baseline": 34,
+      "kept": 24,
+      "removed": 10
+    },
+    "weak_cooccurrence": {
+      "baseline": 64,
+      "kept": 10,
+      "removed": 54
+    }
+  },
+  "configurations": {
+    "A_k5_no_guardrail": {
+      "borderline_incremental_only": null,
+      "broad_node_assets": 142,
+      "historical_supported": 22,
+      "inference_only": 0,
+      "likely_noise_incremental_only": null,
+      "likely_useful_incremental_only": null,
+      "second_order_assets": 184,
+      "sector_proxy": 162,
+      "specific_node_assets": 42,
+      "support_qualified_nodes": 92,
+      "unique_second_order_nodes": 21,
+      "unique_tickers": 42
+    },
+    "B_k10_no_guardrail": {
+      "borderline_incremental_only": null,
+      "broad_node_assets": 311,
+      "historical_supported": 72,
+      "inference_only": 0,
+      "likely_noise_incremental_only": null,
+      "likely_useful_incremental_only": null,
+      "second_order_assets": 431,
+      "sector_proxy": 359,
+      "specific_node_assets": 120,
+      "support_qualified_nodes": 217,
+      "unique_second_order_nodes": 31,
+      "unique_tickers": 61
+    },
+    "C_k10_rule6_guardrail": {
+      "borderline_incremental_only": null,
+      "broad_node_assets": 209,
+      "historical_supported": 68,
+      "inference_only": 0,
+      "likely_noise_incremental_only": null,
+      "likely_useful_incremental_only": null,
+      "second_order_assets": 329,
+      "sector_proxy": 261,
+      "specific_node_assets": 120,
+      "support_qualified_nodes": 166,
+      "unique_second_order_nodes": 30,
+      "unique_tickers": 59
+    }
+  },
+  "filter_effect_B_to_C": {
+    "incremental_borderline_removed": 10,
+    "incremental_borderline_retained": 145,
+    "incremental_likely_noise_removed": 54,
+    "incremental_likely_noise_retained": 10,
+    "incremental_likely_useful_removed": 0,
+    "incremental_likely_useful_retained": 28,
+    "removed_broad_node_assets_full_k10": 102,
+    "removed_candidates_full_k10": 102,
+    "removed_historical_supported_full_k10": 4,
+    "removed_sector_proxy_full_k10": 98,
+    "removed_specific_node_assets_full_k10": 0,
+    "retained_candidates_full_k10": 329
+  },
+  "notes": {
+    "quality_labels_scope": "candidate_quality labels are available only for the k=5 -> k=10 incremental cohort.",
+    "rule6_scope": "Rule-6 is applied offline only to potentially_broad node candidates; specific nodes are retained."
+  },
+  "removed_historical_supported": [
+    {
+      "asset_name": "SonicShares Global Shipping ETF",
+      "candidate_quality": "likely_noise",
+      "event_id": "eval_uranium_nuclear_fuel_disruption",
+      "evidence_level": "historical_supported",
+      "mechanism_consistency": "weak_cooccurrence",
+      "node": "maritime_chokepoint",
+      "node_specificity": "potentially_broad",
+      "supporting_case_ids": "case_2023_red_sea_attacks",
+      "ticker": "BOAT"
+    },
+    {
+      "asset_name": "Matson Inc",
+      "candidate_quality": "likely_noise",
+      "event_id": "eval_uranium_nuclear_fuel_disruption",
+      "evidence_level": "historical_supported",
+      "mechanism_consistency": "weak_cooccurrence",
+      "node": "maritime_chokepoint",
+      "node_specificity": "potentially_broad",
+      "supporting_case_ids": "case_2023_red_sea_attacks",
+      "ticker": "MATX"
+    },
+    {
+      "asset_name": "SonicShares Global Shipping ETF",
+      "candidate_quality": "",
+      "event_id": "hard_hormuz_ambiguous_energy_shipping",
+      "evidence_level": "historical_supported",
+      "mechanism_consistency": "",
+      "node": "maritime_chokepoint",
+      "node_specificity": "potentially_broad",
+      "supporting_case_ids": "case_2023_red_sea_attacks",
+      "ticker": "BOAT"
+    },
+    {
+      "asset_name": "Matson Inc",
+      "candidate_quality": "",
+      "event_id": "hard_hormuz_ambiguous_energy_shipping",
+      "evidence_level": "historical_supported",
+      "mechanism_consistency": "",
+      "node": "maritime_chokepoint",
+      "node_specificity": "potentially_broad",
+      "supporting_case_ids": "case_2023_red_sea_attacks",
+      "ticker": "MATX"
+    }
+  ],
+  "retrieval_effect_A_to_B": {
+    "added_broad_node_assets": 169,
+    "added_historical_supported": 46,
+    "added_historical_supported_broad": 6,
+    "added_historical_supported_broad_share": 0.13043478260869565,
+    "added_historical_supported_specific": 40,
+    "added_historical_supported_specific_share": 0.8695652173913043,
+    "added_inference_only": 0,
+    "added_second_order_assets": 247,
+    "added_sector_proxy": 201,
+    "added_specific_node_assets": 78,
+    "added_support_qualified_nodes": 125,
+    "added_unique_tickers": 61
+  }
+}

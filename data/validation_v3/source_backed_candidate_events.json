@@ -1,0 +1,766 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "v3_20240112_houthi_strikes_red_sea",
+      "entities": [],
+      "event_date": "2024-01-12",
+      "event_id": "v3_20240112_houthi_strikes_red_sea",
+      "event_text": "U.S. and partner forces conducted strikes against Houthi military targets after attacks on commercial shipping in the Red Sea threatened freedom of navigation and global trade routes. Keywords: red sea, houthi, shipping attack, vessel attack, maritime chokepoint.",
+      "event_type": "maritime_security_disruption",
+      "event_type_hint": "maritime_security_disruption",
+      "headline": "U.S. and U.K. strike Houthi targets after Red Sea commercial-shipping attacks",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Middle East",
+        "Red Sea",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Department of Defense",
+      "source_url": "https://www.defense.gov/News/News-Stories/Article/Article/3644027/us-partners-forces-strike-houthi-military-targets-in-yemen/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. and U.K. strike Houthi targets after Red Sea commercial-shipping attacks",
+          "publication_date": "2024-01-12",
+          "source": "U.S. Department of Defense",
+          "source_record_id": "v3_20240112_houthi_strikes_red_sea",
+          "source_url": "https://www.defense.gov/News/News-Stories/Article/Article/3644027/us-partners-forces-strike-houthi-military-targets-in-yemen/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20240306_true_confidence_attack",
+      "entities": [],
+      "event_date": "2024-03-06",
+      "event_id": "v3_20240306_true_confidence_attack",
+      "event_text": "CENTCOM reported a Houthi anti-ship ballistic missile struck M/V True Confidence in the Gulf of Aden, causing fatalities, injuries, vessel damage, and disruption to global trade. Keywords: houthi, vessel attack, shipping attack, red sea, freight routes.",
+      "event_type": "maritime_security_disruption",
+      "event_type_hint": "maritime_security_disruption",
+      "headline": "Houthi anti-ship missile strikes M/V True Confidence in Gulf of Aden",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Middle East",
+        "Red Sea",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Central Command",
+      "source_url": "https://www.centcom.mil/MEDIA/PUBLIC-RELEASES/Article/3698591/houthis-kill-innocent-civilians-with-missile-attack/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Houthi anti-ship missile strikes M/V True Confidence in Gulf of Aden",
+          "publication_date": "2024-03-06",
+          "source": "U.S. Central Command",
+          "source_record_id": "v3_20240306_true_confidence_attack",
+          "source_url": "https://www.centcom.mil/MEDIA/PUBLIC-RELEASES/Article/3698591/houthis-kill-innocent-civilians-with-missile-attack/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20240821_sounion_tanker_attack",
+      "entities": [],
+      "event_date": "2024-08-21",
+      "event_id": "v3_20240821_sounion_tanker_attack",
+      "event_text": "The oil tanker MV Sounion was attacked while transiting the Southern Red Sea, carrying crude oil and raising safety, environmental, oil shipping, and maritime insurance risks. Keywords: red sea, houthi, tanker, oil shipping, vessel attack.",
+      "event_type": "maritime_security_disruption",
+      "event_type_hint": "maritime_security_disruption",
+      "headline": "MV Sounion oil tanker attacked in the Red Sea",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Middle East",
+        "Red Sea",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "International Maritime Organization",
+      "source_url": "https://www.imo.org/en/MediaCentre/SecretaryGeneral/Pages/Statement-MV-SOUNION.aspx",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "MV Sounion oil tanker attacked in the Red Sea",
+          "publication_date": "2024-08-21",
+          "source": "International Maritime Organization",
+          "source_record_id": "v3_20240821_sounion_tanker_attack",
+          "source_url": "https://www.imo.org/en/MediaCentre/SecretaryGeneral/Pages/Statement-MV-SOUNION.aspx"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250315_us_houthi_airstrikes",
+      "entities": [],
+      "event_date": "2025-03-15",
+      "event_id": "v3_20250315_us_houthi_airstrikes",
+      "event_text": "The U.S. launched multiple airstrikes against Iranian-backed Houthis in Yemen after attacks on U.S. ships and Red Sea shipping, with freedom of navigation cited as a core objective. Keywords: red sea, houthi, shipping attack, vessel attack, maritime chokepoint.",
+      "event_type": "maritime_security_disruption",
+      "event_type_hint": "maritime_security_disruption",
+      "headline": "U.S. launches renewed airstrikes against Houthis to restore Red Sea freedom of navigation",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Middle East",
+        "Red Sea",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Department of Defense",
+      "source_url": "https://www.defense.gov/News/News-Stories/Article/Article/4122357/hegseth-says-campaign-against-houthis-will-be-unrelenting-until-hostilities-cea/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. launches renewed airstrikes against Houthis to restore Red Sea freedom of navigation",
+          "publication_date": "2025-03-15",
+          "source": "U.S. Department of Defense",
+          "source_record_id": "v3_20250315_us_houthi_airstrikes",
+          "source_url": "https://www.defense.gov/News/News-Stories/Article/Article/4122357/hegseth-says-campaign-against-houthis-will-be-unrelenting-until-hostilities-cea/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20240223_sovcomflot_sanctions",
+      "entities": [],
+      "event_date": "2024-02-23",
+      "event_id": "v3_20240223_sovcomflot_sanctions",
+      "event_text": "OFAC designated Russian state-owned shipping company Sovcomflot and identified crude oil tankers, targeting Russian oil sales, shadow operations, and energy shipping. Keywords: sanctions, oil shipping, tanker, marine insurance, financial sanctions.",
+      "event_type": "shipping_sanctions",
+      "event_type_hint": "shipping_sanctions",
+      "headline": "U.S. sanctions Sovcomflot and tankers tied to Russian oil shipping",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Europe",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Department of the Treasury",
+      "source_url": "https://home.treasury.gov/news/press-releases/jy2121",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. sanctions Sovcomflot and tankers tied to Russian oil shipping",
+          "publication_date": "2024-02-23",
+          "source": "U.S. Department of the Treasury",
+          "source_record_id": "v3_20240223_sovcomflot_sanctions",
+          "source_url": "https://home.treasury.gov/news/press-releases/jy2121"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20240624_eu_14th_russia_sanctions_lng",
+      "entities": [],
+      "event_date": "2024-06-24",
+      "event_id": "v3_20240624_eu_14th_russia_sanctions_lng",
+      "event_text": "The EU adopted a 14th Russia sanctions package including Russian LNG transshipment restrictions, energy measures, and measures against vessels supporting Russia war activity. Keywords: sanctions, LNG, energy, trade restrictions, customs, oil shipping.",
+      "event_type": "sanctions_energy_shipping",
+      "event_type_hint": "sanctions_energy_shipping",
+      "headline": "EU adopts 14th Russia sanctions package with LNG transshipment and shadow-fleet measures",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Europe",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "Council of the European Union",
+      "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2024/06/24/russia-s-war-of-aggression-against-ukraine-comprehensive-eu-s-14th-package-of-sanctions-cracks-down-on-circumvention-and-adopts-energy-measures/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "EU adopts 14th Russia sanctions package with LNG transshipment and shadow-fleet measures",
+          "publication_date": "2024-06-24",
+          "source": "Council of the European Union",
+          "source_record_id": "v3_20240624_eu_14th_russia_sanctions_lng",
+          "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2024/06/24/russia-s-war-of-aggression-against-ukraine-comprehensive-eu-s-14th-package-of-sanctions-cracks-down-on-circumvention-and-adopts-energy-measures/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250110_us_russia_oil_sanctions",
+      "entities": [],
+      "event_date": "2025-01-10",
+      "event_id": "v3_20250110_us_russia_oil_sanctions",
+      "event_text": "Treasury sanctioned Gazprom Neft, Surgutneftegas, more than 180 oil-carrying vessels, oil traders, oilfield service providers, and insurance entities tied to Russian energy exports. Keywords: sanctions, Russia, oil shipping, energy, marine insurance, financial sanctions.",
+      "event_type": "sanctions_energy_shipping",
+      "event_type_hint": "sanctions_energy_shipping",
+      "headline": "U.S. sanctions Russian oil producers and shadow-fleet vessels",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Europe",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Department of the Treasury",
+      "source_url": "https://home.treasury.gov/news/press-releases/jy2777",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. sanctions Russian oil producers and shadow-fleet vessels",
+          "publication_date": "2025-01-10",
+          "source": "U.S. Department of the Treasury",
+          "source_record_id": "v3_20250110_us_russia_oil_sanctions",
+          "source_url": "https://home.treasury.gov/news/press-releases/jy2777"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250224_eu_16th_russia_sanctions",
+      "entities": [],
+      "event_date": "2025-02-24",
+      "event_id": "v3_20250224_eu_16th_russia_sanctions",
+      "event_text": "The EU adopted its 16th Russia sanctions package, listing entities and actors in military, sanctions-circumvention, crypto, and shadow-fleet networks transporting Russian crude oil and oil products. Keywords: sanctions, Russia, oil shipping, financial sanctions, defense.",
+      "event_type": "sanctions_energy_shipping",
+      "event_type_hint": "sanctions_energy_shipping",
+      "headline": "EU adopts 16th Russia sanctions package targeting shadow fleet and military suppliers",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Europe",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "Council of the European Union",
+      "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2025/02/24/16th-package-of-sanctions-on-russia-s-war-of-aggression-against-ukraine-eu-lists-additional-48-individuals-and-35-entities/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "EU adopts 16th Russia sanctions package targeting shadow fleet and military suppliers",
+          "publication_date": "2025-02-24",
+          "source": "Council of the European Union",
+          "source_record_id": "v3_20250224_eu_16th_russia_sanctions",
+          "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2025/02/24/16th-package-of-sanctions-on-russia-s-war-of-aggression-against-ukraine-eu-lists-additional-48-individuals-and-35-entities/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "entities": [],
+      "event_date": "2024-12-03",
+      "event_id": "v3_20241203_iran_shadow_fleet_sanctions",
+      "event_text": "Treasury imposed sanctions on entities and vessels transporting illicit Iranian petroleum after regional escalation and nuclear developments, targeting Iran petroleum trade and shadow-fleet shipping. Keywords: sanctions, Iran, oil shipping, energy, marine insurance.",
+      "event_type": "sanctions_energy_shipping",
+      "event_type_hint": "sanctions_energy_shipping",
+      "headline": "U.S. sanctions Iranian shadow-fleet petroleum transport entities and vessels",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Middle East",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Department of the Treasury",
+      "source_url": "https://home.treasury.gov/news/press-releases/jy2734",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. sanctions Iranian shadow-fleet petroleum transport entities and vessels",
+          "publication_date": "2024-12-03",
+          "source": "U.S. Department of the Treasury",
+          "source_record_id": "v3_20241203_iran_shadow_fleet_sanctions",
+          "source_url": "https://home.treasury.gov/news/press-releases/jy2734"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20241202_bis_china_semiconductor_controls",
+      "entities": [],
+      "event_date": "2024-12-02",
+      "event_id": "v3_20241202_bis_china_semiconductor_controls",
+      "event_text": "BIS announced new export controls on semiconductor manufacturing equipment, software tools, high-bandwidth memory, and 140 Entity List additions to restrict China advanced semiconductor capabilities. Keywords: export controls, semiconductor, chip, AI, equipment, entity list.",
+      "event_type": "technology_export_controls",
+      "event_type_hint": "technology_export_controls",
+      "headline": "Commerce expands China semiconductor controls including HBM and equipment restrictions",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "East Asia",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Bureau of Industry and Security",
+      "source_url": "https://www.bis.gov/press-release/commerce-strengthens-export-controls-restrict-chinas-capability-produce-advanced-semiconductors-military",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Commerce expands China semiconductor controls including HBM and equipment restrictions",
+          "publication_date": "2024-12-02",
+          "source": "U.S. Bureau of Industry and Security",
+          "source_record_id": "v3_20241202_bis_china_semiconductor_controls",
+          "source_url": "https://www.bis.gov/press-release/commerce-strengthens-export-controls-restrict-chinas-capability-produce-advanced-semiconductors-military"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250113_ai_diffusion_rule",
+      "entities": [],
+      "event_date": "2025-01-13",
+      "event_id": "v3_20250113_ai_diffusion_rule",
+      "event_text": "BIS announced controls on advanced computing chips and AI model weights through an AI diffusion framework intended to govern global deployment of advanced AI technology. Keywords: export controls, advanced computing chips, AI chips, data centers.",
+      "event_type": "technology_export_controls",
+      "event_type_hint": "technology_export_controls",
+      "headline": "Commerce announces AI diffusion export-control framework for advanced computing chips",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "East Asia",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Bureau of Industry and Security",
+      "source_url": "https://www.bis.gov/press-release/biden-harris-administration-announces-regulatory-framework-responsible-diffusion-advanced-artificial",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Commerce announces AI diffusion export-control framework for advanced computing chips",
+          "publication_date": "2025-01-13",
+          "source": "U.S. Bureau of Industry and Security",
+          "source_record_id": "v3_20250113_ai_diffusion_rule",
+          "source_url": "https://www.bis.gov/press-release/biden-harris-administration-announces-regulatory-framework-responsible-diffusion-advanced-artificial"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250513_ai_diffusion_rescission_controls",
+      "entities": [],
+      "event_date": "2025-05-13",
+      "event_id": "v3_20250513_ai_diffusion_rescission_controls",
+      "event_text": "Commerce announced rescission of the AI Diffusion Rule while rolling out additional steps to strengthen semiconductor export controls worldwide. Keywords: export controls, semiconductor, chip, AI, data centers.",
+      "event_type": "technology_export_controls",
+      "event_type_hint": "technology_export_controls",
+      "headline": "Commerce rescinds AI diffusion rule while strengthening chip-related export controls",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "East Asia",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Bureau of Industry and Security",
+      "source_url": "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Commerce rescinds AI diffusion rule while strengthening chip-related export controls",
+          "publication_date": "2025-05-13",
+          "source": "U.S. Bureau of Industry and Security",
+          "source_record_id": "v3_20250513_ai_diffusion_rescission_controls",
+          "source_url": "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20240514_us_china_strategic_tariffs",
+      "entities": [],
+      "event_date": "2024-05-14",
+      "event_id": "v3_20240514_us_china_strategic_tariffs",
+      "event_text": "The U.S. directed Section 301 tariff increases on Chinese electric vehicles, solar cells, semiconductors, batteries, steel, aluminum, and critical minerals. Keywords: tariff, trade restrictions, customs, critical minerals, semiconductor, battery materials.",
+      "event_type": "trade_policy_and_tariffs",
+      "event_type_hint": "trade_policy_and_tariffs",
+      "headline": "U.S. announces tariff increases on Chinese EVs, solar cells, semiconductors, batteries and critical minerals",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "East Asia",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Department of Commerce",
+      "source_url": "https://www.commerce.gov/news/fact-sheets/2024/05/fact-sheet-president-biden-takes-action-protect-american-workers-and",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. announces tariff increases on Chinese EVs, solar cells, semiconductors, batteries and critical minerals",
+          "publication_date": "2024-05-14",
+          "source": "U.S. Department of Commerce",
+          "source_record_id": "v3_20240514_us_china_strategic_tariffs",
+          "source_url": "https://www.commerce.gov/news/fact-sheets/2024/05/fact-sheet-president-biden-takes-action-protect-american-workers-and"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20240913_ustr_section301_tariffs_final",
+      "entities": [],
+      "event_date": "2024-09-13",
+      "event_id": "v3_20240913_ustr_section301_tariffs_final",
+      "event_text": "USTR finalized Section 301 tariff modifications targeting China trade practices, with increases affecting EVs, batteries, semiconductors, solar cells, critical minerals, steel, aluminum, and ship-to-shore cranes. Keywords: tariff, trade restrictions, customs, critical minerals, semiconductor, battery materials.",
+      "event_type": "trade_policy_and_tariffs",
+      "event_type_hint": "trade_policy_and_tariffs",
+      "headline": "USTR finalizes China Section 301 tariff modifications after four-year review",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "East Asia",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "Office of the U.S. Trade Representative",
+      "source_url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2024/september/ustr-finalizes-action-china-tariffs-following-statutory-four-year-review",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "USTR finalizes China Section 301 tariff modifications after four-year review",
+          "publication_date": "2024-09-13",
+          "source": "Office of the U.S. Trade Representative",
+          "source_record_id": "v3_20240913_ustr_section301_tariffs_final",
+          "source_url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2024/september/ustr-finalizes-action-china-tariffs-following-statutory-four-year-review"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250201_canada_mexico_china_tariffs",
+      "entities": [],
+      "event_date": "2025-02-01",
+      "event_id": "v3_20250201_canada_mexico_china_tariffs",
+      "event_text": "The White House announced additional tariffs on imports from Canada, Mexico, and China, including energy resources from Canada at a lower tariff rate. Keywords: tariff, tariffs, trade restrictions, customs, energy, manufacturing inputs.",
+      "event_type": "trade_policy_and_tariffs",
+      "event_type_hint": "trade_policy_and_tariffs",
+      "headline": "U.S. imposes tariffs on imports from Canada, Mexico and China",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "East Asia",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "The White House",
+      "source_url": "https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-j-trump-imposes-tariffs-on-imports-from-canada-mexico-and-china/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. imposes tariffs on imports from Canada, Mexico and China",
+          "publication_date": "2025-02-01",
+          "source": "The White House",
+          "source_record_id": "v3_20250201_canada_mexico_china_tariffs",
+          "source_url": "https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-j-trump-imposes-tariffs-on-imports-from-canada-mexico-and-china/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250306_auto_supply_chain_tariff_adjustment",
+      "entities": [],
+      "event_date": "2025-03-06",
+      "event_id": "v3_20250306_auto_supply_chain_tariff_adjustment",
+      "event_text": "The White House adjusted Canada and Mexico tariffs to reduce disruption to the automotive supply chain while maintaining duties on non-USMCA goods. Keywords: tariff, automotive supply chain, trade restrictions, manufacturing inputs, customs.",
+      "event_type": "trade_policy_and_tariffs",
+      "event_type_hint": "trade_policy_and_tariffs",
+      "headline": "U.S. adjusts Canada and Mexico tariffs for automotive supply-chain disruption concerns",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "The White House",
+      "source_url": "https://www.whitehouse.gov/fact-sheets/2025/03/fact-sheet-president-donald-j-trump-adjusts-tariffs-on-canada-and-mexico-to-minimize-disruption-to-the-automotive-industry/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. adjusts Canada and Mexico tariffs for automotive supply-chain disruption concerns",
+          "publication_date": "2025-03-06",
+          "source": "The White House",
+          "source_record_id": "v3_20250306_auto_supply_chain_tariff_adjustment",
+          "source_url": "https://www.whitehouse.gov/fact-sheets/2025/03/fact-sheet-president-donald-j-trump-adjusts-tariffs-on-canada-and-mexico-to-minimize-disruption-to-the-automotive-industry/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250402_reciprocal_tariffs",
+      "entities": [],
+      "event_date": "2025-04-02",
+      "event_id": "v3_20250402_reciprocal_tariffs",
+      "event_text": "The U.S. issued a reciprocal tariff order imposing a broad 10 percent tariff and higher individualized tariff rates for countries with large trade deficits. Keywords: tariff, tariffs, trade restrictions, customs, trade lanes.",
+      "event_type": "trade_policy_and_tariffs",
+      "event_type_hint": "trade_policy_and_tariffs",
+      "headline": "U.S. announces reciprocal tariff order tied to trade deficits",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "The White House",
+      "source_url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. announces reciprocal tariff order tied to trade deficits",
+          "publication_date": "2025-04-02",
+          "source": "The White House",
+          "source_record_id": "v3_20250402_reciprocal_tariffs",
+          "source_url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250730_copper_tariffs",
+      "entities": [],
+      "event_date": "2025-07-30",
+      "event_id": "v3_20250730_copper_tariffs",
+      "event_text": "The White House announced Section 232 tariffs on semi-finished copper products and copper-intensive derivative products after a national-security investigation into copper imports. Keywords: tariff, critical minerals, copper, trade restrictions, manufacturing inputs.",
+      "event_type": "critical_minerals_trade_restriction",
+      "event_type_hint": "critical_minerals_trade_restriction",
+      "headline": "U.S. imposes Section 232 tariffs on copper products",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "The White House",
+      "source_url": "https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-takes-action-to-address-the-threat-to-national-security-from-imports-of-copper/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. imposes Section 232 tariffs on copper products",
+          "publication_date": "2025-07-30",
+          "source": "The White House",
+          "source_record_id": "v3_20250730_copper_tariffs",
+          "source_url": "https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-takes-action-to-address-the-threat-to-national-security-from-imports-of-copper/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250225_copper_import_investigation",
+      "entities": [],
+      "event_date": "2025-02-25",
+      "event_id": "v3_20250225_copper_import_investigation",
+      "event_text": "The White House launched a Section 232 investigation into copper imports, citing copper supply-chain dependence, foreign smelting concentration, and national-security risk. Keywords: critical minerals, copper, trade restrictions, manufacturing inputs, defense.",
+      "event_type": "critical_minerals_trade_restriction",
+      "event_type_hint": "critical_minerals_trade_restriction",
+      "headline": "U.S. launches Section 232 investigation into copper import dependence",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "North America",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "The White House",
+      "source_url": "https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-trump-addresses-the-threat-to-national-security-from-imports-of-copper/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. launches Section 232 investigation into copper import dependence",
+          "publication_date": "2025-02-25",
+          "source": "The White House",
+          "source_record_id": "v3_20250225_copper_import_investigation",
+          "source_url": "https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-trump-addresses-the-threat-to-national-security-from-imports-of-copper/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20241203_china_gallium_germanium_antimony_ban",
+      "entities": [],
+      "event_date": "2024-12-03",
+      "event_id": "v3_20241203_china_gallium_germanium_antimony_ban",
+      "event_text": "China strengthened export controls to the United States on dual-use gallium, germanium, antimony, superhard materials, and graphite items. Keywords: export controls, gallium, germanium, graphite, critical minerals, customs.",
+      "event_type": "critical_minerals_export_controls",
+      "event_type_hint": "critical_minerals_export_controls",
+      "headline": "China bans exports of gallium, germanium and antimony to the United States",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "East Asia",
+        "North America",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "CSET translation of China MOFCOM notice",
+      "source_url": "https://cset.georgetown.edu/publication/china-rare-earth-export-ban/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "China bans exports of gallium, germanium and antimony to the United States",
+          "publication_date": "2024-12-03",
+          "source": "CSET translation of China MOFCOM notice",
+          "source_record_id": "v3_20241203_china_gallium_germanium_antimony_ban",
+          "source_url": "https://cset.georgetown.edu/publication/china-rare-earth-export-ban/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250404_china_rare_earth_export_controls",
+      "entities": [],
+      "event_date": "2025-04-04",
+      "event_id": "v3_20250404_china_rare_earth_export_controls",
+      "event_text": "Reuters reported China placed export restrictions on rare earth elements after U.S. tariff escalation, affecting minerals used in weapons, electronics, and consumer goods. Keywords: rare earth, export controls, critical minerals, trade restrictions.",
+      "event_type": "critical_minerals_export_controls",
+      "event_type_hint": "critical_minerals_export_controls",
+      "headline": "China imposes rare-earth export controls after U.S. tariff escalation",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "East Asia",
+        "North America",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "Reuters via Investing.com",
+      "source_url": "https://www.investing.com/news/commodities-news/china-hits-back-at-us-tariffs-with-rare-earth-export-controls-3967562",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "China imposes rare-earth export controls after U.S. tariff escalation",
+          "publication_date": "2025-04-04",
+          "source": "Reuters via Investing.com",
+          "source_record_id": "v3_20250404_china_rare_earth_export_controls",
+          "source_url": "https://www.investing.com/news/commodities-news/china-hits-back-at-us-tariffs-with-rare-earth-export-controls-3967562"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20240624_eu_russian_lng_transshipment_ban",
+      "entities": [],
+      "event_date": "2024-06-24",
+      "event_id": "v3_20240624_eu_russian_lng_transshipment_ban",
+      "event_text": "The EU 14th sanctions package forbids reloading services for Russian LNG in EU territory for transshipment to third countries and restricts Russian LNG projects. Keywords: sanctions, LNG, energy, lng shipping, customs.",
+      "event_type": "energy_sanctions",
+      "event_type_hint": "energy_sanctions",
+      "headline": "EU sanctions package bans Russian LNG transshipment services through EU territory",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Europe",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "Council of the European Union",
+      "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2024/06/24/russia-s-war-of-aggression-against-ukraine-comprehensive-eu-s-14th-package-of-sanctions-cracks-down-on-circumvention-and-adopts-energy-measures/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "EU sanctions package bans Russian LNG transshipment services through EU territory",
+          "publication_date": "2024-06-24",
+          "source": "Council of the European Union",
+          "source_record_id": "v3_20240624_eu_russian_lng_transshipment_ban",
+          "source_url": "https://www.consilium.europa.eu/en/press/press-releases/2024/06/24/russia-s-war-of-aggression-against-ukraine-comprehensive-eu-s-14th-package-of-sanctions-cracks-down-on-circumvention-and-adopts-energy-measures/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20241026_israel_strikes_iran",
+      "entities": [],
+      "event_date": "2024-10-26",
+      "event_id": "v3_20241026_israel_strikes_iran",
+      "event_text": "Israel said it conducted precise strikes on military targets in Iran after months of attacks, creating regional escalation risk around Iran, defense, energy, and Persian Gulf shipping. Keywords: Iran escalation, regional escalation, defense, energy, maritime chokepoint, oil shipping.",
+      "event_type": "regional_energy_escalation",
+      "event_type_hint": "regional_energy_escalation",
+      "headline": "Israel conducts retaliatory strikes on military targets in Iran",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Middle East",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "Israel Defense Forces",
+      "source_url": "https://www.idf.il/en/mini-sites/israel-at-war/briefings-by-idf-spokesperson-bg-effie-defrin/october-24-press-briefings/idf-spox-radm-daniel-hagari-regarding-retaliatory-strikes-in-iran/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Israel conducts retaliatory strikes on military targets in Iran",
+          "publication_date": "2024-10-26",
+          "source": "Israel Defense Forces",
+          "source_record_id": "v3_20241026_israel_strikes_iran",
+          "source_url": "https://www.idf.il/en/mini-sites/israel-at-war/briefings-by-idf-spokesperson-bg-effie-defrin/october-24-press-briefings/idf-spox-radm-daniel-hagari-regarding-retaliatory-strikes-in-iran/"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250613_israel_strikes_iran_nuclear",
+      "entities": [],
+      "event_date": "2025-06-13",
+      "event_id": "v3_20250613_israel_strikes_iran_nuclear",
+      "event_text": "Reuters described Israeli strikes on Iranian nuclear facilities and related military escalation, raising regional escalation risk for defense, energy, and Persian Gulf shipping. Keywords: Iran escalation, regional escalation, defense, energy, maritime chokepoint, oil shipping.",
+      "event_type": "regional_energy_escalation",
+      "event_type_hint": "regional_energy_escalation",
+      "headline": "Israel strikes Iranian nuclear facilities in targeted military operation",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Middle East",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "Reuters Archive",
+      "source_url": "https://reuters.screenocean.com/record/1993645",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Israel strikes Iranian nuclear facilities in targeted military operation",
+          "publication_date": "2025-06-13",
+          "source": "Reuters Archive",
+          "source_record_id": "v3_20250613_israel_strikes_iran_nuclear",
+          "source_url": "https://reuters.screenocean.com/record/1993645"
+        }
+      ]
+    },
+    {
+      "candidate_id": "v3_20250622_us_strikes_iran_nuclear_sites",
+      "entities": [],
+      "event_date": "2025-06-22",
+      "event_id": "v3_20250622_us_strikes_iran_nuclear_sites",
+      "event_text": "The Defense Department said U.S. Central Command conducted precision strikes against three Iranian nuclear facilities, Fordow, Natanz, and Esfahan. Keywords: Iran escalation, regional escalation, defense, energy, maritime chokepoint, oil shipping.",
+      "event_type": "regional_energy_escalation",
+      "event_type_hint": "regional_energy_escalation",
+      "headline": "U.S. strikes Iranian nuclear facilities at Fordow, Natanz and Esfahan",
+      "notes": "Supplemental V3 candidate from public official/established source metadata; no CAR or price data used.",
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Middle East",
+        "Global"
+      ],
+      "retrieval_query": "V3 supplemental public-source candidate record; selected by ex-ante mechanism taxonomy, not market outcomes",
+      "retrieved_at": "2026-08-05T03:19:48.674945+00:00",
+      "source": "U.S. Department of Defense",
+      "source_url": "https://www.defense.gov/News/Transcripts/Transcript/Article/4222543/secretary-of-defense-pete-hegseth-and-chairman-of-the-joint-chiefs-of-staff-gen/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "U.S. strikes Iranian nuclear facilities at Fordow, Natanz and Esfahan",
+          "publication_date": "2025-06-22",
+          "source": "U.S. Department of Defense",
+          "source_record_id": "v3_20250622_us_strikes_iran_nuclear_sites",
+          "source_url": "https://www.defense.gov/News/Transcripts/Transcript/Article/4222543/secretary-of-defense-pete-hegseth-and-chairman-of-the-joint-chiefs-of-staff-gen/"
+        }
+      ]
+    }
+  ]
+}

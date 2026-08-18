@@ -1,0 +1,73 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "candidate_47f18c480e87",
+      "entities": [
+        "Houthis"
+      ],
+      "event_date": "2024-10-14",
+      "event_id": "candidate_47f18c480e87",
+      "event_text": "Houthis strike again at two ships 20241014T121500Z defenceweb.co.za",
+      "event_type": "maritime security disruption",
+      "event_type_hint": "maritime security disruption",
+      "headline": "Houthis strike again at two ships",
+      "kb_overlap_evidence": [
+        {
+          "case_date": "2024-10-01",
+          "case_id": "case_2024_us_east_gulf_port_strike",
+          "case_name": "US East and Gulf Coast port strike",
+          "date_score": 0.7,
+          "days_apart": 13,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.4722,
+          "score": 0.3485,
+          "shared_entities": [],
+          "text_similarity": 0.0453
+        },
+        {
+          "case_date": "2023-11-19",
+          "case_id": "case_2023_red_sea_attacks",
+          "case_name": "Red Sea shipping attacks and route diversions",
+          "date_score": 0.0,
+          "days_apart": 330,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 1.0,
+          "score": 0.2016,
+          "shared_entities": [],
+          "text_similarity": 0.0078
+        },
+        {
+          "case_date": "2008-11-15",
+          "case_id": "case_2008_somali_piracy_gulf_of_aden",
+          "case_name": "Somali piracy and Gulf of Aden shipping disruption",
+          "date_score": 0.0,
+          "days_apart": 5812,
+          "entity_overlap": 0.0,
+          "event_type_similarity": 0.6914,
+          "score": 0.1397,
+          "shared_entities": [],
+          "text_similarity": 0.0072
+        }
+      ],
+      "possible_kb_overlap": false,
+      "regions_hint": [
+        "Global",
+        "Middle East"
+      ],
+      "retrieval_query": "(shipping OR vessel OR tanker OR container) (chokepoint OR canal OR \"Red Sea\" OR Hormuz OR Suez OR \"Panama Canal\") (attack OR disruption OR blockade OR restriction OR diversion)",
+      "retrieved_at": "2026-08-05T03:09:00.935811+00:00",
+      "source": "defenceweb.co.za",
+      "source_url": "https://www.defenceweb.co.za/sea/sea-sea/houthis-strike-again-at-two-ships/",
+      "status": "candidate",
+      "supporting_sources": [
+        {
+          "headline": "Houthis strike again at two ships",
+          "publication_date": "2024-10-14",
+          "source": "defenceweb.co.za",
+          "source_record_id": "source_7972ea9d69ba",
+          "source_url": "https://www.defenceweb.co.za/sea/sea-sea/houthis-strike-again-at-two-ships/"
+        }
+      ]
+    }
+  ]
+}

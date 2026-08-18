@@ -1,5 +1,7 @@
 # Project Specification
 
+> **Historical development document. Some architecture details, metrics, and dataset counts reflect earlier GeoRisk versions. See `README.md` for the current frozen public release.**
+
 ## Purpose
 
 GeoRisk Transmission Analyzer will help examine potential transmission channels

@@ -7,6 +7,7 @@ predict stock prices and does not provide investment advice.
 import argparse
 
 from src.agents.case_retriever import retrieve_cases
+from src.agents.asset_ranker import rank_assets
 from src.agents.event_analyst import analyze_event
 from src.agents.evidence_agent import grade_evidence
 from src.agents.llm_event_analyst import analyze_event_with_llm
@@ -17,6 +18,8 @@ from src.config import USE_LLM_EVENT_ANALYST
 from src.report_formatter import format_concise_report
 from src.schemas import EventAnalysis
 from src.schemas import FinalReport
+from src.v3_config import V3_CONFIG, assert_v3_config
+from src.v4_config import V4_CONFIG, assert_v4_config
 
 
 def run_pipeline(
@@ -36,6 +39,97 @@ def run_pipeline(
     evidence_results = grade_evidence(
         event,
         candidate_assets,
+        retrieved_cases,
+        transmission_chain,
+    )
+    evidence_results = rank_assets(
+        evidence_results,
+        event,
+        retrieved_cases,
+        transmission_chain,
+    )
+    final_report = generate_report(
+        event,
+        retrieved_cases,
+        transmission_chain,
+        evidence_results,
+    )
+
+    return final_report
+
+
+def run_v4_pipeline(
+    news_text: str,
+    event_analyzer: str | None = None,
+) -> FinalReport:
+    """Run the frozen GeoRisk V4 configuration explicitly.
+
+    This path does not rely on legacy defaults or environment feature flags.
+    """
+
+    assert_v4_config(V4_CONFIG)
+    if not news_text.strip():
+        raise ValueError("news_text must contain a geopolitical risk news item.")
+
+    event = _analyze_event(news_text, event_analyzer)
+    retrieved_cases = retrieve_cases(news_text, event, top_k=V4_CONFIG.retrieval_top_k)
+    transmission_chain = build_transmission_chain(
+        event,
+        retrieved_cases,
+        use_mechanism_compatible_support=V4_CONFIG.use_mechanism_compatible_support,
+    )
+    candidate_assets = map_assets(event, transmission_chain)
+    evidence_results = grade_evidence(
+        event,
+        candidate_assets,
+        retrieved_cases,
+        transmission_chain,
+    )
+    evidence_results = rank_assets(
+        evidence_results,
+        event,
+        retrieved_cases,
+        transmission_chain,
+    )
+    final_report = generate_report(
+        event,
+        retrieved_cases,
+        transmission_chain,
+        evidence_results,
+    )
+
+    return final_report
+
+
+def run_v3_pipeline(news_text: str) -> FinalReport:
+    """Run the frozen GeoRisk V3 baseline explicitly.
+
+    V3 reproduces the pre-V4 snapshot builder path: rule-based event analysis,
+    top_k=3 case retrieval, raw same-node second-order support, and no
+    TransmissionContext or mechanism-compatible support.
+    """
+
+    assert_v3_config(V3_CONFIG)
+    if not news_text.strip():
+        raise ValueError("news_text must contain a geopolitical risk news item.")
+
+    event = _analyze_event(news_text, V3_CONFIG.event_analyzer)
+    retrieved_cases = retrieve_cases(news_text, event, top_k=V3_CONFIG.retrieval_top_k)
+    transmission_chain = build_transmission_chain(
+        event,
+        retrieved_cases,
+        use_mechanism_compatible_support=V3_CONFIG.mechanism_compatibility_enabled,
+    )
+    candidate_assets = map_assets(event, transmission_chain)
+    evidence_results = grade_evidence(
+        event,
+        candidate_assets,
+        retrieved_cases,
+        transmission_chain,
+    )
+    evidence_results = rank_assets(
+        evidence_results,
+        event,
         retrieved_cases,
         transmission_chain,
     )

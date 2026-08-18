@@ -1,0 +1,96 @@
+{
+  "asset_level_secondary": {
+    "clustering_limitation": "Asset-level rows are clustered within events; this is descriptive only.",
+    "difference": null,
+    "mann_whitney_secondary": null,
+    "rejected": {
+      "mean": null,
+      "median": null,
+      "n": 0,
+      "p25": null,
+      "p75": null
+    },
+    "relative_difference": null,
+    "selected": {
+      "mean": 0.9443441804592598,
+      "median": 0.7431434355874895,
+      "n": 186,
+      "p25": 0.3146022817612915,
+      "p75": 1.2591256556308736
+    }
+  },
+  "binary_secondary": {
+    "delta_percentage_points": null,
+    "market_responsive_rejected": 0,
+    "market_responsive_selected": 22,
+    "market_weak_rejected": 0,
+    "market_weak_selected": 164,
+    "rejected_hit_rate": null,
+    "responsive_miss_rate": 0.0,
+    "selected_hit_rate": 0.11827956989247312,
+    "selection_precision": 0.11827956989247312,
+    "weak_filter_specificity": 0.0
+  },
+  "candidate_definition": {
+    "candidate_asset": "Asset mapped from frozen event-specific transmission nodes before final evidence/ranking output.",
+    "not_considered": "Asset-mapping entries not generated for the event; excluded.",
+    "rejected": "Candidate asset considered for the event but absent from frozen output.",
+    "selected": "Candidate asset present in frozen GeoRisk predicted_exposures."
+  },
+  "candidate_reconstruction": {
+    "candidate_snapshot_hash": "9acfb64ce9014ddc2f9c41ce7b27c28394ebd2b7a33a66cfec559ee4d9514e5f",
+    "candidate_source": "existing frozen artifacts",
+    "events": 12,
+    "not_considered_assets_excluded": true,
+    "prices_inspected_before_candidate_freeze": false,
+    "rejected_candidates": 0,
+    "scar_inspected_before_candidate_freeze": false,
+    "selected_candidates": 186,
+    "total_event_specific_candidates": 186
+  },
+  "continuous_primary": {
+    "filtering_lift": null,
+    "mean_event_delta": null,
+    "median_event_delta": null,
+    "paired_sign_flip_test": null,
+    "primary_metric_status": "not_evaluable_no_rejected_candidates",
+    "rejected_aggregate_median_abs_scar": null,
+    "relative_filtering_lift": null,
+    "selected_aggregate_median_abs_scar": 0.7278980029377967,
+    "selected_eq_rejected_events": 0,
+    "selected_gt_rejected_events": 0,
+    "selected_lt_rejected_events": 0
+  },
+  "evaluability": {
+    "excluded_events": 12,
+    "exclusion_reasons": {
+      "no_evaluable_rejected_candidates": 12
+    },
+    "paired_eligible_events": 0,
+    "rejected_evaluable": 0,
+    "selected_evaluable": 186
+  },
+  "experiment_name": "Curated-Pool Filtering Ability Test",
+  "integrity": {
+    "candidate_definition_frozen_before_market_outcomes": true,
+    "car_scar_unchanged": true,
+    "event_changes": false,
+    "georisk_unchanged": true,
+    "prices_not_used_for_candidate_construction": true,
+    "scar_not_used_for_candidate_construction": true,
+    "threshold_tuning": false,
+    "v4_unchanged": true,
+    "v5_implemented": false
+  },
+  "main_conclusion": {
+    "answer": "NO",
+    "interpretation": "This does not prove selected assets underperform rejected assets; it shows the requested final filtering/ranking discrimination test is structurally unavailable for these frozen artifacts.",
+    "reason": "The frozen CAR validation path selected every event-specific mapped candidate; no considered-but-rejected candidate set exists for a selected-vs-rejected market comparison."
+  },
+  "reproducibility": {
+    "asset_mapping_hash": "5b94c4d8e0255237d1cb9f5f8eb564072b509c3923c89ca1b6fb117942f8316a",
+    "car_results_hash": "12eeab979a982c3f3401b4df27656631fead34c07849d63f6d4e7ca1eb508acc",
+    "permutation_draws": 10000,
+    "random_seed": 20260805
+  }
+}

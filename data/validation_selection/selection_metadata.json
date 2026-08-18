@@ -1,0 +1,36 @@
+{
+  "accepted_count": 18,
+  "candidate_count": 18,
+  "final_selected_event_ids": [
+    "candidate_d41a5f82d14a",
+    "candidate_355782516069",
+    "candidate_03b2368e1784",
+    "candidate_fba3f59c71da",
+    "candidate_ff6378fbb36b",
+    "candidate_130fb98e42bb",
+    "candidate_2bd2cdbf5b54",
+    "candidate_eaccce38b750",
+    "candidate_a126990eefca",
+    "candidate_4ead99ff6140"
+  ],
+  "kb_case_count": 70,
+  "kb_version": {
+    "case_count": 70,
+    "sha256": "1cb2016153efa08d8b40897ab272543de9c64507387104d924bdb39e8730525b"
+  },
+  "manifest_hash": "4f14aba1341c81ec077a58ec6bd79475d15dd21ac40e23690bd716d3a8d42b63",
+  "preserved_accepted_event_ids": [],
+  "random_seed": 42,
+  "rejected_count": 0,
+  "selection_rules": {
+    "car_outputs_read": false,
+    "incident_rejection_score": 0.72,
+    "manifest_path": "data/validation_events.yaml",
+    "manifest_rebuild": true,
+    "max_events": 10,
+    "ordering": "event_type,event_date,event_id; one pass for event-type diversity, then fill remaining slots",
+    "outcome_data_used": false
+  },
+  "snapshot_count": 10,
+  "timestamp": "2026-08-05T00:49:30.491251+00:00"
+}

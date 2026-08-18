@@ -1,0 +1,10 @@
+baseline_name,scope,metric,value
+Curated-Pool Random Baseline,all,sampling_universe,asset_mapping.csv
+Curated-Pool Random Baseline,all,monte_carlo_draws,1000
+Curated-Pool Random Baseline,all,random_seed,20260805
+Curated-Pool Random Baseline,all,mean_hit_rate,0.100564597942964
+Curated-Pool Random Baseline,all,median_hit_rate,0.10215053763440861
+Curated-Pool Random Baseline,all,p05_hit_rate,0.07526881720430108
+Curated-Pool Random Baseline,all,p95_hit_rate,0.125
+Curated-Pool Random Baseline,all,georisk_percentile_hit_rate,0.871
+Curated-Pool Random Baseline,all,georisk_observed_hit_rate,0.11827956989247312
