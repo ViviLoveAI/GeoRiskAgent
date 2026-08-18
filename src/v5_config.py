@@ -11,6 +11,9 @@ from dataclasses import dataclass
 from src.v4_config import V4_CONFIG, assert_v4_config
 
 
+PRODUCTION_VERSION = "V5"
+METHODOLOGY_VERSION = "V5"
+
 ARCHITECTURE_VERSION = "v5_agentic_discovery_mvp"
 REPAIR_POLICY_VERSION = "node_repair_v1"
 SPECIFICITY_RECOVERY_POLICY_VERSION = "specificity_recovery_v1"

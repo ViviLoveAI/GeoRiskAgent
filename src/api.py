@@ -14,13 +14,15 @@ from src.input_normalizer import normalize_event_input
 from src.orchestration.langgraph_v5 import run_v5_langgraph
 from src.schemas import FinalReport
 from src.v4_config import (
-    METHODOLOGY_VERSION,
     POST_FREEZE_FIX_MANIFEST,
     POST_FREEZE_FIXES_ENABLED,
-    PRODUCTION_VERSION,
     V4_CONFIG,
 )
-from src.v5_config import V5_RECOVERY_APPLICABILITY_CONFIG
+from src.v5_config import (
+    METHODOLOGY_VERSION,
+    PRODUCTION_VERSION,
+    V5_RECOVERY_APPLICABILITY_CONFIG,
+)
 from src.vector_store_health import assert_vector_store_ready, validate_vector_store
 
 

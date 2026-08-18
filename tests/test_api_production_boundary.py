@@ -4,13 +4,15 @@ from src import api
 from src.input_normalizer import NormalizedInput
 from src.schemas import EventAnalysis, FinalReport, TransmissionChain
 from src.v4_config import (
-    METHODOLOGY_VERSION,
     POST_FREEZE_FIX_MANIFEST,
     POST_FREEZE_FIXES_ENABLED,
-    PRODUCTION_VERSION,
     V4_CONFIG,
 )
-from src.v5_config import V5_RECOVERY_APPLICABILITY_CONFIG
+from src.v5_config import (
+    METHODOLOGY_VERSION,
+    PRODUCTION_VERSION,
+    V5_RECOVERY_APPLICABILITY_CONFIG,
+)
 from src.v5_models import AnalysisState, V5AnalysisResult
 from src.vector_store_health import VectorStoreHealth
 
