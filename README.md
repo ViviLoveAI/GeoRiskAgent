@@ -24,18 +24,7 @@ Post-freeze production fixes are recorded in `data/validation_v4/execution_diagn
 
 ## 2. System Architecture
 
-```mermaid
-flowchart LR
-  A["Browser"] --> B["Streamlit Frontend"]
-  B -->|"REST / JSON"| C["FastAPI Service"]
-  C --> D["GeoRisk V4 Pipeline"]
-  D --> E["Event Analyst"]
-  D --> F["Historical Case Retrieval"]
-  D --> G["Transmission Builder"]
-  D --> H["Evidence Grader"]
-  D --> I["Asset Ranker"]
-  F --> J["ChromaDB / Historical KB"]
-```
+![GeoRisk v1.0.0 system architecture](assets/georisk_v1_architecture.svg)
 
 Core implementation:
 
@@ -50,27 +39,7 @@ Core implementation:
 | Interfaces | `src/api.py`, `app.py`, `src/pipeline.py` | FastAPI owns the production service boundary; Streamlit is an HTTP client; CLI/Python paths remain available for research and evaluation. |
 | V5 LangGraph Orchestration | `src/orchestration/langgraph_v5.py` | Represents the frozen V5 bounded repair workflow as explicit state transitions while reusing existing V5 functions. |
 
-The production V4 path uses simple Python orchestration functions and Pydantic models. V5 also has a thin LangGraph representation for stateful orchestration, conditional repair routing, bounded iteration, and deterministic handoff to the frozen V4 verification boundary.
-
-V5 LangGraph orchestration:
-
-```mermaid
-flowchart TD
-  A["Current Event"] --> B["Prepare Event"]
-  B --> C["Retrieve Candidates / Evidence"]
-  C --> D["Initial Frozen V4 Verification"]
-  D -->|"Repair Disabled"| J["Finalize"]
-  D -->|"Repair Enabled"| E["Diagnose Repair Need"]
-  E -->|"No Node Gap or Budget Exhausted"| J
-  E -->|"Node Gap and Budget Available"| F["Node Repair"]
-  F --> G["Current-Context Projection"]
-  G --> H["Repaired Frozen V4 Verification"]
-  H --> I["Candidate-Local Specificity Recovery / Applicability Gate"]
-  I --> J
-  J --> K["Final Evidence / Asset Output"]
-```
-
-The LangGraph adapter does not introduce new agents, memory, persistence, LLM overrides, or changed evidence semantics.
+The production V4 path uses simple Python orchestration functions and Pydantic models. V5 also has a thin LangGraph representation for stateful orchestration, conditional repair routing, bounded iteration, and deterministic handoff to the frozen V4 verification boundary. The LangGraph adapter does not introduce new agents, memory, persistence, LLM overrides, or changed evidence semantics.
 
 ## 3. Evidence Model
 
