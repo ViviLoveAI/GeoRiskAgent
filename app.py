@@ -45,18 +45,32 @@ EVIDENCE_LABELS = {
     "sector_proxy": "🟡 Sector Proxy",
     "inference_only": "⚪ Inference Only",
 }
+EVIDENCE_GUIDE = [
+    (
+        "🟢 Historical Supported",
+        "Historical events directly support the asset or its exposure channel.",
+    ),
+    (
+        "🟡 Sector Proxy",
+        "History supports the broader sector or supply-chain channel, not the exact asset.",
+    ),
+    (
+        "⚪ Inference Only",
+        "The mapping is plausible, but the retrieved history does not directly corroborate it.",
+    ),
+]
 SECOND_ORDER_EMPTY_STATE_TITLE = "No qualified second-order exposures identified"
 SECOND_ORDER_EMPTY_STATE_BODY = (
     "GeoRisk identified direct exposure channels for this event, but no "
-    "secondary assets met the current V4 historical-support and transmission "
-    "requirements. Direct exposures remain available in the Transmission Chain "
+    "secondary assets met the current historical-support and transmission "
+    "requirements. Direct exposures remain available in the Transmission Path "
     "as reference anchors."
 )
-REPORT_TAB_LABELS = [
-    "Overview",
-    "Asset Watchlist",
-    "Transmission Chain",
-    "Historical Cases",
+REPORT_SECTIONS = [
+    ("summary", "1 · Summary"),
+    ("watchlist", "2 · Asset Watchlist"),
+    ("transmission", "3 · Transmission Path"),
+    ("evidence", "4 · Historical Evidence"),
 ]
 DIRECT_REFERENCE_INITIAL_GROUPS = 6
 REPORT_FOOTER_DISCLAIMER = (
@@ -64,17 +78,6 @@ REPORT_FOOTER_DISCLAIMER = (
     "Outputs are not price forecasts, market probabilities, trading signals, "
     "or investment advice."
 )
-METHODOLOGY_LIMITATIONS = [
-    "Evidence levels describe historical/evidential support strength.",
-    "Retrieved historical cases are analogs, not forecasts.",
-    "Mapped assets are risk-watchlist candidates, not trading signals.",
-    (
-        "Evidence scores are not expected-return estimates or probabilities "
-        "of price movement."
-    ),
-]
-
-
 class GeoRiskAPIClientError(RuntimeError):
     """Raised for user-safe frontend API failures."""
 
@@ -89,14 +92,204 @@ def main() -> None:
 
     st.set_page_config(
         page_title="GeoRisk Transmission Analyzer",
+        page_icon="🌐",
         layout="wide",
+        initial_sidebar_state="collapsed",
     )
+    _inject_global_styles()
     _initialize_state()
 
     if st.session_state.page == "report" and "report" in st.session_state:
         _render_report_page()
     else:
         _render_home_page()
+
+
+def _inject_global_styles() -> None:
+    """Apply the shared visual system for the Streamlit application."""
+
+    st.markdown(
+        """
+        <style>
+        :root {
+            --georisk-ink: #172033;
+            --georisk-muted: #607086;
+            --georisk-blue: #2457e6;
+            --georisk-blue-dark: #173ba6;
+            --georisk-soft: #f4f7fc;
+            --georisk-line: #dfe6f1;
+        }
+        .stApp {
+            background:
+                radial-gradient(circle at 92% 4%, rgba(36, 87, 230, 0.08), transparent 24rem),
+                #ffffff;
+            color: var(--georisk-ink);
+        }
+        .block-container {
+            max-width: 1180px;
+            padding-top: 2.2rem;
+            padding-bottom: 4rem;
+        }
+        h1, h2, h3 { letter-spacing: -0.025em; }
+        .georisk-hero {
+            padding: 2.7rem 3rem;
+            border: 1px solid var(--georisk-line);
+            border-radius: 24px;
+            background: linear-gradient(135deg, #f8faff 0%, #eef3ff 55%, #f8fbff 100%);
+            box-shadow: 0 20px 50px rgba(27, 49, 92, 0.08);
+            margin-bottom: 1.5rem;
+        }
+        .georisk-eyebrow {
+            color: var(--georisk-blue);
+            font-size: 0.78rem;
+            font-weight: 750;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+        .georisk-hero h1 {
+            color: var(--georisk-ink);
+            font-size: clamp(2.2rem, 5vw, 4.25rem);
+            line-height: 1.02;
+            max-width: 850px;
+            margin: 0 0 1rem;
+        }
+        .georisk-hero p {
+            color: var(--georisk-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 790px;
+            margin: 0;
+        }
+        .georisk-section-intro {
+            color: var(--georisk-muted);
+            max-width: 760px;
+            margin: -0.3rem 0 1.2rem;
+        }
+        .georisk-step {
+            color: var(--georisk-blue);
+            font-size: 0.75rem;
+            font-weight: 750;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        div[data-testid="stForm"], div[data-testid="stVerticalBlockBorderWrapper"] {
+            border-color: var(--georisk-line);
+            border-radius: 18px;
+        }
+        div[data-testid="stButton"] > button[kind="primary"],
+        div[data-testid="stFormSubmitButton"] > button {
+            background: var(--georisk-blue) !important;
+            border-color: var(--georisk-blue) !important;
+            color: #ffffff !important;
+            border-radius: 10px;
+            font-weight: 700;
+            min-height: 2.75rem;
+        }
+        div[data-testid="stButton"] > button[kind="primary"]:hover,
+        div[data-testid="stFormSubmitButton"] > button:hover {
+            background: var(--georisk-blue-dark) !important;
+            border-color: var(--georisk-blue-dark) !important;
+        }
+        .georisk-report-nav-label {
+            color: var(--georisk-muted);
+            font-size: 0.78rem;
+            margin: 0.25rem 0 0.7rem;
+        }
+        [class*="st-key-example_card_"] > div[data-testid="stElementContainer"]:has(div[data-testid="stButton"]) {
+            margin-top: auto;
+        }
+        .georisk-footer-note {
+            color: var(--georisk-muted);
+            font-size: 0.82rem;
+            text-align: center;
+            padding-top: 1.2rem;
+        }
+        .georisk-why {
+            position: relative;
+            overflow: hidden;
+            margin-top: 3rem;
+            padding: 3.2rem;
+            border-radius: 26px;
+            background:
+                radial-gradient(circle at 88% 5%, rgba(90, 127, 255, 0.38), transparent 22rem),
+                linear-gradient(145deg, #111a31 0%, #182443 58%, #10182c 100%);
+            box-shadow: 0 24px 60px rgba(15, 28, 58, 0.2);
+            color: #ffffff;
+        }
+        .georisk-why-kicker {
+            color: #91adff;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .georisk-why h2 {
+            color: #ffffff;
+            font-size: clamp(2rem, 4vw, 3.35rem);
+            line-height: 1.08;
+            max-width: 800px;
+            margin: 0.8rem 0 1rem;
+        }
+        .georisk-why-lead {
+            color: #c3cee6;
+            font-size: 1.03rem;
+            line-height: 1.65;
+            max-width: 790px;
+            margin: 0 0 2rem;
+        }
+        .georisk-why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+        .georisk-why-card {
+            position: relative;
+            min-height: 170px;
+            padding: 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 17px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(8px);
+        }
+        .georisk-why-number {
+            color: #91adff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+        }
+        .georisk-why-card h3 {
+            color: #ffffff;
+            font-size: 1.42rem;
+            line-height: 1.25;
+            margin: 2.3rem 0 0;
+        }
+        .georisk-why-flow {
+            margin-top: 1.2rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid rgba(145, 173, 255, 0.25);
+            border-radius: 12px;
+            background: rgba(9, 15, 30, 0.35);
+            color: #dce5fa;
+            font-size: 0.84rem;
+            font-weight: 650;
+            letter-spacing: 0.02em;
+            text-align: center;
+        }
+        @media (max-width: 720px) {
+            .block-container { padding-top: 1rem; }
+            .georisk-hero { padding: 1.8rem 1.4rem; border-radius: 18px; }
+            .georisk-hero h1 { font-size: 2.35rem; }
+            .georisk-why { padding: 2rem 1.3rem; border-radius: 20px; }
+            .georisk-why-grid { grid-template-columns: 1fr; }
+            .georisk-why-card { min-height: 125px; }
+            .georisk-why-card h3 { margin-top: 1.4rem; }
+            .georisk-why-flow { line-height: 1.8; }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def _initialize_state() -> None:
@@ -110,29 +303,72 @@ def _initialize_state() -> None:
         st.session_state.custom_event = ""
     if "service_error" not in st.session_state:
         st.session_state.service_error = ""
+    if "report_section" not in st.session_state:
+        st.session_state.report_section = "summary"
 
 
 def _render_home_page() -> None:
     """Render the event dashboard home page."""
 
-    _render_runtime_status()
     _render_service_status_message()
 
-    st.title("GeoRisk Transmission Analyzer")
     st.markdown(
-        "GeoRisk maps direct market exposures to geopolitical events and "
-        "surfaces historically grounded second-order transmission risks."
+        """
+        <section class="georisk-hero">
+          <div class="georisk-eyebrow">Geopolitical risk intelligence</div>
+          <h1>See where a geopolitical shock travels next.</h1>
+          <p>GeoRisk turns an event into a reviewable transmission map—connecting
+          direct impact, historical analogs, downstream exposure channels, and
+          evidence-qualified assets.</p>
+        </section>
+        """,
+        unsafe_allow_html=True,
     )
-    st.caption("Risk watchlist generation only. Not price prediction or investment advice.")
 
-    st.header("Try an example")
+    st.markdown('<div class="georisk-step">01 · Start an analysis</div>', unsafe_allow_html=True)
+    st.header("What event do you want to understand?")
+    st.markdown(
+        '<p class="georisk-section-intro">Enter a conflict, policy action, trade restriction, supply shock, or logistics disruption. A short headline is enough.</p>',
+        unsafe_allow_html=True,
+    )
+    with st.form("event_analysis_form", border=True):
+        custom_event = st.text_input(
+            "Event",
+            key="custom_event",
+            placeholder="e.g. Red Sea shipping disruption",
+            help="Name the geopolitical event, policy action, shock, or crisis you want to analyze.",
+        )
+        custom_context = st.text_area(
+            "Context (optional)",
+            key="custom_news_text",
+            height=100,
+            placeholder="Add one or two sentences if you want GeoRisk to focus on a specific development.",
+            help=(
+                "Add one or two sentences if the event name alone is ambiguous "
+                "or if you want GeoRisk to focus on a specific development."
+            ),
+        )
+        submitted = st.form_submit_button(
+            "Analyze transmission risk  →",
+            type="primary",
+            use_container_width=True,
+        )
+        if submitted:
+            _handle_custom_event_submit(custom_event, custom_context)
+
+    st.markdown('<div class="georisk-step">02 · Or explore an example</div>', unsafe_allow_html=True)
+    st.header("See GeoRisk in action")
     columns = st.columns(len(EXAMPLE_EVENTS))
-    for column, event in zip(columns, EXAMPLE_EVENTS, strict=False):
+    for index, (column, event) in enumerate(zip(columns, EXAMPLE_EVENTS, strict=False)):
         with column:
-            with st.container(border=True):
+            with st.container(border=True, height=265, key=f"example_card_{index}"):
                 st.subheader(event["label"])
                 st.write(event["description"])
-                if st.button(f"Analyze {event['label']}", key=f"example_{event['label']}"):
+                if st.button(
+                    f"Analyze example  →",
+                    key=f"example_{event['label']}",
+                    use_container_width=True,
+                ):
                     _analyze_and_open_report(
                         event["event"],
                         event["label"],
@@ -140,26 +376,40 @@ def _render_home_page() -> None:
                         context=event.get("context"),
                     )
 
-    st.header("Analyze an Event")
-    custom_event = st.text_input(
-        "Event *",
-        key="custom_event",
-        placeholder="Red Sea Shipping Disruption",
-        help="Name the geopolitical event, policy action, shock, or crisis you want to analyze.",
+    _render_why_georisk()
+    _render_runtime_status()
+
+
+def _render_why_georisk() -> None:
+    """Explain the product value once on the home page."""
+
+    st.markdown(
+        """
+        <section class="georisk-why">
+          <div class="georisk-why-kicker">Why GeoRisk</div>
+          <h2>See what the headline leaves below the surface.</h2>
+          <p class="georisk-why-lead">The obvious market impact is only the starting point.
+          GeoRisk follows the shock further—showing how risk moves through supply chains,
+          reaches downstream exposure channels, and connects to reviewable assets.</p>
+          <div class="georisk-why-grid">
+            <article class="georisk-why-card">
+              <div class="georisk-why-number">01</div>
+              <h3>Discover the hidden second-order impact</h3>
+            </article>
+            <article class="georisk-why-card">
+              <div class="georisk-why-number">02</div>
+              <h3>Follow the transmission chain</h3>
+            </article>
+            <article class="georisk-why-card">
+              <div class="georisk-why-number">03</div>
+              <h3>Review the evidence faster</h3>
+            </article>
+          </div>
+          <div class="georisk-why-flow">Headline &nbsp;→&nbsp; Direct shock &nbsp;→&nbsp; Transmission channels &nbsp;→&nbsp; Evidence-backed watchlist</div>
+        </section>
+        """,
+        unsafe_allow_html=True,
     )
-    with st.expander("Add context (optional)", expanded=False):
-        custom_context = st.text_area(
-            "Additional Context",
-            key="custom_news_text",
-            height=110,
-            placeholder="Several carriers are rerouting around the Cape of Good Hope as regional security risks increase.",
-            help=(
-                "Add one or two sentences if the event name alone is ambiguous "
-                "or if you want GeoRisk to focus on a specific development."
-            ),
-        )
-    if st.button("Analyze Risk Transmission", type="primary"):
-        _handle_custom_event_submit(custom_event, custom_context)
 
 
 def _handle_custom_event_submit(
@@ -212,6 +462,7 @@ def _analyze_and_open_report(
         st.session_state.selected_event_label = event_label
         st.session_state.service_error = ""
         st.session_state.page = "report"
+        st.session_state.report_section = "summary"
     st.rerun()
 
 
@@ -342,40 +593,119 @@ def _get_api_version() -> dict[str, object] | None:
 def _render_report_page() -> None:
     """Render the report detail page."""
 
-    if st.button("← Back to Event Dashboard"):
-        st.session_state.page = "home"
-        st.rerun()
-
     report = st.session_state.report
     selected_event_label = st.session_state.get("selected_event_label", "Analyzed Event")
 
-    st.title("GeoRisk Transmission Report")
-    st.caption(selected_event_label)
+    header_left, header_right = st.columns([4, 1], vertical_alignment="bottom")
+    with header_left:
+        st.markdown('<div class="georisk-step">Analysis complete</div>', unsafe_allow_html=True)
+        st.title("GeoRisk Transmission Report")
+        st.caption(selected_event_label)
+    with header_right:
+        if st.button("＋ New analysis", use_container_width=True):
+            _start_new_analysis()
 
-    overview_tab, watchlist_tab, chain_tab, cases_tab = st.tabs(REPORT_TAB_LABELS)
-
-    with overview_tab:
+    _render_report_navigation()
+    section = st.session_state.get("report_section", "summary")
+    if section == "summary":
         _render_overview_tab(report)
-    with cases_tab:
-        _render_historical_cases_tab(report)
-    with chain_tab:
-        _render_transmission_chain_tab(report)
-    with watchlist_tab:
+        _render_continue_button("watchlist", "Continue to Asset Watchlist  →")
+    elif section == "watchlist":
         _render_watchlist_tab(report)
-    _render_report_footer(report)
+        _render_continue_button("transmission", "Continue to Transmission Path  →")
+    elif section == "transmission":
+        _render_transmission_chain_tab(report)
+        _render_continue_button("evidence", "Continue to Historical Evidence  →")
+    else:
+        _render_historical_cases_tab(report)
+        _render_report_end_actions()
+
+
+def _start_new_analysis() -> None:
+    """Return to a clean event form for a new analysis."""
+
+    st.session_state.page = "home"
+    st.session_state.report_section = "summary"
+    st.session_state.custom_event = ""
+    st.session_state.custom_news_text = ""
+    st.rerun()
+
+
+def _render_report_end_actions() -> None:
+    """Offer clear next actions at the end of the report journey."""
+
+    st.divider()
+    st.subheader("What would you like to do next?")
+    back_column, new_column = st.columns(2)
+    with back_column:
+        if st.button("← Back to Summary", use_container_width=True):
+            st.session_state.report_section = "summary"
+            st.rerun()
+    with new_column:
+        if st.button("＋ Analyze another event", type="primary", use_container_width=True):
+            _start_new_analysis()
+
+
+def _render_report_navigation() -> None:
+    """Render prominent report-section navigation buttons."""
+
+    st.markdown(
+        '<p class="georisk-report-nav-label">Explore the report</p>',
+        unsafe_allow_html=True,
+    )
+    active_section = st.session_state.get("report_section", "summary")
+    columns = st.columns(len(REPORT_SECTIONS))
+    for column, (section, label) in zip(columns, REPORT_SECTIONS, strict=False):
+        with column:
+            if st.button(
+                label,
+                key=f"report_nav_{section}",
+                type="primary" if section == active_section else "secondary",
+                use_container_width=True,
+            ):
+                st.session_state.report_section = section
+                st.rerun()
+
+
+def _render_continue_button(section: str, label: str) -> None:
+    """Render an explicit next-step button within the report journey."""
+
+    st.divider()
+    left, right = st.columns([2, 1])
+    with left:
+        st.caption(
+            "Use the report navigation above at any time, or continue through the analysis in order."
+        )
+    with right:
+        if st.button(label, key=f"continue_{section}", type="primary", use_container_width=True):
+            st.session_state.report_section = section
+            st.rerun()
 
 
 def _render_overview_tab(report) -> None:
     """Render event overview information."""
 
-    st.subheader("What GeoRisk Understood")
     title = getattr(report, "input_title", None) or report.event.title
-    st.markdown(f"### {title}")
-    if getattr(report, "input_event_year", None):
-        st.caption(f"Event year: {report.input_event_year}")
-    if getattr(report, "input_event_date", None):
-        st.caption(f"Event date: {report.input_event_date}")
+    original_text = getattr(report, "original_event_text", None)
+    normalized_text = getattr(report, "normalized_event_text", None)
+    language = getattr(report, "input_language", None)
+    normalization_applied = bool(getattr(report, "input_normalization_applied", False))
 
+    st.subheader("Event Summary")
+    st.markdown(f"### {title}")
+    st.write(report.event.summary)
+
+    if original_text and language and language != "English":
+        with st.expander("Original and normalized event text", expanded=False):
+            st.markdown("**Original event**")
+            st.write(original_text)
+            if normalization_applied and normalized_text and normalized_text != original_text:
+                st.markdown("**Normalized for analysis**")
+                st.write(normalized_text)
+            else:
+                st.caption("English normalization was unavailable; GeoRisk analyzed the supplied text.")
+
+    st.subheader("Event Classification")
     overview_rows = [
         ("Event type", _event_type_label(report.event.event_type)),
         ("Regions", ", ".join(report.event.regions) or "Unspecified"),
@@ -389,27 +719,13 @@ def _render_overview_tab(report) -> None:
             st.markdown(f"**{label}**")
             st.write(value)
 
-    original_text = getattr(report, "original_event_text", None)
-    normalized_text = getattr(report, "normalized_event_text", None)
-    language = getattr(report, "input_language", None)
-    normalization_applied = bool(getattr(report, "input_normalization_applied", False))
-    if original_text and language and language != "English":
-        st.markdown("### Original Event")
-        st.write(original_text)
-        if normalization_applied and normalized_text and normalized_text != original_text:
-            st.markdown("### Normalized for Analysis")
-            st.write(normalized_text)
-            st.caption("Non-English inputs are translated and normalized before event extraction.")
-        else:
-            st.caption(
-                "Non-English input was detected, but English normalization was unavailable; "
-                "GeoRisk analyzed the original supplied text."
-            )
-        st.markdown("### Event Summary")
-        st.write(report.event.summary)
-    else:
-        st.markdown("### Event Summary")
-        st.write(report.event.summary)
+    event_metadata = []
+    if getattr(report, "input_event_year", None):
+        event_metadata.append(f"Event year: {report.input_event_year}")
+    if getattr(report, "input_event_date", None):
+        event_metadata.append(f"Event date: {report.input_event_date}")
+    if event_metadata:
+        st.caption(" · ".join(event_metadata))
 
     with st.expander("Normalized event summary", expanded=False):
         st.write(report.event_summary)
@@ -425,9 +741,6 @@ def _render_historical_cases_tab(report) -> None:
             st.markdown(f"**{case.get('event_name', 'Unknown case')}**")
             st.caption(_event_type_label(str(case.get("event_type", "unknown"))))
             st.write(case.get("summary", ""))
-            relevance = case.get("relevance")
-            if relevance and relevance != "not scored":
-                st.caption(f"Retrieval relevance: {relevance}")
 
 
 def _render_transmission_chain_tab(report) -> None:
@@ -486,11 +799,6 @@ def _render_transmission_chain_tab(report) -> None:
             if other_nodes:
                 st.markdown(f"- Other affected nodes: {_format_node_list(other_nodes)}")
 
-    if getattr(report.transmission_chain, "rationale", None):
-        with st.expander("Why this transmission?"):
-            st.write(report.transmission_chain.rationale)
-
-
 def _render_watchlist_tab(report) -> None:
     """Render the two-layer asset report."""
 
@@ -499,6 +807,7 @@ def _render_watchlist_tab(report) -> None:
         "Direct exposures provide the baseline; GeoRisk's ranked output focuses "
         "on historically supported downstream risk transmission."
     )
+    _render_evidence_guide()
 
     ranked_second, direct_references, unclassified = _partition_watchlist_assets(report)
     if unclassified:
@@ -506,10 +815,6 @@ def _render_watchlist_tab(report) -> None:
 
     st.markdown("### Ranked Second-Order Exposures")
     st.caption("Differentiated downstream exposure candidates surfaced through historical transmission patterns.")
-    st.caption(
-        "Evidence scores reflect strength of historical support, not expected "
-        "return or probability of price movement."
-    )
     if not ranked_second:
         _render_empty_second_order_state()
     else:
@@ -526,19 +831,26 @@ def _render_watchlist_tab(report) -> None:
         _render_direct_reference_groups(direct_references)
     else:
         st.write("No direct exposure reference assets are available in this report.")
+    _render_watchlist_disclaimer()
 
 
-def _render_report_footer(report) -> None:
-    """Render lightweight scope and methodology caveats below the report."""
+def _render_evidence_guide() -> None:
+    """Explain the three user-facing evidence tiers before showing assets."""
+
+    st.markdown("#### How to read the evidence colors")
+    columns = st.columns(len(EVIDENCE_GUIDE))
+    for column, (label, description) in zip(columns, EVIDENCE_GUIDE, strict=False):
+        with column:
+            with st.container(border=True, height=165):
+                st.markdown(f"**{label}**")
+                st.caption(description)
+
+
+def _render_watchlist_disclaimer() -> None:
+    """Render the report scope as quiet supporting copy on the results page."""
 
     st.divider()
-    st.subheader("Limitations & Disclaimer")
-    st.markdown(REPORT_FOOTER_DISCLAIMER)
-    with st.expander("Methodology limitations", expanded=False):
-        for limitation in METHODOLOGY_LIMITATIONS:
-            st.markdown(f"- {limitation}")
-        for limitation in report.limitations:
-            st.markdown(f"- {limitation}")
+    st.caption(REPORT_FOOTER_DISCLAIMER)
 
 
 def _format_nodes(nodes: list[str]) -> str:
@@ -577,14 +889,6 @@ def _event_type_label(event_type: str) -> str:
     """Format normalized event types as readable labels."""
 
     return EVENT_TYPE_LABELS.get(event_type, event_type.replace("_", " ").title())
-
-
-def _format_confidence(confidence: float | None) -> str:
-    """Format confidence as a two-decimal evidence-strength score."""
-
-    if confidence is None:
-        return "n/a"
-    return f"{confidence:.2f}"
 
 
 def _all_watchlist_assets(report) -> list[dict[str, object]]:
@@ -799,53 +1103,62 @@ def _render_second_order_explainers(assets: list[dict[str, object]], report) -> 
     if not assets:
         return
 
-    st.markdown("#### Why These Assets?")
+    st.markdown("#### How Each Exposure Reaches the Asset")
     for asset in assets:
         label = (
             f"#{_rank_display(asset)} {asset.get('ticker') or 'n/a'} — "
             f"{asset.get('asset_name') or asset.get('asset') or 'Unknown asset'}"
         )
         with st.expander(label):
-            st.markdown(f"**Exposure channel:** {_format_node_title(str(asset.get('supply_chain_node') or ''))}")
-            rationale = asset.get("ranking_rationale") or asset.get("reason")
-            st.markdown(f"**Why it was surfaced:** {rationale or 'No ranking rationale available in this report.'}")
             st.markdown(f"**Evidence:** {_evidence_badge(asset.get('evidence_level'))}")
-            st.markdown(f"**Evidence score:** {_format_confidence_value(asset.get('confidence'))}")
-            _render_support_summary(asset)
+            st.markdown("**Transmission path**")
+            for step_number, (step_label, step_value) in enumerate(
+                _asset_transmission_path_steps(asset, report),
+                start=1,
+            ):
+                st.markdown(f"{step_number}. **{step_label}** — {step_value}")
             _render_supporting_cases(asset, report)
 
 
-def _render_support_summary(asset: dict[str, object]) -> None:
-    """Render truthful node-qualification versus asset-evidence support counts."""
+def _asset_transmission_path_steps(
+    asset: dict[str, object],
+    report,
+) -> list[tuple[str, str]]:
+    """Build a readable event-to-asset path from existing report evidence."""
 
-    qualification_count = _int_or_none(asset.get("qualification_case_count"))
-    supporting_count = _int_or_none(asset.get("supporting_case_count"))
-    if qualification_count is None and isinstance(asset.get("qualification_case_ids"), list):
-        qualification_count = len(set(asset["qualification_case_ids"]))
-    if supporting_count is None and isinstance(asset.get("supporting_case_ids"), list):
-        supporting_count = len(set(asset["supporting_case_ids"]))
+    event_title = getattr(report, "input_title", None) or report.event.title
+    direct_nodes = _format_node_list(report.event.supply_chain_nodes)
+    chain_steps = [
+        _format_node_title(step) if _looks_like_enum(step) else step
+        for step in (getattr(report.transmission_chain, "chain_steps", []) or [])
+        if step
+    ]
+    mechanism = " → ".join(dict.fromkeys(chain_steps[:4]))
+    channel = _format_node_title(
+        str(asset.get("supply_chain_node") or asset.get("exposure_node") or "")
+    )
+    ticker = str(asset.get("ticker") or "n/a")
+    asset_name = str(asset.get("asset_name") or asset.get("asset") or "Unknown asset")
 
-    if qualification_count:
-        st.markdown(
-            "**Node qualification:** "
-            f"{qualification_count} mechanism-compatible historical case(s)"
-        )
-    if supporting_count is not None:
-        st.markdown(
-            "**Asset evidence:** "
-            f"{supporting_count} asset-level supporting case(s)"
-        )
+    steps = [
+        ("Current event", str(event_title)),
+        ("Direct impact", direct_nodes),
+    ]
+    if mechanism:
+        steps.append(("Spillover mechanism", mechanism))
+    steps.extend(
+        [
+            ("Downstream exposure channel", channel),
+            ("Mapped asset", f"{ticker} — {asset_name}"),
+        ]
+    )
+    return steps
 
 
 def _render_supporting_cases(asset: dict[str, object], report) -> None:
     """Render supporting historical case metadata when present."""
 
-    qualification_count = _int_or_none(asset.get("qualification_case_count"))
-    supporting_count = _int_or_none(asset.get("supporting_case_count"))
-    if qualification_count and supporting_count != qualification_count:
-        st.markdown("**Asset-level supporting historical cases:**")
-    else:
-        st.markdown("**Supporting historical cases:**")
+    st.markdown("**Historical events supporting this path**")
     case_titles = _case_title_lookup(report)
     details = asset.get("supporting_case_details")
     if isinstance(details, list) and details:
@@ -854,12 +1167,8 @@ def _render_supporting_cases(asset: dict[str, object], report) -> None:
                 continue
             case_id = detail.get("case_id") or "unknown_case"
             title = detail.get("title") or detail.get("event_name") or case_titles.get(str(case_id))
-            rank = detail.get("retrieval_rank")
-            suffix = f" (retrieval rank {rank})" if rank else ""
             if title:
-                st.markdown(f"- {title} (`{case_id}`){suffix}")
-            else:
-                st.markdown(f"- `{case_id}`{suffix}")
+                st.markdown(f"- {title}")
         return
 
     case_ids = asset.get("supporting_case_ids")
@@ -867,24 +1176,10 @@ def _render_supporting_cases(asset: dict[str, object], report) -> None:
         for case_id in case_ids:
             title = case_titles.get(str(case_id))
             if title:
-                st.markdown(f"- {title} (`{case_id}`)")
-            else:
-                st.markdown(f"- `{case_id}`")
+                st.markdown(f"- {title}")
         return
 
-    st.markdown("- No supporting case IDs available in this report.")
-
-
-def _int_or_none(value: object) -> int | None:
-    """Return an int for safe count rendering, otherwise None."""
-
-    if isinstance(value, bool):
-        return None
-    if isinstance(value, int):
-        return value
-    if isinstance(value, float) and value.is_integer():
-        return int(value)
-    return None
+    st.markdown("- No named supporting historical events are available in this report.")
 
 
 def _case_title_lookup(report) -> dict[str, str]:
@@ -892,8 +1187,8 @@ def _case_title_lookup(report) -> dict[str, str]:
 
     lookup: dict[str, str] = {}
     for case in getattr(report, "retrieved_case_summaries", []) or []:
-        if isinstance(case, dict) and case.get("case_id"):
-            lookup[str(case["case_id"])] = str(case.get("event_name") or case["case_id"])
+        if isinstance(case, dict) and case.get("case_id") and case.get("event_name"):
+            lookup[str(case["case_id"])] = str(case["event_name"])
     for case in getattr(report, "retrieved_cases", []) or []:
         case_id = getattr(case, "case_id", None)
         title = getattr(case, "title", None)
@@ -914,15 +1209,6 @@ def _rank_display(asset: dict[str, object]) -> str:
 
     rank = asset.get("rank_within_order") or asset.get("rank")
     return str(rank) if rank not in {None, ""} else "—"
-
-
-def _format_confidence_value(confidence: object) -> str:
-    """Format evidence score without implying market probability."""
-
-    try:
-        return f"{float(confidence):.2f}"
-    except (TypeError, ValueError):
-        return "n/a"
 
 
 def _partition_transmission_nodes(report) -> tuple[list[str], list[str], list[str]]:
@@ -1054,21 +1340,30 @@ def _transmission_evidence_notes(report, second_order_nodes: list[str]) -> list[
     """Return evidence notes derived from existing transmission metadata."""
 
     notes: list[str] = []
+    case_titles = _case_title_lookup(report)
     support_map = getattr(report.transmission_chain, "node_supporting_case_ids", {}) or {}
     for node in second_order_nodes:
         case_ids = support_map.get(node, [])
         if case_ids:
-            notes.append(
-                f"{_format_node_title(node)} supported by "
-                f"{len(case_ids)} historical case(s): "
-                + ", ".join(f"`{case_id}`" for case_id in case_ids[:5])
-            )
+            titles = [case_titles[str(case_id)] for case_id in case_ids if str(case_id) in case_titles]
+            if titles:
+                notes.append(
+                    f"{_format_node_title(node)} supported by: "
+                    + "; ".join(dict.fromkeys(titles[:5]))
+                )
+            else:
+                notes.append(f"{_format_node_title(node)} has compatible historical support.")
     supporting_case_ids = getattr(report.transmission_chain, "supporting_case_ids", []) or []
     if supporting_case_ids and not notes:
-        notes.append(
-            "Supporting historical analogs: "
-            + ", ".join(f"`{case_id}`" for case_id in supporting_case_ids[:6])
-        )
+        titles = [
+            case_titles[str(case_id)]
+            for case_id in supporting_case_ids
+            if str(case_id) in case_titles
+        ]
+        if titles:
+            notes.append("Supporting historical analogs: " + "; ".join(dict.fromkeys(titles[:6])))
+        else:
+            notes.append("Compatible historical analogs support this transmission path.")
     return notes
 
 

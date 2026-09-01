@@ -189,24 +189,22 @@ def test_secondary_channel_summary_connects_channels_to_ranked_tickers():
 
 def test_empty_second_order_state_copy_is_analytical_abstention():
     assert "No qualified second-order exposures" in app.SECOND_ORDER_EMPTY_STATE_TITLE
-    assert "met the current V4" in app.SECOND_ORDER_EMPTY_STATE_BODY
-    assert "Transmission Chain" in app.SECOND_ORDER_EMPTY_STATE_BODY
+    assert "historical-support" in app.SECOND_ORDER_EMPTY_STATE_BODY
+    assert "Transmission Path" in app.SECOND_ORDER_EMPTY_STATE_BODY
 
 
-def test_report_tab_order_prioritizes_results_before_evidence():
-    assert app.REPORT_TAB_LABELS == [
-        "Overview",
-        "Asset Watchlist",
-        "Transmission Chain",
-        "Historical Cases",
+def test_report_navigation_order_prioritizes_results_before_evidence():
+    assert app.REPORT_SECTIONS == [
+        ("summary", "1 · Summary"),
+        ("watchlist", "2 · Asset Watchlist"),
+        ("transmission", "3 · Transmission Path"),
+        ("evidence", "4 · Historical Evidence"),
     ]
 
 
-def test_disclaimer_footer_content_remains_available():
+def test_watchlist_disclaimer_content_remains_available():
     assert "not price forecasts" in app.REPORT_FOOTER_DISCLAIMER
     assert "investment advice" in app.REPORT_FOOTER_DISCLAIMER
-    assert any("Evidence levels" in item for item in app.METHODOLOGY_LIMITATIONS)
-    assert any("not forecasts" in item for item in app.METHODOLOGY_LIMITATIONS)
 
 
 def test_direct_reference_asset_summary_groups_assets_without_ranks():
