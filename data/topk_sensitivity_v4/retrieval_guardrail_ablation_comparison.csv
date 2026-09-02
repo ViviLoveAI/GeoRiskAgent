@@ -1,4 +1,0 @@
-configuration,support_qualified_nodes,unique_second_order_nodes,second_order_assets,unique_tickers,historical_supported,sector_proxy,inference_only,specific_node_assets,broad_node_assets,likely_useful_incremental_only,borderline_incremental_only,likely_noise_incremental_only
-A_k5_no_guardrail,92,21,184,42,22,162,0,42,142,,,
-B_k10_no_guardrail,217,31,431,61,72,359,0,120,311,,,
-C_k10_rule6_guardrail,166,30,329,59,68,261,0,120,209,,,

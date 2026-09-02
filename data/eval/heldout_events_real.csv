@@ -1,4 +1,0 @@
-event_id,event_date,event_description,notes
-ukraine_invasion_2022,2022-02-24,"Russia launches a full-scale invasion of Ukraine, raising concerns about energy supply, grain exports, sanctions, and defense spending.","Held-out validation event; verify not already in KB before final reporting"
-israel_hamas_2023,2023-10-07,"Hamas attacks Israel, raising regional security risks and concerns over defense, energy, and Middle East escalation.","Held-out validation event; weekend event, evaluator should roll t0 to next trading day"
-taiwan_drills_2022,2022-08-04,"China begins major military drills around Taiwan, raising concerns about semiconductor supply chains, shipping routes, and regional security risk.","Held-out validation event; verify not already in KB before final reporting"

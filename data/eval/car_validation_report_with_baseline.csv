@@ -1,6 +1,0 @@
-event_id,event_date,t0_date,group,symbol,node,asset_type,confidence,evidence_label,baseline_type,car,estimation_std_abnormal_return,standardized_car,hit,direction,missing_data_reason
-red_sea_heldout_2023,2023-07-08,2023-07-10,georisk_flagged,FRO,oil_shipping,equity,0.82,historical_supported,,0.012001054938751698,0.0038896771643417653,3.085360155020112,True,positive,
-red_sea_heldout_2023,2023-07-08,2023-07-10,georisk_flagged,BOAT,maritime_chokepoint,etf,0.64,sector_proxy,,-0.010997783423094987,0.00324894770165856,-3.3850293796605935,True,negative,
-red_sea_heldout_2023,2023-07-08,,georisk_flagged,MISSING,logistics,equity,0.35,inference_only,,,,,False,,missing_asset_prices
-red_sea_heldout_2023,2023-07-08,2023-07-10,baseline,QQQ,broad_market,equity_etf,,,random_baseline,0.000999659037375089,0.0015532688016467236,0.6435840572573684,False,positive,
-red_sea_heldout_2023,2023-07-08,2023-07-10,baseline,XLF,financials,equity_etf,,,sector_baseline,-0.0005004850705943031,0.0010419391955926352,-0.48033999748866035,False,negative,

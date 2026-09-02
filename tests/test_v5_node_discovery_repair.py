@@ -1,5 +1,3 @@
-import csv
-
 from src.agents.node_discovery_repair import propose_node_repairs
 from src.pipeline import run_v4_pipeline
 from src.schemas import EventAnalysis, RetrievedCase
@@ -261,7 +259,8 @@ def test_node_repair_cannot_introduce_arbitrary_tickers(monkeypatch):
 
 def test_hormuz_temporal_gap_is_not_treated_as_already_proposed():
     result = run_v5_pipeline(
-        _heldout_description("v4cand_20260319_imo_hormuz_safe_passage"),
+        "The IMO reported a framework concerning safe passage through the "
+        "Strait of Hormuz following maritime security concerns.",
         event_analyzer="rule",
     )
 
@@ -282,7 +281,8 @@ def test_hormuz_temporal_gap_is_not_treated_as_already_proposed():
 
 def test_gru_dns_temporal_gap_is_not_treated_as_already_proposed():
     result = run_v5_pipeline(
-        _heldout_description("v4cand_20260407_us_gru_dns_hijacking_disruption"),
+        "The U.S. Justice Department announced disruption of a GRU-linked DNS "
+        "hijacking network affecting digital infrastructure.",
         event_analyzer="rule",
     )
 
@@ -803,15 +803,3 @@ def _defense_context(case_id: str) -> dict[str, str]:
         "target_node_role": "downstream_exposure",
         "canonical_context": "regional_security_context",
     }
-
-
-def _heldout_description(event_id: str) -> str:
-    with open(
-        "data/validation_v4/temporal_final_heldout_events.csv",
-        newline="",
-        encoding="utf-8",
-    ) as handle:
-        for row in csv.DictReader(handle):
-            if row["event_id"] == event_id:
-                return row["short_description"]
-    raise AssertionError(f"missing held-out event fixture: {event_id}")

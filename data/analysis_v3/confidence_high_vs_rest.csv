@@ -1,7 +1,0 @@
-scope,group,evaluated,hits,hit_rate,mean_abs_SCAR,median_abs_SCAR,max_abs_SCAR,unique_events,events_with_at_least_one_hit
-all,high_confidence_historical_supported,38,5,0.1315789474,1.1338813314,0.9478881359,3.6336565266,7,2
-all,lower_confidence_sector_proxy_inference_only,148,17,0.1148648649,0.8956792363,0.6156354881,5.6157685083,12,6
-first_order,high_confidence_historical_supported,32,3,0.0937500000,1.0738526024,1.0010297946,2.9175517973,7,2
-first_order,lower_confidence_sector_proxy_inference_only,100,11,0.1100000000,0.9026222443,0.5915703643,5.6157685083,12,4
-second_order,high_confidence_historical_supported,6,2,0.3333333333,1.4540345526,0.7972305065,3.6336565266,3,1
-second_order,lower_confidence_sector_proxy_inference_only,48,6,0.1250000000,0.8812146364,0.7452501779,2.3747642563,12,4

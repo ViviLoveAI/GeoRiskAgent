@@ -25,24 +25,66 @@ logs/
 tmp/
 temp/
 
-# Raw collected/source dumps excluded from public release
-data/validation_candidates/raw/
-data/validation_v3/candidates/raw/
-data/validation_v3/candidates_2019_2024/raw/
-data/validation_v4/candidates/raw/*
-!data/validation_v4/candidates/raw/.gitkeep
+# Public product data allowlist. Experiments, predictions, validation snapshots,
+# downloaded prices, and generated evaluation results remain local.
+data/*
+!data/asset_mapping.csv
+!data/historical_cases.json
+!data/transmission_context_v1.json
 
-# Downloaded market data; regenerate locally when needed
-data/prices/
-data/eval/*prices*.csv
-data/market_validation/**/prices/
+# Research/evaluation implementation remains local rather than shipping as part
+# of the public product repository.
+src/eval/
+src/validation/
+scripts/*
+!scripts/check_deployment.sh
+!scripts/setup_ec2_docker.sh
 
-# Noncanonical V5 scratch/intermediate experiments; keep final recovery_applicability_ab artifacts public
-data/validation_v5/guardrail_routing_audit/
-data/validation_v5/node_repair_ab/
-data/validation_v5/node_repair_ab_v2/
-data/validation_v5/node_repair_projection_ab/
-data/validation_v5/specificity_recovery_ab/
+# Internal research documentation and release-packaging records.
+docs/*
+!docs/DATA_POLICY.md
+AGENTS.md
+PROJECT_SPEC.md
+PUBLIC_RELEASE_*.md
+public_release_audit_v5.json
+
+# Tests tied only to private experiment datasets or research utilities.
+tests/test_audit_validation_inputs.py
+tests/test_baseline_universe_test.py
+tests/test_broad_random_baseline.py
+tests/test_candidate_collector.py
+tests/test_car_calculator.py
+tests/test_car_evaluator.py
+tests/test_context_coverage_audit.py
+tests/test_curated_activation_test.py
+tests/test_curated_filtering_test.py
+tests/test_event_screening.py
+tests/test_exposure_evaluator.py
+tests/test_full_car_validation.py
+tests/test_multiyear_paired_prediction.py
+tests/test_prediction_snapshot.py
+tests/test_price_preparation.py
+tests/test_scar_continuous_test.py
+tests/test_transmission_context.py
+tests/test_v3_additional_baselines.py
+tests/test_v3_car_provenance_replay.py
+tests/test_v3_freeze_and_multiyear_benchmark.py
+tests/test_v4_compatible_node_funnel.py
+tests/test_v4_config_freeze.py
+tests/test_v4_execution_lifecycle.py
+tests/test_v4_heldout_candidate_screening.py
+tests/test_v4_heldout_protocol.py
+tests/test_v4_temporal_heldout.py
+tests/test_v4_temporal_prediction.py
+tests/test_validation_car_calculator.py
+tests/test_validation_set_builder.py
+tests/test_yfinance_fetcher.py
+
+# Superseded product visuals.
+assets/dashboard.png
+assets/assets:red_sea_report.png
+assets/assets:semiconductor_report.png
+assets/georisk_v1_architecture.svg
 
 # Local model/cache directories
 .cache/

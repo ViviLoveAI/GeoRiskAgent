@@ -1,7 +1,7 @@
 # Contributing to GeoRisk
 
-Thanks for your interest in improving GeoRisk. This project values small,
-auditable changes that preserve reproducibility and clear attribution.
+Thanks for your interest in improving GeoRisk. This project values focused,
+reviewable changes that make the product more useful and trustworthy.
 
 ## Getting Started
 
@@ -21,24 +21,20 @@ Good contribution areas include:
 - tests
 - UI and usability improvements
 - new integrations or adapters
-- additional evaluation utilities
 - historical-case or domain adapters when data provenance and licensing are clear
 
 ## Changes That Need Prior Discussion
 
 Please open an issue before proposing changes that would:
 
-- modify frozen V4/V5 methodology
-- change reported benchmark semantics
 - change thresholds
-- change evaluation datasets
 - replace retrieval methodology
 - change Node Repair, specificity recovery, or applicability logic
 - change canonical labels
-- alter public evaluation artifacts
 
-GeoRisk intentionally preserves frozen evaluation boundaries so public results
-remain reproducible and comparable over time.
+Private experiment results and generated validation datasets are not part of
+the public product repository. Proposed methodology changes should include a
+clear explanation and focused tests without committing raw research outputs.
 
 ## Testing
 
@@ -58,7 +54,7 @@ Please include:
 - summary of what changed
 - motivation for the change
 - tests run
-- methodology/result impact, if any
+- methodology impact, if any
 - screenshots for UI changes, where applicable
 
 ## Data and Licensing

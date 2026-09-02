@@ -1,10 +1,4 @@
-"""Frozen GeoRisk V3 baseline configuration.
-
-The V3 baseline is reconstructed from the pre-V4 validation path that built
-``data/validation_v3`` snapshots through ``run_pipeline(..., event_analyzer="rule")``
-without passing ``top_k``. That call resolved to the legacy pipeline default
-``top_k=3`` and used raw same-node support, not TransmissionContext.
-"""
+"""Legacy GeoRisk V3 configuration retained for runtime compatibility."""
 
 from __future__ import annotations
 

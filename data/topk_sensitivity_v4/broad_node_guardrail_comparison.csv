@@ -1,4 +1,0 @@
-simulation,retained_candidates,likely_useful,borderline,likely_noise,unclear,noise_rate,historical_supported_retained,sector_proxy_retained,removed_candidates,noise_removed,noise_reduction_rate,borderline_retention_rate,historical_supported_retention_rate,total_candidate_reduction,historical_supported_removed,sector_proxy_removed
-A_mechanism_consistency,149,28,121,0,0,0.0,40,109,98,64,1.0,0.7806451612903226,0.8695652173913043,0.39676113360323884,6,92
-B_support_count_gte3,153,28,97,28,0,0.1830065359477124,44,109,94,36,0.5625,0.6258064516129033,0.9565217391304348,0.38056680161943324,2,92
-C_combined,105,28,77,0,0,0.0,40,65,142,64,1.0,0.4967741935483871,0.8695652173913043,0.5748987854251012,6,136

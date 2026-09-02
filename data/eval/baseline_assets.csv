@@ -1,3 +1,0 @@
-event_id,symbol,node,asset_type,baseline_type
-red_sea_heldout_2023,QQQ,broad_market,equity_etf,random_baseline
-red_sea_heldout_2023,XLF,financials,equity_etf,sector_baseline

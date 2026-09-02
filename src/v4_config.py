@@ -22,10 +22,7 @@ from src.mechanism_context import (
 METHODOLOGY_VERSION = "V4"
 PRODUCTION_VERSION = "V4.1"
 POST_FREEZE_FIXES_ENABLED = True
-POST_FREEZE_FIX_MANIFEST = (
-    "data/validation_v4/execution_diagnostics/"
-    "v4_post_freeze_production_fix_manifest.json"
-)
+POST_FREEZE_FIX_MANIFEST = "private_research_artifact"
 
 
 @dataclass(frozen=True)
