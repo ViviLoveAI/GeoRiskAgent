@@ -1,9 +1,11 @@
 """Streamlit app for GeoRisk Transmission Analyzer."""
 
+import html
 import logging
 
 import requests
 import streamlit as st
+import streamlit.components.v1 as components
 
 from src.config import GEORISK_API_TIMEOUT_SECONDS, GEORISK_API_URL
 from src.report_formatter import EVENT_TYPE_LABELS, NODE_LABELS
@@ -67,10 +69,10 @@ SECOND_ORDER_EMPTY_STATE_BODY = (
     "as reference anchors."
 )
 REPORT_SECTIONS = [
-    ("summary", "1 · Summary"),
-    ("watchlist", "2 · Asset Watchlist"),
-    ("transmission", "3 · Transmission Path"),
-    ("evidence", "4 · Historical Evidence"),
+    ("summary", "Overview"),
+    ("watchlist", "Watchlist"),
+    ("transmission", "Transmission"),
+    ("evidence", "Evidence"),
 ]
 DIRECT_REFERENCE_INITIAL_GROUPS = 6
 REPORT_FOOTER_DISCLAIMER = (
@@ -98,6 +100,7 @@ def main() -> None:
     )
     _inject_global_styles()
     _initialize_state()
+    _scroll_to_top_if_requested()
 
     if st.session_state.page == "report" and "report" in st.session_state:
         _render_report_page()
@@ -113,31 +116,34 @@ def _inject_global_styles() -> None:
         <style>
         :root {
             --georisk-ink: #172033;
-            --georisk-muted: #607086;
-            --georisk-blue: #2457e6;
-            --georisk-blue-dark: #173ba6;
-            --georisk-soft: #f4f7fc;
-            --georisk-line: #dfe6f1;
+            --georisk-muted: #667085;
+            --georisk-blue: #3157d5;
+            --georisk-blue-dark: #2447b8;
+            --georisk-navy: #14213d;
+            --georisk-soft: #f6f8fc;
+            --georisk-line: #e1e7f0;
         }
         .stApp {
-            background:
-                radial-gradient(circle at 92% 4%, rgba(36, 87, 230, 0.08), transparent 24rem),
-                #ffffff;
+            background: var(--georisk-soft);
             color: var(--georisk-ink);
         }
         .block-container {
-            max-width: 1180px;
+            max-width: 1220px;
             padding-top: 2.2rem;
             padding-bottom: 4rem;
         }
         h1, h2, h3 { letter-spacing: -0.025em; }
-        .georisk-hero {
-            padding: 2.7rem 3rem;
+        [data-testid="stHeaderActionElements"] { display: none !important; }
+        .st-key-home_hero {
+            padding: 3rem;
             border: 1px solid var(--georisk-line);
-            border-radius: 24px;
-            background: linear-gradient(135deg, #f8faff 0%, #eef3ff 55%, #f8fbff 100%);
-            box-shadow: 0 20px 50px rgba(27, 49, 92, 0.08);
-            margin-bottom: 1.5rem;
+            border-radius: 26px;
+            background:
+                radial-gradient(circle at 8% 4%, rgba(49, 87, 213, 0.11), transparent 24rem),
+                radial-gradient(circle at 96% 92%, rgba(118, 144, 224, 0.09), transparent 22rem),
+                linear-gradient(145deg, #fbfcff 0%, #f1f5ff 48%, #eef2fb 100%);
+            box-shadow: 0 22px 55px rgba(29, 52, 95, 0.09);
+            margin-bottom: 2rem;
         }
         .georisk-eyebrow {
             color: var(--georisk-blue);
@@ -147,19 +153,72 @@ def _inject_global_styles() -> None:
             text-transform: uppercase;
             margin-bottom: 0.8rem;
         }
-        .georisk-hero h1 {
+        .georisk-hero-copy h1 {
             color: var(--georisk-ink);
-            font-size: clamp(2.2rem, 5vw, 4.25rem);
-            line-height: 1.02;
-            max-width: 850px;
+            font-size: clamp(2.5rem, 4.4vw, 4.1rem);
+            line-height: 1.04;
+            max-width: 650px;
             margin: 0 0 1rem;
         }
-        .georisk-hero p {
+        .georisk-hero-copy > p {
             color: var(--georisk-muted);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            max-width: 790px;
+            font-size: 1.04rem;
+            line-height: 1.68;
+            max-width: 590px;
             margin: 0;
+        }
+        .georisk-value-list {
+            display: grid;
+            gap: 0.7rem;
+            margin-top: 1.7rem;
+        }
+        .georisk-value-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--georisk-ink);
+            font-size: 0.94rem;
+            font-weight: 700;
+        }
+        .georisk-value-icon {
+            display: grid;
+            place-items: center;
+            flex: 0 0 2rem;
+            width: 2rem;
+            height: 2rem;
+            color: var(--georisk-blue-dark);
+            border: 1px solid #ced9fa;
+            border-radius: 9px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+        .georisk-value-icon svg {
+            width: 1.05rem;
+            height: 1.05rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .st-key-hero_input {
+            padding: 1.5rem;
+            border: 1px solid var(--georisk-line);
+            border-radius: 19px;
+            background: #ffffff;
+            box-shadow: 0 14px 36px rgba(31, 49, 83, 0.09);
+        }
+        .georisk-form-kicker {
+            color: var(--georisk-muted);
+            font-size: 0.74rem;
+            font-weight: 750;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+        .georisk-form-title {
+            color: var(--georisk-ink);
+            font-size: 1.45rem;
+            font-weight: 760;
+            margin: 0.35rem 0 0.2rem;
         }
         .georisk-section-intro {
             color: var(--georisk-muted);
@@ -176,6 +235,7 @@ def _inject_global_styles() -> None:
         div[data-testid="stForm"], div[data-testid="stVerticalBlockBorderWrapper"] {
             border-color: var(--georisk-line);
             border-radius: 18px;
+            background: #ffffff;
         }
         div[data-testid="stButton"] > button[kind="primary"],
         div[data-testid="stFormSubmitButton"] > button {
@@ -199,92 +259,143 @@ def _inject_global_styles() -> None:
         [class*="st-key-example_card_"] > div[data-testid="stElementContainer"]:has(div[data-testid="stButton"]) {
             margin-top: auto;
         }
+        .georisk-example-copy { display: flex; flex-direction: column; }
+        .georisk-example-label {
+            color: var(--georisk-muted);
+            font-size: 0.73rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            margin-bottom: 1.15rem;
+        }
+        .georisk-example-copy h3 {
+            color: var(--georisk-ink);
+            font-size: 1.55rem;
+            line-height: 1.22;
+            min-height: 3.8rem;
+            margin: 0 0 0.8rem;
+        }
+        .georisk-example-copy p {
+            color: var(--georisk-ink);
+            font-size: 0.94rem;
+            line-height: 1.55;
+            min-height: 4.5rem;
+            margin: 0;
+        }
+        div[class*="st-key-report_nav_"] div[data-testid="stButton"] > button[data-testid="stBaseButton-primary"] {
+            background: #e9efff !important;
+            border-color: #c9d5fa !important;
+            color: var(--georisk-blue-dark) !important;
+        }
+        div[class*="st-key-report_nav_"] div[data-testid="stButton"] > button[data-testid="stBaseButton-primary"]:hover {
+            background: #dde7ff !important;
+            border-color: #b9c9f8 !important;
+            color: var(--georisk-blue-dark) !important;
+        }
         .georisk-footer-note {
             color: var(--georisk-muted);
             font-size: 0.82rem;
             text-align: center;
             padding-top: 1.2rem;
         }
-        .georisk-why {
-            position: relative;
-            overflow: hidden;
-            margin-top: 3rem;
-            padding: 3.2rem;
-            border-radius: 26px;
-            background:
-                radial-gradient(circle at 88% 5%, rgba(90, 127, 255, 0.38), transparent 22rem),
-                linear-gradient(145deg, #111a31 0%, #182443 58%, #10182c 100%);
-            box-shadow: 0 24px 60px rgba(15, 28, 58, 0.2);
-            color: #ffffff;
+        .georisk-process {
+            margin-top: 2.8rem;
+            padding: 2.3rem;
+            border: 1px solid var(--georisk-line);
+            border-radius: 22px;
+            background: #ffffff;
         }
-        .georisk-why-kicker {
-            color: #91adff;
-            font-size: 0.76rem;
-            font-weight: 800;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-        }
-        .georisk-why h2 {
-            color: #ffffff;
-            font-size: clamp(2rem, 4vw, 3.35rem);
-            line-height: 1.08;
-            max-width: 800px;
-            margin: 0.8rem 0 1rem;
-        }
-        .georisk-why-lead {
-            color: #c3cee6;
-            font-size: 1.03rem;
-            line-height: 1.65;
-            max-width: 790px;
-            margin: 0 0 2rem;
-        }
-        .georisk-why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
-        }
-        .georisk-why-card {
-            position: relative;
-            min-height: 170px;
-            padding: 1.4rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 17px;
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(8px);
-        }
-        .georisk-why-number {
-            color: #91adff;
+        .georisk-process-kicker {
+            color: var(--georisk-blue);
             font-size: 0.75rem;
             font-weight: 800;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
-        .georisk-why-card h3 {
-            color: #ffffff;
-            font-size: 1.42rem;
-            line-height: 1.25;
-            margin: 2.3rem 0 0;
+        .georisk-process h2 {
+            color: var(--georisk-ink);
+            font-size: 2rem;
+            margin: 0.55rem 0 1.6rem;
         }
-        .georisk-why-flow {
-            margin-top: 1.2rem;
-            padding: 0.9rem 1rem;
-            border: 1px solid rgba(145, 173, 255, 0.25);
-            border-radius: 12px;
-            background: rgba(9, 15, 30, 0.35);
-            color: #dce5fa;
+        .georisk-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.85rem;
+            align-items: stretch;
+            counter-reset: georisk-stage;
+        }
+        .georisk-process-item {
+            display: flex;
+            flex-direction: column;
+            min-height: 205px;
+            padding: 1.25rem;
+            border: 1px solid #e4e9f3;
+            border-radius: 16px;
+            background: linear-gradient(145deg, #fbfcff 0%, #f3f6fc 100%);
+            box-shadow: 0 8px 24px rgba(31, 49, 83, 0.035);
+        }
+        .georisk-process-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.8rem;
+        }
+        .georisk-process-number {
+            display: grid;
+            place-items: center;
+            width: 2rem;
+            height: 2rem;
+            color: var(--georisk-blue);
+            background: #e8eeff;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+        }
+        .georisk-process-label {
+            color: #7a879e;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .georisk-process-item h3 {
+            color: var(--georisk-ink);
+            font-size: 1.04rem;
+            min-height: 2.6rem;
+            margin: 1.1rem 0 0.55rem;
+        }
+        .georisk-process-item p {
+            color: var(--georisk-muted);
             font-size: 0.84rem;
-            font-weight: 650;
-            letter-spacing: 0.02em;
-            text-align: center;
+            line-height: 1.5;
+            margin: 0;
+        }
+        @media (max-width: 900px) {
+            .st-key-home_hero div[data-testid="stHorizontalBlock"] {
+                flex-direction: column;
+            }
+            .st-key-home_hero div[data-testid="stColumn"] {
+                width: 100% !important;
+                flex: 1 1 100% !important;
+            }
+        }
+        @media (min-width: 721px) and (max-width: 1000px) {
+            .georisk-process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
         @media (max-width: 720px) {
             .block-container { padding-top: 1rem; }
-            .georisk-hero { padding: 1.8rem 1.4rem; border-radius: 18px; }
-            .georisk-hero h1 { font-size: 2.35rem; }
-            .georisk-why { padding: 2rem 1.3rem; border-radius: 20px; }
-            .georisk-why-grid { grid-template-columns: 1fr; }
-            .georisk-why-card { min-height: 125px; }
-            .georisk-why-card h3 { margin-top: 1.4rem; }
-            .georisk-why-flow { line-height: 1.8; }
+            .st-key-home_hero { padding: 1.5rem; border-radius: 19px; }
+            .georisk-hero-copy h1 { font-size: 2.45rem; }
+            .georisk-process { padding: 1.5rem; }
+            .georisk-process-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+            .georisk-process-item h3 { min-height: auto; }
+            .st-key-overview_previews > div[data-testid="stLayoutWrapper"] > div[data-testid="stHorizontalBlock"] {
+                flex-direction: column;
+            }
+            .st-key-overview_previews > div[data-testid="stLayoutWrapper"] > div[data-testid="stHorizontalBlock"] > div[data-testid="stColumn"] {
+                width: 100% !important;
+                flex: 1 1 100% !important;
+            }
         }
         </style>
         """,
@@ -307,65 +418,132 @@ def _initialize_state() -> None:
         st.session_state.report_section = "summary"
 
 
+def _scroll_to_top_if_requested() -> None:
+    """Reset browser scroll after a logical page transition."""
+
+    if not st.session_state.get("scroll_to_top"):
+        return
+    st.session_state.scroll_to_top = False
+    components.html(
+        """
+        <script>
+          try {
+            const parentWindow = window.parent;
+            parentWindow.history.replaceState(
+              null,
+              "",
+              parentWindow.location.pathname + parentWindow.location.search
+            );
+            const mainScroller = parentWindow.document.querySelector('[data-testid="stMain"]');
+            if (mainScroller) {
+              mainScroller.scrollTo({ top: 0, left: 0, behavior: "auto" });
+            }
+            parentWindow.scrollTo({ top: 0, left: 0, behavior: "auto" });
+          } catch (error) {
+            window.parent.scrollTo(0, 0);
+          }
+        </script>
+        """,
+        height=0,
+        width=0,
+    )
+
+
 def _render_home_page() -> None:
     """Render the event dashboard home page."""
 
     _render_service_status_message()
+    with st.container(key="home_hero"):
+        story_column, input_column = st.columns([1.08, 0.92], gap="large", vertical_alignment="center")
+        with story_column:
+            st.markdown(
+                """
+                <div class="georisk-hero-copy">
+                  <div class="georisk-eyebrow">Geopolitical risk intelligence</div>
+                  <h1>See the risk beneath the headline.</h1>
+                  <p>Paste a geopolitical event. GeoRisk structures the shock, finds relevant
+                  historical analogs, traces direct and second-order transmission channels, and
+                  returns an evidence-labeled asset watchlist for human review.</p>
+                  <div class="georisk-value-list">
+                    <div class="georisk-value-item">
+                      <span class="georisk-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"></circle><circle cx="17" cy="17" r="3"></circle><path d="M9.5 9.5l5 5M14 7h3v3"></path></svg>
+                      </span>
+                      <span>Find the hidden second-order impact</span>
+                    </div>
+                    <div class="georisk-value-item">
+                      <span class="georisk-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="6" r="2"></circle><circle cx="19" cy="12" r="2"></circle><path d="M7 11l3.5-3.5M13.5 7.5L17 11M7 13h10"></path></svg>
+                      </span>
+                      <span>Follow the transmission chain step by step</span>
+                    </div>
+                    <div class="georisk-value-item">
+                      <span class="georisk-value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"></path><path d="M14 3v4h4M9 13l2 2 4-5"></path></svg>
+                      </span>
+                      <span>Review the evidence faster</span>
+                    </div>
+                  </div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+        with input_column:
+            with st.container(border=True, key="hero_input"):
+                st.markdown(
+                    '<div class="georisk-form-kicker">Start an analysis</div>'
+                    '<div class="georisk-form-title">What event do you want to understand?</div>',
+                    unsafe_allow_html=True,
+                )
+                with st.form("event_analysis_form", border=False):
+                    custom_event = st.text_input(
+                        "Event",
+                        key="custom_event",
+                        placeholder="e.g. Red Sea shipping disruption",
+                        help="Name the geopolitical event, policy action, shock, or crisis you want to analyze.",
+                    )
+                    custom_context = st.text_area(
+                        "Context (optional)",
+                        key="custom_news_text",
+                        height=92,
+                        placeholder="Add one or two sentences to focus the analysis.",
+                    )
+                    submitted = st.form_submit_button(
+                        "Analyze transmission risk  →",
+                        type="primary",
+                        use_container_width=True,
+                    )
+                    if submitted:
+                        _handle_custom_event_submit(custom_event, custom_context)
 
+    _render_example_gallery()
+    _render_process_overview()
+    _render_runtime_status()
+
+
+def _render_example_gallery() -> None:
+    """Render curated examples as clearly labeled sample-report cards."""
+
+    st.markdown('<div class="georisk-step">Try the examples</div>', unsafe_allow_html=True)
+    st.header("Explore a sample report")
     st.markdown(
-        """
-        <section class="georisk-hero">
-          <div class="georisk-eyebrow">Geopolitical risk intelligence</div>
-          <h1>See where a geopolitical shock travels next.</h1>
-          <p>GeoRisk turns an event into a reviewable transmission map—connecting
-          direct impact, historical analogs, downstream exposure channels, and
-          evidence-qualified assets.</p>
-        </section>
-        """,
+        '<p class="georisk-section-intro">Start with a prepared scenario to see the complete report experience.</p>',
         unsafe_allow_html=True,
     )
-
-    st.markdown('<div class="georisk-step">01 · Start an analysis</div>', unsafe_allow_html=True)
-    st.header("What event do you want to understand?")
-    st.markdown(
-        '<p class="georisk-section-intro">Enter a conflict, policy action, trade restriction, supply shock, or logistics disruption. A short headline is enough.</p>',
-        unsafe_allow_html=True,
-    )
-    with st.form("event_analysis_form", border=True):
-        custom_event = st.text_input(
-            "Event",
-            key="custom_event",
-            placeholder="e.g. Red Sea shipping disruption",
-            help="Name the geopolitical event, policy action, shock, or crisis you want to analyze.",
-        )
-        custom_context = st.text_area(
-            "Context (optional)",
-            key="custom_news_text",
-            height=100,
-            placeholder="Add one or two sentences if you want GeoRisk to focus on a specific development.",
-            help=(
-                "Add one or two sentences if the event name alone is ambiguous "
-                "or if you want GeoRisk to focus on a specific development."
-            ),
-        )
-        submitted = st.form_submit_button(
-            "Analyze transmission risk  →",
-            type="primary",
-            use_container_width=True,
-        )
-        if submitted:
-            _handle_custom_event_submit(custom_event, custom_context)
-
-    st.markdown('<div class="georisk-step">02 · Or explore an example</div>', unsafe_allow_html=True)
-    st.header("See GeoRisk in action")
     columns = st.columns(len(EXAMPLE_EVENTS))
     for index, (column, event) in enumerate(zip(columns, EXAMPLE_EVENTS, strict=False)):
         with column:
-            with st.container(border=True, height=265, key=f"example_card_{index}"):
-                st.subheader(event["label"])
-                st.write(event["description"])
+            with st.container(border=True, height=315, key=f"example_card_{index}"):
+                st.markdown(
+                    '<div class="georisk-example-copy">'
+                    '<div class="georisk-example-label">Sample scenario</div>'
+                    f'<h3>{html.escape(event["label"])}</h3>'
+                    f'<p>{html.escape(event["description"])}</p>'
+                    '</div>',
+                    unsafe_allow_html=True,
+                )
                 if st.button(
-                    f"Analyze example  →",
+                    "Open sample report  →",
                     key=f"example_{event['label']}",
                     use_container_width=True,
                 ):
@@ -374,38 +552,40 @@ def _render_home_page() -> None:
                         event["label"],
                         event_year=event.get("year"),
                         context=event.get("context"),
+                        report_source="example",
                     )
 
-    _render_why_georisk()
-    _render_runtime_status()
 
-
-def _render_why_georisk() -> None:
-    """Explain the product value once on the home page."""
+def _render_process_overview() -> None:
+    """Render a compact explanation of the analysis workflow."""
 
     st.markdown(
         """
-        <section class="georisk-why">
-          <div class="georisk-why-kicker">Why GeoRisk</div>
-          <h2>See what the headline leaves below the surface.</h2>
-          <p class="georisk-why-lead">The obvious market impact is only the starting point.
-          GeoRisk follows the shock further—showing how risk moves through supply chains,
-          reaches downstream exposure channels, and connects to reviewable assets.</p>
-          <div class="georisk-why-grid">
-            <article class="georisk-why-card">
-              <div class="georisk-why-number">01</div>
-              <h3>Discover the hidden second-order impact</h3>
+        <section class="georisk-process">
+          <div class="georisk-process-kicker">How GeoRisk works</div>
+          <h2>How an event becomes a reviewable risk map</h2>
+          <div class="georisk-process-grid">
+            <article class="georisk-process-item">
+              <div class="georisk-process-meta"><div class="georisk-process-number">01</div><div class="georisk-process-label">Input</div></div>
+              <h3>Understand the event</h3>
+              <p>Turn the headline into regions, industries, shocks, and direct exposure nodes.</p>
             </article>
-            <article class="georisk-why-card">
-              <div class="georisk-why-number">02</div>
-              <h3>Follow the transmission chain</h3>
+            <article class="georisk-process-item">
+              <div class="georisk-process-meta"><div class="georisk-process-number">02</div><div class="georisk-process-label">Ground</div></div>
+              <h3>Find historical analogs</h3>
+              <p>Retrieve past events that share a relevant geopolitical mechanism.</p>
             </article>
-            <article class="georisk-why-card">
-              <div class="georisk-why-number">03</div>
-              <h3>Review the evidence faster</h3>
+            <article class="georisk-process-item">
+              <div class="georisk-process-meta"><div class="georisk-process-number">03</div><div class="georisk-process-label">Trace</div></div>
+              <h3>Build the transmission chain</h3>
+              <p>Follow the shock from direct impact into downstream supply-chain channels.</p>
+            </article>
+            <article class="georisk-process-item">
+              <div class="georisk-process-meta"><div class="georisk-process-number">04</div><div class="georisk-process-label">Review</div></div>
+              <h3>Map evidence to assets</h3>
+              <p>Review candidate assets with their transmission path and evidence strength.</p>
             </article>
           </div>
-          <div class="georisk-why-flow">Headline &nbsp;→&nbsp; Direct shock &nbsp;→&nbsp; Transmission channels &nbsp;→&nbsp; Evidence-backed watchlist</div>
         </section>
         """,
         unsafe_allow_html=True,
@@ -435,6 +615,7 @@ def _analyze_and_open_report(
     *,
     event_year: int | None = None,
     context: str | None = None,
+    report_source: str = "custom",
 ) -> None:
     """Request an analysis from the FastAPI backend and open the report page."""
 
@@ -463,6 +644,8 @@ def _analyze_and_open_report(
         st.session_state.service_error = ""
         st.session_state.page = "report"
         st.session_state.report_section = "summary"
+        st.session_state.report_source = report_source
+        st.session_state.scroll_to_top = True
     st.rerun()
 
 
@@ -598,7 +781,12 @@ def _render_report_page() -> None:
 
     header_left, header_right = st.columns([4, 1], vertical_alignment="bottom")
     with header_left:
-        st.markdown('<div class="georisk-step">Analysis complete</div>', unsafe_allow_html=True)
+        report_kicker = (
+            "Sample report"
+            if st.session_state.get("report_source") == "example"
+            else "Analysis complete"
+        )
+        st.markdown(f'<div class="georisk-step">{report_kicker}</div>', unsafe_allow_html=True)
         st.title("GeoRisk Transmission Report")
         st.caption(selected_event_label)
     with header_right:
@@ -609,7 +797,6 @@ def _render_report_page() -> None:
     section = st.session_state.get("report_section", "summary")
     if section == "summary":
         _render_overview_tab(report)
-        _render_continue_button("watchlist", "Continue to Asset Watchlist  →")
     elif section == "watchlist":
         _render_watchlist_tab(report)
         _render_continue_button("transmission", "Continue to Transmission Path  →")
@@ -628,6 +815,7 @@ def _start_new_analysis() -> None:
     st.session_state.report_section = "summary"
     st.session_state.custom_event = ""
     st.session_state.custom_news_text = ""
+    st.session_state.scroll_to_top = True
     st.rerun()
 
 
@@ -638,7 +826,7 @@ def _render_report_end_actions() -> None:
     st.subheader("What would you like to do next?")
     back_column, new_column = st.columns(2)
     with back_column:
-        if st.button("← Back to Summary", use_container_width=True):
+        if st.button("← Back to Overview", use_container_width=True):
             st.session_state.report_section = "summary"
             st.rerun()
     with new_column:
@@ -677,7 +865,7 @@ def _render_continue_button(section: str, label: str) -> None:
             "Use the report navigation above at any time, or continue through the analysis in order."
         )
     with right:
-        if st.button(label, key=f"continue_{section}", type="primary", use_container_width=True):
+        if st.button(label, key=f"continue_{section}", use_container_width=True):
             st.session_state.report_section = section
             st.rerun()
 
@@ -691,9 +879,23 @@ def _render_overview_tab(report) -> None:
     language = getattr(report, "input_language", None)
     normalization_applied = bool(getattr(report, "input_normalization_applied", False))
 
-    st.subheader("Event Summary")
-    st.markdown(f"### {title}")
+    st.markdown('<div class="georisk-step">Event summary</div>', unsafe_allow_html=True)
+    st.markdown(f"## {title}")
     st.write(report.event.summary)
+
+    event_metadata = []
+    if getattr(report, "input_event_year", None):
+        event_metadata.append(str(report.input_event_year))
+    if getattr(report, "input_event_date", None):
+        event_metadata.append(str(report.input_event_date))
+    event_metadata.extend(
+        [
+            _event_type_label(report.event.event_type),
+            ", ".join(report.event.regions) or "Unspecified region",
+            ", ".join(report.event.industries) or "Unspecified industry",
+        ]
+    )
+    st.caption(" · ".join(event_metadata))
 
     if original_text and language and language != "English":
         with st.expander("Original and normalized event text", expanded=False):
@@ -705,30 +907,68 @@ def _render_overview_tab(report) -> None:
             else:
                 st.caption("English normalization was unavailable; GeoRisk analyzed the supplied text.")
 
-    st.subheader("Event Classification")
-    overview_rows = [
-        ("Event type", _event_type_label(report.event.event_type)),
-        ("Regions", ", ".join(report.event.regions) or "Unspecified"),
-        ("Industries", ", ".join(report.event.industries) or "Unspecified"),
-        ("Shock direction", _format_node_title(report.event.shock_direction)),
-        ("Direct exposure nodes", _format_nodes(report.event.supply_chain_nodes)),
-    ]
-    columns = st.columns(2)
-    for index, (label, value) in enumerate(overview_rows):
-        with columns[index % 2]:
-            st.markdown(f"**{label}**")
-            st.write(value)
+    st.markdown("### What GeoRisk surfaced")
+    _, second_order_nodes, _ = _partition_transmission_nodes(report)
+    ranked_second, _, _ = _partition_watchlist_assets(report)
+    with st.container(key="overview_previews"):
+        transmission_column, watchlist_column = st.columns(2, gap="large")
 
-    event_metadata = []
-    if getattr(report, "input_event_year", None):
-        event_metadata.append(f"Event year: {report.input_event_year}")
-    if getattr(report, "input_event_date", None):
-        event_metadata.append(f"Event date: {report.input_event_date}")
-    if event_metadata:
-        st.caption(" · ".join(event_metadata))
+        with transmission_column:
+            with st.container(border=True, key="overview_transmission_preview"):
+                st.caption("TRANSMISSION AT A GLANCE")
+                st.markdown(f"**{_event_type_label(report.event.event_type)}**")
+                st.markdown("↓")
+                st.markdown(
+                    "**Direct impact**  \n"
+                    + _compact_node_list(report.event.supply_chain_nodes, limit=4)
+                )
+                st.markdown("↓")
+                st.markdown(
+                    "**Downstream channels**  \n"
+                    + _compact_node_list(second_order_nodes, limit=4)
+                )
+            if st.button(
+                "Explore the full transmission  →",
+                key="overview_to_transmission",
+                use_container_width=True,
+            ):
+                st.session_state.report_section = "transmission"
+                st.rerun()
 
-    with st.expander("Normalized event summary", expanded=False):
-        st.write(report.event_summary)
+        with watchlist_column:
+            with st.container(border=True, key="overview_watchlist_preview"):
+                st.caption("SECOND-ORDER WATCHLIST")
+                if ranked_second:
+                    for asset in ranked_second[:3]:
+                        st.markdown(f"**#{_rank_display(asset)} {asset.get('ticker') or 'n/a'}**")
+                        st.caption(
+                            f"{_format_node_title(str(asset.get('supply_chain_node') or ''))} · "
+                            f"{_evidence_badge(asset.get('evidence_level'))}"
+                        )
+                    if len(ranked_second) > 3:
+                        st.caption(f"+ {len(ranked_second) - 3} more exposure candidate(s)")
+                else:
+                    st.markdown("**No qualified second-order exposures**")
+                    st.write("Direct exposure references are still available for context.")
+            if st.button(
+                "View the full watchlist  →",
+                key="overview_to_watchlist",
+                use_container_width=True,
+            ):
+                st.session_state.report_section = "watchlist"
+                st.rerun()
+
+
+def _compact_node_list(nodes: list[str], *, limit: int) -> str:
+    """Return a compact readable node list with an overflow count."""
+
+    if not nodes:
+        return "None identified"
+    labels = [_format_node_title(node) for node in nodes[:limit]]
+    extra = len(nodes) - len(labels)
+    if extra > 0:
+        labels.append(f"+{extra} more")
+    return " · ".join(labels)
 
 
 def _render_historical_cases_tab(report) -> None:

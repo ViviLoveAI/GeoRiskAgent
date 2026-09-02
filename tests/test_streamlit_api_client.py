@@ -195,11 +195,22 @@ def test_empty_second_order_state_copy_is_analytical_abstention():
 
 def test_report_navigation_order_prioritizes_results_before_evidence():
     assert app.REPORT_SECTIONS == [
-        ("summary", "1 · Summary"),
-        ("watchlist", "2 · Asset Watchlist"),
-        ("transmission", "3 · Transmission Path"),
-        ("evidence", "4 · Historical Evidence"),
+        ("summary", "Overview"),
+        ("watchlist", "Watchlist"),
+        ("transmission", "Transmission"),
+        ("evidence", "Evidence"),
     ]
+
+
+def test_compact_node_list_limits_overview_noise():
+    value = app._compact_node_list(
+        ["ai_chips", "semiconductor_equipment", "data_centers"],
+        limit=2,
+    )
+
+    assert "AI Chips" in value
+    assert "Semiconductor Equipment" in value
+    assert "+1 more" in value
 
 
 def test_watchlist_disclaimer_content_remains_available():
