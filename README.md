@@ -1,6 +1,6 @@
-# GeoRisk
+![GeoRisk](assets/brand/georisk-logo-horizontal.svg)
 
-### See the risk beneath the headline.
+## See the risk beneath the headline.
 
 **GeoRisk turns a geopolitical event into a traceable map of market exposure.**
 

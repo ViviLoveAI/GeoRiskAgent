@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="244" viewBox="0 0 820 400" role="img" aria-labelledby="title desc">
+  <title id="title">GeoRisk</title>
+  <desc id="desc">GeoRisk logo: a blue globe with one event spreading through layered transmission paths.</desc>
+  <defs>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAFBFF"/>
+      <stop offset="0.62" stop-color="#F1F4FF"/>
+      <stop offset="1" stop-color="#E9EEFF"/>
+    </linearGradient>
+    <radialGradient id="ocean" cx="32%" cy="22%" r="90%">
+      <stop offset="0" stop-color="#F7FBFF"/>
+      <stop offset="0.5" stop-color="#DCE9FF"/>
+      <stop offset="1" stop-color="#BED2F4"/>
+    </radialGradient>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6885B4" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#96ACCC" stop-opacity="0.24"/>
+    </linearGradient>
+    <linearGradient id="outer-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#456895"/>
+      <stop offset="0.52" stop-color="#627FAB"/>
+      <stop offset="1" stop-color="#7F99C1"/>
+    </linearGradient>
+    <linearGradient id="flow-main" gradientUnits="userSpaceOnUse" x1="205" y1="205" x2="103" y2="117">
+      <stop offset="0" stop-color="#4565C7" stop-opacity="0.9"/>
+      <stop offset="0.62" stop-color="#91A5D8" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#B6C3E4" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="flow-upper" gradientUnits="userSpaceOnUse" x1="205" y1="205" x2="341" y2="198">
+      <stop offset="0" stop-color="#5C78C8" stop-opacity="0.82"/>
+      <stop offset="0.68" stop-color="#8EA4D5" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#B5C2E1" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="flow-middle" gradientUnits="userSpaceOnUse" x1="205" y1="205" x2="342" y2="301">
+      <stop offset="0" stop-color="#607BC8" stop-opacity="0.76"/>
+      <stop offset="0.7" stop-color="#9EAED9" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#C0CAE5" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="flow-deep" gradientUnits="userSpaceOnUse" x1="205" y1="205" x2="158" y2="342">
+      <stop offset="0" stop-color="#6A82C8" stop-opacity="0.7"/>
+      <stop offset="0.74" stop-color="#B5C1E1" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#CBD3EA" stop-opacity="0.02"/>
+    </linearGradient>
+    <radialGradient id="event">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.4" stop-color="#B7C5FF"/>
+      <stop offset="1" stop-color="#3157D5"/>
+    </radialGradient>
+    <clipPath id="globe-clip">
+      <circle cx="230" cy="205" r="145"/>
+    </clipPath>
+    <filter id="blur-5" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="blur-10" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="blur-18" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(30 -5)">
+    <circle cx="230" cy="205" r="145" fill="url(#ocean)"/>
+
+    <g clip-path="url(#globe-clip)">
+      <!-- Refined but restrained coastlines: geographic texture without map-level noise. -->
+      <path d="M88 119 C94 108 101 100 112 96 C120 88 126 82 138 78 C151 73 165 75 176 80 C185 84 189 92 182 99 C175 105 168 105 161 114 C155 122 147 121 141 129 C134 138 127 136 119 144 C112 149 104 143 98 137 C92 132 89 126 88 119 Z" fill="url(#land)" stroke="#6F86AD" stroke-width="0.8" stroke-opacity="0.28"/>
+      <path d="M121 139 C132 134 144 139 151 150 C155 157 148 163 154 172 C159 179 151 185 157 193 C162 200 152 207 149 218 C146 227 139 236 133 231 C127 226 129 215 124 205 C119 196 121 187 114 177 C108 168 109 158 114 149 C116 145 118 142 121 139 Z" fill="url(#land)" stroke="#6F86AD" stroke-width="0.8" stroke-opacity="0.28"/>
+      <path d="M193 100 C201 92 211 87 222 84 C233 82 239 88 249 85 C260 82 267 90 277 91 C288 92 290 99 302 99 C313 100 321 110 325 121 C328 128 315 132 306 128 C299 126 295 121 287 127 C279 134 275 140 264 139 C255 138 252 131 241 135 C232 138 232 146 219 147 C208 148 205 138 196 141 C188 143 186 132 190 120 C193 112 186 106 193 100 Z" fill="url(#land)" stroke="#6F86AD" stroke-width="0.8" stroke-opacity="0.28"/>
+      <path d="M228 151 C237 145 247 144 256 148 C266 152 274 158 279 166 C284 176 275 184 270 194 C265 204 270 213 260 224 C254 232 256 241 246 253 C239 261 236 271 227 266 C219 262 222 251 218 241 C214 231 208 222 209 211 C210 201 214 192 214 181 C214 169 221 157 228 151 Z" fill="url(#land)" stroke="#6F86AD" stroke-width="0.8" stroke-opacity="0.28"/>
+      <path d="M309 216 C318 211 328 210 336 214 C345 217 351 224 350 232 C349 239 338 243 330 246 C321 247 316 241 310 236 C304 231 302 221 309 216 Z" fill="url(#land)" stroke="#6F86AD" stroke-width="0.8" stroke-opacity="0.25"/>
+      <circle cx="290" cy="145" r="2.2" fill="#7289AF" opacity="0.28"/>
+      <circle cx="298" cy="152" r="1.4" fill="#7289AF" opacity="0.22"/>
+      <circle cx="176" cy="112" r="1.7" fill="#7289AF" opacity="0.2"/>
+
+      <!-- Subtle latitude gives dimensionality without turning into a network icon. -->
+      <path d="M91 157 C164 132 286 132 364 161" fill="none" stroke="#66748F" stroke-width="2" opacity="0.11"/>
+      <path d="M86 222 C164 250 293 251 371 217" fill="none" stroke="#66748F" stroke-width="2" opacity="0.08"/>
+
+      <!-- A quiet field provides depth without looking like a painted overlay. -->
+      <ellipse cx="229" cy="270" rx="103" ry="86" fill="#7390D2" opacity="0.045" filter="url(#blur-18)"/>
+
+      <!-- Soft under-glow, followed by precise transmission curves. -->
+      <path d="M205 205 C181 181 157 156 132 138 C120 130 110 123 103 117" fill="none" stroke="#4B69C3" stroke-width="9" stroke-linecap="round" opacity="0.08" filter="url(#blur-5)"/>
+      <path d="M205 205 C231 184 260 174 294 181 C314 184 329 190 341 198" fill="none" stroke="#758ACB" stroke-width="8" stroke-linecap="round" opacity="0.07" filter="url(#blur-5)"/>
+      <path d="M205 205 C243 219 277 239 306 266 C322 280 334 292 342 301" fill="none" stroke="#8295CF" stroke-width="9" stroke-linecap="round" opacity="0.065" filter="url(#blur-5)"/>
+      <path d="M205 205 C191 236 176 272 170 316 C166 329 162 338 158 342" fill="none" stroke="#92A2D2" stroke-width="10" stroke-linecap="round" opacity="0.06" filter="url(#blur-10)"/>
+
+      <path d="M205 205 C181 181 157 156 132 138 C120 130 110 123 103 117" fill="none" stroke="url(#flow-main)" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M205 205 C231 184 260 174 294 181 C314 184 329 190 341 198" fill="none" stroke="url(#flow-upper)" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M205 205 C243 219 277 239 306 266 C322 280 334 292 342 301" fill="none" stroke="url(#flow-middle)" stroke-width="2.3" stroke-linecap="round"/>
+      <path d="M205 205 C191 236 176 272 170 316 C166 329 162 338 158 342" fill="none" stroke="url(#flow-deep)" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Small waypoints create transmission rhythm without competing with the main event. -->
+      <circle cx="169" cy="170" r="3.4" fill="#EEF2FF" fill-opacity="0.5"/>
+      <circle cx="169" cy="170" r="1.8" fill="#7088CC" opacity="0.58"/>
+
+      <circle cx="259" cy="228" r="3" fill="#EFF3FF" fill-opacity="0.4"/>
+      <circle cx="259" cy="228" r="1.6" fill="#8A9CD2" opacity="0.42"/>
+
+      <circle cx="190" cy="258" r="2.8" fill="#F1F4FF" fill-opacity="0.34"/>
+      <circle cx="190" cy="258" r="1.4" fill="#9AA9D5" opacity="0.34"/>
+
+      <!-- Nodes have rings and controlled hierarchy instead of soft blobs. -->
+      <circle cx="205" cy="205" r="11" fill="#3157D5" opacity="0.1" filter="url(#blur-5)"/>
+      <circle cx="205" cy="205" r="4.6" fill="#3157D5"/>
+
+      <circle cx="132" cy="138" r="5" fill="#7890D0" fill-opacity="0.13" stroke="#879BD1" stroke-width="0.9" stroke-opacity="0.38"/>
+      <circle cx="132" cy="138" r="2.4" fill="#7189CB" opacity="0.76"/>
+
+      <circle cx="294" cy="181" r="5.5" fill="#7890D0" fill-opacity="0.13" stroke="#879BD1" stroke-width="0.9" stroke-opacity="0.38"/>
+      <circle cx="294" cy="181" r="2.5" fill="#7189CB" opacity="0.74"/>
+
+      <circle cx="306" cy="266" r="5" fill="#879AD1" fill-opacity="0.11" stroke="#95A6D5" stroke-width="0.85" stroke-opacity="0.32"/>
+      <circle cx="306" cy="266" r="2.3" fill="#8398CF" opacity="0.66"/>
+
+      <circle cx="170" cy="316" r="4.5" fill="#9AAAD5" fill-opacity="0.09" stroke="#A8B5DA" stroke-width="0.8" stroke-opacity="0.25"/>
+      <circle cx="170" cy="316" r="2.1" fill="#98A9D4" opacity="0.52"/>
+    </g>
+
+    <!-- A complete but low-contrast earth boundary. -->
+    <circle cx="230" cy="205" r="145" fill="none" stroke="url(#outer-ring)" stroke-width="5.5"/>
+
+  </g>
+
+  <g transform="translate(440 135)">
+    <text x="0" y="70" fill="#294F8F" font-family="Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="72" font-weight="750" letter-spacing="-2.8">GeoRisk</text>
+  </g>
+</svg>

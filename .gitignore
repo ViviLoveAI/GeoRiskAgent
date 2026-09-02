@@ -85,6 +85,7 @@ assets/dashboard.png
 assets/assets:red_sea_report.png
 assets/assets:semiconductor_report.png
 assets/georisk_v1_architecture.svg
+assets/brand/concepts/
 
 # Local model/cache directories
 .cache/
