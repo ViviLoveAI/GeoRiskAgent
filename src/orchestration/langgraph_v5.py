@@ -13,6 +13,7 @@ from typing import Literal, TypedDict
 from langgraph.graph import END, START, StateGraph
 
 from src.agents.case_retriever import retrieve_cases
+from src.agents.llm_event_analyst import get_last_analysis_trace
 from src.agents.node_discovery_repair import (
     compatible_support_counts,
     diagnose_evidence_state,
@@ -21,10 +22,23 @@ from src.agents.node_discovery_repair import (
 )
 from src.agents.repaired_context_projection import project_repaired_node_context
 from src.pipeline import _analyze_event
+from src.config import USE_LLM_EVENT_ANALYST
+from src.gate_observability import record_pipeline_gate_decisions
+from src.observability import (
+    ExecutionMetadata,
+    FunnelMetrics,
+    analysis_run,
+    emit_run_record,
+)
 from src.schemas import EventAnalysis, FinalReport, RetrievedCase, TransmissionChain
 from src.v4_config import V4_CONFIG
 from src.v5_config import V5_CONFIG, V5DiscoveryConfig, assert_v5_config
-from src.v5_models import AnalysisState, NodeRepairProposal, V5AnalysisResult
+from src.v5_models import (
+    AnalysisState,
+    NodeRepairProposal,
+    V5AnalysisResult,
+    V5RuntimeMetrics,
+)
 from src.v5_pipeline import (
     _current_candidate_nodes,
     _current_proposed_nodes,
@@ -57,6 +71,7 @@ class GeoRiskV5State(TypedDict, total=False):
     proposals: list[NodeRepairProposal]
     projection_overrides: dict[str, dict[str, str]]
     support_delta: dict[str, int]
+    phase_latency_ms: dict[str, float]
     result: V5AnalysisResult
 
 
@@ -107,14 +122,82 @@ def run_v5_langgraph(
         raise ValueError("news_text must contain a geopolitical risk news item.")
 
     graph = build_v5_langgraph()
-    output = graph.invoke(
-        {
-            "news_text": news_text,
-            "event_analyzer": event_analyzer,
-            "config": config,
-        }
-    )
-    return output["result"]
+    start = perf_counter()
+    with analysis_run() as telemetry:
+        requested_analyzer = _selected_event_analyzer(event_analyzer)
+        try:
+            output = graph.invoke(
+                {
+                    "news_text": news_text,
+                    "event_analyzer": event_analyzer,
+                    "config": config,
+                }
+            )
+        except Exception:
+            total_latency_ms = _elapsed_precise_ms(start)
+            trace = get_last_analysis_trace() if requested_analyzer == "llm" else {}
+            failure_metadata = ExecutionMetadata(
+                run_id=telemetry.run_id,
+                requested_event_analyzer=requested_analyzer,
+                effective_event_analyzer=str(
+                    trace.get("effective_event_analyzer", requested_analyzer)
+                ),
+                degraded=bool(trace.get("fallback_occurred", False)),
+                degradation_reason=(
+                    str(trace.get("degradation_reason"))
+                    if trace.get("degradation_reason")
+                    else None
+                ),
+                total_latency_ms=total_latency_ms,
+                llm_latency_ms=float(trace.get("llm_latency_ms", 0.0) or 0.0),
+                llm_latency_share_pct=(
+                    min(
+                        100.0,
+                        float(trace.get("llm_latency_ms", 0.0) or 0.0)
+                        / total_latency_ms
+                        * 100.0,
+                    )
+                    if total_latency_ms > 0
+                    else 0.0
+                ),
+                token_usage=(
+                    trace.get("token_usage")
+                    if isinstance(trace.get("token_usage"), dict)
+                    else None
+                ),
+                outcome_status="OPERATIONAL_FAILURE",
+                funnel=FunnelMetrics(
+                    rejected_decision_count=sum(
+                        not decision.accepted for decision in telemetry.gate_decisions
+                    )
+                ),
+                gate_decisions=list(telemetry.gate_decisions),
+            )
+            emit_run_record(failure_metadata, total_latency_ms=total_latency_ms)
+            raise
+        total_latency_ms = _elapsed_precise_ms(start)
+        result = output["result"].model_copy(
+            update={
+                "runtime_metrics": V5RuntimeMetrics(
+                    total_latency_ms=total_latency_ms,
+                    phase_latency_ms=output.get("phase_latency_ms", {}),
+                )
+            }
+        )
+        metadata = _execution_metadata(
+            result,
+            run_id=telemetry.run_id,
+            requested_event_analyzer=requested_analyzer,
+        )
+        result = result.model_copy(
+            update={
+                "final_report": result.final_report.model_copy(
+                    update={"execution_metadata": metadata}
+                )
+            }
+        )
+        emit_run_record(metadata, total_latency_ms=total_latency_ms)
+        return result
 
 
 def prepare_event_node(state: GeoRiskV5State) -> GeoRiskV5State:
@@ -138,7 +221,12 @@ def prepare_event_node(state: GeoRiskV5State) -> GeoRiskV5State:
         after="RETRIEVAL",
         latency_ms=_elapsed_ms(start),
     )
-    return {"event": event, "state": analysis_state}
+    return _with_phase_timing(
+        {"event": event, "state": analysis_state},
+        state,
+        "event_analysis",
+        start,
+    )
 
 
 def retrieve_candidates_node(state: GeoRiskV5State) -> GeoRiskV5State:
@@ -166,12 +254,18 @@ def retrieve_candidates_node(state: GeoRiskV5State) -> GeoRiskV5State:
         source_case_ids=[case.case_id for case in retrieved_cases],
         latency_ms=_elapsed_ms(start),
     )
-    return {"retrieved_cases": retrieved_cases, "state": analysis_state}
+    return _with_phase_timing(
+        {"retrieved_cases": retrieved_cases, "state": analysis_state},
+        state,
+        "retrieval",
+        start,
+    )
 
 
 def verify_initial_v4_node(state: GeoRiskV5State) -> GeoRiskV5State:
     """Enter the frozen V4 verification boundary for the initial candidates."""
 
+    start = perf_counter()
     analysis_state = state["state"]
     event = state["event"]
     retrieved_cases = state["retrieved_cases"]
@@ -190,13 +284,18 @@ def verify_initial_v4_node(state: GeoRiskV5State) -> GeoRiskV5State:
         retrieved_cases,
         analysis_state.candidate_nodes,
     )
-    return {
-        "initial_report": initial_report,
-        "initial_chain": initial_chain,
-        "final_report": initial_report,
-        "final_chain": initial_chain,
-        "state": analysis_state,
-    }
+    return _with_phase_timing(
+        {
+            "initial_report": initial_report,
+            "initial_chain": initial_chain,
+            "final_report": initial_report,
+            "final_chain": initial_chain,
+            "state": analysis_state,
+        },
+        state,
+        "initial_verification_mapping_ranking",
+        start,
+    )
 
 
 def route_after_initial_verify(state: GeoRiskV5State) -> Route:
@@ -233,7 +332,12 @@ def diagnose_repair_need_node(state: GeoRiskV5State) -> GeoRiskV5State:
         source_case_ids=_proposal_case_ids(proposals),
         latency_ms=_elapsed_ms(start),
     )
-    return {"proposals": proposals, "state": analysis_state}
+    return _with_phase_timing(
+        {"proposals": proposals, "state": analysis_state},
+        state,
+        "repair_diagnosis",
+        start,
+    )
 
 
 def route_after_diagnosis(state: GeoRiskV5State) -> Route:
@@ -251,16 +355,23 @@ def route_after_diagnosis(state: GeoRiskV5State) -> Route:
 def apply_node_repair_node(state: GeoRiskV5State) -> GeoRiskV5State:
     """Apply existing bounded node repair proposals to retrieved cases."""
 
+    start = perf_counter()
     repaired_cases = repaired_retrieved_cases(
         state["retrieved_cases"],
         state.get("proposals", []),
     )
-    return {"retrieved_cases": repaired_cases}
+    return _with_phase_timing(
+        {"retrieved_cases": repaired_cases},
+        state,
+        "node_repair",
+        start,
+    )
 
 
 def project_repaired_context_node(state: GeoRiskV5State) -> GeoRiskV5State:
     """Project current-event context for repaired nodes using existing rules."""
 
+    start = perf_counter()
     analysis_state = state["state"]
     event = state["event"]
     proposals = state.get("proposals", [])
@@ -293,16 +404,22 @@ def project_repaired_context_node(state: GeoRiskV5State) -> GeoRiskV5State:
         for proposal in proposals
     ]
     analysis_state.repair_proposals = proposals
-    return {
-        "projection_overrides": projection_overrides,
-        "proposals": proposals,
-        "state": analysis_state,
-    }
+    return _with_phase_timing(
+        {
+            "projection_overrides": projection_overrides,
+            "proposals": proposals,
+            "state": analysis_state,
+        },
+        state,
+        "context_projection",
+        start,
+    )
 
 
 def verify_repaired_v4_node(state: GeoRiskV5State) -> GeoRiskV5State:
     """Re-enter frozen V4 verification with repaired candidates and projections."""
 
+    start = perf_counter()
     analysis_state = state["state"]
     event = state["event"]
     proposals = state.get("proposals", [])
@@ -340,18 +457,24 @@ def verify_repaired_v4_node(state: GeoRiskV5State) -> GeoRiskV5State:
     analysis_state.compatible_support = repaired_support
     with _projection_overrides(state.get("projection_overrides", {})):
         final_report, final_chain = _run_frozen_v4_verify(event, repaired_cases)
-    return {
-        "final_report": final_report,
-        "final_chain": final_chain,
-        "proposals": proposals,
-        "support_delta": support_delta,
-        "state": analysis_state,
-    }
+    return _with_phase_timing(
+        {
+            "final_report": final_report,
+            "final_chain": final_chain,
+            "proposals": proposals,
+            "support_delta": support_delta,
+            "state": analysis_state,
+        },
+        state,
+        "repaired_verification_mapping_ranking",
+        start,
+    )
 
 
 def recover_specificity_node(state: GeoRiskV5State) -> GeoRiskV5State:
     """Run existing candidate-local specificity recovery when configured."""
 
+    start = perf_counter()
     analysis_state = state["state"]
     event = state["event"]
     proposals = state.get("proposals", [])
@@ -389,37 +512,177 @@ def recover_specificity_node(state: GeoRiskV5State) -> GeoRiskV5State:
         source_case_ids=_proposal_case_ids(proposals),
         support_delta=state.get("support_delta", {}),
     )
-    return {
-        "final_report": final_report,
-        "final_chain": final_chain,
-        "proposals": proposals,
-        "state": analysis_state,
-    }
+    return _with_phase_timing(
+        {
+            "final_report": final_report,
+            "final_chain": final_chain,
+            "proposals": proposals,
+            "state": analysis_state,
+        },
+        state,
+        "specificity_recovery",
+        start,
+    )
 
 
 def finalize_node(state: GeoRiskV5State) -> GeoRiskV5State:
     """Finalize the V5 result without changing final evidence semantics."""
 
+    start = perf_counter()
     analysis_state = state["state"]
     final_report = state["final_report"]
     config = state["config"]
+    terminal_status = _terminal_status(final_report)
     if not config.enable_node_repair and analysis_state.diagnosis is None:
-        analysis_state.status = "FINAL"
         _record(
             analysis_state,
             action="FINALIZE",
             reason="Node repair disabled; returning frozen V4-equivalent output",
             before="VERIFY",
-            after="FINAL",
+            after=terminal_status,
         )
     else:
-        analysis_state.status = "FINAL" if final_report.evidence_results else "ABSTAIN"
-        if analysis_state.status == "ABSTAIN":
+        analysis_state.status = terminal_status
+        if terminal_status != "RANKED":
             _record(
                 analysis_state,
                 action="ABSTAIN",
-                reason="Frozen V4 verification produced no mapped evidence results",
+                reason=(
+                    "No second-order exposure qualified for ranking"
+                    if terminal_status == "RANKING_ABSTAIN"
+                    else "Frozen V4 verification produced no mapped evidence results"
+                ),
                 before="FINAL",
-                after="ABSTAIN",
+                after=terminal_status,
             )
-    return {"result": _result(final_report, analysis_state, config), "state": analysis_state}
+    return _with_phase_timing(
+        {"result": _result(final_report, analysis_state, config), "state": analysis_state},
+        state,
+        "finalization",
+        start,
+    )
+
+
+def _with_phase_timing(
+    update: GeoRiskV5State,
+    state: GeoRiskV5State,
+    phase: str,
+    start: float,
+) -> GeoRiskV5State:
+    """Attach one non-semantic phase duration to a graph state update."""
+
+    timings = dict(state.get("phase_latency_ms", {}))
+    timings[phase] = timings.get(phase, 0.0) + _elapsed_precise_ms(start)
+    return {**update, "phase_latency_ms": timings}
+
+
+def _elapsed_precise_ms(start: float) -> float:
+    """Return a non-negative millisecond duration without integer rounding."""
+
+    return max(0.0, (perf_counter() - start) * 1000.0)
+
+
+def _terminal_status(final_report: FinalReport) -> str:
+    """Classify analytical completion separately from operational failures."""
+
+    if any(
+        result.ranking_scope == "ranked_second_order"
+        for result in final_report.evidence_results
+    ):
+        return "RANKED"
+    if final_report.evidence_results:
+        return "RANKING_ABSTAIN"
+    return "FULL_ABSTAIN"
+
+
+def _selected_event_analyzer(event_analyzer: str | None) -> str:
+    """Resolve the requested analyzer exactly as the pipeline selector does."""
+
+    if event_analyzer is not None:
+        return event_analyzer
+    return "llm" if USE_LLM_EVENT_ANALYST else "rule"
+
+
+def _execution_metadata(
+    result: V5AnalysisResult,
+    *,
+    run_id: str,
+    requested_event_analyzer: str,
+) -> ExecutionMetadata:
+    """Build output metadata and final gate records for one completed run."""
+
+    from src.observability import current_telemetry
+
+    report = result.final_report
+    record_pipeline_gate_decisions(result)
+    ranked = [
+        item for item in report.evidence_results
+        if item.ranking_scope == "ranked_second_order"
+    ]
+    first_order = [
+        item for item in report.evidence_results
+        if item.ranking_scope == "reference_first_order"
+    ]
+    collector = current_telemetry()
+    decisions = list(collector.gate_decisions if collector else [])
+    mechanism_nodes = {
+        decision.candidate_id
+        for decision in decisions
+        if decision.gate == "mechanism_check" and decision.accepted
+    }
+    qualified_nodes = {
+        decision.candidate_id
+        for decision in decisions
+        if decision.gate == "support_threshold" and decision.accepted
+    }
+    trace = get_last_analysis_trace() if requested_event_analyzer == "llm" else {}
+    degraded = bool(trace.get("fallback_occurred", False))
+    effective_analyzer = str(
+        trace.get("effective_event_analyzer", requested_event_analyzer)
+    )
+    funnel = FunnelMetrics(
+        direct_node_count=len(set(result.state.direct_nodes)),
+        retrieved_case_count=len(result.state.retrieved_cases),
+        raw_candidate_node_count=len(
+            set(result.state.candidate_nodes) - set(result.state.direct_nodes)
+        ),
+        mechanism_compatible_node_count=len(mechanism_nodes),
+        support_qualified_node_count=len(qualified_nodes),
+        affected_node_count=len(set(report.transmission_chain.affected_nodes)),
+        mapped_asset_count=len({item.ticker for item in report.evidence_results}),
+        ranked_second_order_count=len(ranked),
+        first_order_reference_count=len(first_order),
+        rejected_decision_count=sum(not decision.accepted for decision in decisions),
+    )
+    return ExecutionMetadata(
+        run_id=run_id,
+        requested_event_analyzer=requested_event_analyzer,
+        effective_event_analyzer=effective_analyzer,
+        degraded=degraded,
+        degradation_reason=(
+            str(trace.get("degradation_reason"))
+            if trace.get("degradation_reason")
+            else None
+        ),
+        total_latency_ms=(
+            result.runtime_metrics.total_latency_ms if result.runtime_metrics else 0.0
+        ),
+        llm_latency_ms=float(trace.get("llm_latency_ms", 0.0) or 0.0),
+        llm_latency_share_pct=(
+            min(
+                100.0,
+                float(trace.get("llm_latency_ms", 0.0) or 0.0)
+                / result.runtime_metrics.total_latency_ms
+                * 100.0,
+            )
+            if result.runtime_metrics and result.runtime_metrics.total_latency_ms > 0
+            else 0.0
+        ),
+        phase_latency_ms=(
+            result.runtime_metrics.phase_latency_ms if result.runtime_metrics else {}
+        ),
+        token_usage=trace.get("token_usage") if isinstance(trace.get("token_usage"), dict) else None,
+        outcome_status=_terminal_status(report),
+        funnel=funnel,
+        gate_decisions=decisions,
+    )

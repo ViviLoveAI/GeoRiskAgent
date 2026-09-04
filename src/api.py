@@ -9,7 +9,18 @@ from datetime import datetime
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-from src.config import INTERACTIVE_EVENT_ANALYZER
+from src.config import (
+    INTERACTIVE_EVENT_ANALYZER,
+    LLM_EVENT_ANALYST_MAX_RETRIES,
+    LLM_EVENT_ANALYST_TIMEOUT_SECONDS,
+)
+from src.health_checks import (
+    DependencyHealth,
+    llm_configuration_health,
+    probe_llm_endpoint,
+    validate_asset_mapping,
+    validate_historical_cases,
+)
 from src.input_normalizer import normalize_event_input
 from src.orchestration.langgraph_v5 import run_v5_langgraph
 from src.schemas import FinalReport
@@ -107,11 +118,23 @@ class HealthVectorStore(BaseModel):
     message: str | None = None
 
 
+class HealthComponent(BaseModel):
+    """One required or optional dependency health result."""
+
+    status: str
+    required: bool
+    healthy: bool
+    records: int | None = None
+    message: str | None = None
+
+
 class HealthResponse(BaseModel):
     """API health response."""
 
     status: str
     vector_store: HealthVectorStore
+    ready: bool
+    components: dict[str, HealthComponent]
 
 
 class VersionConfiguration(BaseModel):
@@ -121,6 +144,8 @@ class VersionConfiguration(BaseModel):
     support_threshold: int
     mechanism_compatible: bool
     event_analyzer: str
+    llm_timeout_seconds: float
+    llm_max_retries: int
     transmission_context_version: str
     canonical_family_version: str
     mechanism_compatibility_version: str
@@ -148,22 +173,92 @@ class VersionResponse(BaseModel):
 
 @app.get("/health", response_model=HealthResponse)
 def health() -> HealthResponse:
-    """Return API and required retrieval-infrastructure health."""
+    """Return detailed readiness with a non-networked optional LLM status."""
+
+    return _health_response(active_llm_probe=False)
+
+
+@app.get("/health/live")
+def health_live() -> dict[str, str]:
+    """Return process liveness without touching external dependencies."""
+
+    return {"status": "alive"}
+
+
+@app.get("/health/ready", response_model=HealthResponse)
+def health_ready() -> HealthResponse:
+    """Return readiness based only on dependencies required for deterministic mode."""
+
+    return _health_response(active_llm_probe=False)
+
+
+@app.get("/health/deep", response_model=HealthResponse)
+def health_deep() -> HealthResponse:
+    """Run an explicit optional LLM endpoint probe plus all required checks."""
+
+    return _health_response(active_llm_probe=True)
+
+
+def _health_response(*, active_llm_probe: bool) -> HealthResponse:
+    """Build a component-level health response and enforce required readiness."""
 
     vector_health = validate_vector_store()
     vector_status = "ready" if vector_health.healthy else "unavailable"
+    historical_cases = validate_historical_cases()
+    asset_mapping = validate_asset_mapping()
+    llm = probe_llm_endpoint() if active_llm_probe else llm_configuration_health()
+    dependencies = [historical_cases, asset_mapping, llm]
+    required_ready = vector_health.healthy and all(
+        dependency.healthy for dependency in dependencies if dependency.required
+    )
+    optional_degraded = any(
+        not dependency.healthy for dependency in dependencies if not dependency.required
+    )
+    overall_status = (
+        "unhealthy"
+        if not required_ready
+        else "degraded"
+        if optional_degraded
+        else "healthy"
+    )
     response = HealthResponse(
-        status="healthy" if vector_health.healthy else "unhealthy",
+        status=overall_status,
+        ready=required_ready,
         vector_store=HealthVectorStore(
             status=vector_status,
             collection=vector_health.collection_name,
             documents=vector_health.collection_count,
             message=None if vector_health.healthy else vector_health.message,
         ),
+        components={
+            "vector_store": HealthComponent(
+                status=vector_status,
+                required=True,
+                healthy=vector_health.healthy,
+                records=vector_health.collection_count,
+                message=None if vector_health.healthy else vector_health.message,
+            ),
+            **{
+                dependency.name: _health_component(dependency)
+                for dependency in dependencies
+            },
+        },
     )
-    if not vector_health.healthy:
+    if not required_ready:
         raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=response.model_dump())
     return response
+
+
+def _health_component(dependency: DependencyHealth) -> HealthComponent:
+    """Convert an internal dependency result to the public response schema."""
+
+    return HealthComponent(
+        status=dependency.status,
+        required=dependency.required,
+        healthy=dependency.healthy,
+        records=dependency.records,
+        message=dependency.message,
+    )
 
 
 @app.get("/version", response_model=VersionResponse)
@@ -183,6 +278,8 @@ def version() -> VersionResponse:
             support_threshold=V4_CONFIG.compatible_support_threshold,
             mechanism_compatible=V4_CONFIG.use_mechanism_compatible_support,
             event_analyzer=INTERACTIVE_EVENT_ANALYZER,
+            llm_timeout_seconds=LLM_EVENT_ANALYST_TIMEOUT_SECONDS,
+            llm_max_retries=LLM_EVENT_ANALYST_MAX_RETRIES,
             transmission_context_version=V4_CONFIG.transmission_context_version,
             canonical_family_version=V4_CONFIG.canonical_family_version,
             mechanism_compatibility_version=V4_CONFIG.mechanism_compatibility_version,

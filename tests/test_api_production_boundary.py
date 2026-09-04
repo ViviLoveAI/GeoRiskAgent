@@ -231,8 +231,12 @@ def test_health_reports_ready_vector_store(monkeypatch):
     assert response.status_code == 200
     payload = response.json()
     assert payload["status"] == "healthy"
+    assert payload["ready"] is True
     assert payload["vector_store"]["status"] == "ready"
     assert payload["vector_store"]["documents"] == 70
+    assert payload["components"]["historical_case_kb"]["status"] == "ready"
+    assert payload["components"]["asset_mapping"]["status"] == "ready"
+    assert payload["components"]["llm_event_analyst"]["required"] is False
 
 
 def test_health_reports_unhealthy_vector_store(monkeypatch):
@@ -255,6 +259,51 @@ def test_health_reports_unhealthy_vector_store(monkeypatch):
     assert response.json()["detail"]["status"] == "unhealthy"
 
 
+def test_liveness_does_not_run_dependency_checks(monkeypatch):
+    monkeypatch.setattr(
+        api,
+        "validate_vector_store",
+        lambda: (_ for _ in ()).throw(AssertionError("must not be called")),
+    )
+
+    response = TestClient(api.app).get("/health/live")
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "alive"}
+
+
+def test_deep_health_treats_unreachable_llm_as_optional(monkeypatch):
+    monkeypatch.setattr(
+        api,
+        "validate_vector_store",
+        lambda: VectorStoreHealth(
+            chroma_version="1.5.9",
+            persistence_path="chroma_db",
+            collection_name="georisk_historical_cases",
+            collection_count=70,
+            healthy=True,
+            message="OK",
+        ),
+    )
+    monkeypatch.setattr(
+        api,
+        "probe_llm_endpoint",
+        lambda: api.DependencyHealth(
+            name="llm_event_analyst",
+            status="unreachable",
+            healthy=False,
+            required=False,
+            message="APIConnectionError",
+        ),
+    )
+
+    response = TestClient(api.app).get("/health/deep")
+
+    assert response.status_code == 200
+    assert response.json()["status"] == "degraded"
+    assert response.json()["ready"] is True
+
+
 def test_version_reflects_v5_langgraph_runtime_and_frozen_v4_boundary():
     response = TestClient(api.app).get("/version")
 
@@ -271,6 +320,8 @@ def test_version_reflects_v5_langgraph_runtime_and_frozen_v4_boundary():
     assert configuration["top_k"] == V4_CONFIG.retrieval_top_k
     assert configuration["support_threshold"] == V4_CONFIG.compatible_support_threshold
     assert configuration["mechanism_compatible"] == V4_CONFIG.use_mechanism_compatible_support
+    assert configuration["llm_timeout_seconds"] == 5.0
+    assert configuration["llm_max_retries"] == 0
     assert configuration["architecture_version"] == V5_RECOVERY_APPLICABILITY_CONFIG.architecture_version
     assert "Frozen V4" in configuration["verification_boundary"]
     assert configuration["max_repair_attempts"] == 1

@@ -95,13 +95,13 @@ def run_v5_pipeline(
     )
 
     if not config.enable_node_repair:
-        state.status = "FINAL"
+        terminal_status = _terminal_status(initial_report)
         _record(
             state,
             action="FINALIZE",
             reason="Node repair disabled; returning frozen V4-equivalent output",
             before="VERIFY",
-            after="FINAL",
+            after=terminal_status,
         )
         return _result(initial_report, state, config)
 
@@ -228,14 +228,19 @@ def run_v5_pipeline(
             latency_ms=_elapsed_ms(repair_start),
         )
 
-    state.status = "FINAL" if final_report.evidence_results else "ABSTAIN"
-    if state.status == "ABSTAIN":
+    terminal_status = _terminal_status(final_report)
+    state.status = terminal_status  # type: ignore[assignment]
+    if terminal_status != "RANKED":
         _record(
             state,
             action="ABSTAIN",
-            reason="Frozen V4 verification produced no mapped evidence results",
+            reason=(
+                "No second-order exposure qualified for ranking"
+                if terminal_status == "RANKING_ABSTAIN"
+                else "Frozen V4 verification produced no mapped evidence results"
+            ),
             before="FINAL",
-            after="ABSTAIN",
+            after=terminal_status,
         )
     return _result(final_report, state, config)
 
@@ -600,6 +605,19 @@ def _proposal_case_ids(proposals: list) -> list[str]:
 
 def _elapsed_ms(start: float) -> int:
     return max(0, round((perf_counter() - start) * 1000))
+
+
+def _terminal_status(final_report: FinalReport) -> str:
+    """Classify a completed run by whether second-order ranking was emitted."""
+
+    if any(
+        result.ranking_scope == "ranked_second_order"
+        for result in final_report.evidence_results
+    ):
+        return "RANKED"
+    if final_report.evidence_results:
+        return "RANKING_ABSTAIN"
+    return "FULL_ABSTAIN"
 
 
 def _dedupe(values: list[str]) -> list[str]:

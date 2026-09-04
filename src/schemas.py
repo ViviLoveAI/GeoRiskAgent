@@ -7,6 +7,8 @@ structure.
 
 from pydantic import BaseModel, Field
 
+from src.observability import ExecutionMetadata
+
 
 class GeoRiskEvent(BaseModel):
     """A geopolitical risk event to analyze."""
@@ -156,3 +158,4 @@ class FinalReport(BaseModel):
     input_language: str | None = None
     input_normalization_applied: bool = False
     input_normalization_error: str | None = None
+    execution_metadata: ExecutionMetadata | None = None

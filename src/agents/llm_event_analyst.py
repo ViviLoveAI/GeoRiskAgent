@@ -13,13 +13,22 @@ import json
 import os
 import re
 import sys
+from contextvars import ContextVar
+from time import perf_counter
 from typing import Any
 
 from pydantic import BaseModel, Field
 
 from src.agents.event_analyst import DEFAULT_EVENT_TYPE, EVENT_RULES, analyze_event
-from src.config import ASSET_MAPPING_PATH, LLM_EVENT_ANALYST_MODEL, USE_LLM_EVENT_ANALYST
+from src.config import (
+    ASSET_MAPPING_PATH,
+    LLM_EVENT_ANALYST_MAX_RETRIES,
+    LLM_EVENT_ANALYST_MODEL,
+    LLM_EVENT_ANALYST_TIMEOUT_SECONDS,
+    USE_LLM_EVENT_ANALYST,
+)
 from src import nodes
+from src.observability import record_gate_decision
 from src.schemas import EventAnalysis
 
 
@@ -44,7 +53,10 @@ EXTRA_LLM_EVENT_TYPES = {
     "aerospace_supply_chain_sanctions",
 }
 
-_last_analysis_trace: dict[str, object] = {}
+_last_analysis_trace: ContextVar[dict[str, object] | None] = ContextVar(
+    "llm_event_analysis_trace",
+    default=None,
+)
 
 
 class LLMEventAnalysisCandidate(BaseModel):
@@ -64,27 +76,35 @@ class LLMEventAnalysisCandidate(BaseModel):
 def analyze_event_with_llm(news_text: str) -> EventAnalysis:
     """Analyze a news item with an optional LLM and safe rule-based fallback."""
 
-    global _last_analysis_trace
-
     if not news_text.strip():
         raise ValueError("news_text must not be empty.")
 
     _log_runtime_status()
-    _last_analysis_trace = {
+    _last_analysis_trace.set({
         "openai_api_key_detected": bool(os.getenv("OPENAI_API_KEY")),
         "use_llm_event_analyst": USE_LLM_EVENT_ANALYST,
         "model": LLM_EVENT_ANALYST_MODEL,
         "api_call_attempted": False,
         "fallback_occurred": False,
         "fallback_reason": None,
+        "llm_latency_ms": 0.0,
+        "token_usage": None,
         "supporting_phrases": {},
-    }
+        "effective_event_analyzer": "llm",
+        "degradation_reason": None,
+    })
     api_call_attempted = False
     try:
         api_call_attempted = True
-        _last_analysis_trace["api_call_attempted"] = True
+        _update_trace(api_call_attempted=True)
         _log("OpenAI API call attempted: yes")
-        raw_response = _call_llm(news_text)
+        llm_start = perf_counter()
+        try:
+            raw_response = _call_llm(news_text)
+        finally:
+            _update_trace(
+                llm_latency_ms=max(0.0, (perf_counter() - llm_start) * 1000.0)
+            )
         payload = _parse_json_object(raw_response)
         _normalize_supporting_phrases(payload)
         candidate = LLMEventAnalysisCandidate.model_validate(payload)
@@ -93,27 +113,53 @@ def analyze_event_with_llm(news_text: str) -> EventAnalysis:
         _validate_no_tickers(event, news_text)
         _validate_no_advice_or_price_language(payload)
         _validate_grounding(news_text, candidate.supporting_phrases)
-        _last_analysis_trace["supporting_phrases"] = candidate.supporting_phrases
+        _update_trace(supporting_phrases=candidate.supporting_phrases)
+        record_gate_decision(
+            candidate_type="event_analysis",
+            candidate_id="llm_event_analysis",
+            gate="llm_validation",
+            accepted=True,
+            reason_code="LLM_ACCEPTED",
+        )
         _log("Fallback to rule-based analyzer: no")
         return event
     except Exception as exc:
         if not api_call_attempted:
             _log("OpenAI API call attempted: no")
+        reason_code = _classify_failure(exc)
         _log("Fallback to rule-based analyzer: yes")
-        _log(f"Fallback reason: {type(exc).__name__}: {exc}")
+        _log(f"Fallback reason: {reason_code}")
         fallback_event = analyze_event(news_text)
-        _last_analysis_trace["fallback_occurred"] = True
-        _last_analysis_trace["fallback_reason"] = f"{type(exc).__name__}: {exc}"
-        _last_analysis_trace["supporting_phrases"] = {
-            "rule_based_keywords": fallback_event.risk_factors,
-        }
+        _update_trace(
+            fallback_occurred=True,
+            fallback_reason=reason_code,
+            fallback_exception_type=type(exc).__name__,
+            degradation_reason=reason_code,
+            effective_event_analyzer="rule",
+            supporting_phrases={"rule_based_keywords": fallback_event.risk_factors},
+        )
+        record_gate_decision(
+            candidate_type="event_analysis",
+            candidate_id="llm_event_analysis",
+            gate="llm_validation",
+            accepted=False,
+            reason_code=reason_code,
+        )
         return fallback_event
 
 
 def get_last_analysis_trace() -> dict[str, object]:
-    """Return observability metadata for the most recent LLM analysis."""
+    """Return request-local observability metadata for the latest LLM analysis."""
 
-    return dict(_last_analysis_trace)
+    return dict(_last_analysis_trace.get() or {})
+
+
+def _update_trace(**updates: object) -> None:
+    """Replace the request-local trace without mutating shared defaults."""
+
+    trace = dict(_last_analysis_trace.get() or {})
+    trace.update(updates)
+    _last_analysis_trace.set(trace)
 
 
 def _log_runtime_status() -> None:
@@ -138,7 +184,10 @@ def _call_llm(news_text: str) -> str:
     except ImportError as exc:
         raise RuntimeError("openai package is not installed.") from exc
 
-    client = OpenAI()
+    client = OpenAI(
+        timeout=LLM_EVENT_ANALYST_TIMEOUT_SECONDS,
+        max_retries=LLM_EVENT_ANALYST_MAX_RETRIES,
+    )
     response = client.chat.completions.create(
         model=LLM_EVENT_ANALYST_MODEL,
         temperature=0,
@@ -153,10 +202,58 @@ def _call_llm(news_text: str) -> str:
             },
         ],
     )
+    _update_trace(token_usage=_token_usage(response.usage))
     content = response.choices[0].message.content
     if not content:
         raise ValueError("LLM returned empty content.")
     return content
+
+
+def _classify_failure(exc: Exception) -> str:
+    """Map SDK and validation failures to stable, non-sensitive reason codes."""
+
+    name = type(exc).__name__.lower()
+    message = str(exc).lower()
+    if "timeout" in name or "timed out" in message:
+        return "LLM_TIMEOUT"
+    if "authentication" in name or "permission" in name or "api key" in message:
+        return "LLM_AUTH_ERROR"
+    if "connection" in name:
+        return "LLM_CONNECTION_ERROR"
+    if "ground" in message or "supporting_phrases" in message:
+        return "LLM_GROUNDING_REJECTED"
+    if any(term in message for term in ADVICE_OR_PRICE_LANGUAGE):
+        return "LLM_POLICY_REJECTED"
+    return "LLM_INVALID_OUTPUT"
+
+
+def _token_usage(usage: Any) -> dict[str, int] | None:
+    """Normalize OpenAI usage metadata for experiment and cost accounting."""
+
+    if usage is None:
+        return None
+    prompt_tokens = int(_field(usage, "prompt_tokens", 0) or 0)
+    completion_tokens = int(_field(usage, "completion_tokens", 0) or 0)
+    total_tokens = int(
+        _field(usage, "total_tokens", prompt_tokens + completion_tokens)
+        or prompt_tokens + completion_tokens
+    )
+    prompt_details = _field(usage, "prompt_tokens_details", None)
+    cached_tokens = int(_field(prompt_details, "cached_tokens", 0) or 0)
+    return {
+        "input_tokens": prompt_tokens,
+        "cached_input_tokens": cached_tokens,
+        "output_tokens": completion_tokens,
+        "total_tokens": total_tokens,
+    }
+
+
+def _field(value: Any, name: str, default: Any) -> Any:
+    """Read one field from an SDK model or mapping without version coupling."""
+
+    if isinstance(value, dict):
+        return value.get(name, default)
+    return getattr(value, name, default)
 
 
 def _system_prompt() -> str:

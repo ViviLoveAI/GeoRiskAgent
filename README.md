@@ -158,6 +158,20 @@ GEORISK_API_URL=http://127.0.0.1:8000 \
 
 The default rule-based event analysis works without an API key. Optional OpenAI-powered event structuring can be enabled through `.env.example`.
 
+LLM event analysis has a five-second request budget and no SDK retries. A
+timeout, connection failure, invalid response, or grounding rejection falls
+back to the deterministic analyst. Every report exposes `execution_metadata`
+with the requested and effective analyzer, degradation reason, stage latency,
+token usage, funnel counts, gate decisions, and one of `RANKED`,
+`RANKING_ABSTAIN`, or `FULL_ABSTAIN`.
+
+Runtime summaries are written as rotating JSONL to
+`logs/georisk-runtime.jsonl` (ignored by Git). Health endpoints are split by
+intent: `/health/live` checks only the process, `/health/ready` and `/health`
+validate the vector index plus the two authoritative local data sources, and
+`/health/deep` additionally probes the optional LLM endpoint. An unavailable
+LLM degrades deep health but does not make deterministic mode unready.
+
 ## Built for visible provenance
 
 GeoRisk uses explicit, reviewable analysis stages rather than presenting a black-box conclusion:

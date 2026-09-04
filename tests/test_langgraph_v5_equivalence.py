@@ -18,6 +18,10 @@ def test_langgraph_v5_repair_disabled_matches_frozen_runner():
     graph = langgraph_v5.run_v5_langgraph(NEWS, event_analyzer="rule", config=config)
 
     assert _canonical_result(graph) == _canonical_result(frozen)
+    assert graph.final_report.execution_metadata is not None
+    assert graph.final_report.execution_metadata.requested_event_analyzer == "rule"
+    assert graph.final_report.execution_metadata.effective_event_analyzer == "rule"
+    assert graph.state.status == graph.final_report.execution_metadata.outcome_status
 
 
 def test_langgraph_v5_repair_path_matches_frozen_runner(monkeypatch):
@@ -95,6 +99,7 @@ def test_langgraph_v5_graph_exposes_expected_control_nodes():
 
 def _canonical_result(result) -> dict[str, Any]:
     payload = result.model_dump(mode="json")
+    payload["final_report"].pop("execution_metadata", None)
     for action in payload["state"]["trajectory"]:
         action["latency_ms"] = 0
     return {

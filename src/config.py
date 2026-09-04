@@ -24,6 +24,12 @@ HISTORICAL_CASES_PATH = DATA_DIR / "historical_cases.json"
 TRANSMISSION_CONTEXT_V1_PATH = DATA_DIR / "transmission_context_v1.json"
 USE_LLM_EVENT_ANALYST = os.getenv("USE_LLM_EVENT_ANALYST", "true").lower() == "true"
 LLM_EVENT_ANALYST_MODEL = os.getenv("LLM_EVENT_ANALYST_MODEL", "gpt-4.1-mini")
+LLM_EVENT_ANALYST_TIMEOUT_SECONDS = float(
+    os.getenv("LLM_EVENT_ANALYST_TIMEOUT_SECONDS", "5")
+)
+LLM_EVENT_ANALYST_MAX_RETRIES = int(
+    os.getenv("LLM_EVENT_ANALYST_MAX_RETRIES", "0")
+)
 USE_MECHANISM_COMPATIBLE_SUPPORT = (
     os.getenv("USE_MECHANISM_COMPATIBLE_SUPPORT", "false").lower() == "true"
 )

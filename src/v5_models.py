@@ -16,6 +16,10 @@ AnalysisStatus = Literal[
     "VERIFY",
     "FINAL",
     "ABSTAIN",
+    "RANKED",
+    "RANKING_ABSTAIN",
+    "FULL_ABSTAIN",
+    "OPERATIONAL_FAILURE",
 ]
 
 EvidenceDiagnosis = Literal[
@@ -117,6 +121,13 @@ class AnalysisState(BaseModel):
     trajectory: list[AgentAction] = Field(default_factory=list)
 
 
+class V5RuntimeMetrics(BaseModel):
+    """Non-semantic wall-clock measurements for one V5 graph execution."""
+
+    total_latency_ms: float = 0.0
+    phase_latency_ms: dict[str, float] = Field(default_factory=dict)
+
+
 class V5AnalysisResult(BaseModel):
     """Final V5 wrapper preserving the V4 report plus V5 metadata."""
 
@@ -125,3 +136,4 @@ class V5AnalysisResult(BaseModel):
     repair_policy_version: str
     repair_enabled: bool
     state: AnalysisState
+    runtime_metrics: V5RuntimeMetrics | None = None
